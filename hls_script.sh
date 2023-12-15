@@ -32,7 +32,7 @@ cd ./$design.prj/quartus/
 quartus_sh --flow compile quartus_compile
 
 # Modify the Quartus settings file (.qsf) to include power analysis
-cat ~/HLSDataset/quartus_power_set >> ./quartus_compile.qsf
+cat ~/IntelHLSDataset/quartus_power_set >> ./quartus_compile.qsf
 
 # Run a Power Analysis on the generated design
 quartus_pow quartus_compile
@@ -41,6 +41,6 @@ quartus_pow quartus_compile
 # - We could consider extracting more Report Panels here or let it be
 #   an argument to the script
 # - All extracted data is stored in the data directory of the benchmark
-quartus_sh -t ~/HLSDataset/power_to_csv.tcl -project "quartus_compile" -panel "Power Analyzer||Power Analyzer Summary" -file ../../../data/$design.csv
+quartus_sh -t ~/IntelHLSDataset/power_to_csv.tcl -project "quartus_compile" -panel "Power Analyzer||Power Analyzer Summary" -file ../../../data/$design.csv
 
 
