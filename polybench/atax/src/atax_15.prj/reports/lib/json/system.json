@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"atax"
+      , "id":2742148648
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Write"
+          , "id":2742685248
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"atax.B13"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_15.c"
+                , "line":46
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Read"
+          , "id":2742536112
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"atax.B1.start"
+              , "Width":"192 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_15.c"
+                , "line":3
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"call.atax"
+      , "id":2742301032
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"192 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"192 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"return.atax"
+      , "id":2742301160
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":2742301032
+      , "to":2742536112
+    }
+    , {
+      "from":2742685248
+      , "to":2742301160
+    }
+    , {
+      "from":2742536112
+      , "to":2742685248
+    }
+  ]
+}

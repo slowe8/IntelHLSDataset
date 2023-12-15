@@ -1,0 +1,19 @@
+Fitter Status : Successful - Wed Dec 13 00:18:24 2023
+Quartus Prime Version : 20.4.0 Build 72 12/14/2020 SC Pro Edition
+Revision Name : quartus_compile
+Top-level Entity Name : quartus_compile
+Family : Cyclone 10 GX
+Device : 10CX220YF780I5G
+Timing Models : Final
+Power Models : Final
+Device Status : Final
+Logic utilization (in ALMs) : 8,397 / 80,330 ( 10 % )
+Total registers : 15420
+Total pins : 0 / 340 ( 0 % )
+Total virtual pins : 401
+Total block memory bits : 191,040 / 12,021,760 ( 2 % )
+Total RAM Blocks : 26 / 587 ( 4 % )
+Total DSP Blocks : 9 / 192 ( 5 % )
+Total HSSI RX channels : 0 / 12 ( 0 % )
+Total HSSI TX channels : 0 / 12 ( 0 % )
+Total PLLs : 0 / 30 ( 0 % )

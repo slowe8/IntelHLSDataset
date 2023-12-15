@@ -1,0 +1,743 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"'i'"
+      , "id":4294967295
+      , "src":"3820150128"
+      , "dst":"3841277856"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"atax.B3"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'i'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"100.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Compare(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"13"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'i'"
+          , "id":3820150128
+          , "start":"1.00"
+          , "parent":"atax.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":5
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Compare"
+          , "id":3808053232
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":13
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3841277856
+          , "end":"3.00"
+          , "parent":"atax.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":13
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3820150128
+          , "to":3808053232
+        }
+        , {
+          "from":3808053232
+          , "to":3841277856
+        }
+        , {
+          "from":3820150128
+          , "to":3841277856
+        }
+        , {
+          "from":3820150128
+          , "to":3841277856
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"3841054160"
+      , "dst":"3841750064"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"atax.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"atax.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: atax.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"13"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: 4X Partially unrolled atax.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"18"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"13"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"25"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: Fused loop atax.B6(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"35"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B7(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"28"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B8(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"37"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B9(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"37"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B10(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"35"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B11(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"43"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B12(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"43"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":3841054160
+          , "start":"1.00"
+          , "parent":"atax.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":3
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"atax.B3"
+          , "id":3822259040
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":13
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"4X Partially unrolled atax.B4"
+          , "id":3832625504
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":18
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B5"
+          , "id":3839395840
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":13
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B2"
+          , "id":3821500192
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":25
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Fused loop atax.B6"
+          , "id":3839401456
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B7"
+          , "id":3839406736
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":28
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B8"
+          , "id":3839403472
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":37
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B9"
+          , "id":3839405232
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":37
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B10"
+          , "id":3841239872
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B11"
+          , "id":3841236976
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B12"
+          , "id":3839391808
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3841750064
+          , "end":"1.00"
+          , "parent":"atax.B13"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3822259040
+          , "to":3832625504
+        }
+        , {
+          "from":3832625504
+          , "to":3832625504
+        }
+        , {
+          "from":3832625504
+          , "to":3839395840
+        }
+        , {
+          "from":3839395840
+          , "to":3821500192
+        }
+        , {
+          "from":3821500192
+          , "to":3839401456
+        }
+        , {
+          "from":3839401456
+          , "to":3839406736
+        }
+        , {
+          "from":3839406736
+          , "to":3839406736
+        }
+        , {
+          "from":3839406736
+          , "to":3839403472
+        }
+        , {
+          "from":3839403472
+          , "to":3839405232
+        }
+        , {
+          "from":3839405232
+          , "to":3839405232
+        }
+        , {
+          "from":3839405232
+          , "to":3841239872
+        }
+        , {
+          "from":3841239872
+          , "to":3841236976
+        }
+        , {
+          "from":3839391808
+          , "to":3839391808
+        }
+        , {
+          "from":3841236976
+          , "to":3839391808
+        }
+        , {
+          "from":3841054160
+          , "to":3822259040
+        }
+        , {
+          "from":3839391808
+          , "to":3841750064
+        }
+        , {
+          "from":3841054160
+          , "to":3841750064
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"tmp1"
+      , "id":4294967295
+      , "src":"3840188592"
+      , "dst":"3840191568"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"atax.B7"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"tmp1"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"9"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"100.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"f32 FP *+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"29"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"tmp1"
+          , "id":3840188592
+          , "start":"6.00"
+          , "parent":"atax.B7"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":5
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 FP *+"
+          , "id":3840191232
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":29
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3840191568
+          , "end":"10.00"
+          , "parent":"atax.B7"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":29
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3840188592
+          , "to":3840191232
+        }
+        , {
+          "from":3840191232
+          , "to":3840191568
+        }
+        , {
+          "from":3840188592
+          , "to":3840191568
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"buff_y_out"
+      , "id":4294967295
+      , "src":"3839133360"
+      , "dst":"3841109552"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"atax.B6"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"buff_y_out"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"8"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: atax.B9(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                  , "line":"37"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"buff_y_out"
+          , "id":3839133360
+          , "start":"9.00"
+          , "parent":"atax.B6"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":38
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"atax.B9"
+          , "id":3839405232
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":37
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3841109552
+          , "end":"1.00"
+          , "parent":"atax.B10"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_2.c"
+                , "line":38
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3839405232
+          , "to":3839405232
+        }
+        , {
+          "from":3839133360
+          , "to":3839405232
+        }
+        , {
+          "from":3839405232
+          , "to":3841109552
+        }
+        , {
+          "from":3839133360
+          , "to":3841109552
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

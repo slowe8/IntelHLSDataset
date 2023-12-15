@@ -1,0 +1,3191 @@
+{
+  "1137655384":
+  {
+    "nodes":
+    [
+      {
+        "name":"atax.B0.runOnce"
+        , "id":1137978528
+        , "start":"0"
+        , "end":"2"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"?"
+            , "id":1147632688
+            , "start":"1"
+            , "end":"2"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B1.start"
+        , "id":1137978672
+        , "start":"2"
+        , "end":"4"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 0"
+            , "id":1140245392
+            , "start":"3"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_wt_entry_ataxs_c0_enter11_atax0"
+                , "Cluster Type":"Stall-Enable"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"0"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Exit"
+                , "id":1150424368
+                , "start":"3"
+                , "end":"3"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"1"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"?"
+            , "id":1173482160
+            , "start":"3"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":3
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"RD"
+            , "id":1157696704
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Read"
+                , "Width":"192 bits"
+                , "Depth":"0"
+                , "Stream Name":"call.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":3
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":1157446656
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":3
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B3"
+        , "id":1137964240
+        , "start":"4"
+        , "end":"39"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"'i'"
+            , "id":1156596976
+            , "start":"5"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"'i'"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":1157722832
+            , "start":"6"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"7-bit Integer Compare"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":13
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"'i'"
+            , "id":1156008000
+            , "start":"5"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"'i'"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"+"
+            , "id":1157731008
+            , "start":"6"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":13
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1157647472
+            , "start":"6"
+            , "end":"38"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":15
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1144712608
+            , "start":"38"
+            , "end":"39"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined never-stall"
+                , "Stall-free":"Yes"
+                , "Global Memory":"No"
+                , "Start Cycle":"34"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":15
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1157345712
+            , "start":"6"
+            , "end":"38"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":16
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1147933872
+            , "start":"38"
+            , "end":"39"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined never-stall"
+                , "Stall-free":"Yes"
+                , "Global Memory":"No"
+                , "Start Cycle":"34"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":16
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1145306384
+            , "start":"6"
+            , "end":"38"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":14
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Dest"
+            , "id":1156661024
+            , "start":"5"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":3
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1141889056
+            , "start":"6"
+            , "end":"6"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":14
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1141982624
+            , "start":"6"
+            , "end":"38"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":14
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1157672336
+            , "start":"38"
+            , "end":"39"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined never-stall"
+                , "Stall-free":"Yes"
+                , "Global Memory":"No"
+                , "Start Cycle":"34"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":14
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"8X Partially unrolled atax.B4"
+        , "id":1137964320
+        , "start":"39"
+        , "end":"78"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 1"
+            , "id":1143111504
+            , "start":"40"
+            , "end":"41"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body9_ataxs_c0_enter14314_atax1"
+                , "Cluster Type":"Stall-Enable"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"1"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'j'"
+                , "id":1182724112
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":5
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1182601360
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"2 (0x2)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1172840064
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"3 (0x3)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1155310640
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"6 (0x6)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1155155632
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"7 (0x7)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1155071472
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"5 (0x5)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1150568720
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"8 (0x8)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1150150208
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"4 (0x4)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Or"
+                , "id":1144302784
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Or"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"?"
+                , "id":1173523232
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":14
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1173574080
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1155252768
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":1177229744
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":3
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1182602032
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1176812272
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1172840736
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1155311312
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1155156304
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1155072144
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1150150880
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1144303456
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1173588528
+                , "start":"41"
+                , "end":"41"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"LD"
+            , "id":1180959120
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1156016096
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1151033152
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1148592640
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1147649408
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1144611728
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1144384800
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"LD"
+            , "id":1143464736
+            , "start":"41"
+            , "end":"73"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"2"
+                , "Latency":"32"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":19
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 2"
+            , "id":1144316976
+            , "start":"73"
+            , "end":"78"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c1_in_for_body9_ataxs_c1_enter_atax12"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"34"
+                , "Cluster Latency":"5"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"ST"
+                , "id":1147318512
+                , "start":"74"
+                , "end":"75"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"35"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1142546592
+                , "start":"74"
+                , "end":"75"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"35"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1180982048
+                , "start":"75"
+                , "end":"78"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"36"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B5"
+        , "id":1137964400
+        , "start":"78"
+        , "end":"78"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B2"
+        , "id":1137964160
+        , "start":"78"
+        , "end":"78"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"Fused loop atax.B6"
+        , "id":1137964480
+        , "start":"78"
+        , "end":"88"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 3"
+            , "id":1144578192
+            , "start":"79"
+            , "end":"88"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_cond24_preheader_ataxs_c0_enter14812_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"9"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":1147243168
+                , "start":"80"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":5
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1186471792
+                , "start":"80"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":25
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1147204192
+                , "start":"80"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1177127520
+                , "start":"80"
+                , "end":"85"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1173621344
+                , "start":"85"
+                , "end":"88"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"7"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"256"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B7"
+        , "id":1137964560
+        , "start":"88"
+        , "end":"101"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 4"
+            , "id":1144973696
+            , "start":"89"
+            , "end":"101"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body26_ataxs_c0_enter16615_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"12"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"buff_y_out"
+                , "id":1157266608
+                , "start":"92"
+                , "end":"92"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"tmp1"
+                , "id":1151207984
+                , "start":"94"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"tmp1"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":5
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"tmp1"
+                , "id":1151029824
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"tmp1"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":1150782992
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":5
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1172372624
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1150893264
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":28
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_A"
+                , "id":1150572384
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_A"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1151489632
+                , "start":"90"
+                , "end":"90"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1172374416
+                , "start":"90"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1151460656
+                , "start":"90"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1151210624
+                , "start":"94"
+                , "end":"98"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1186340208
+                , "start":"98"
+                , "end":"101"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"10"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"320"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B8"
+        , "id":1137964640
+        , "start":"101"
+        , "end":"111"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 5"
+            , "id":1145787360
+            , "start":"101"
+            , "end":"111"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_inc40_ataxs_c0_enter189_atax3"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"10"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"ST"
+                , "id":1150908752
+                , "start":"102"
+                , "end":"103"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1150121344
+                , "start":"103"
+                , "end":"108"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1176549584
+                , "start":"108"
+                , "end":"111"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"7"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"64"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"buff_y_out"
+            , "id":1172786880
+            , "start":"110"
+            , "end":"111"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"buff_y_out"
+                , "Start Cycle":"9"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":38
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"4X Partially unrolled atax.B9"
+        , "id":1137964720
+        , "start":"111"
+        , "end":"125"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 6"
+            , "id":1146031536
+            , "start":"112"
+            , "end":"125"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body48_ataxs_c0_enter20116_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"13"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"buff_y_out"
+                , "id":1151376176
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":1150885264
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":5
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1144627312
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"4 (0x4)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1143136864
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"?"
+                , "id":1150427200
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1145506144
+                , "start":"113"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_A"
+                , "id":1145359232
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_A"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1145101296
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1143265584
+                , "start":"113"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_y_out"
+                , "id":1143576592
+                , "start":"113"
+                , "end":"113"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1145082096
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1145081760
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1145081424
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1145079744
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1143244064
+                , "start":"121"
+                , "end":"122"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"10"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":38
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1177215488
+                , "start":"122"
+                , "end":"125"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"11"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"48"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B10"
+        , "id":1137964800
+        , "start":"125"
+        , "end":"126"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B11"
+        , "id":1137964880
+        , "start":"126"
+        , "end":"126"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"4X Partially unrolled atax.B12"
+        , "id":1137964960
+        , "start":"126"
+        , "end":"260"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"FFwd Dest"
+            , "id":1182334224
+            , "start":"135"
+            , "end":"136"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"9"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":3
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Global variable"
+            , "id":1185879680
+            , "start":"228"
+            , "end":"229"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Global variable"
+                , "Start Cycle":"102"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Global variable"
+            , "id":1185876368
+            , "start":"197"
+            , "end":"198"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Global variable"
+                , "Start Cycle":"71"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Global variable"
+            , "id":1185869824
+            , "start":"166"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Global variable"
+                , "Start Cycle":"40"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"'i'"
+            , "id":1176917856
+            , "start":"127"
+            , "end":"128"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"'i'"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1150961568
+            , "start":"128"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"39"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1150960000
+            , "start":"128"
+            , "end":"128"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 7"
+            , "id":1147593744
+            , "start":"128"
+            , "end":"136"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body69_ataxs_c0_enter22113_atax38"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"2"
+                , "Cluster Latency":"8"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"LD"
+                , "id":1185706800
+                , "start":"129"
+                , "end":"133"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"128 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"3"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                      , "line":44
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1185664400
+                , "start":"133"
+                , "end":"136"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"7"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"160"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"ST"
+            , "id":1182370144
+            , "start":"229"
+            , "end":"260"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"103"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Or"
+            , "id":1150847520
+            , "start":"136"
+            , "end":"136"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Or"
+                , "Constant Operand":"3 (0x3)"
+                , "Start Cycle":"10"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":43
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1182043120
+            , "start":"136"
+            , "end":"136"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"10"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1173308384
+            , "start":"136"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"10"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Or"
+            , "id":1150847184
+            , "start":"167"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Or"
+                , "Constant Operand":"2 (0x2)"
+                , "Start Cycle":"41"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":43
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1186142944
+            , "start":"167"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"41"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1174557744
+            , "start":"167"
+            , "end":"198"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"41"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Or"
+            , "id":1150846848
+            , "start":"167"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Or"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"41"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":43
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Ptr. Comp."
+            , "id":1186141376
+            , "start":"167"
+            , "end":"167"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Pointer Computation"
+                , "Start Cycle":"41"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":1176992608
+            , "start":"198"
+            , "end":"229"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"72"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":44
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"+"
+            , "id":1150814016
+            , "start":"128"
+            , "end":"128"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"4 (0x4)"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":43
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B13"
+        , "id":1137965040
+        , "start":"260"
+        , "end":"261"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"WR"
+            , "id":1186526240
+            , "start":"260"
+            , "end":"260"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Write"
+                , "Width":"1 bit"
+                , "Depth":"0"
+                , "Stream Name":"return.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"0"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_9.c"
+                  , "line":46
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+    ]
+  }
+}

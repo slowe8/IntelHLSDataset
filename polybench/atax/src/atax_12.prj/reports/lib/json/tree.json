@@ -1,0 +1,147 @@
+{
+  "nodes":
+  [
+    {
+      "name":"atax"
+      , "id":37924392
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"8X Partially unrolled atax.B9"
+          , "id":38233088
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 6"
+              , "id":46414352
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B11"
+          , "id":38233248
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B10"
+          , "id":38233168
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B7"
+          , "id":38232928
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 4"
+              , "id":45356480
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"Fused loop atax.B6"
+          , "id":38232848
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 3"
+              , "id":44961120
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B8"
+          , "id":38233008
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 5"
+              , "id":46170176
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B13"
+          , "id":38233408
+          , "type":"bb"
+        }
+        , {
+          "name":"8X Partially unrolled atax.B12"
+          , "id":38233328
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 7"
+              , "id":48199712
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B2"
+          , "id":38232528
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B1.start"
+          , "id":38247040
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 0"
+              , "id":40468416
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B5"
+          , "id":38232768
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B0.runOnce"
+          , "id":38246896
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B3"
+          , "id":38232608
+          , "type":"bb"
+        }
+        , {
+          "name":"8X Partially unrolled atax.B4"
+          , "id":38232688
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 2"
+              , "id":44744208
+              , "type":"cluster"
+            }
+            , {
+              "name":"Cluster 1"
+              , "id":43566512
+              , "type":"cluster"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+  ]
+}
