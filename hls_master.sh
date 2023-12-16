@@ -12,15 +12,17 @@ if [ -d $benchmark_set/$benchmark/src/ ]; then # Check if this is directory exit
 	for file in $benchmark_set/$benchmark/src/*; do 
        		if [ -f $file ]; then # Check if the object is a file 
 	       		# Check if the object is the header file
-			if [ $file = "atax.h" ]; then
-		       		continue
-			fi
+			
 
 			# Otherwise, run the flow script
 			# These two commands clip the unwanted pieces of the path
 	       		target=${file#${benchmark_set}/${benchmark}/src/}
 	       		target=${target%.c}
-	       		./hls_script.sh $benchmark_set $benchmark $target &
+			if [ $target = "atax.h" ]; then
+		       		continue
+			fi
+	       		./hls_script.sh $benchmark_set $benchmark $target
+			echo "Compiling ${file}..."
 		fi
 	done
 else # Notify the user if the benchmark does not exist
