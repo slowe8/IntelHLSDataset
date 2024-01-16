@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="hls_sim_component_dpi_controller_10/sim/hls_sim_stream_sink_dpi_bfm.sv"
+   type="SYSTEM_VERILOG"
+   library="hls_sim_component_dpi_controller_10" />
+ <file
+   path="hls_sim_component_dpi_controller_10/sim/hls_sim_stream_source_dpi_bfm.sv"
+   type="SYSTEM_VERILOG"
+   library="hls_sim_component_dpi_controller_10" />
+ <file
+   path="hls_sim_component_dpi_controller_10/sim/hld_sim_latency_tracker.sv"
+   type="SYSTEM_VERILOG"
+   library="hls_sim_component_dpi_controller_10" />
+ <file
+   path="hls_sim_component_dpi_controller_10/sim/hls_sim_component_dpi_controller.sv"
+   type="SYSTEM_VERILOG"
+   library="hls_sim_component_dpi_controller_10" />
+ <file
+   path="sim/dpic_atax.v"
+   type="VERILOG"
+   library="dpic_atax"
+   hasInlineConfiguration="true" />
+ <topLevel name="dpic_atax.dpic_atax" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

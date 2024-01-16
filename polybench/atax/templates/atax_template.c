@@ -3,9 +3,16 @@
 component void atax(DATA_TYPE A[N][N], DATA_TYPE x[N], DATA_TYPE y_out[N])
 {
 	int i, j;
+	{{ buff_A }}
 	DATA_TYPE buff_A[N][N];
+
+	{{ buff_x }}
     	DATA_TYPE buff_x[N];
+
+	{{ buff_y_out }}
     	DATA_TYPE buff_y_out[N];
+
+	{{ tmp1 }}
     	DATA_TYPE tmp1[N];
 
 	{{ lprd_1 }}

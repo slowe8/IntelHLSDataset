@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_pop_i1_exitcond1994_pop37_0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -64,10 +64,10 @@ module atax_i_llvm_fpga_pop_i1_exitcond1994_pop37_0 (
     // c_i7_03(CONSTANT,3)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,4)@4
+    // element_extension2(BITJOIN,4)@2
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1(EXTIFACE,7)@4
+    // i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1(EXTIFACE,7)@2
     assign i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_data_in = element_extension2_q[0:0];
     assign i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_dir = in_dir;
     assign i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_feedback_in = in_feedback_in_37;
@@ -112,10 +112,10 @@ module atax_i_llvm_fpga_pop_i1_exitcond1994_pop37_0 (
     // feedback_sync_out(GPOUT,6)
     assign out_feedback_stall_out_37 = i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_feedback_stall_out;
 
-    // sync_out(GPOUT,9)@4
+    // sync_out(GPOUT,9)@2
     assign out_stall_out = i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,12)@4
+    // dupName_0_sync_out_x(GPOUT,12)@2
     assign out_data_out = i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_data_out;
     assign out_valid_out = i_llvm_fpga_pop_i1_exitcond1994_pop37_atax1_valid_out;
 

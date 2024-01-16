@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_push_i32_j_235_push40_0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -59,7 +59,7 @@ module atax_i_llvm_fpga_push_i32_j_235_push40_0 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_push_i32_j_235_push40_atax1(EXTIFACE,5)@2
+    // i_llvm_fpga_push_i32_j_235_push40_atax1(EXTIFACE,5)@3
     assign i_llvm_fpga_push_i32_j_235_push40_atax1_data_in = in_data_in;
     assign i_llvm_fpga_push_i32_j_235_push40_atax1_dir = in_keep_going28;
     assign i_llvm_fpga_push_i32_j_235_push40_atax1_feedback_stall_in = in_feedback_stall_in_40;
@@ -106,10 +106,10 @@ module atax_i_llvm_fpga_push_i32_j_235_push40_0 (
     assign out_feedback_out_40 = i_llvm_fpga_push_i32_j_235_push40_atax1_feedback_out;
     assign out_feedback_valid_out_40 = i_llvm_fpga_push_i32_j_235_push40_atax1_feedback_valid_out;
 
-    // sync_out(GPOUT,8)@2
+    // sync_out(GPOUT,8)@3
     assign out_stall_out = i_llvm_fpga_push_i32_j_235_push40_atax1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,10)@2
+    // dupName_0_sync_out_x(GPOUT,10)@3
     assign out_data_out = i_llvm_fpga_push_i32_j_235_push40_atax1_data_out;
     assign out_valid_out = i_llvm_fpga_push_i32_j_235_push40_atax1_valid_out;
 

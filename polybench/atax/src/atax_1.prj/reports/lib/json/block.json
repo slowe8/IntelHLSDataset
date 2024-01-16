@@ -1,5 +1,5 @@
 {
-  "3333431424":
+  "3041788192":
   {
     "nodes":
     [
@@ -8,31 +8,54 @@
     [
     ]
   }
-  , "3333431504":
+  , "3041788272":
   {
     "nodes":
     [
       {
-        "name":"+"
-        , "id":3338539664
-        , "start":"2.00"
+        "name":"'i'"
+        , "id":3047419472
+        , "start":"1.00"
         , "end":"2.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'i'"
+            , "Start Cycle":"1"
+            , "Latency":"1"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":7
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":3056035024
+        , "start":"2.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
             }
           ]
         ]
@@ -40,7 +63,7 @@
       }
       , {
         "name":"ST"
-        , "id":3339006064
+        , "id":3057355952
         , "start":"34.00"
         , "end":"35.00"
         , "details":
@@ -60,58 +83,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":3339330272
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Compare"
-        , "id":3340776928
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"7-bit Integer Compare"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":16
             }
           ]
         ]
@@ -119,7 +92,7 @@
       }
       , {
         "name":"'i'"
-        , "id":3347738928
+        , "id":3057470768
         , "start":"1.00"
         , "end":"2.00"
         , "details":
@@ -136,8 +109,62 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":5
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":7
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":3057471408
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"7-bit Integer Compare"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":3057492064
+        , "start":"34.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"34"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":18
             }
           ]
         ]
@@ -145,7 +172,7 @@
       }
       , {
         "name":"Ptr. Comp."
-        , "id":3348998704
+        , "id":3057869344
         , "start":"2.00"
         , "end":"34.00"
         , "details":
@@ -161,8 +188,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":15
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":16
             }
           ]
         ]
@@ -170,7 +197,7 @@
       }
       , {
         "name":"FFwd Dest"
-        , "id":3349134880
+        , "id":3057871632
         , "start":"1.00"
         , "end":"2.00"
         , "details":
@@ -186,31 +213,59 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":3
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":5
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"Loop Orch"
-        , "id":3349543776
+        "name":"Ptr. Comp."
+        , "id":3058234400
         , "start":"2.00"
-        , "end":"3.00"
+        , "end":"34.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"2"
+            , "Latency":"32"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":18
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":3071639472
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
             }
           ]
         ]
@@ -218,7 +273,7 @@
       }
       , {
         "name":"LD"
-        , "id":3349877216
+        , "id":3072273456
         , "start":"2.00"
         , "end":"34.00"
         , "details":
@@ -238,8 +293,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":14
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":16
             }
           ]
         ]
@@ -247,7 +302,7 @@
       }
       , {
         "name":"ST"
-        , "id":3350081072
+        , "id":3072399584
         , "start":"34.00"
         , "end":"35.00"
         , "details":
@@ -267,34 +322,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":15
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"'i'"
-        , "id":3350116736
-        , "start":"1.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'i'"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":5
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":17
             }
           ]
         ]
@@ -302,23 +331,23 @@
       }
       , {
         "name":"Ptr. Comp."
-        , "id":3362937968
+        , "id":3073066272
         , "start":"2.00"
-        , "end":"34.00"
+        , "end":"2.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Pointer Computation"
             , "Start Cycle":"2"
-            , "Latency":"32"
+            , "Latency":"0"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
               , "line":16
             }
           ]
@@ -327,7 +356,7 @@
       }
       , {
         "name":"Loop Input"
-        , "id":3368492528
+        , "id":3077015312
         , "details":
         [
           {
@@ -340,62 +369,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":3368618304
-        , "start":"34.00"
-        , "end":"35.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"34"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":16
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":3369301328
-        , "start":"2.00"
-        , "end":"34.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":14
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
             }
           ]
         ]
@@ -403,7 +378,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":3370361712
+        , "id":3078746960
         , "start":"2.00"
         , "end":"3.00"
         , "details":
@@ -422,8 +397,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
             }
           ]
         ]
@@ -431,7 +406,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":3370829776
+        , "id":3079215024
         , "start":"2.00"
         , "end":"3.00"
         , "details":
@@ -450,8 +425,33 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":13
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":15
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":3079373296
+        , "start":"2.00"
+        , "end":"34.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"2"
+            , "Latency":"32"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":17
             }
           ]
         ]
@@ -461,8 +461,8 @@
     , "links":
     [
       {
-        "from":3338539664
-        , "to":3370829776
+        "from":3047419472
+        , "to":3057869344
         , "details":
         [
           {
@@ -472,8 +472,107 @@
         ]
       }
       , {
-        "from":3339330272
-        , "to":3349877216
+        "from":3047419472
+        , "to":3058234400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3047419472
+        , "to":3071639472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3047419472
+        , "to":3073066272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3047419472
+        , "to":3079373296
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3057470768
+        , "to":3057471408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"7"
+          }
+        ]
+      }
+      , {
+        "from":3057470768
+        , "to":3078746960
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"7"
+          }
+        ]
+      }
+      , {
+        "from":3057471408
+        , "to":3056035024
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3057471408
+        , "to":3078746960
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3057471408
+        , "to":3079215024
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3057869344
+        , "to":3057355952
         , "details":
         [
           {
@@ -483,107 +582,8 @@
         ]
       }
       , {
-        "from":3340776928
-        , "to":3349543776
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3340776928
-        , "to":3370361712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3340776928
-        , "to":3370829776
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3347738928
-        , "to":3338539664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3347738928
-        , "to":3339330272
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3347738928
-        , "to":3348998704
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3347738928
-        , "to":3362937968
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3347738928
-        , "to":3369301328
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3348998704
-        , "to":3350081072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3349134880
-        , "to":3339330272
+        "from":3057871632
+        , "to":3073066272
         , "details":
         [
           {
@@ -593,8 +593,19 @@
         ]
       }
       , {
-        "from":3349877216
-        , "to":3339006064
+        "from":3058234400
+        , "to":3057492064
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":3071639472
+        , "to":3079215024
         , "details":
         [
           {
@@ -604,30 +615,19 @@
         ]
       }
       , {
-        "from":3350116736
-        , "to":3340776928
+        "from":3072273456
+        , "to":3057355952
         , "details":
         [
           {
             "type":"table"
-            , "Width":"7"
+            , "Width":"32"
           }
         ]
       }
       , {
-        "from":3350116736
-        , "to":3370361712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"7"
-          }
-        ]
-      }
-      , {
-        "from":3362937968
-        , "to":3368618304
+        "from":3073066272
+        , "to":3072273456
         , "details":
         [
           {
@@ -637,8 +637,8 @@
         ]
       }
       , {
-        "from":3368492528
-        , "to":3347738928
+        "from":3077015312
+        , "to":3047419472
         , "details":
         [
           {
@@ -648,8 +648,8 @@
         ]
       }
       , {
-        "from":3368492528
-        , "to":3350116736
+        "from":3077015312
+        , "to":3057470768
         , "details":
         [
           {
@@ -659,19 +659,8 @@
         ]
       }
       , {
-        "from":3369301328
-        , "to":3339006064
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3370361712
-        , "to":3350116736
+        "from":3078746960
+        , "to":3057470768
         , "reverse":1
         , "details":
         [
@@ -682,28 +671,39 @@
         ]
       }
       , {
-        "from":3370829776
-        , "to":3347738928
+        "from":3079215024
+        , "to":3047419472
         , "reverse":1
         , "details":
         [
           {
             "type":"table"
             , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3079373296
+        , "to":3072399584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
           }
         ]
       }
     ]
   }
-  , "3333431584":
+  , "3041788352":
   {
     "nodes":
     [
       {
         "name":"Cluster 1"
-        , "id":3338337968
+        , "id":3046694576
         , "start":"1.00"
-        , "end":"2.00"
+        , "end":"3.00"
         , "details":
         [
           {
@@ -711,7 +711,7 @@
             , "Cluster Name":"i_sfc_s_c0_in_for_body9_ataxs_c0_enter12214_atax1"
             , "Cluster Type":"Stall-Enable"
             , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"1"
+            , "Cluster Latency":"2"
           }
         ]
         , "type":"bb"
@@ -719,13 +719,13 @@
         [
           {
             "name":"Logic"
-            , "id":3338345056
+            , "id":3046701664
             , "details":
             [
               {
                 "type":"table"
                 , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"1"
+                , "Cluster Logic Latency":"2"
               }
             ]
             , "type":"inst"
@@ -734,9 +734,9 @@
       }
       , {
         "name":"LD"
-        , "id":3351609344
-        , "start":"2.00"
-        , "end":"34.00"
+        , "id":3046128736
+        , "start":"3.00"
+        , "end":"35.00"
         , "details":
         [
           {
@@ -746,7 +746,7 @@
             , "LSU Style":"Pipelined"
             , "Stall-free":"No"
             , "Global Memory":"Yes"
-            , "Start Cycle":"2"
+            , "Start Cycle":"3"
             , "Latency":"32"
           }
         ]
@@ -754,8 +754,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":19
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":21
             }
           ]
         ]
@@ -763,9 +763,9 @@
       }
       , {
         "name":"LD"
-        , "id":3359675344
-        , "start":"2.00"
-        , "end":"34.00"
+        , "id":3047362672
+        , "start":"3.00"
+        , "end":"35.00"
         , "details":
         [
           {
@@ -775,7 +775,7 @@
             , "LSU Style":"Pipelined"
             , "Stall-free":"No"
             , "Global Memory":"Yes"
-            , "Start Cycle":"2"
+            , "Start Cycle":"3"
             , "Latency":"32"
           }
         ]
@@ -783,8 +783,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":19
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":21
             }
           ]
         ]
@@ -792,9 +792,9 @@
       }
       , {
         "name":"LD"
-        , "id":3359952432
-        , "start":"2.00"
-        , "end":"34.00"
+        , "id":3051901280
+        , "start":"3.00"
+        , "end":"35.00"
         , "details":
         [
           {
@@ -804,7 +804,7 @@
             , "LSU Style":"Pipelined"
             , "Stall-free":"No"
             , "Global Memory":"Yes"
-            , "Start Cycle":"2"
+            , "Start Cycle":"3"
             , "Latency":"32"
           }
         ]
@@ -812,8 +812,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":19
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":21
             }
           ]
         ]
@@ -821,9 +821,9 @@
       }
       , {
         "name":"LD"
-        , "id":3363559616
-        , "start":"2.00"
-        , "end":"34.00"
+        , "id":3051994032
+        , "start":"3.00"
+        , "end":"35.00"
         , "details":
         [
           {
@@ -833,7 +833,7 @@
             , "LSU Style":"Pipelined"
             , "Stall-free":"No"
             , "Global Memory":"Yes"
-            , "Start Cycle":"2"
+            , "Start Cycle":"3"
             , "Latency":"32"
           }
         ]
@@ -841,29 +841,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":3368540896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":18
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":21
             }
           ]
         ]
@@ -871,9 +850,9 @@
       }
       , {
         "name":"ST"
-        , "id":3371537968
-        , "start":"34.00"
-        , "end":"35.00"
+        , "id":3056914832
+        , "start":"35.00"
+        , "end":"36.00"
         , "details":
         [
           {
@@ -883,7 +862,7 @@
             , "LSU Style":"Pipelined never-stall"
             , "Stall-free":"Yes"
             , "Global Memory":"No"
-            , "Start Cycle":"34"
+            , "Start Cycle":"35"
             , "Latency":"1"
           }
         ]
@@ -891,10 +870,23 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":19
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":21
             }
           ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Input"
+        , "id":3076886288
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"atax.B4, atax.B3"
+          }
         ]
         , "type":"inst"
       }
@@ -902,8 +894,8 @@
     , "links":
     [
       {
-        "from":3351609344
-        , "to":3371537968
+        "from":3046128736
+        , "to":3056914832
         , "details":
         [
           {
@@ -913,8 +905,8 @@
         ]
       }
       , {
-        "from":3338345056
-        , "to":3351609344
+        "from":3046701664
+        , "to":3046128736
         , "details":
         [
           {
@@ -924,8 +916,8 @@
         ]
       }
       , {
-        "from":3359675344
-        , "to":3371537968
+        "from":3047362672
+        , "to":3056914832
         , "details":
         [
           {
@@ -935,8 +927,8 @@
         ]
       }
       , {
-        "from":3338345056
-        , "to":3359675344
+        "from":3046701664
+        , "to":3047362672
         , "details":
         [
           {
@@ -946,8 +938,8 @@
         ]
       }
       , {
-        "from":3359952432
-        , "to":3371537968
+        "from":3051901280
+        , "to":3056914832
         , "details":
         [
           {
@@ -957,8 +949,8 @@
         ]
       }
       , {
-        "from":3338345056
-        , "to":3359952432
+        "from":3046701664
+        , "to":3051901280
         , "details":
         [
           {
@@ -968,8 +960,8 @@
         ]
       }
       , {
-        "from":3363559616
-        , "to":3371537968
+        "from":3051994032
+        , "to":3056914832
         , "details":
         [
           {
@@ -979,8 +971,8 @@
         ]
       }
       , {
-        "from":3338345056
-        , "to":3363559616
+        "from":3046701664
+        , "to":3051994032
         , "details":
         [
           {
@@ -990,8 +982,19 @@
         ]
       }
       , {
-        "from":3368540896
-        , "to":3338345056
+        "from":3046701664
+        , "to":3056914832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"448"
+          }
+        ]
+      }
+      , {
+        "from":3076886288
+        , "to":3046701664
         , "details":
         [
           {
@@ -1001,19 +1004,8 @@
         ]
       }
       , {
-        "from":3368540896
-        , "to":3338345056
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3368540896
-        , "to":3338345056
+        "from":3076886288
+        , "to":3046701664
         , "details":
         [
           {
@@ -1023,25 +1015,25 @@
         ]
       }
       , {
-        "from":3338345056
-        , "to":3371537968
+        "from":3076886288
+        , "to":3046701664
         , "details":
         [
           {
             "type":"table"
-            , "Width":"448"
+            , "Width":"1"
           }
         ]
       }
     ]
   }
-  , "3333431664":
+  , "3041788432":
   {
     "nodes":
     [
       {
         "name":"Input"
-        , "id":3368627440
+        , "id":3076950368
         , "details":
         [
           {
@@ -1057,13 +1049,13 @@
     [
     ]
   }
-  , "3333431744":
+  , "3041788512":
   {
     "nodes":
     [
       {
         "name":"Cluster 2"
-        , "id":3339336528
+        , "id":3047693136
         , "start":"1.00"
         , "end":"10.00"
         , "details":
@@ -1081,7 +1073,7 @@
         [
           {
             "name":"Logic"
-            , "id":3339343280
+            , "id":3047699888
             , "details":
             [
               {
@@ -1094,7 +1086,7 @@
           }
           , {
             "name":"Exit"
-            , "id":3339571232
+            , "id":3047927840
             , "details":
             [
               {
@@ -1112,7 +1104,7 @@
       }
       , {
         "name":"Loop Input"
-        , "id":3368564496
+        , "id":3076881184
         , "details":
         [
           {
@@ -1125,8 +1117,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":35
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":37
             }
           ]
         ]
@@ -1136,12 +1128,12 @@
     , "links":
     [
       {
-        "from":3339343280
-        , "to":3339571232
+        "from":3047699888
+        , "to":3047927840
       }
       , {
-        "from":3368564496
-        , "to":3339343280
+        "from":3076881184
+        , "to":3047699888
         , "details":
         [
           {
@@ -1152,15 +1144,15 @@
       }
     ]
   }
-  , "3333431824":
+  , "3041788592":
   {
     "nodes":
     [
       {
         "name":"Cluster 3"
-        , "id":3339731984
+        , "id":3048088592
         , "start":"1.00"
-        , "end":"13.00"
+        , "end":"14.00"
         , "details":
         [
           {
@@ -1168,7 +1160,7 @@
             , "Cluster Name":"i_sfc_s_c0_in_for_body26_ataxs_c0_enter14515_atax1"
             , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"12"
+            , "Cluster Latency":"13"
           }
         ]
         , "type":"bb"
@@ -1176,25 +1168,25 @@
         [
           {
             "name":"Logic"
-            , "id":3339738720
+            , "id":3048095328
             , "details":
             [
               {
                 "type":"table"
                 , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"9"
+                , "Cluster Logic Latency":"10"
               }
             ]
             , "type":"inst"
           }
           , {
             "name":"Exit"
-            , "id":3340394384
+            , "id":3048750992
             , "details":
             [
               {
                 "type":"table"
-                , "Start Cycle":"10"
+                , "Start Cycle":"11"
                 , "Latency":"3"
                 , "Exit FIFO Depth":"32"
                 , "Exit FIFO Width":"320"
@@ -1207,7 +1199,7 @@
       }
       , {
         "name":"Loop Orch"
-        , "id":3365062576
+        , "id":3076880576
         , "details":
         [
           {
@@ -1219,8 +1211,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":28
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":30
             }
           ]
         ]
@@ -1230,12 +1222,12 @@
     , "links":
     [
       {
-        "from":3339738720
-        , "to":3340394384
+        "from":3048095328
+        , "to":3048750992
       }
       , {
-        "from":3365062576
-        , "to":3339738720
+        "from":3076880576
+        , "to":3048095328
         , "details":
         [
           {
@@ -1245,8 +1237,52 @@
         ]
       }
       , {
-        "from":3365062576
-        , "to":3339738720
+        "from":3076880576
+        , "to":3048095328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":3076880576
+        , "to":3048095328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":3076880576
+        , "to":3048095328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3076880576
+        , "to":3048095328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3076880576
+        , "to":3048095328
         , "details":
         [
           {
@@ -1256,52 +1292,8 @@
         ]
       }
       , {
-        "from":3365062576
-        , "to":3339738720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3365062576
-        , "to":3339738720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3365062576
-        , "to":3339738720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3365062576
-        , "to":3339738720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3365062576
-        , "to":3339738720
+        "from":3076880576
+        , "to":3048095328
         , "details":
         [
           {
@@ -1312,13 +1304,13 @@
       }
     ]
   }
-  , "3333431904":
+  , "3041788672":
   {
     "nodes":
     [
       {
         "name":"Cluster 4"
-        , "id":3340546048
+        , "id":3048902656
         , "start":"0.00"
         , "end":"10.00"
         , "details":
@@ -1336,7 +1328,7 @@
         [
           {
             "name":"Logic"
-            , "id":3340552704
+            , "id":3048909312
             , "details":
             [
               {
@@ -1349,7 +1341,7 @@
           }
           , {
             "name":"Exit"
-            , "id":3340655616
+            , "id":3049012224
             , "details":
             [
               {
@@ -1366,21 +1358,8 @@
         ]
       }
       , {
-        "name":"Input"
-        , "id":3368834960
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Input"
-            , "Preceding Blocks":"atax.B7"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"buff_y_out"
-        , "id":3370362480
+        , "id":3050883296
         , "start":"9.00"
         , "end":"10.00"
         , "details":
@@ -1397,10 +1376,23 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":38
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":40
             }
           ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Input"
+        , "id":3060431744
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"atax.B7"
+          }
         ]
         , "type":"inst"
       }
@@ -1408,12 +1400,12 @@
     , "links":
     [
       {
-        "from":3340552704
-        , "to":3340655616
+        "from":3048909312
+        , "to":3049012224
       }
       , {
-        "from":3368834960
-        , "to":3340552704
+        "from":3060431744
+        , "to":3048909312
         , "details":
         [
           {
@@ -1423,8 +1415,8 @@
         ]
       }
       , {
-        "from":3368834960
-        , "to":3370362480
+        "from":3060431744
+        , "to":3050883296
         , "details":
         [
           {
@@ -1434,8 +1426,8 @@
         ]
       }
       , {
-        "from":3368834960
-        , "to":3340552704
+        "from":3060431744
+        , "to":3048909312
         , "details":
         [
           {
@@ -1446,15 +1438,15 @@
       }
     ]
   }
-  , "3333431984":
+  , "3041788752":
   {
     "nodes":
     [
       {
         "name":"Cluster 5"
-        , "id":3340790224
+        , "id":3049146832
         , "start":"1.00"
-        , "end":"14.00"
+        , "end":"15.00"
         , "details":
         [
           {
@@ -1462,7 +1454,7 @@
             , "Cluster Name":"i_sfc_s_c0_in_for_body48_ataxs_c0_enter18016_atax1"
             , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"13"
+            , "Cluster Latency":"14"
           }
         ]
         , "type":"bb"
@@ -1470,25 +1462,25 @@
         [
           {
             "name":"Logic"
-            , "id":3340796800
+            , "id":3049153408
             , "details":
             [
               {
                 "type":"table"
                 , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"10"
+                , "Cluster Logic Latency":"11"
               }
             ]
             , "type":"inst"
           }
           , {
             "name":"Exit"
-            , "id":3341448592
+            , "id":3049805200
             , "details":
             [
               {
                 "type":"table"
-                , "Start Cycle":"11"
+                , "Start Cycle":"12"
                 , "Latency":"3"
                 , "Exit FIFO Depth":"32"
                 , "Exit FIFO Width":"48"
@@ -1501,7 +1493,7 @@
       }
       , {
         "name":"Loop Input"
-        , "id":3368844480
+        , "id":3077521936
         , "details":
         [
           {
@@ -1516,34 +1508,12 @@
     , "links":
     [
       {
-        "from":3340796800
-        , "to":3341448592
+        "from":3049153408
+        , "to":3049805200
       }
       , {
-        "from":3368844480
-        , "to":3340796800
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3368844480
-        , "to":3340796800
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3368844480
-        , "to":3340796800
+        "from":3077521936
+        , "to":3049153408
         , "details":
         [
           {
@@ -1553,8 +1523,8 @@
         ]
       }
       , {
-        "from":3368844480
-        , "to":3340796800
+        "from":3077521936
+        , "to":3049153408
         , "details":
         [
           {
@@ -1564,8 +1534,8 @@
         ]
       }
       , {
-        "from":3368844480
-        , "to":3340796800
+        "from":3077521936
+        , "to":3049153408
         , "details":
         [
           {
@@ -1575,8 +1545,30 @@
         ]
       }
       , {
-        "from":3368844480
-        , "to":3340796800
+        "from":3077521936
+        , "to":3049153408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3077521936
+        , "to":3049153408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3077521936
+        , "to":3049153408
         , "details":
         [
           {
@@ -1587,13 +1579,13 @@
       }
     ]
   }
-  , "3333432064":
+  , "3041788832":
   {
     "nodes":
     [
       {
         "name":"Input"
-        , "id":3368832912
+        , "id":3078423664
         , "details":
         [
           {
@@ -1606,7 +1598,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":3370998080
+        , "id":3079383360
         , "start":"0.00"
         , "end":"1.00"
         , "details":
@@ -1625,8 +1617,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":38
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":40
             }
           ]
         ]
@@ -1636,8 +1628,8 @@
     , "links":
     [
       {
-        "from":3368832912
-        , "to":3370998080
+        "from":3078423664
+        , "to":3079383360
         , "details":
         [
           {
@@ -1648,7 +1640,7 @@
       }
     ]
   }
-  , "3333432144":
+  , "3041788912":
   {
     "nodes":
     [
@@ -1657,13 +1649,13 @@
     [
     ]
   }
-  , "3333432224":
+  , "3041788992":
   {
     "nodes":
     [
       {
         "name":"Cluster 6"
-        , "id":3341697040
+        , "id":3050053648
         , "start":"1.00"
         , "end":"13.00"
         , "details":
@@ -1681,7 +1673,7 @@
         [
           {
             "name":"Logic"
-            , "id":3341703872
+            , "id":3050060480
             , "details":
             [
               {
@@ -1694,7 +1686,7 @@
           }
           , {
             "name":"Exit"
-            , "id":3342131376
+            , "id":3050487984
             , "details":
             [
               {
@@ -1712,7 +1704,7 @@
       }
       , {
         "name":"Loop Orch"
-        , "id":3371535504
+        , "id":3077166912
         , "details":
         [
           {
@@ -1724,8 +1716,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":43
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":45
             }
           ]
         ]
@@ -1735,12 +1727,12 @@
     , "links":
     [
       {
-        "from":3341703872
-        , "to":3342131376
+        "from":3050060480
+        , "to":3050487984
       }
       , {
-        "from":3371535504
-        , "to":3341703872
+        "from":3077166912
+        , "to":3050060480
         , "details":
         [
           {
@@ -1751,13 +1743,13 @@
       }
     ]
   }
-  , "3333432304":
+  , "3041789072":
   {
     "nodes":
     [
       {
         "name":"WR"
-        , "id":3370420656
+        , "id":3078800736
         , "start":"0.00"
         , "end":"0.00"
         , "details":
@@ -1777,8 +1769,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":46
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":48
             }
           ]
         ]
@@ -1786,7 +1778,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":3371469824
+        , "id":3079854576
         , "start":"0.00"
         , "end":"1.00"
         , "details":
@@ -1807,8 +1799,8 @@
     , "links":
     [
       {
-        "from":3370420656
-        , "to":3371469824
+        "from":3078800736
+        , "to":3079854576
         , "details":
         [
           {
@@ -1819,13 +1811,13 @@
       }
     ]
   }
-  , "3333445792":
+  , "3041802560":
   {
     "nodes":
     [
       {
         "name":"?"
-        , "id":3339709504
+        , "id":3058516176
         , "start":"1.00"
         , "end":"2.00"
         , "details":
@@ -1842,7 +1834,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":3371503072
+        , "id":3079887760
         , "start":"1.00"
         , "end":"2.00"
         , "details":
@@ -1861,8 +1853,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":3
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":5
             }
           ]
         ]
@@ -1872,8 +1864,8 @@
     , "links":
     [
       {
-        "from":3371503072
-        , "to":3339709504
+        "from":3079887760
+        , "to":3058516176
         , "reverse":1
         , "details":
         [
@@ -1885,13 +1877,13 @@
       }
     ]
   }
-  , "3333445936":
+  , "3041802704":
   {
     "nodes":
     [
       {
         "name":"Cluster 0"
-        , "id":3335571696
+        , "id":3044533728
         , "start":"1.00"
         , "end":"1.00"
         , "details":
@@ -1909,7 +1901,7 @@
         [
           {
             "name":"Logic"
-            , "id":3337373392
+            , "id":3045730512
             , "details":
             [
               {
@@ -1923,24 +1915,8 @@
         ]
       }
       , {
-        "name":"FFwd Src"
-        , "id":3343674128
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"?"
-        , "id":3344195264
+        , "id":3052702336
         , "start":"1.00"
         , "end":"2.00"
         , "details":
@@ -1957,8 +1933,8 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":3
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":5
             }
           ]
         ]
@@ -1966,7 +1942,7 @@
       }
       , {
         "name":"FFwd Src"
-        , "id":3349868432
+        , "id":3057859360
         , "start":"2.00"
         , "end":"2.00"
         , "details":
@@ -1978,20 +1954,11 @@
             , "Latency":"0"
           }
         ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":3
-            }
-          ]
-        ]
         , "type":"inst"
       }
       , {
         "name":"RD"
-        , "id":3364386784
+        , "id":3058225616
         , "start":"2.00"
         , "end":"2.00"
         , "details":
@@ -2011,8 +1978,33 @@
         [
           [
             {
-              "filename":"/home/slowe8/HLSDataset/polybench/atax/src/atax_1.c"
-              , "line":3
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":5
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":3081253552
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              , "line":5
             }
           ]
         ]
@@ -2022,8 +2014,8 @@
     , "links":
     [
       {
-        "from":3344195264
-        , "to":3364386784
+        "from":3052702336
+        , "to":3058225616
         , "details":
         [
           {
@@ -2033,8 +2025,8 @@
         ]
       }
       , {
-        "from":3364386784
-        , "to":3343674128
+        "from":3058225616
+        , "to":3057859360
         , "details":
         [
           {
@@ -2044,8 +2036,8 @@
         ]
       }
       , {
-        "from":3364386784
-        , "to":3349868432
+        "from":3058225616
+        , "to":3081253552
         , "details":
         [
           {

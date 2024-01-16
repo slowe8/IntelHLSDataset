@@ -1,0 +1,16 @@
+# Authored by:  Sean Lowe
+# Description:  This is a python script that generates design iterations for
+#               a Jinja2 tagged C/C++ design
+#
+# **NOTE**: This script is subject to change a lot depending on discussions
+#           with Dr. Arora and Dr. Zhigang. Right not I have just used it
+#           to generate some hand written design iterations automatically
+#           Only includes a set of directives for atax.* benchmark
+
+from jinja2 import Environment, FileSystemLoader
+import sys
+
+benchmark_family = sys.argv[1]
+benchmark = sys.argv[2]
+
+

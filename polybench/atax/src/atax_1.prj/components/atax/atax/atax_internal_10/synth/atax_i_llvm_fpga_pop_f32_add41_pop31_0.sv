@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_pop_f32_add41_pop31_0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -56,7 +56,7 @@ module atax_i_llvm_fpga_pop_f32_add41_pop31_0 (
     wire i_llvm_fpga_pop_f32_add41_pop31_atax1_valid_out_bitsignaltemp;
 
 
-    // i_llvm_fpga_pop_f32_add41_pop31_atax1(EXTIFACE,5)@6
+    // i_llvm_fpga_pop_f32_add41_pop31_atax1(EXTIFACE,5)@7
     assign i_llvm_fpga_pop_f32_add41_pop31_atax1_data_in = in_data_in;
     assign i_llvm_fpga_pop_f32_add41_pop31_atax1_dir = in_dir;
     assign i_llvm_fpga_pop_f32_add41_pop31_atax1_feedback_in = in_feedback_in_31;
@@ -98,10 +98,10 @@ module atax_i_llvm_fpga_pop_f32_add41_pop31_0 (
     // feedback_sync_out(GPOUT,4)
     assign out_feedback_stall_out_31 = i_llvm_fpga_pop_f32_add41_pop31_atax1_feedback_stall_out;
 
-    // sync_out(GPOUT,8)@6
+    // sync_out(GPOUT,8)@7
     assign out_stall_out = i_llvm_fpga_pop_f32_add41_pop31_atax1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,10)@6
+    // dupName_0_sync_out_x(GPOUT,10)@7
     assign out_data_out = i_llvm_fpga_pop_f32_add41_pop31_atax1_data_out;
     assign out_valid_out = i_llvm_fpga_pop_f32_add41_pop31_atax1_valid_out;
 

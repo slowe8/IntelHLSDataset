@@ -1,0 +1,21 @@
+# system info dpic_atax on 2024.01.02.20:41:31
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for dpic_atax on 2024.01.02.20:41:31
+files:
+filepath,kind,attributes,module,is_top
+sim/dpic_atax.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,dpic_atax,true
+hls_sim_component_dpi_controller_10/sim/hls_sim_stream_sink_dpi_bfm.sv,SYSTEM_VERILOG,,hls_sim_component_dpi_controller,false
+hls_sim_component_dpi_controller_10/sim/hls_sim_stream_source_dpi_bfm.sv,SYSTEM_VERILOG,,hls_sim_component_dpi_controller,false
+hls_sim_component_dpi_controller_10/sim/hld_sim_latency_tracker.sv,SYSTEM_VERILOG,,hls_sim_component_dpi_controller,false
+hls_sim_component_dpi_controller_10/sim/hls_sim_component_dpi_controller.sv,SYSTEM_VERILOG,,hls_sim_component_dpi_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+dpic_atax.dpic_atax,hls_sim_component_dpi_controller

@@ -1,0 +1,64 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/verification/tb/sim
+T_opt
+!s110 1704253348
+VMbRdU8<J>n;0?3RzTC2880
+Z2 04 2 4 work tb fast 0
+=1-043201265d21-6594d7a3-69b09-184ef0
+R0
+Z3 !s12b OEM100
+Z4 !s124 OEM25U4142 
+o-quiet -auto_acc_if_foreign -work tb -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10gx_ver -L cyclone10gx_hssi_ver -L cyclone10gx_hip_ver -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclone10gx -L cyclone10gx_hssi -L cyclone10gx_hip -L hls_sim_clock_reset_10 -L clock_reset -L hls_sim_component_dpi_controller_10 -L dpic_atax -L avalon_split_multibit_conduit_10 -L sp_cstart -L avalon_conduit_fanout_10 -L atax_ir_cfan -L avalon_concatenate_singlebit_conduits_10 -L cat_done -L hls_sim_stream_source_dpi_bfm_10 -L sso_atax_y_out -L cat_cwfsw -L atax_en_cfan -L atax_internal_10 -L atax -L altera_common_sv_packages -L hls_sim_mm_slave_dpi_bfm_10 -L mm_slave_atax_avmm_0_rw -L sso_atax_x -L sso_atax_A -L atax_cfan -L hls_sim_main_dpi_controller_10 -L main_dpi_controller -L altera_irq_mapper_1920 -L tb +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2023.3;77
+R1
+T_opt1
+!s110 1704255118
+V7Q8`H<If6kTBE>j9<zR[43
+R2
+=1-043201265d21-6594de8d-3f372-189833
+R0
+R3
+R4
+o-quiet -auto_acc_if_foreign -work tb -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10gx_ver -L cyclone10gx_hssi_ver -L cyclone10gx_hip_ver -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclone10gx -L cyclone10gx_hssi -L cyclone10gx_hip -L hls_sim_clock_reset_10 -L clock_reset -L hls_sim_component_dpi_controller_10 -L dpic_atax -L avalon_split_multibit_conduit_10 -L sp_cstart -L avalon_conduit_fanout_10 -L atax_ir_cfan -L avalon_concatenate_singlebit_conduits_10 -L cat_done -L hls_sim_stream_source_dpi_bfm_10 -L sso_atax_y_out -L cat_cwfsw -L atax_en_cfan -L atax_internal_10 -L atax -L altera_common_sv_packages -L hls_sim_mm_slave_dpi_bfm_10 -L mm_slave_atax_avmm_0_rw -L sso_atax_x -L sso_atax_A -L atax_cfan -L hls_sim_main_dpi_controller_10 -L main_dpi_controller -L altera_irq_mapper_1920 -L tb +nowarnTFMPC +acc
+R5
+n@_opt1
+R6
+vtb
+2tb.v
+!s110 1704253347
+!i10b 1
+!s100 CO4Wlja6EfLmIQ6oFaWa[0
+I0LNYY9[hP3i2To:dOXZU^0
+R1
+w1704253294
+8tb.v
+Ftb.v
+!i122 0
+L0 6 189
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1704253347.000000
+!s107 tb.v|
+!s90 +incdir+.|tb.v|-work|tb|
+!i113 0
+o-work tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 +incdir+. -work tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5

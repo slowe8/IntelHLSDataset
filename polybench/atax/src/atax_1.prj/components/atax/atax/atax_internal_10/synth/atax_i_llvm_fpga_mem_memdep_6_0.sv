@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_mem_memdep_6_0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -108,13 +108,13 @@ module atax_i_llvm_fpga_mem_memdep_6_0 (
     // c_i3_08(CONSTANT,9)
     assign c_i3_08_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,18)@10
+    // addr_trunc_sel_x(BITSELECT,18)@11
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_memdep_6_atax1(EXTIFACE,13)@10 + 1
+    // i_llvm_fpga_mem_memdep_6_atax1(EXTIFACE,13)@11 + 1
     assign i_llvm_fpga_mem_memdep_6_atax1_avm_readdata = in_memdep_6_atax_avm_readdata;
     assign i_llvm_fpga_mem_memdep_6_atax1_avm_readdatavalid = in_memdep_6_atax_avm_readdatavalid;
     assign i_llvm_fpga_mem_memdep_6_atax1_avm_waitrequest = in_memdep_6_atax_avm_waitrequest;
@@ -230,10 +230,10 @@ module atax_i_llvm_fpga_mem_memdep_6_0 (
     assign out_memdep_6_atax_avm_byteenable = i_llvm_fpga_mem_memdep_6_atax1_avm_byteenable;
     assign out_memdep_6_atax_avm_burstcount = i_llvm_fpga_mem_memdep_6_atax1_avm_burstcount;
 
-    // sync_out(GPOUT,16)@11
+    // sync_out(GPOUT,16)@12
     assign out_o_stall = i_llvm_fpga_mem_memdep_6_atax1_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,19)@11
+    // dupName_0_sync_out_x(GPOUT,19)@12
     assign out_o_valid = i_llvm_fpga_mem_memdep_6_atax1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_6_atax1_o_writeack;
 

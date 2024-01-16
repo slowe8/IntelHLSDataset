@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/verification/tb/sim
+vatax_cfan
+2../../ip/tb/atax_cfan/sim/atax_cfan.v
+!s110 1704253347
+!i10b 1
+!s100 76:bE?^fadc4O?LCdll]z2
+I51iQmC^KN?>n]JWdlGCaL0
+R0
+w1704253293
+8../../ip/tb/atax_cfan/sim/atax_cfan.v
+F../../ip/tb/atax_cfan/sim/atax_cfan.v
+!i122 0
+L0 6 17
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1704253347.000000
+!s107 ../../ip/tb/atax_cfan/sim/atax_cfan.v|
+!s90 +incdir+.|../../ip/tb/atax_cfan/sim/atax_cfan.v|-work|atax_cfan|
+!i113 0
+o-work atax_cfan -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 +incdir+. -work atax_cfan -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

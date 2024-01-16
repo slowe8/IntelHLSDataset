@@ -1,0 +1,14 @@
+
+WORK > DEFAULT
+DEFAULT:                  ./libraries/work/                    
+work:                     ./libraries/work/                    
+avalon_conduit_fanout_10: ./libraries/avalon_conduit_fanout_10/
+atax_en_cfan:             ./libraries/atax_en_cfan/            
+altera_ver:               ./libraries/altera_ver/              
+lpm_ver:                  ./libraries/lpm_ver/                 
+sgate_ver:                ./libraries/sgate_ver/               
+altera_mf_ver:            ./libraries/altera_mf_ver/           
+altera_lnsim_ver:         ./libraries/altera_lnsim_ver/        
+cyclone10gx_ver:          ./libraries/cyclone10gx_ver/         
+cyclone10gx_hssi_ver:     ./libraries/cyclone10gx_hssi_ver/    
+cyclone10gx_hip_ver:      ./libraries/cyclone10gx_hip_ver/     

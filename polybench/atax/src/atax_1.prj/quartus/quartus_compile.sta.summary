@@ -3,53 +3,53 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'clock'
-Slack : -4.304
-TNS   : -6975.288
+Slack : -2.167
+TNS   : -5015.829
 Corner: Slow 900mV -40C Model
 
 Type  : Setup 'clock2x'
-Slack : -1.659
-TNS   : -103.192
-Corner: Slow 900mV 100C Model
-
-Type  : Hold 'clock'
-Slack : -0.161
-TNS   : -5.722
+Slack : -0.895
+TNS   : -69.480
 Corner: Slow 900mV -40C Model
 
 Type  : Hold 'clock2x'
-Slack : 0.023
+Slack : -0.030
+TNS   : -0.066
+Corner: Slow 900mV -40C Model
+
+Type  : Hold 'clock'
+Slack : 0.013
 TNS   : 0.000
 Corner: Fast 900mV -40C Model
 
 Type  : Recovery 'clock2x'
-Slack : -1.431
-TNS   : -4.450
-Corner: Slow 900mV 100C Model
-
-Type  : Recovery 'clock'
-Slack : -0.835
-TNS   : -1162.428
+Slack : -1.168
+TNS   : -3.863
 Corner: Slow 900mV -40C Model
 
+Type  : Recovery 'clock'
+Slack : -0.738
+TNS   : -1204.253
+Corner: Slow 900mV 100C Model
+
 Type  : Removal 'clock'
-Slack : 0.077
+Slack : 0.151
 TNS   : 0.000
 Corner: Fast 900mV -40C Model
 
 Type  : Removal 'clock2x'
-Slack : 0.148
+Slack : 0.208
 TNS   : 0.000
 Corner: Fast 900mV -40C Model
 
 Type  : Minimum Pulse Width 'clock'
 Slack : -1.720
-TNS   : -823.530
+TNS   : -776.318
 Corner: Slow 900mV -40C Model
 
 Type  : Minimum Pulse Width 'clock2x'
 Slack : -1.628
-TNS   : -59.994
+TNS   : -59.642
 Corner: Slow 900mV 100C Model
 
 ------------------------------------------------------------

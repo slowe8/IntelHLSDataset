@@ -1,0 +1,14 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                            
+work:                             ./libraries/work/                            
+hls_sim_stream_source_dpi_bfm_10: ./libraries/hls_sim_stream_source_dpi_bfm_10/
+sso_atax_y_out:                   ./libraries/sso_atax_y_out/                  
+altera_ver:                       ./libraries/altera_ver/                      
+lpm_ver:                          ./libraries/lpm_ver/                         
+sgate_ver:                        ./libraries/sgate_ver/                       
+altera_mf_ver:                    ./libraries/altera_mf_ver/                   
+altera_lnsim_ver:                 ./libraries/altera_lnsim_ver/                
+cyclone10gx_ver:                  ./libraries/cyclone10gx_ver/                 
+cyclone10gx_hssi_ver:             ./libraries/cyclone10gx_hssi_ver/            
+cyclone10gx_hip_ver:              ./libraries/cyclone10gx_hip_ver/             

@@ -1,4 +1,4 @@
- -- Copyright (C) 2020  Intel Corporation. All rights reserved.
+ -- Copyright (C) 2023  Intel Corporation. All rights reserved.
  -- Your use of Intel Corporation's design tools, logic functions 
  -- and other software and tools, and any partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -10,8 +10,8 @@
  -- agreement, including, without limitation, that your use is for
  -- the sole purpose of programming logic devices manufactured by
  -- Intel and sold by Intel or its authorized distributors.  Please
- -- refer to the applicable agreement for further details, at
- -- https://fpgasoftware.intel.com/eula.
+ -- refer to the Intel FPGA Software License Subscription Agreements 
+ -- on the Quartus Prime software download page.
  -- 
  -- This is a Quartus Prime output file. It is for reporting purposes only, and is
  -- not intended for use as a Quartus Prime input file. This file cannot be used
@@ -69,7 +69,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 20.4.0 Build 72 12/14/2020 SC Pro Edition
+Quartus Prime Version 23.4.0 Build 79 11/22/2023 SC Pro Edition
 CHIP  "quartus_compile"  ASSIGNED TO AN: 10CX220YF780I5G
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment

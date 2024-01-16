@@ -2,7 +2,7 @@
 # your components in a full Quartus compilation for the targeted device
 
 # Family and device are derived from the -march argument to i++
-set_global_assignment -name FAMILY "Cyclone10GX"
+set_global_assignment -name FAMILY Cyclone10GX
 set_global_assignment -name DEVICE 10CX220YF780I5G
 # This script parses the Quartus reports and generates a summary that can be viewed via reports/report.html or reports/lib/json/quartus.json
 set_global_assignment -name POST_FLOW_SCRIPT_FILE "quartus_sh:generate_report.tcl"
@@ -14,8 +14,8 @@ set_global_assignment -name IP_FILE ../components/atax/atax.ip
 set_global_assignment -name SYSTEMVERILOG_FILE quartus_compile.sv
 
 # Partitions are used to separate the component logic from the project harness when tallying area results
-# Obsolete assignment in <Version 20.4> "set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id component_partition"
-# Obsolete assignment in <Version 20.4> "set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id component_partition"
+# Obsolete assignment in <Version 23.4> "set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id component_partition"
+# Obsolete assignment in <Version 23.4> "set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id component_partition"
 set_instance_assignment -name PARTITION component_atax -to "atax:atax_inst"
 
 # No need to generate a bitstream for this compile so save time by skipping the assembler
@@ -26,14 +26,10 @@ set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
 # This assignment configures all component I/Os as virtual pins to more accurately
 # model placement and routing in a larger system
 set_instance_assignment -name VIRTUAL_PIN ON -to *
-set_global_assignment -name LAST_QUARTUS_VERSION "20.4.0 Pro Edition"
-set_instance_assignment -name VIRTUAL_PIN ON -to *
-set_global_assignment -name LAST_QUARTUS_VERSION "20.4.0 Pro Edition"
-set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
-set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
-set_global_assignment -name POWER_REPORT_SIGNAL_ACTIVITY ON
-set_global_assignment -name POWER_REPORT_POWER_DISSIPATION ON
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.4.0 Pro Edition"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name FLOW_ENABLE_EDA_NETLIST_WRITER ON
+set_global_assignment -name EDA_MAP_ILLEGAL_CHARACTERS ON -section_id eda_simulation
+set_global_assignment -name EDA_ENABLE_GLITCH_FILTERING ON -section_id eda_simulation
+set_global_assignment -name EDA_WRITE_NODES_FOR_POWER_ESTIMATION ALL_NODES -section_id eda_simulations

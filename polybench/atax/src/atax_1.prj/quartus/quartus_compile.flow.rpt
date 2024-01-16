@@ -1,36 +1,25 @@
 Flow report for quartus_compile
-Wed Dec 13 00:37:09 2023
-Quartus Prime Version 20.4.0 Build 72 12/14/2020 SC Pro Edition
+Mon Jan 15 13:03:46 2024
+Quartus Prime Version 23.4.0 Build 79 11/22/2023 SC Pro Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
-  1. Parallel Compilation
-  2. Legal Notice
-  3. Flow Summary
-  4. Flow Settings
-  5. Flow Non-Default Global Settings
-  6. Flow Elapsed Time
-  7. Flow OS Summary
-  8. Flow Log
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
 
-
-
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 52     ;
-; Maximum allowed            ; 12     ;
-+----------------------------+--------+
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -42,16 +31,16 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the Intel FPGA Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
 +-------------------------------------------------------------------------+
 ; Flow Summary                                                            ;
 +-----------------------------+-------------------------------------------+
-; Flow Status                 ; Successful - Wed Dec 13 00:37:09 2023     ;
-; Quartus Prime Version       ; 20.4.0 Build 72 12/14/2020 SC Pro Edition ;
+; Flow Status                 ; Successful - Mon Jan 15 13:03:46 2024     ;
+; Quartus Prime Version       ; 23.4.0 Build 79 11/22/2023 SC Pro Edition ;
 ; Revision Name               ; quartus_compile                           ;
 ; Top-level Entity Name       ; quartus_compile                           ;
 ; Family                      ; Cyclone 10 GX                             ;
@@ -59,8 +48,8 @@ https://fpgasoftware.intel.com/eula.
 ; Timing Models               ; Final                                     ;
 ; Power Models                ; Final                                     ;
 ; Device Status               ; Final                                     ;
-; Logic utilization (in ALMs) ; 3,064 / 80,330 ( 4 % )                    ;
-; Total registers             ; 6002                                      ;
+; Logic utilization (in ALMs) ; 3,030 / 80,330 ( 4 % )                    ;
+; Total registers             ; 6207                                      ;
 ; Total pins                  ; 0 / 340 ( 0 % )                           ;
 ; Total virtual pins          ; 401                                       ;
 ; Total block memory bits     ; 142,080 / 12,021,760 ( 1 % )              ;
@@ -69,6 +58,7 @@ https://fpgasoftware.intel.com/eula.
 ; Total HSSI RX channels      ; 0 / 12 ( 0 % )                            ;
 ; Total HSSI TX channels      ; 0 / 12 ( 0 % )                            ;
 ; Total PLLs                  ; 0 / 30 ( 0 % )                            ;
+; Simulation Files Creation   ; Successful                                ;
 +-----------------------------+-------------------------------------------+
 
 
@@ -77,59 +67,68 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/13/2023 00:34:30 ;
+; Start date & time ; 01/02/2024 21:41:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; quartus_compile     ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                  ;
-+------------------------+-----------------------------------------------+---------------+-------------+------------+
-; Assignment Name        ; Value                                         ; Default Value ; Entity Name ; Section Id ;
-+------------------------+-----------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID  ; 101633580564321.170245287008049               ; --            ; --          ; --         ;
-; FLOW_DISABLE_ASSEMBLER ; On                                            ; Off           ; --          ; --         ;
-; MISC_FILE              ; ../components/atax/atax/atax.cmp              ; --            ; --          ; --         ;
-; MISC_FILE              ; ../components/atax/atax/../atax.ip            ; --            ; --          ; --         ;
-; POST_FLOW_SCRIPT_FILE  ; quartus_sh:generate_report.tcl                ; --            ; --          ; --         ;
-; SLD_INFO               ; QSYS_NAME atax HAS_SOPCINFO 1 GENERATION_ID 0 ; --            ; atax        ; --         ;
-; SOPCINFO_FILE          ; ../components/atax/atax/atax.sopcinfo         ; --            ; --          ; --         ;
-+------------------------+-----------------------------------------------+---------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                    ;
++--------------------------------+-----------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                ; Value                                                                                               ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------+-----------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID          ; 4612814167329.170425693858362                                                                       ; --            ; --          ; --             ;
+; EDA_MAP_ILLEGAL_CHARACTERS     ; On                                                                                                  ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT         ; Verilog Hdl                                                                                         ; --            ; --          ; eda_simulation ;
+; EDA_TIME_SCALE                 ; 1 ps                                                                                                ; --            ; --          ; eda_simulation ;
+; FLOW_DISABLE_ASSEMBLER         ; On                                                                                                  ; Off           ; --          ; --             ;
+; FLOW_ENABLE_EDA_NETLIST_WRITER ; On                                                                                                  ; Off           ; --          ; --             ;
+; MISC_FILE                      ; /mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/components/atax/atax/atax.cmp      ; --            ; --          ; --             ;
+; MISC_FILE                      ; /mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/components/atax/atax.ip            ; --            ; --          ; --             ;
+; POST_FLOW_SCRIPT_FILE          ; quartus_sh:generate_report.tcl                                                                      ; --            ; --          ; --             ;
+; SOPCINFO_FILE                  ; /mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/components/atax/atax/atax.sopcinfo ; --            ; --          ; --             ;
++--------------------------------+-----------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
 
 
-+------------------------------------------------------+
-; Flow Elapsed Time                                    ;
-+-----------------+--------------+---------------------+
-; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
-+-----------------+--------------+---------------------+
-; Synthesis       ; 00:00:32     ; 1926 MB             ;
-; Fitter          ; 00:01:41     ; 5019 MB             ;
-; Timing Analyzer ; 00:00:06     ; 2161 MB             ;
-; Power Analyzer  ; 00:00:10     ; 2795 MB             ;
-; Total           ; 00:02:29     ; --                  ;
-+-----------------+--------------+---------------------+
++---------------------------------------------------------+
+; Flow Elapsed Time                                       ;
++--------------------+--------------+---------------------+
+; Module Name        ; Elapsed Time ; Peak Virtual Memory ;
++--------------------+--------------+---------------------+
+; Synthesis          ; 00:00:28     ; 1976 MB             ;
+; Fitter             ; 00:01:30     ; 5472 MB             ;
+; Timing Analyzer    ; 00:00:04     ; 2075 MB             ;
+; EDA Netlist Writer ; 00:00:04     ; 1812 MB             ;
+; EDA Netlist Writer ; 00:00:04     ; 1864 MB             ;
+; EDA Netlist Writer ; 00:00:04     ; 1862 MB             ;
+; Total              ; 00:02:14     ; --                  ;
++--------------------+--------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------+
 ; Flow OS Summary                                                                      ;
-+-----------------+------------------------+-------------+------------+----------------+
-; Module Name     ; Machine Hostname       ; OS Name     ; OS Version ; Processor type ;
-+-----------------+------------------------+-------------+------------+----------------+
-; Synthesis       ; fpga01i.sol.rc.asu.edu ; Rocky Linux ; 8          ; x86_64         ;
-; Fitter          ; fpga01i.sol.rc.asu.edu ; Rocky Linux ; 8          ; x86_64         ;
-; Timing Analyzer ; fpga01i.sol.rc.asu.edu ; Rocky Linux ; 8          ; x86_64         ;
-; Power Analyzer  ; fpga01i.sol.rc.asu.edu ; Rocky Linux ; 8          ; x86_64         ;
-+-----------------+------------------------+-------------+------------+----------------+
++--------------------+------------------+----------------+------------+----------------+
+; Module Name        ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++--------------------+------------------+----------------+------------+----------------+
+; Synthesis          ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; Fitter             ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; Timing Analyzer    ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; EDA Netlist Writer ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; EDA Netlist Writer ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; EDA Netlist Writer ; en4228283l       ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
++--------------------+------------------+----------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_syn --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+quartus_syn --dni --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
 quartus_fit --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
 quartus_sta quartus_compile -c quartus_compile --mode=finalize
-quartus_pow quartus_compile
+quartus_eda --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+quartus_eda --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+quartus_eda --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
 
 
 

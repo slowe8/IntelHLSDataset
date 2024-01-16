@@ -1,0 +1,24 @@
+
+WORK > DEFAULT
+DEFAULT:                           ./libraries/work/                  
+work:                              ./libraries/work/                  
+altera_irq_mapper_1920:            ./libraries/altera_irq_mapper_1920/
+tb:                                ./libraries/tb/                    
+altera_ver:                        ./libraries/altera_ver/            
+lpm_ver:                           ./libraries/lpm_ver/               
+sgate_ver:                         ./libraries/sgate_ver/             
+altera_mf_ver:                     ./libraries/altera_mf_ver/         
+altera_lnsim_ver:                  ./libraries/altera_lnsim_ver/      
+cyclone10gx_ver:                   ./libraries/cyclone10gx_ver/       
+cyclone10gx_hssi_ver:              ./libraries/cyclone10gx_hssi_ver/  
+cyclone10gx_hip_ver:               ./libraries/cyclone10gx_hip_ver/   
+altera:                            ./libraries/altera/                
+lpm:                               ./libraries/lpm/                   
+sgate:                             ./libraries/sgate/                 
+altera_mf:                         ./libraries/altera_mf/             
+altera_lnsim:                      ./libraries/altera_lnsim/          
+cyclone10gx:                       ./libraries/cyclone10gx/           
+cyclone10gx_hssi:                  ./libraries/cyclone10gx_hssi/      
+cyclone10gx_hip:                   ./libraries/cyclone10gx_hip/       
+OTHERS=_default_synopsys_sim.setup                                    
+LIBRARY_SCAN = TRUE

@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -216,177 +216,159 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     wire [0:0] leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_s;
     reg [1:0] leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_q;
     reg [0:0] redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q;
-    reg [0:0] redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q;
-    reg [0:0] redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_delay_0;
-    reg [0:0] redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_q;
-    reg [0:0] redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_delay_0;
-    reg [63:0] redist3_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q;
-    reg [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_q;
-    reg [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_0;
-    reg [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_1;
-    reg [63:0] redist6_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q;
-    reg [0:0] redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_q;
-    reg [0:0] redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_0;
-    reg [0:0] redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_1;
-    reg [0:0] redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_q;
-    reg [0:0] redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_0;
-    reg [0:0] redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_1;
-    reg [0:0] redist9_sync_together97_aunroll_x_in_i_valid_1_q;
-    reg [0:0] redist10_sync_together97_aunroll_x_in_i_valid_2_q;
-    reg [0:0] redist11_sync_together97_aunroll_x_in_i_valid_3_q;
-    reg [0:0] redist12_sync_together97_aunroll_x_in_i_valid_4_q;
-    reg [0:0] redist13_sync_together97_aunroll_x_in_i_valid_8_q;
-    reg [0:0] redist13_sync_together97_aunroll_x_in_i_valid_8_delay_0;
-    reg [0:0] redist13_sync_together97_aunroll_x_in_i_valid_8_delay_1;
-    reg [0:0] redist13_sync_together97_aunroll_x_in_i_valid_8_delay_2;
-    reg [0:0] redist14_i_first_cleanup49_atax3_sel_x_b_2_q;
-    reg [0:0] redist14_i_first_cleanup49_atax3_sel_x_b_2_delay_0;
-    reg [31:0] redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_q;
-    reg [31:0] redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_delay_0;
-    reg [0:0] redist16_i_masked53_atax31_q_6_q;
-    reg [0:0] redist16_i_masked53_atax31_q_6_delay_0;
-    reg [0:0] redist16_i_masked53_atax31_q_6_delay_1;
-    reg [0:0] redist16_i_masked53_atax31_q_6_delay_2;
-    reg [0:0] redist16_i_masked53_atax31_q_6_delay_3;
-    reg [1:0] redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q;
-    reg [1:0] redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_delay_0;
-    reg [0:0] redist22_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_6_q;
-    reg [0:0] redist23_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_6_q;
-    reg [0:0] redist24_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_6_q;
-    reg [0:0] redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q;
-    reg [0:0] redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0;
-    reg [0:0] redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_q;
-    reg [0:0] redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_0;
-    reg [0:0] redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_1;
-    reg [0:0] redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_2;
-    reg [0:0] redist27_i_first_cleanup_xor50_atax4_q_2_q;
-    reg [0:0] redist27_i_first_cleanup_xor50_atax4_q_2_delay_0;
-    wire redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_reset0;
-    wire [31:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ia;
-    wire [1:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_aa;
-    wire [1:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ab;
-    wire [31:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_iq;
-    wire [31:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_q;
-    wire [1:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_q;
-    (* preserve *) reg [1:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_i;
-    reg [1:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_wraddr_q;
-    wire [2:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_last_q;
-    wire [2:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_b;
-    wire [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_q;
-    (* dont_merge *) reg [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmpReg_q;
-    wire [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_notEnable_q;
-    wire [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_nor_q;
-    (* dont_merge *) reg [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena_q;
-    wire [0:0] redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_enaAnd_q;
-    wire redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_reset0;
-    wire [63:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ia;
-    wire [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_aa;
-    wire [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ab;
-    wire [63:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_iq;
-    wire [63:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_q;
-    wire [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_q;
-    (* preserve *) reg [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i;
-    (* preserve *) reg redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_eq;
-    reg [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_wraddr_q;
-    wire [1:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_last_q;
-    wire [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmp_q;
-    (* dont_merge *) reg [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmpReg_q;
-    wire [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_notEnable_q;
-    wire [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_nor_q;
-    (* dont_merge *) reg [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena_q;
-    wire [0:0] redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_enaAnd_q;
-    wire redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_reset0;
-    wire [63:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ia;
-    wire [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_aa;
-    wire [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ab;
-    wire [63:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_iq;
-    wire [63:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_q;
-    wire [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_q;
-    (* preserve *) reg [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i;
-    (* preserve *) reg redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_eq;
-    reg [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_wraddr_q;
-    wire [1:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_last_q;
-    wire [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmp_q;
-    (* dont_merge *) reg [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmpReg_q;
-    wire [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_notEnable_q;
-    wire [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_nor_q;
-    (* dont_merge *) reg [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena_q;
-    wire [0:0] redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_enaAnd_q;
-    wire redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0;
-    wire [63:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia;
-    wire [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa;
-    wire [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab;
-    wire [63:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq;
-    wire [63:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q;
-    wire [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q;
-    (* preserve *) reg [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i;
-    (* preserve *) reg redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq;
-    reg [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q;
-    wire [1:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q;
-    wire [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q;
-    (* dont_merge *) reg [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q;
-    wire [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q;
-    wire [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q;
-    (* dont_merge *) reg [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q;
-    wire [0:0] redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q;
-    wire redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_reset0;
-    wire [63:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ia;
-    wire [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_aa;
-    wire [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ab;
-    wire [63:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_iq;
-    wire [63:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_q;
-    wire [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_q;
-    (* preserve *) reg [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i;
-    (* preserve *) reg redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_eq;
-    reg [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_wraddr_q;
-    wire [1:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_last_q;
-    wire [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmp_q;
-    (* dont_merge *) reg [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmpReg_q;
-    wire [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_notEnable_q;
-    wire [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_nor_q;
-    (* dont_merge *) reg [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena_q;
-    wire [0:0] redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_enaAnd_q;
+    reg [0:0] redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q;
+    reg [0:0] redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q;
+    reg [0:0] redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_q;
+    reg [0:0] redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_0;
+    reg [0:0] redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_1;
+    reg [63:0] redist4_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q;
+    reg [0:0] redist6_sync_together97_aunroll_x_in_c0_eni7_4_tpl_1_q;
+    reg [63:0] redist7_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q;
+    reg [0:0] redist8_sync_together97_aunroll_x_in_c0_eni7_6_tpl_1_q;
+    reg [0:0] redist9_sync_together97_aunroll_x_in_c0_eni7_7_tpl_1_q;
+    reg [0:0] redist10_sync_together97_aunroll_x_in_i_valid_1_q;
+    reg [0:0] redist11_sync_together97_aunroll_x_in_i_valid_2_q;
+    reg [0:0] redist12_sync_together97_aunroll_x_in_i_valid_3_q;
+    reg [0:0] redist13_sync_together97_aunroll_x_in_i_valid_4_q;
+    reg [0:0] redist14_sync_together97_aunroll_x_in_i_valid_5_q;
+    reg [0:0] redist15_sync_together97_aunroll_x_in_i_valid_9_q;
+    reg [0:0] redist15_sync_together97_aunroll_x_in_i_valid_9_delay_0;
+    reg [0:0] redist15_sync_together97_aunroll_x_in_i_valid_9_delay_1;
+    reg [0:0] redist15_sync_together97_aunroll_x_in_i_valid_9_delay_2;
+    reg [0:0] redist16_i_first_cleanup49_atax3_sel_x_b_1_q;
+    reg [63:0] redist17_i_arrayidx329_atax0_dupName_0_trunc_sel_x_b_1_q;
+    reg [0:0] redist18_i_masked53_atax31_q_7_q;
+    reg [63:0] redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_q;
+    reg [63:0] redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_delay_0;
+    reg [31:0] redist23_i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out_1_q;
+    reg [1:0] redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q;
+    reg [0:0] redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_q;
+    reg [0:0] redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_delay_0;
+    reg [0:0] redist26_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_9_q;
+    reg [0:0] redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_q;
+    reg [0:0] redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_delay_0;
+    reg [0:0] redist28_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_9_q;
+    reg [0:0] redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_q;
+    reg [0:0] redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_delay_0;
+    reg [0:0] redist30_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_9_q;
+    reg [0:0] redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q;
+    reg [0:0] redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0;
+    reg [0:0] redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_q;
+    reg [0:0] redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_0;
+    reg [0:0] redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_1;
+    reg [0:0] redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_2;
+    reg [0:0] redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_3;
+    reg [0:0] redist33_i_first_cleanup_xor50_atax4_q_1_q;
+    wire redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_reset0;
+    wire [31:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ia;
+    wire [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_aa;
+    wire [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ab;
+    wire [31:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_iq;
+    wire [31:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_q;
+    wire [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_q;
+    (* preserve *) reg [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i;
+    (* preserve *) reg redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_eq;
+    reg [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_wraddr_q;
+    wire [2:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_last_q;
+    wire [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmp_q;
+    (* dont_merge *) reg [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmpReg_q;
+    wire [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_notEnable_q;
+    wire [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_nor_q;
+    (* dont_merge *) reg [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena_q;
+    wire [0:0] redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_enaAnd_q;
+    wire redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_reset0;
+    wire [63:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ia;
+    wire [2:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_aa;
+    wire [2:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ab;
+    wire [63:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_iq;
+    wire [63:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_q;
+    wire [2:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_q;
+    (* preserve *) reg [2:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i;
+    (* preserve *) reg redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_eq;
+    reg [2:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_wraddr_q;
+    wire [3:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_last_q;
+    wire [3:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_b;
+    wire [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_q;
+    (* dont_merge *) reg [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmpReg_q;
+    wire [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_notEnable_q;
+    wire [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_nor_q;
+    (* dont_merge *) reg [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena_q;
+    wire [0:0] redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_enaAnd_q;
+    wire redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0;
+    wire [63:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia;
+    wire [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa;
+    wire [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab;
+    wire [63:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq;
+    wire [63:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q;
+    wire [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q;
+    (* preserve *) reg [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i;
+    (* preserve *) reg redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq;
+    reg [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q;
+    wire [1:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q;
+    wire [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q;
+    (* dont_merge *) reg [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q;
+    wire [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q;
+    wire [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q;
+    (* dont_merge *) reg [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q;
+    wire [0:0] redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q;
+    wire redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_reset0;
+    wire [63:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ia;
+    wire [1:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_aa;
+    wire [1:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ab;
+    wire [63:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_iq;
+    wire [63:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_q;
+    wire [1:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_q;
+    (* preserve *) reg [1:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_i;
+    reg [1:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_wraddr_q;
+    wire [2:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_last_q;
+    wire [2:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_b;
+    wire [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_q;
+    (* dont_merge *) reg [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmpReg_q;
+    wire [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_notEnable_q;
+    wire [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_nor_q;
+    (* dont_merge *) reg [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena_q;
+    wire [0:0] redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_enaAnd_q;
 
 
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // redist9_sync_together97_aunroll_x_in_i_valid_1(DELAY,162)
+    // redist10_sync_together97_aunroll_x_in_i_valid_1(DELAY,163)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist9_sync_together97_aunroll_x_in_i_valid_1_q <= '0;
+            redist10_sync_together97_aunroll_x_in_i_valid_1_q <= '0;
         end
         else
         begin
-            redist9_sync_together97_aunroll_x_in_i_valid_1_q <= $unsigned(in_i_valid);
+            redist10_sync_together97_aunroll_x_in_i_valid_1_q <= $unsigned(in_i_valid);
         end
     end
 
-    // redist10_sync_together97_aunroll_x_in_i_valid_2(DELAY,163)
+    // redist11_sync_together97_aunroll_x_in_i_valid_2(DELAY,164)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist10_sync_together97_aunroll_x_in_i_valid_2_q <= '0;
+            redist11_sync_together97_aunroll_x_in_i_valid_2_q <= '0;
         end
         else
         begin
-            redist10_sync_together97_aunroll_x_in_i_valid_2_q <= $unsigned(redist9_sync_together97_aunroll_x_in_i_valid_1_q);
+            redist11_sync_together97_aunroll_x_in_i_valid_2_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_1_q);
         end
     end
 
-    // redist11_sync_together97_aunroll_x_in_i_valid_3(DELAY,164)
+    // redist12_sync_together97_aunroll_x_in_i_valid_3(DELAY,165)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist11_sync_together97_aunroll_x_in_i_valid_3_q <= '0;
+            redist12_sync_together97_aunroll_x_in_i_valid_3_q <= '0;
         end
         else
         begin
-            redist11_sync_together97_aunroll_x_in_i_valid_3_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            redist12_sync_together97_aunroll_x_in_i_valid_3_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
@@ -394,7 +376,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     assign GND_q = $unsigned(1'b0);
 
     // leftShiftStage0Idx1Rng1_uid149_i_cleanups_shl48_atax0_shift_x(BITSELECT,148)@4
-    assign leftShiftStage0Idx1Rng1_uid149_i_cleanups_shl48_atax0_shift_x_in = redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q[0:0];
+    assign leftShiftStage0Idx1Rng1_uid149_i_cleanups_shl48_atax0_shift_x_in = redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q[0:0];
     assign leftShiftStage0Idx1Rng1_uid149_i_cleanups_shl48_atax0_shift_x_b = leftShiftStage0Idx1Rng1_uid149_i_cleanups_shl48_atax0_shift_x_in[0:0];
 
     // leftShiftStage0Idx1_uid150_i_cleanups_shl48_atax0_shift_x(BITJOIN,149)@4
@@ -402,10 +384,10 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
 
     // leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x(MUX,151)@4
     assign leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_s = VCC_q;
-    always @(leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_s or redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q or leftShiftStage0Idx1_uid150_i_cleanups_shl48_atax0_shift_x_q)
+    always @(leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_s or redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q or leftShiftStage0Idx1_uid150_i_cleanups_shl48_atax0_shift_x_q)
     begin
         unique case (leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_s)
-            1'b0 : leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_q = redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q;
+            1'b0 : leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_q = redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q;
             1'b1 : leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_q = leftShiftStage0Idx1_uid150_i_cleanups_shl48_atax0_shift_x_q;
             default : leftShiftStage0_uid152_i_cleanups_shl48_atax0_shift_x_q = 2'b0;
         endcase
@@ -417,36 +399,32 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // i_cleanups_shl48_atax5_vt_join(BITJOIN,44)@4
     assign i_cleanups_shl48_atax5_vt_join_q = {i_cleanups_shl48_atax5_vt_select_1_b, GND_q};
 
-    // redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2(DELAY,174)
+    // redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1(DELAY,177)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_delay_0 <= '0;
-            redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q <= '0;
+            redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q <= '0;
         end
         else
         begin
-            redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out);
-            redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q <= redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_delay_0;
+            redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q <= $unsigned(i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out);
         end
     end
 
-    // i_first_cleanup_xor50_atax4(LOGICAL,48)@2
+    // i_first_cleanup_xor50_atax4(LOGICAL,48)@3
     assign i_first_cleanup_xor50_atax4_q = i_first_cleanup49_atax3_sel_x_b ^ VCC_q;
 
-    // redist27_i_first_cleanup_xor50_atax4_q_2(DELAY,180)
+    // redist33_i_first_cleanup_xor50_atax4_q_1(DELAY,186)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist27_i_first_cleanup_xor50_atax4_q_2_delay_0 <= '0;
-            redist27_i_first_cleanup_xor50_atax4_q_2_q <= '0;
+            redist33_i_first_cleanup_xor50_atax4_q_1_q <= '0;
         end
         else
         begin
-            redist27_i_first_cleanup_xor50_atax4_q_2_delay_0 <= $unsigned(i_first_cleanup_xor50_atax4_q);
-            redist27_i_first_cleanup_xor50_atax4_q_2_q <= redist27_i_first_cleanup_xor50_atax4_q_2_delay_0;
+            redist33_i_first_cleanup_xor50_atax4_q_1_q <= $unsigned(i_first_cleanup_xor50_atax4_q);
         end
     end
 
@@ -454,14 +432,14 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     assign i_notcmp40_atax24_q = i_exitcond13_atax22_cmp_nsign_q ^ VCC_q;
 
     // i_or51_atax26(LOGICAL,82)@4
-    assign i_or51_atax26_q = i_notcmp40_atax24_q | redist27_i_first_cleanup_xor50_atax4_q_2_q;
+    assign i_or51_atax26_q = i_notcmp40_atax24_q | redist33_i_first_cleanup_xor50_atax4_q_1_q;
 
     // i_next_cleanups52_atax27(MUX,80)@4
     assign i_next_cleanups52_atax27_s = i_or51_atax26_q;
-    always @(i_next_cleanups52_atax27_s or redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q or i_cleanups_shl48_atax5_vt_join_q)
+    always @(i_next_cleanups52_atax27_s or redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q or i_cleanups_shl48_atax5_vt_join_q)
     begin
         unique case (i_next_cleanups52_atax27_s)
-            1'b0 : i_next_cleanups52_atax27_q = redist21_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_2_q;
+            1'b0 : i_next_cleanups52_atax27_q = redist24_i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out_1_q;
             1'b1 : i_next_cleanups52_atax27_q = i_cleanups_shl48_atax5_vt_join_q;
             default : i_next_cleanups52_atax27_q = 2'b0;
         endcase
@@ -475,7 +453,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .in_feedback_stall_in_33(i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_feedback_stall_out_33),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
-        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_3_q),
+        .in_valid_in(redist12_sync_together97_aunroll_x_in_i_valid_3_q),
         .out_data_out(),
         .out_feedback_out_33(i_llvm_fpga_push_i2_cleanups47_push33_atax28_out_feedback_out_33),
         .out_feedback_valid_out_33(i_llvm_fpga_push_i2_cleanups47_push33_atax28_out_feedback_valid_out_33),
@@ -498,19 +476,32 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
     end
 
+    // redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2(DELAY,154)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q <= '0;
+        end
+        else
+        begin
+            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q <= $unsigned(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q);
+        end
+    end
+
     // c_i2_164(CONSTANT,30)
     assign c_i2_164_q = $unsigned(2'b01);
 
-    // i_llvm_fpga_pop_i2_cleanups47_pop33_atax2(BLACKBOX,63)@2
+    // i_llvm_fpga_pop_i2_cleanups47_pop33_atax2(BLACKBOX,63)@3
     // out out_feedback_stall_out_33@20000000
     atax_i_llvm_fpga_pop_i2_cleanups47_pop33_0 thei_llvm_fpga_pop_i2_cleanups47_pop33_atax2 (
         .in_data_in(c_i2_164_q),
-        .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
+        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q),
         .in_feedback_in_33(i_llvm_fpga_push_i2_cleanups47_push33_atax28_out_feedback_out_33),
         .in_feedback_valid_in_33(i_llvm_fpga_push_i2_cleanups47_push33_atax28_out_feedback_valid_out_33),
         .in_predicate(GND_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist9_sync_together97_aunroll_x_in_i_valid_1_q),
+        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_2_q),
         .out_data_out(i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out),
         .out_feedback_stall_out_33(i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_feedback_stall_out_33),
         .out_stall_out(),
@@ -519,21 +510,19 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // i_first_cleanup49_atax3_sel_x(BITSELECT,116)@2
+    // i_first_cleanup49_atax3_sel_x(BITSELECT,116)@3
     assign i_first_cleanup49_atax3_sel_x_b = i_llvm_fpga_pop_i2_cleanups47_pop33_atax2_out_data_out[0:0];
 
-    // redist14_i_first_cleanup49_atax3_sel_x_b_2(DELAY,167)
+    // redist16_i_first_cleanup49_atax3_sel_x_b_1(DELAY,169)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist14_i_first_cleanup49_atax3_sel_x_b_2_delay_0 <= '0;
-            redist14_i_first_cleanup49_atax3_sel_x_b_2_q <= '0;
+            redist16_i_first_cleanup49_atax3_sel_x_b_1_q <= '0;
         end
         else
         begin
-            redist14_i_first_cleanup49_atax3_sel_x_b_2_delay_0 <= $unsigned(i_first_cleanup49_atax3_sel_x_b);
-            redist14_i_first_cleanup49_atax3_sel_x_b_2_q <= redist14_i_first_cleanup49_atax3_sel_x_b_2_delay_0;
+            redist16_i_first_cleanup49_atax3_sel_x_b_1_q <= $unsigned(i_first_cleanup49_atax3_sel_x_b);
         end
     end
 
@@ -557,7 +546,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .in_feedback_stall_in_30(i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_atax21_out_feedback_stall_out_30),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
-        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_3_q),
+        .in_valid_in(redist12_sync_together97_aunroll_x_in_i_valid_3_q),
         .out_data_out(),
         .out_feedback_out_30(i_llvm_fpga_push_i7_fpga_indvars_iv11_push30_atax30_out_feedback_out_30),
         .out_feedback_valid_out_30(i_llvm_fpga_push_i7_fpga_indvars_iv11_push30_atax30_out_feedback_valid_out_30),
@@ -574,12 +563,12 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // out out_feedback_stall_out_30@20000000
     atax_i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_0 thei_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_atax21 (
         .in_data_in(c_i7_6268_q),
-        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
+        .in_dir(redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
         .in_feedback_in_30(i_llvm_fpga_push_i7_fpga_indvars_iv11_push30_atax30_out_feedback_out_30),
         .in_feedback_valid_in_30(i_llvm_fpga_push_i7_fpga_indvars_iv11_push30_atax30_out_feedback_valid_out_30),
         .in_predicate(GND_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_3_q),
+        .in_valid_in(redist12_sync_together97_aunroll_x_in_i_valid_3_q),
         .out_data_out(i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_atax21_out_data_out),
         .out_feedback_stall_out_30(i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_atax21_out_feedback_stall_out_30),
         .out_stall_out(),
@@ -597,9 +586,9 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     atax_i_llvm_fpga_push_i1_notexitcond54_0 thei_llvm_fpga_push_i1_notexitcond54_atax25 (
         .in_data_in(i_exitcond13_atax22_cmp_nsign_q),
         .in_feedback_stall_in_7(i_llvm_fpga_pipeline_keep_going44_atax6_out_not_exitcond_stall_out),
-        .in_first_cleanup49(redist14_i_first_cleanup49_atax3_sel_x_b_2_q),
+        .in_first_cleanup49(redist16_i_first_cleanup49_atax3_sel_x_b_1_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_3_q),
+        .in_valid_in(redist12_sync_together97_aunroll_x_in_i_valid_3_q),
         .out_data_out(),
         .out_feedback_out_7(i_llvm_fpga_push_i1_notexitcond54_atax25_out_feedback_out_7),
         .out_feedback_valid_out_7(i_llvm_fpga_push_i1_notexitcond54_atax25_out_feedback_valid_out_7),
@@ -618,7 +607,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg1_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg1_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
@@ -640,18 +629,16 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3(DELAY,154)
+    // redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3(DELAY,155)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_delay_0 <= '0;
-            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q <= '0;
+            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q <= '0;
         end
         else
         begin
-            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_delay_0 <= $unsigned(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q);
-            redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q <= redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_delay_0;
+            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q <= $unsigned(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q);
         end
     end
 
@@ -662,14 +649,14 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // out out_not_exitcond_stall_out@20000000
     // out out_pipeline_valid_out@20000000
     atax_i_llvm_fpga_pipeline_keep_going44_0 thei_llvm_fpga_pipeline_keep_going44_atax6 (
-        .in_data_in(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
+        .in_data_in(redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
         .in_initeration_in(i_llvm_fpga_push_i1_lastiniteration46_atax7_out_feedback_out_6),
         .in_initeration_valid_in(i_llvm_fpga_push_i1_lastiniteration46_atax7_out_feedback_valid_out_6),
         .in_not_exitcond_in(i_llvm_fpga_push_i1_notexitcond54_atax25_out_feedback_out_7),
         .in_not_exitcond_valid_in(i_llvm_fpga_push_i1_notexitcond54_atax25_out_feedback_valid_out_7),
         .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_stall_in(GND_q),
-        .in_valid_in(redist11_sync_together97_aunroll_x_in_i_valid_3_q),
+        .in_valid_in(redist12_sync_together97_aunroll_x_in_i_valid_3_q),
         .out_data_out(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .out_exiting_stall_out(i_llvm_fpga_pipeline_keep_going44_atax6_out_exiting_stall_out),
         .out_exiting_valid_out(i_llvm_fpga_pipeline_keep_going44_atax6_out_exiting_valid_out),
@@ -689,7 +676,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // pipeline_valid_out_sync(GPOUT,85)
     assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going44_atax6_out_pipeline_valid_out;
 
-    // valid_fanout_reg5(REG,125)@1 + 1
+    // valid_fanout_reg5(REG,125)@2 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -698,14 +685,14 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg5_q <= $unsigned(in_i_valid);
+            valid_fanout_reg5_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_1_q);
         end
     end
 
     // c_i32_066(CONSTANT,31)
     assign c_i32_066_q = $unsigned(32'b00000000000000000000000000000000);
 
-    // valid_fanout_reg2(REG,122)@1 + 1
+    // valid_fanout_reg2(REG,122)@2 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -714,7 +701,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg2_q <= $unsigned(in_i_valid);
+            valid_fanout_reg2_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_1_q);
         end
     end
 
@@ -727,42 +714,40 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg9_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg9_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
     // c_i32_167(CONSTANT,32)
     assign c_i32_167_q = $unsigned(32'b00000000000000000000000000000001);
 
-    // i_inc38_atax19(ADD,54)@2
-    assign i_inc38_atax19_a = {1'b0, i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out};
-    assign i_inc38_atax19_b = {1'b0, c_i32_167_q};
-    assign i_inc38_atax19_o = $unsigned(i_inc38_atax19_a) + $unsigned(i_inc38_atax19_b);
-    assign i_inc38_atax19_q = i_inc38_atax19_o[32:0];
-
-    // bgTrunc_i_inc38_atax19_sel_x(BITSELECT,89)@2
-    assign bgTrunc_i_inc38_atax19_sel_x_b = i_inc38_atax19_q[31:0];
-
-    // redist15_bgTrunc_i_inc38_atax19_sel_x_b_2(DELAY,168)
+    // redist23_i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out_1(DELAY,176)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_delay_0 <= '0;
-            redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_q <= '0;
+            redist23_i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out_1_q <= '0;
         end
         else
         begin
-            redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_delay_0 <= $unsigned(bgTrunc_i_inc38_atax19_sel_x_b);
-            redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_q <= redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_delay_0;
+            redist23_i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out_1_q <= $unsigned(i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out);
         end
     end
+
+    // i_inc38_atax19(ADD,54)@4
+    assign i_inc38_atax19_a = {1'b0, redist23_i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out_1_q};
+    assign i_inc38_atax19_b = {1'b0, c_i32_167_q};
+    assign i_inc38_atax19_o = $unsigned(i_inc38_atax19_a) + $unsigned(i_inc38_atax19_b);
+    assign i_inc38_atax19_q = i_inc38_atax19_o[32:0];
+
+    // bgTrunc_i_inc38_atax19_sel_x(BITSELECT,89)@4
+    assign bgTrunc_i_inc38_atax19_sel_x_b = i_inc38_atax19_q[31:0];
 
     // i_llvm_fpga_push_i32_j_137_push32_atax20(BLACKBOX,75)@4
     // out out_feedback_out_32@20000000
     // out out_feedback_valid_out_32@20000000
     atax_i_llvm_fpga_push_i32_j_137_push32_0 thei_llvm_fpga_push_i32_j_137_push32_atax20 (
-        .in_data_in(redist15_bgTrunc_i_inc38_atax19_sel_x_b_2_q),
+        .in_data_in(bgTrunc_i_inc38_atax19_sel_x_b),
         .in_feedback_stall_in_32(i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_feedback_stall_out_32),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
@@ -776,11 +761,11 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pop_i32_j_137_pop32_atax8(BLACKBOX,64)@2
+    // i_llvm_fpga_pop_i32_j_137_pop32_atax8(BLACKBOX,64)@3
     // out out_feedback_stall_out_32@20000000
     atax_i_llvm_fpga_pop_i32_j_137_pop32_0 thei_llvm_fpga_pop_i32_j_137_pop32_atax8 (
         .in_data_in(c_i32_066_q),
-        .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
+        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_2_q),
         .in_feedback_in_32(i_llvm_fpga_push_i32_j_137_push32_atax20_out_feedback_out_32),
         .in_feedback_valid_in_32(i_llvm_fpga_push_i32_j_137_push32_atax20_out_feedback_valid_out_32),
         .in_predicate(GND_q),
@@ -794,19 +779,19 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // i_idxprom31_atax9_sel_x(BITSELECT,117)@2
+    // i_idxprom31_atax9_sel_x(BITSELECT,117)@3
     assign i_idxprom31_atax9_sel_x_b = {32'b00000000000000000000000000000000, i_llvm_fpga_pop_i32_j_137_pop32_atax8_out_data_out[31:0]};
 
-    // i_idxprom31_atax9_vt_select_31(BITSELECT,53)@2
+    // i_idxprom31_atax9_vt_select_31(BITSELECT,53)@3
     assign i_idxprom31_atax9_vt_select_31_b = i_idxprom31_atax9_sel_x_b[31:0];
 
-    // i_idxprom31_atax9_vt_join(BITJOIN,52)@2
+    // i_idxprom31_atax9_vt_join(BITJOIN,52)@3
     assign i_idxprom31_atax9_vt_join_q = {c_i32_066_q, i_idxprom31_atax9_vt_select_31_b};
 
-    // i_arrayidx329_atax0_dupName_0_narrow_x(BITSELECT,100)@2
+    // i_arrayidx329_atax0_dupName_0_narrow_x(BITSELECT,100)@3
     assign i_arrayidx329_atax0_dupName_0_narrow_x_b = i_idxprom31_atax9_vt_join_q[61:0];
 
-    // i_arrayidx329_atax0_dupName_0_shift_join_x(BITJOIN,101)@2
+    // i_arrayidx329_atax0_dupName_0_shift_join_x(BITJOIN,101)@3
     assign i_arrayidx329_atax0_dupName_0_shift_join_x_q = {i_arrayidx329_atax0_dupName_0_narrow_x_b, i_arrayidx329_atax12_vt_const_1_q};
 
     // valid_fanout_reg3(REG,123)@1 + 1
@@ -822,16 +807,16 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
     end
 
-    // redist12_sync_together97_aunroll_x_in_i_valid_4(DELAY,165)
+    // redist13_sync_together97_aunroll_x_in_i_valid_4(DELAY,166)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist12_sync_together97_aunroll_x_in_i_valid_4_q <= '0;
+            redist13_sync_together97_aunroll_x_in_i_valid_4_q <= '0;
         end
         else
         begin
-            redist12_sync_together97_aunroll_x_in_i_valid_4_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_3_q);
+            redist13_sync_together97_aunroll_x_in_i_valid_4_q <= $unsigned(redist12_sync_together97_aunroll_x_in_i_valid_3_q);
         end
     end
 
@@ -844,115 +829,115 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg4_q <= $unsigned(redist12_sync_together97_aunroll_x_in_i_valid_4_q);
+            valid_fanout_reg4_q <= $unsigned(redist13_sync_together97_aunroll_x_in_i_valid_4_q);
         end
     end
 
-    // redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2(DELAY,178)
+    // redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2(DELAY,184)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0 <= '0;
-            redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q <= '0;
+            redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0 <= '0;
+            redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q <= '0;
         end
         else
         begin
-            redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out);
-            redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q <= redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0;
+            redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out);
+            redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q <= redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_delay_0;
         end
     end
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable(LOGICAL,217)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q = $unsigned(~ (VCC_q));
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable(LOGICAL,213)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q = $unsigned(~ (VCC_q));
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor(LOGICAL,218)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q = ~ (redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q | redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q);
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor(LOGICAL,214)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q = ~ (redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_notEnable_q | redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q);
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last(CONSTANT,214)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q = $unsigned(2'b01);
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last(CONSTANT,210)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q = $unsigned(2'b01);
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp(LOGICAL,215)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q = $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q == redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q ? 1'b1 : 1'b0);
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp(LOGICAL,211)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q = $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_last_q == redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q ? 1'b1 : 1'b0);
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg(REG,216)
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg(REG,212)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q <= $unsigned(1'b0);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q <= $unsigned(1'b0);
         end
         else
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q <= $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q <= $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmp_q);
         end
     end
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena(REG,219)
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena(REG,215)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q <= $unsigned(1'b0);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q <= $unsigned(1'b0);
         end
-        else if (redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q == 1'b1)
+        else if (redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_nor_q == 1'b1)
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q <= $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q <= $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_cmpReg_q);
         end
     end
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd(LOGICAL,220)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q = redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q & VCC_q;
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd(LOGICAL,216)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q = redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_sticky_ena_q & VCC_q;
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt(COUNTER,212)
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt(COUNTER,208)
     // low=0, high=2, step=1, init=0
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= 2'd0;
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b0;
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= 2'd0;
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b0;
         end
         else
         begin
-            if (redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i == 2'd1)
+            if (redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i == 2'd1)
             begin
-                redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b1;
+                redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b1;
             end
             else
             begin
-                redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b0;
+                redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq <= 1'b0;
             end
-            if (redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq == 1'b1)
+            if (redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_eq == 1'b1)
             begin
-                redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i) + $unsigned(2'd2);
+                redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i) + $unsigned(2'd2);
             end
             else
             begin
-                redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i) + $unsigned(2'd1);
+                redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i <= $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i) + $unsigned(2'd1);
             end
         end
     end
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q = redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i[1:0];
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q = redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_i[1:0];
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr(REG,213)
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr(REG,209)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q <= $unsigned(2'b10);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q <= $unsigned(2'b10);
         end
         else
         begin
-            redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q <= $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q);
+            redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q <= $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q);
         end
     end
 
-    // redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem(DUALMEM,211)
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia = $unsigned(i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out);
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa = redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q;
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab = redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q;
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0 = ~ (resetn);
+    // redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem(DUALMEM,207)
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia = $unsigned(i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out);
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa = redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_wraddr_q;
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab = redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_rdcnt_q;
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0 = ~ (resetn);
     altera_syncram #(
         .ram_block_type("MLAB"),
         .operation_mode("DUAL_PORT"),
@@ -976,17 +961,17 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .read_during_write_mode_mixed_ports("DONT_CARE"),
         .power_up_uninitialized("TRUE"),
         .intended_device_family("Cyclone 10 GX")
-    ) redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_dmem (
-        .clocken1(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q[0]),
+    ) redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_dmem (
+        .clocken1(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_enaAnd_q[0]),
         .clocken0(1'b1),
         .clock0(clock),
-        .aclr1(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0),
+        .aclr1(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_reset0),
         .clock1(clock),
-        .address_a(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa),
-        .data_a(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia),
+        .address_a(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_aa),
+        .data_a(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ia),
         .wren_a(VCC_q[0]),
-        .address_b(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab),
-        .q_b(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq),
+        .address_b(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_ab),
+        .q_b(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq),
         .wren_b(),
         .rden_a(),
         .rden_b(),
@@ -1006,15 +991,15 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .q_a(),
         .eccstatus()
     );
-    assign redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q = redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq[63:0];
+    assign redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q = redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_iq[63:0];
 
     // i_llvm_fpga_push_i64_idxprom2791_push35_atax11(BLACKBOX,76)@6
     // out out_feedback_out_35@20000000
     // out out_feedback_valid_out_35@20000000
     atax_i_llvm_fpga_push_i64_idxprom2791_push35_0 thei_llvm_fpga_push_i64_idxprom2791_push35_atax11 (
-        .in_data_in(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q),
+        .in_data_in(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q),
         .in_feedback_stall_in_35(i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_feedback_stall_out_35),
-        .in_keep_going44(redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q),
+        .in_keep_going44(redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q),
         .in_stall_in(GND_q),
         .in_valid_in(valid_fanout_reg4_q),
         .out_data_out(),
@@ -1026,23 +1011,23 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist3_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1(DELAY,156)
+    // redist4_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1(DELAY,157)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist3_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q <= '0;
+            redist4_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q <= '0;
         end
         else
         begin
-            redist3_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q <= $unsigned(in_c0_eni7_2_tpl);
+            redist4_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q <= $unsigned(in_c0_eni7_2_tpl);
         end
     end
 
     // i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10(BLACKBOX,65)@2
     // out out_feedback_stall_out_35@20000000
     atax_i_llvm_fpga_pop_i64_idxprom2791_pop35_0 thei_llvm_fpga_pop_i64_idxprom2791_pop35_atax10 (
-        .in_data_in(redist3_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q),
+        .in_data_in(redist4_sync_together97_aunroll_x_in_c0_eni7_2_tpl_1_q),
         .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
         .in_feedback_in_35(i_llvm_fpga_push_i64_idxprom2791_push35_atax11_out_feedback_out_35),
         .in_feedback_valid_in_35(i_llvm_fpga_push_i64_idxprom2791_push35_atax11_out_feedback_valid_out_35),
@@ -1078,29 +1063,42 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // i_arrayidx329_atax0_dupName_0_trunc_sel_x(BITSELECT,104)@2
     assign i_arrayidx329_atax0_dupName_0_trunc_sel_x_b = i_arrayidx329_atax0_add_x_q[63:0];
 
-    // i_arrayidx329_atax0_dupName_0_add_x(ADD,99)@2
-    assign i_arrayidx329_atax0_dupName_0_add_x_a = {1'b0, i_arrayidx329_atax0_dupName_0_trunc_sel_x_b};
+    // redist17_i_arrayidx329_atax0_dupName_0_trunc_sel_x_b_1(DELAY,170)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist17_i_arrayidx329_atax0_dupName_0_trunc_sel_x_b_1_q <= '0;
+        end
+        else
+        begin
+            redist17_i_arrayidx329_atax0_dupName_0_trunc_sel_x_b_1_q <= $unsigned(i_arrayidx329_atax0_dupName_0_trunc_sel_x_b);
+        end
+    end
+
+    // i_arrayidx329_atax0_dupName_0_add_x(ADD,99)@3
+    assign i_arrayidx329_atax0_dupName_0_add_x_a = {1'b0, redist17_i_arrayidx329_atax0_dupName_0_trunc_sel_x_b_1_q};
     assign i_arrayidx329_atax0_dupName_0_add_x_b = {1'b0, i_arrayidx329_atax0_dupName_0_shift_join_x_q};
     assign i_arrayidx329_atax0_dupName_0_add_x_o = $unsigned(i_arrayidx329_atax0_dupName_0_add_x_a) + $unsigned(i_arrayidx329_atax0_dupName_0_add_x_b);
     assign i_arrayidx329_atax0_dupName_0_add_x_q = i_arrayidx329_atax0_dupName_0_add_x_o[64:0];
 
-    // i_arrayidx329_atax0_dupName_2_trunc_sel_x(BITSELECT,105)@2
+    // i_arrayidx329_atax0_dupName_2_trunc_sel_x(BITSELECT,105)@3
     assign i_arrayidx329_atax0_dupName_2_trunc_sel_x_b = i_arrayidx329_atax0_dupName_0_add_x_q[63:0];
 
-    // i_arrayidx329_atax12_vt_select_63(BITSELECT,39)@2
+    // i_arrayidx329_atax12_vt_select_63(BITSELECT,39)@3
     assign i_arrayidx329_atax12_vt_select_63_b = i_arrayidx329_atax0_dupName_2_trunc_sel_x_b[63:2];
 
     // i_arrayidx329_atax12_vt_const_1(CONSTANT,37)
     assign i_arrayidx329_atax12_vt_const_1_q = $unsigned(2'b00);
 
-    // i_arrayidx329_atax12_vt_join(BITJOIN,38)@2
+    // i_arrayidx329_atax12_vt_join(BITJOIN,38)@3
     assign i_arrayidx329_atax12_vt_join_q = {i_arrayidx329_atax12_vt_select_63_b, i_arrayidx329_atax12_vt_const_1_q};
 
-    // i_llvm_fpga_mem_unnamed_atax12_atax13(BLACKBOX,56)@2
+    // i_llvm_fpga_mem_unnamed_atax12_atax13(BLACKBOX,56)@3
     // in in_i_stall@20000000
-    // out out_o_readdata@6
-    // out out_o_stall@5
-    // out out_o_valid@6
+    // out out_o_readdata@7
+    // out out_o_stall@6
+    // out out_o_valid@7
     // out out_unnamed_atax12_atax_avm_address@20000000
     // out out_unnamed_atax12_atax_avm_burstcount@20000000
     // out out_unnamed_atax12_atax_avm_byteenable@20000000
@@ -1141,7 +1139,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     assign out_unnamed_atax12_atax_avm_byteenable = i_llvm_fpga_mem_unnamed_atax12_atax13_out_unnamed_atax12_atax_avm_byteenable;
     assign out_unnamed_atax12_atax_avm_burstcount = i_llvm_fpga_mem_unnamed_atax12_atax13_out_unnamed_atax12_atax_avm_burstcount;
 
-    // valid_fanout_reg6(REG,126)@1 + 1
+    // valid_fanout_reg6(REG,126)@2 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1150,33 +1148,33 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg6_q <= $unsigned(in_i_valid);
+            valid_fanout_reg6_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_1_q);
         end
     end
 
     // c_atax_buff_x_pmem(CONSTANT,5)
     assign c_atax_buff_x_pmem_q = $unsigned(64'b0100000001000001000000000000000000000000000000000000000000000000);
 
-    // i_arrayidx3410_atax0_add_x(ADD,106)@2
+    // i_arrayidx3410_atax0_add_x(ADD,106)@3
     assign i_arrayidx3410_atax0_add_x_a = {1'b0, c_atax_buff_x_pmem_q};
     assign i_arrayidx3410_atax0_add_x_b = {1'b0, i_arrayidx329_atax0_dupName_0_shift_join_x_q};
     assign i_arrayidx3410_atax0_add_x_o = $unsigned(i_arrayidx3410_atax0_add_x_a) + $unsigned(i_arrayidx3410_atax0_add_x_b);
     assign i_arrayidx3410_atax0_add_x_q = i_arrayidx3410_atax0_add_x_o[64:0];
 
-    // i_arrayidx3410_atax0_dupName_0_trunc_sel_x(BITSELECT,111)@2
+    // i_arrayidx3410_atax0_dupName_0_trunc_sel_x(BITSELECT,111)@3
     assign i_arrayidx3410_atax0_dupName_0_trunc_sel_x_b = i_arrayidx3410_atax0_add_x_q[63:0];
 
-    // i_arrayidx3410_atax14_vt_select_63(BITSELECT,42)@2
+    // i_arrayidx3410_atax14_vt_select_63(BITSELECT,42)@3
     assign i_arrayidx3410_atax14_vt_select_63_b = i_arrayidx3410_atax0_dupName_0_trunc_sel_x_b[63:2];
 
-    // i_arrayidx3410_atax14_vt_join(BITJOIN,41)@2
+    // i_arrayidx3410_atax14_vt_join(BITJOIN,41)@3
     assign i_arrayidx3410_atax14_vt_join_q = {i_arrayidx3410_atax14_vt_select_63_b, i_arrayidx329_atax12_vt_const_1_q};
 
-    // i_llvm_fpga_mem_unnamed_atax13_atax15(BLACKBOX,57)@2
+    // i_llvm_fpga_mem_unnamed_atax13_atax15(BLACKBOX,57)@3
     // in in_i_stall@20000000
-    // out out_o_readdata@6
-    // out out_o_stall@5
-    // out out_o_valid@6
+    // out out_o_readdata@7
+    // out out_o_stall@6
+    // out out_o_valid@7
     // out out_unnamed_atax13_atax_avm_address@20000000
     // out out_unnamed_atax13_atax_avm_burstcount@20000000
     // out out_unnamed_atax13_atax_avm_byteenable@20000000
@@ -1217,26 +1215,39 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     assign out_unnamed_atax13_atax_avm_byteenable = i_llvm_fpga_mem_unnamed_atax13_atax15_out_unnamed_atax13_atax_avm_byteenable;
     assign out_unnamed_atax13_atax_avm_burstcount = i_llvm_fpga_mem_unnamed_atax13_atax15_out_unnamed_atax13_atax_avm_burstcount;
 
-    // redist13_sync_together97_aunroll_x_in_i_valid_8(DELAY,166)
+    // redist14_sync_together97_aunroll_x_in_i_valid_5(DELAY,167)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_0 <= '0;
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_1 <= '0;
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_2 <= '0;
-            redist13_sync_together97_aunroll_x_in_i_valid_8_q <= '0;
+            redist14_sync_together97_aunroll_x_in_i_valid_5_q <= '0;
         end
         else
         begin
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_0 <= $unsigned(redist12_sync_together97_aunroll_x_in_i_valid_4_q);
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_1 <= redist13_sync_together97_aunroll_x_in_i_valid_8_delay_0;
-            redist13_sync_together97_aunroll_x_in_i_valid_8_delay_2 <= redist13_sync_together97_aunroll_x_in_i_valid_8_delay_1;
-            redist13_sync_together97_aunroll_x_in_i_valid_8_q <= redist13_sync_together97_aunroll_x_in_i_valid_8_delay_2;
+            redist14_sync_together97_aunroll_x_in_i_valid_5_q <= $unsigned(redist13_sync_together97_aunroll_x_in_i_valid_4_q);
         end
     end
 
-    // valid_fanout_reg0(REG,120)@9 + 1
+    // redist15_sync_together97_aunroll_x_in_i_valid_9(DELAY,168)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_0 <= '0;
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_1 <= '0;
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_2 <= '0;
+            redist15_sync_together97_aunroll_x_in_i_valid_9_q <= '0;
+        end
+        else
+        begin
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_0 <= $unsigned(redist14_sync_together97_aunroll_x_in_i_valid_5_q);
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_1 <= redist15_sync_together97_aunroll_x_in_i_valid_9_delay_0;
+            redist15_sync_together97_aunroll_x_in_i_valid_9_delay_2 <= redist15_sync_together97_aunroll_x_in_i_valid_9_delay_1;
+            redist15_sync_together97_aunroll_x_in_i_valid_9_q <= redist15_sync_together97_aunroll_x_in_i_valid_9_delay_2;
+        end
+    end
+
+    // valid_fanout_reg0(REG,120)@10 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1245,11 +1256,11 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg0_q <= $unsigned(redist13_sync_together97_aunroll_x_in_i_valid_8_q);
+            valid_fanout_reg0_q <= $unsigned(redist15_sync_together97_aunroll_x_in_i_valid_9_q);
         end
     end
 
-    // valid_fanout_reg16(REG,136)@3 + 1
+    // valid_fanout_reg16(REG,136)@1 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1258,7 +1269,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg16_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg16_q <= $unsigned(in_i_valid);
         end
     end
 
@@ -1271,7 +1282,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg17_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg17_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
@@ -1279,7 +1290,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // out out_feedback_out_38@20000000
     // out out_feedback_valid_out_38@20000000
     atax_i_llvm_fpga_push_i1_notcmp5696_push38_0 thei_llvm_fpga_push_i1_notcmp5696_push38_atax39 (
-        .in_data_in(i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out),
+        .in_data_in(redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_q),
         .in_feedback_stall_in_38(i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_feedback_stall_out_38),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
@@ -1293,28 +1304,24 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3(DELAY,161)
+    // redist9_sync_together97_aunroll_x_in_c0_eni7_7_tpl_1(DELAY,162)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_0 <= '0;
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_1 <= '0;
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_q <= '0;
+            redist9_sync_together97_aunroll_x_in_c0_eni7_7_tpl_1_q <= '0;
         end
         else
         begin
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_0 <= $unsigned(in_c0_eni7_7_tpl);
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_1 <= redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_0;
-            redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_q <= redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_delay_1;
+            redist9_sync_together97_aunroll_x_in_c0_eni7_7_tpl_1_q <= $unsigned(in_c0_eni7_7_tpl);
         end
     end
 
-    // i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38(BLACKBOX,62)@4
+    // i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38(BLACKBOX,62)@2
     // out out_feedback_stall_out_38@20000000
     atax_i_llvm_fpga_pop_i1_notcmp5696_pop38_0 thei_llvm_fpga_pop_i1_notcmp5696_pop38_atax38 (
-        .in_data_in(redist8_sync_together97_aunroll_x_in_c0_eni7_7_tpl_3_q),
-        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
+        .in_data_in(redist9_sync_together97_aunroll_x_in_c0_eni7_7_tpl_1_q),
+        .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
         .in_feedback_in_38(i_llvm_fpga_push_i1_notcmp5696_push38_atax39_out_feedback_out_38),
         .in_feedback_valid_in_38(i_llvm_fpga_push_i1_notcmp5696_push38_atax39_out_feedback_valid_out_38),
         .in_predicate(GND_q),
@@ -1328,11 +1335,26 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist22_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_6(DELAY,175)
-    dspba_delay_ver #( .width(1), .depth(6), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
-    redist22_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_6 ( .xin(i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out), .xout(redist22_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_6_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+    // redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2(DELAY,178)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_delay_0 <= '0;
+            redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_q <= '0;
+        end
+        else
+        begin
+            redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out);
+            redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_q <= redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_delay_0;
+        end
+    end
 
-    // valid_fanout_reg14(REG,134)@3 + 1
+    // redist26_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_9(DELAY,179)
+    dspba_delay_ver #( .width(1), .depth(7), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
+    redist26_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_9 ( .xin(redist25_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_2_q), .xout(redist26_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_9_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+
+    // valid_fanout_reg14(REG,134)@1 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1341,7 +1363,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg14_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg14_q <= $unsigned(in_i_valid);
         end
     end
 
@@ -1354,7 +1376,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg15_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg15_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
@@ -1362,7 +1384,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // out out_feedback_out_37@20000000
     // out out_feedback_valid_out_37@20000000
     atax_i_llvm_fpga_push_i1_exitcond1994_push37_0 thei_llvm_fpga_push_i1_exitcond1994_push37_atax37 (
-        .in_data_in(i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out),
+        .in_data_in(redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_q),
         .in_feedback_stall_in_37(i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_feedback_stall_out_37),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
@@ -1376,28 +1398,24 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3(DELAY,160)
+    // redist8_sync_together97_aunroll_x_in_c0_eni7_6_tpl_1(DELAY,161)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_0 <= '0;
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_1 <= '0;
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_q <= '0;
+            redist8_sync_together97_aunroll_x_in_c0_eni7_6_tpl_1_q <= '0;
         end
         else
         begin
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_0 <= $unsigned(in_c0_eni7_6_tpl);
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_1 <= redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_0;
-            redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_q <= redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_delay_1;
+            redist8_sync_together97_aunroll_x_in_c0_eni7_6_tpl_1_q <= $unsigned(in_c0_eni7_6_tpl);
         end
     end
 
-    // i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36(BLACKBOX,60)@4
+    // i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36(BLACKBOX,60)@2
     // out out_feedback_stall_out_37@20000000
     atax_i_llvm_fpga_pop_i1_exitcond1994_pop37_0 thei_llvm_fpga_pop_i1_exitcond1994_pop37_atax36 (
-        .in_data_in(redist7_sync_together97_aunroll_x_in_c0_eni7_6_tpl_3_q),
-        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
+        .in_data_in(redist8_sync_together97_aunroll_x_in_c0_eni7_6_tpl_1_q),
+        .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
         .in_feedback_in_37(i_llvm_fpga_push_i1_exitcond1994_push37_atax37_out_feedback_out_37),
         .in_feedback_valid_in_37(i_llvm_fpga_push_i1_exitcond1994_push37_atax37_out_feedback_valid_out_37),
         .in_predicate(GND_q),
@@ -1411,153 +1429,97 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist24_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_6(DELAY,177)
-    dspba_delay_ver #( .width(1), .depth(6), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
-    redist24_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_6 ( .xin(i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out), .xout(redist24_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_6_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_notEnable(LOGICAL,207)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_notEnable_q = $unsigned(~ (VCC_q));
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_nor(LOGICAL,208)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_nor_q = ~ (redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_notEnable_q | redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena_q);
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_last(CONSTANT,204)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_last_q = $unsigned(2'b01);
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmp(LOGICAL,205)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmp_q = $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_last_q == redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_q ? 1'b1 : 1'b0);
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmpReg(REG,206)
+    // redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2(DELAY,182)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmpReg_q <= $unsigned(1'b0);
+            redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_delay_0 <= '0;
+            redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_q <= '0;
         end
         else
         begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmpReg_q <= $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmp_q);
+            redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out);
+            redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_q <= redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_delay_0;
         end
     end
 
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena(REG,209)
+    // redist30_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_9(DELAY,183)
+    dspba_delay_ver #( .width(1), .depth(7), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
+    redist30_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_9 ( .xin(redist29_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_2_q), .xout(redist30_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_9_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_notEnable(LOGICAL,203)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_notEnable_q = $unsigned(~ (VCC_q));
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_nor(LOGICAL,204)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_nor_q = ~ (redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_notEnable_q | redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena_q);
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_last(CONSTANT,200)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_last_q = $unsigned(4'b0100);
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp(LOGICAL,201)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_b = {1'b0, redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_q};
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_q = $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_last_q == redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_b ? 1'b1 : 1'b0);
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmpReg(REG,202)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena_q <= $unsigned(1'b0);
-        end
-        else if (redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_nor_q == 1'b1)
-        begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena_q <= $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_cmpReg_q);
-        end
-    end
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_enaAnd(LOGICAL,210)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_enaAnd_q = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_sticky_ena_q & VCC_q;
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt(COUNTER,202)
-    // low=0, high=2, step=1, init=0
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i <= 2'd0;
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_eq <= 1'b0;
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmpReg_q <= $unsigned(1'b0);
         end
         else
         begin
-            if (redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i == 2'd1)
-            begin
-                redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_eq <= 1'b1;
-            end
-            else
-            begin
-                redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_eq <= 1'b0;
-            end
-            if (redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_eq == 1'b1)
-            begin
-                redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i <= $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i) + $unsigned(2'd2);
-            end
-            else
-            begin
-                redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i <= $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i) + $unsigned(2'd1);
-            end
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmpReg_q <= $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmp_q);
         end
     end
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_q = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_i[1:0];
 
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_notEnable(LOGICAL,197)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_notEnable_q = $unsigned(~ (VCC_q));
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_nor(LOGICAL,198)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_nor_q = ~ (redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_notEnable_q | redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena_q);
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_last(CONSTANT,194)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_last_q = $unsigned(2'b01);
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmp(LOGICAL,195)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmp_q = $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_last_q == redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_q ? 1'b1 : 1'b0);
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmpReg(REG,196)
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena(REG,205)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmpReg_q <= $unsigned(1'b0);
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena_q <= $unsigned(1'b0);
+        end
+        else if (redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_nor_q == 1'b1)
+        begin
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena_q <= $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_cmpReg_q);
+        end
+    end
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_enaAnd(LOGICAL,206)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_enaAnd_q = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_sticky_ena_q & VCC_q;
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt(COUNTER,198)
+    // low=0, high=5, step=1, init=0
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i <= 3'd0;
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_eq <= 1'b0;
         end
         else
         begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmpReg_q <= $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmp_q);
-        end
-    end
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena(REG,199)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena_q <= $unsigned(1'b0);
-        end
-        else if (redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_nor_q == 1'b1)
-        begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena_q <= $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_cmpReg_q);
-        end
-    end
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_enaAnd(LOGICAL,200)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_enaAnd_q = redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_sticky_ena_q & VCC_q;
-
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt(COUNTER,192)
-    // low=0, high=2, step=1, init=0
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i <= 2'd0;
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_eq <= 1'b0;
-        end
-        else
-        begin
-            if (redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i == 2'd1)
+            if (redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i == 3'd4)
             begin
-                redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_eq <= 1'b1;
+                redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_eq <= 1'b1;
             end
             else
             begin
-                redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_eq <= 1'b0;
+                redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_eq <= 1'b0;
             end
-            if (redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_eq == 1'b1)
+            if (redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_eq == 1'b1)
             begin
-                redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i <= $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i) + $unsigned(2'd2);
+                redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i <= $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i) + $unsigned(3'd3);
             end
             else
             begin
-                redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i <= $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i) + $unsigned(2'd1);
+                redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i <= $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i) + $unsigned(3'd1);
             end
         end
     end
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_q = redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_i[1:0];
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_q = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_i[2:0];
 
     // valid_fanout_reg12(REG,132)@1 + 1
     always @ (posedge clock or negedge resetn)
@@ -1572,7 +1534,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
     end
 
-    // valid_fanout_reg13(REG,133)@5 + 1
+    // valid_fanout_reg13(REG,133)@3 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1581,17 +1543,17 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg13_q <= $unsigned(redist12_sync_together97_aunroll_x_in_i_valid_4_q);
+            valid_fanout_reg13_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
-    // i_llvm_fpga_push_p67f32_arrayidx28893_push36_atax35(BLACKBOX,78)@6
+    // i_llvm_fpga_push_p67f32_arrayidx28893_push36_atax35(BLACKBOX,78)@4
     // out out_feedback_out_36@20000000
     // out out_feedback_valid_out_36@20000000
     atax_i_llvm_fpga_push_p67f32_arrayidx28893_push36_0 thei_llvm_fpga_push_p67f32_arrayidx28893_push36_atax35 (
-        .in_data_in(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_q),
+        .in_data_in(redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_q),
         .in_feedback_stall_in_36(i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_feedback_stall_out_36),
-        .in_keep_going44(redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q),
+        .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
         .in_valid_in(valid_fanout_reg13_q),
         .out_data_out(),
@@ -1603,23 +1565,23 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist6_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1(DELAY,159)
+    // redist7_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1(DELAY,160)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist6_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q <= '0;
+            redist7_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q <= '0;
         end
         else
         begin
-            redist6_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q <= $unsigned(in_c0_eni7_5_tpl);
+            redist7_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q <= $unsigned(in_c0_eni7_5_tpl);
         end
     end
 
     // i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34(BLACKBOX,67)@2
     // out out_feedback_stall_out_36@20000000
     atax_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_0 thei_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34 (
-        .in_data_in(redist6_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q),
+        .in_data_in(redist7_sync_together97_aunroll_x_in_c0_eni7_5_tpl_1_q),
         .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
         .in_feedback_in_36(i_llvm_fpga_push_p67f32_arrayidx28893_push36_atax35_out_feedback_out_36),
         .in_feedback_valid_in_36(i_llvm_fpga_push_p67f32_arrayidx28893_push36_atax35_out_feedback_valid_out_36),
@@ -1634,33 +1596,48 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_wraddr(REG,193)
+    // redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2(DELAY,172)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_wraddr_q <= $unsigned(2'b10);
+            redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_delay_0 <= '0;
+            redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_q <= '0;
         end
         else
         begin
-            redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_wraddr_q <= $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_q);
+            redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out);
+            redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_q <= redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_delay_0;
         end
     end
 
-    // redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem(DUALMEM,191)
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ia = $unsigned(i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out);
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_aa = redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_wraddr_q;
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ab = redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_rdcnt_q;
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_reset0 = ~ (resetn);
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_wraddr(REG,199)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_wraddr_q <= $unsigned(3'b101);
+        end
+        else
+        begin
+            redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_wraddr_q <= $unsigned(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_q);
+        end
+    end
+
+    // redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem(DUALMEM,197)
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ia = $unsigned(redist19_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_2_q);
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_aa = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_wraddr_q;
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ab = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_rdcnt_q;
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_reset0 = ~ (resetn);
     altera_syncram #(
         .ram_block_type("MLAB"),
         .operation_mode("DUAL_PORT"),
         .width_a(64),
-        .widthad_a(2),
-        .numwords_a(3),
+        .widthad_a(3),
+        .numwords_a(6),
         .width_b(64),
-        .widthad_b(2),
-        .numwords_b(3),
+        .widthad_b(3),
+        .numwords_b(6),
         .lpm_type("altera_syncram"),
         .width_byteena_a(1),
         .address_reg_b("CLOCK0"),
@@ -1675,17 +1652,17 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .read_during_write_mode_mixed_ports("DONT_CARE"),
         .power_up_uninitialized("TRUE"),
         .intended_device_family("Cyclone 10 GX")
-    ) redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_dmem (
-        .clocken1(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_enaAnd_q[0]),
+    ) redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_dmem (
+        .clocken1(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_enaAnd_q[0]),
         .clocken0(1'b1),
         .clock0(clock),
-        .aclr1(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_reset0),
+        .aclr1(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_reset0),
         .clock1(clock),
-        .address_a(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_aa),
-        .data_a(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ia),
+        .address_a(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_aa),
+        .data_a(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ia),
         .wren_a(VCC_q[0]),
-        .address_b(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_ab),
-        .q_b(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_iq),
+        .address_b(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_ab),
+        .q_b(redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_iq),
         .wren_b(),
         .rden_a(),
         .rden_b(),
@@ -1705,82 +1682,9 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .q_a(),
         .eccstatus()
     );
-    assign redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_q = redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_iq[63:0];
+    assign redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_q = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_iq[63:0];
 
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_wraddr(REG,203)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_wraddr_q <= $unsigned(2'b10);
-        end
-        else
-        begin
-            redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_wraddr_q <= $unsigned(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_q);
-        end
-    end
-
-    // redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem(DUALMEM,201)
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ia = $unsigned(redist17_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_4_mem_q);
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_aa = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_wraddr_q;
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ab = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_rdcnt_q;
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_reset0 = ~ (resetn);
-    altera_syncram #(
-        .ram_block_type("MLAB"),
-        .operation_mode("DUAL_PORT"),
-        .width_a(64),
-        .widthad_a(2),
-        .numwords_a(3),
-        .width_b(64),
-        .widthad_b(2),
-        .numwords_b(3),
-        .lpm_type("altera_syncram"),
-        .width_byteena_a(1),
-        .address_reg_b("CLOCK0"),
-        .indata_reg_b("CLOCK0"),
-        .rdcontrol_reg_b("CLOCK0"),
-        .byteena_reg_b("CLOCK0"),
-        .outdata_reg_b("CLOCK1"),
-        .outdata_aclr_b("CLEAR1"),
-        .clock_enable_input_a("NORMAL"),
-        .clock_enable_input_b("NORMAL"),
-        .clock_enable_output_b("NORMAL"),
-        .read_during_write_mode_mixed_ports("DONT_CARE"),
-        .power_up_uninitialized("TRUE"),
-        .intended_device_family("Cyclone 10 GX")
-    ) redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_dmem (
-        .clocken1(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_enaAnd_q[0]),
-        .clocken0(1'b1),
-        .clock0(clock),
-        .aclr1(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_reset0),
-        .clock1(clock),
-        .address_a(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_aa),
-        .data_a(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ia),
-        .wren_a(VCC_q[0]),
-        .address_b(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_ab),
-        .q_b(redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_iq),
-        .wren_b(),
-        .rden_a(),
-        .rden_b(),
-        .data_b(),
-        .clocken2(),
-        .clocken3(),
-        .aclr0(),
-        .addressstall_a(),
-        .addressstall_b(),
-        .byteena_a(),
-        .byteena_b(),
-        .eccencbypass(),
-        .eccencparity(),
-        .sclr(),
-        .address2_a(),
-        .address2_b(),
-        .q_a(),
-        .eccstatus()
-    );
-    assign redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_q = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_iq[63:0];
-
-    // valid_fanout_reg10(REG,130)@3 + 1
+    // valid_fanout_reg10(REG,130)@1 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1789,7 +1693,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg10_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg10_q <= $unsigned(in_i_valid);
         end
     end
 
@@ -1802,7 +1706,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg11_q <= $unsigned(redist10_sync_together97_aunroll_x_in_i_valid_2_q);
+            valid_fanout_reg11_q <= $unsigned(redist11_sync_together97_aunroll_x_in_i_valid_2_q);
         end
     end
 
@@ -1810,7 +1714,7 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
     // out out_feedback_out_34@20000000
     // out out_feedback_valid_out_34@20000000
     atax_i_llvm_fpga_push_i1_forked8790_push34_0 thei_llvm_fpga_push_i1_forked8790_push34_atax33 (
-        .in_data_in(i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out),
+        .in_data_in(redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_q),
         .in_feedback_stall_in_34(i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_feedback_stall_out_34),
         .in_keep_going44(i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out),
         .in_stall_in(GND_q),
@@ -1824,28 +1728,24 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3(DELAY,158)
+    // redist6_sync_together97_aunroll_x_in_c0_eni7_4_tpl_1(DELAY,159)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_0 <= '0;
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_1 <= '0;
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_q <= '0;
+            redist6_sync_together97_aunroll_x_in_c0_eni7_4_tpl_1_q <= '0;
         end
         else
         begin
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_0 <= $unsigned(in_c0_eni7_4_tpl);
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_1 <= redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_0;
-            redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_q <= redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_delay_1;
+            redist6_sync_together97_aunroll_x_in_c0_eni7_4_tpl_1_q <= $unsigned(in_c0_eni7_4_tpl);
         end
     end
 
-    // i_llvm_fpga_pop_i1_forked8790_pop34_atax32(BLACKBOX,61)@4
+    // i_llvm_fpga_pop_i1_forked8790_pop34_atax32(BLACKBOX,61)@2
     // out out_feedback_stall_out_34@20000000
     atax_i_llvm_fpga_pop_i1_forked8790_pop34_0 thei_llvm_fpga_pop_i1_forked8790_pop34_atax32 (
-        .in_data_in(redist5_sync_together97_aunroll_x_in_c0_eni7_4_tpl_3_q),
-        .in_dir(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q),
+        .in_data_in(redist6_sync_together97_aunroll_x_in_c0_eni7_4_tpl_1_q),
+        .in_dir(redist0_sync_together97_aunroll_x_in_c0_eni7_1_tpl_1_q),
         .in_feedback_in_34(i_llvm_fpga_push_i1_forked8790_push34_atax33_out_feedback_out_34),
         .in_feedback_valid_in_34(i_llvm_fpga_push_i1_forked8790_push34_atax33_out_feedback_valid_out_34),
         .in_predicate(GND_q),
@@ -1859,37 +1759,35 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist23_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_6(DELAY,176)
-    dspba_delay_ver #( .width(1), .depth(6), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
-    redist23_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_6 ( .xin(i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out), .xout(redist23_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_6_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
-
-    // i_masked53_atax31(LOGICAL,79)@4 + 1
-    assign i_masked53_atax31_qi = i_notcmp40_atax24_q & redist14_i_first_cleanup49_atax3_sel_x_b_2_q;
-    dspba_delay_ver #( .width(1), .depth(1), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
-    i_masked53_atax31_delay ( .xin(i_masked53_atax31_qi), .xout(i_masked53_atax31_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
-
-    // redist16_i_masked53_atax31_q_6(DELAY,169)
+    // redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2(DELAY,180)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist16_i_masked53_atax31_q_6_delay_0 <= '0;
-            redist16_i_masked53_atax31_q_6_delay_1 <= '0;
-            redist16_i_masked53_atax31_q_6_delay_2 <= '0;
-            redist16_i_masked53_atax31_q_6_delay_3 <= '0;
-            redist16_i_masked53_atax31_q_6_q <= '0;
+            redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_delay_0 <= '0;
+            redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_q <= '0;
         end
         else
         begin
-            redist16_i_masked53_atax31_q_6_delay_0 <= $unsigned(i_masked53_atax31_q);
-            redist16_i_masked53_atax31_q_6_delay_1 <= redist16_i_masked53_atax31_q_6_delay_0;
-            redist16_i_masked53_atax31_q_6_delay_2 <= redist16_i_masked53_atax31_q_6_delay_1;
-            redist16_i_masked53_atax31_q_6_delay_3 <= redist16_i_masked53_atax31_q_6_delay_2;
-            redist16_i_masked53_atax31_q_6_q <= redist16_i_masked53_atax31_q_6_delay_3;
+            redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_delay_0 <= $unsigned(i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out);
+            redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_q <= redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_delay_0;
         end
     end
 
-    // valid_fanout_reg7(REG,127)@5 + 1
+    // redist28_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_9(DELAY,181)
+    dspba_delay_ver #( .width(1), .depth(7), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
+    redist28_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_9 ( .xin(redist27_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_2_q), .xout(redist28_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_9_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+
+    // i_masked53_atax31(LOGICAL,79)@4 + 1
+    assign i_masked53_atax31_qi = i_notcmp40_atax24_q & redist16_i_first_cleanup49_atax3_sel_x_b_1_q;
+    dspba_delay_ver #( .width(1), .depth(1), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
+    i_masked53_atax31_delay ( .xin(i_masked53_atax31_qi), .xout(i_masked53_atax31_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+
+    // redist18_i_masked53_atax31_q_7(DELAY,171)
+    dspba_delay_ver #( .width(1), .depth(6), .reset_kind("ASYNC"), .phase(0), .modulus(1), .reset_high(1'b0) )
+    redist18_i_masked53_atax31_q_7 ( .xin(i_masked53_atax31_q), .xout(redist18_i_masked53_atax31_q_7_q), .clk(clock), .aclr(resetn), .ena(1'b1) );
+
+    // valid_fanout_reg7(REG,127)@6 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1898,11 +1796,11 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg7_q <= $unsigned(redist12_sync_together97_aunroll_x_in_i_valid_4_q);
+            valid_fanout_reg7_q <= $unsigned(redist14_sync_together97_aunroll_x_in_i_valid_5_q);
         end
     end
 
-    // valid_fanout_reg8(REG,128)@9 + 1
+    // valid_fanout_reg8(REG,128)@10 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1911,17 +1809,17 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         end
         else
         begin
-            valid_fanout_reg8_q <= $unsigned(redist13_sync_together97_aunroll_x_in_i_valid_8_q);
+            valid_fanout_reg8_q <= $unsigned(redist15_sync_together97_aunroll_x_in_i_valid_9_q);
         end
     end
 
-    // i_llvm_fpga_push_f32_add41_push31_atax18(BLACKBOX,68)@10
+    // i_llvm_fpga_push_f32_add41_push31_atax18(BLACKBOX,68)@11
     // out out_feedback_out_31@20000000
     // out out_feedback_valid_out_31@20000000
     atax_i_llvm_fpga_push_f32_add41_push31_0 thei_llvm_fpga_push_f32_add41_push31_atax18 (
         .in_data_in(i_llvm_fpga_fp_multadd_mult_add_atax17_out_primWireOut),
         .in_feedback_stall_in_31(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_feedback_stall_out_31),
-        .in_keep_going44(redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_q),
+        .in_keep_going44(redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_q),
         .in_stall_in(GND_q),
         .in_valid_in(valid_fanout_reg8_q),
         .out_data_out(),
@@ -1933,103 +1831,279 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .resetn(resetn)
     );
 
-    // redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5(DELAY,155)
+    // redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6(DELAY,156)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_delay_0 <= '0;
-            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_q <= '0;
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_0 <= '0;
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_1 <= '0;
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_q <= '0;
         end
         else
         begin
-            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_delay_0 <= $unsigned(redist1_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q);
-            redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_q <= redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_delay_0;
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_0 <= $unsigned(redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_3_q);
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_1 <= redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_0;
+            redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_q <= redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_delay_1;
         end
     end
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_notEnable(LOGICAL,187)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_notEnable_q = $unsigned(~ (VCC_q));
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_notEnable(LOGICAL,193)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_notEnable_q = $unsigned(~ (VCC_q));
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_nor(LOGICAL,188)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_nor_q = ~ (redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_notEnable_q | redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena_q);
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_nor(LOGICAL,194)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_nor_q = ~ (redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_notEnable_q | redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena_q);
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_last(CONSTANT,184)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_last_q = $unsigned(3'b010);
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_last(CONSTANT,190)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_last_q = $unsigned(3'b011);
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp(LOGICAL,185)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_b = {1'b0, redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_q};
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_q = $unsigned(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_last_q == redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_b ? 1'b1 : 1'b0);
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmp(LOGICAL,191)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmp_q = $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_last_q == redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_q ? 1'b1 : 1'b0);
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmpReg(REG,186)
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmpReg(REG,192)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmpReg_q <= $unsigned(1'b0);
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmpReg_q <= $unsigned(1'b0);
         end
         else
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmpReg_q <= $unsigned(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmp_q);
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmpReg_q <= $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmp_q);
         end
     end
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena(REG,189)
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena(REG,195)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena_q <= $unsigned(1'b0);
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena_q <= $unsigned(1'b0);
         end
-        else if (redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_nor_q == 1'b1)
+        else if (redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_nor_q == 1'b1)
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena_q <= $unsigned(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_cmpReg_q);
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena_q <= $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_cmpReg_q);
         end
     end
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_enaAnd(LOGICAL,190)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_enaAnd_q = redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_sticky_ena_q & VCC_q;
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_enaAnd(LOGICAL,196)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_enaAnd_q = redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_sticky_ena_q & VCC_q;
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt(COUNTER,182)
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt(COUNTER,188)
+    // low=0, high=4, step=1, init=0
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i <= 3'd0;
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_eq <= 1'b0;
+        end
+        else
+        begin
+            if (redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i == 3'd3)
+            begin
+                redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_eq <= 1'b1;
+            end
+            else
+            begin
+                redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_eq <= 1'b0;
+            end
+            if (redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_eq == 1'b1)
+            begin
+                redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i <= $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i) + $unsigned(3'd4);
+            end
+            else
+            begin
+                redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i <= $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i) + $unsigned(3'd1);
+            end
+        end
+    end
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_q = redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_i[2:0];
+
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_wraddr(REG,189)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_wraddr_q <= $unsigned(3'b100);
+        end
+        else
+        begin
+            redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_wraddr_q <= $unsigned(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_q);
+        end
+    end
+
+    // redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem(DUALMEM,187)
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ia = $unsigned(in_c0_eni7_3_tpl);
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_aa = redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_wraddr_q;
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ab = redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_rdcnt_q;
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_reset0 = ~ (resetn);
+    altera_syncram #(
+        .ram_block_type("MLAB"),
+        .operation_mode("DUAL_PORT"),
+        .width_a(32),
+        .widthad_a(3),
+        .numwords_a(5),
+        .width_b(32),
+        .widthad_b(3),
+        .numwords_b(5),
+        .lpm_type("altera_syncram"),
+        .width_byteena_a(1),
+        .address_reg_b("CLOCK0"),
+        .indata_reg_b("CLOCK0"),
+        .rdcontrol_reg_b("CLOCK0"),
+        .byteena_reg_b("CLOCK0"),
+        .outdata_reg_b("CLOCK1"),
+        .outdata_aclr_b("CLEAR1"),
+        .clock_enable_input_a("NORMAL"),
+        .clock_enable_input_b("NORMAL"),
+        .clock_enable_output_b("NORMAL"),
+        .read_during_write_mode_mixed_ports("DONT_CARE"),
+        .power_up_uninitialized("TRUE"),
+        .intended_device_family("Cyclone 10 GX")
+    ) redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_dmem (
+        .clocken1(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_enaAnd_q[0]),
+        .clocken0(1'b1),
+        .clock0(clock),
+        .aclr1(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_reset0),
+        .clock1(clock),
+        .address_a(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_aa),
+        .data_a(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ia),
+        .wren_a(VCC_q[0]),
+        .address_b(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_ab),
+        .q_b(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_iq),
+        .wren_b(),
+        .rden_a(),
+        .rden_b(),
+        .data_b(),
+        .clocken2(),
+        .clocken3(),
+        .aclr0(),
+        .addressstall_a(),
+        .addressstall_b(),
+        .byteena_a(),
+        .byteena_b(),
+        .eccencbypass(),
+        .eccencparity(),
+        .sclr(),
+        .address2_a(),
+        .address2_b(),
+        .q_a(),
+        .eccstatus()
+    );
+    assign redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_q = redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_iq[31:0];
+
+    // i_llvm_fpga_pop_f32_add41_pop31_atax16(BLACKBOX,59)@7
+    // out out_feedback_stall_out_31@20000000
+    atax_i_llvm_fpga_pop_f32_add41_pop31_0 thei_llvm_fpga_pop_f32_add41_pop31_atax16 (
+        .in_data_in(redist5_sync_together97_aunroll_x_in_c0_eni7_3_tpl_6_mem_q),
+        .in_dir(redist3_sync_together97_aunroll_x_in_c0_eni7_1_tpl_6_q),
+        .in_feedback_in_31(i_llvm_fpga_push_f32_add41_push31_atax18_out_feedback_out_31),
+        .in_feedback_valid_in_31(i_llvm_fpga_push_f32_add41_push31_atax18_out_feedback_valid_out_31),
+        .in_predicate(GND_q),
+        .in_stall_in(GND_q),
+        .in_valid_in(valid_fanout_reg7_q),
+        .out_data_out(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_data_out),
+        .out_feedback_stall_out_31(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_feedback_stall_out_31),
+        .out_stall_out(),
+        .out_valid_out(),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // i_llvm_fpga_fp_multadd_mult_add_atax17(BLACKBOX,55)@7
+    // out out_primWireOut@11
+    atax_flt_i_sfc_logic_s_c0_in_for_body26_0000xk5id06uq0cp0jv34qcz thei_llvm_fpga_fp_multadd_mult_add_atax17 (
+        .in_0(i_llvm_fpga_mem_unnamed_atax12_atax13_out_o_readdata),
+        .in_1(i_llvm_fpga_mem_unnamed_atax13_atax15_out_o_readdata),
+        .in_2(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_data_out),
+        .out_primWireOut(i_llvm_fpga_fp_multadd_mult_add_atax17_out_primWireOut),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_notEnable(LOGICAL,223)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_notEnable_q = $unsigned(~ (VCC_q));
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_nor(LOGICAL,224)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_nor_q = ~ (redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_notEnable_q | redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena_q);
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_last(CONSTANT,220)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_last_q = $unsigned(3'b010);
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp(LOGICAL,221)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_b = {1'b0, redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_q};
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_q = $unsigned(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_last_q == redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_b ? 1'b1 : 1'b0);
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmpReg(REG,222)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmpReg_q <= $unsigned(1'b0);
+        end
+        else
+        begin
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmpReg_q <= $unsigned(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmp_q);
+        end
+    end
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena(REG,225)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena_q <= $unsigned(1'b0);
+        end
+        else if (redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_nor_q == 1'b1)
+        begin
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena_q <= $unsigned(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_cmpReg_q);
+        end
+    end
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_enaAnd(LOGICAL,226)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_enaAnd_q = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_sticky_ena_q & VCC_q;
+
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt(COUNTER,218)
     // low=0, high=3, step=1, init=0
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_i <= 2'd0;
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_i <= 2'd0;
         end
         else
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_i <= $unsigned(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_i) + $unsigned(2'd1);
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_i <= $unsigned(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_i) + $unsigned(2'd1);
         end
     end
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_q = redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_i[1:0];
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_q = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_i[1:0];
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_wraddr(REG,183)
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_wraddr(REG,219)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_wraddr_q <= $unsigned(2'b11);
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_wraddr_q <= $unsigned(2'b11);
         end
         else
         begin
-            redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_wraddr_q <= $unsigned(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_q);
+            redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_wraddr_q <= $unsigned(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_q);
         end
     end
 
-    // redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem(DUALMEM,181)
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ia = $unsigned(in_c0_eni7_3_tpl);
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_aa = redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_wraddr_q;
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ab = redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_rdcnt_q;
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_reset0 = ~ (resetn);
+    // redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem(DUALMEM,217)
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ia = $unsigned(redist21_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q);
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_aa = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_wraddr_q;
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ab = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_rdcnt_q;
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_reset0 = ~ (resetn);
     altera_syncram #(
         .ram_block_type("MLAB"),
         .operation_mode("DUAL_PORT"),
-        .width_a(32),
+        .width_a(64),
         .widthad_a(2),
         .numwords_a(4),
-        .width_b(32),
+        .width_b(64),
         .widthad_b(2),
         .numwords_b(4),
         .lpm_type("altera_syncram"),
@@ -2046,17 +2120,17 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .read_during_write_mode_mixed_ports("DONT_CARE"),
         .power_up_uninitialized("TRUE"),
         .intended_device_family("Cyclone 10 GX")
-    ) redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_dmem (
-        .clocken1(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_enaAnd_q[0]),
+    ) redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_dmem (
+        .clocken1(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_enaAnd_q[0]),
         .clocken0(1'b1),
         .clock0(clock),
-        .aclr1(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_reset0),
+        .aclr1(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_reset0),
         .clock1(clock),
-        .address_a(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_aa),
-        .data_a(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ia),
+        .address_a(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_aa),
+        .data_a(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ia),
         .wren_a(VCC_q[0]),
-        .address_b(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_ab),
-        .q_b(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_iq),
+        .address_b(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_ab),
+        .q_b(redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_iq),
         .wren_b(),
         .rden_a(),
         .rden_b(),
@@ -2076,211 +2150,39 @@ module atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 (
         .q_a(),
         .eccstatus()
     );
-    assign redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_q = redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_iq[31:0];
+    assign redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_q = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_iq[63:0];
 
-    // i_llvm_fpga_pop_f32_add41_pop31_atax16(BLACKBOX,59)@6
-    // out out_feedback_stall_out_31@20000000
-    atax_i_llvm_fpga_pop_f32_add41_pop31_0 thei_llvm_fpga_pop_f32_add41_pop31_atax16 (
-        .in_data_in(redist4_sync_together97_aunroll_x_in_c0_eni7_3_tpl_5_mem_q),
-        .in_dir(redist2_sync_together97_aunroll_x_in_c0_eni7_1_tpl_5_q),
-        .in_feedback_in_31(i_llvm_fpga_push_f32_add41_push31_atax18_out_feedback_out_31),
-        .in_feedback_valid_in_31(i_llvm_fpga_push_f32_add41_push31_atax18_out_feedback_valid_out_31),
-        .in_predicate(GND_q),
-        .in_stall_in(GND_q),
-        .in_valid_in(valid_fanout_reg7_q),
-        .out_data_out(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_data_out),
-        .out_feedback_stall_out_31(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_feedback_stall_out_31),
-        .out_stall_out(),
-        .out_valid_out(),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_fp_multadd_mult_add_atax17(BLACKBOX,55)@6
-    // out out_primWireOut@10
-    atax_flt_i_sfc_logic_s_c0_in_for_body26_0000xk5id06uq0cp0jv34qcz thei_llvm_fpga_fp_multadd_mult_add_atax17 (
-        .in_0(i_llvm_fpga_mem_unnamed_atax12_atax13_out_o_readdata),
-        .in_1(i_llvm_fpga_mem_unnamed_atax13_atax15_out_o_readdata),
-        .in_2(i_llvm_fpga_pop_f32_add41_pop31_atax16_out_data_out),
-        .out_primWireOut(i_llvm_fpga_fp_multadd_mult_add_atax17_out_primWireOut),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_notEnable(LOGICAL,227)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_notEnable_q = $unsigned(~ (VCC_q));
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_nor(LOGICAL,228)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_nor_q = ~ (redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_notEnable_q | redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena_q);
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_last(CONSTANT,224)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_last_q = $unsigned(2'b01);
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmp(LOGICAL,225)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmp_q = $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_last_q == redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_q ? 1'b1 : 1'b0);
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmpReg(REG,226)
+    // redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7(DELAY,185)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmpReg_q <= $unsigned(1'b0);
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_0 <= '0;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_1 <= '0;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_2 <= '0;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_3 <= '0;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_q <= '0;
         end
         else
         begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmpReg_q <= $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmp_q);
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_0 <= $unsigned(redist31_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q);
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_1 <= redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_0;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_2 <= redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_1;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_3 <= redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_2;
+            redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_q <= redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_delay_3;
         end
     end
 
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena(REG,229)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena_q <= $unsigned(1'b0);
-        end
-        else if (redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_nor_q == 1'b1)
-        begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena_q <= $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_cmpReg_q);
-        end
-    end
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_enaAnd(LOGICAL,230)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_enaAnd_q = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_sticky_ena_q & VCC_q;
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt(COUNTER,222)
-    // low=0, high=2, step=1, init=0
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i <= 2'd0;
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_eq <= 1'b0;
-        end
-        else
-        begin
-            if (redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i == 2'd1)
-            begin
-                redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_eq <= 1'b1;
-            end
-            else
-            begin
-                redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_eq <= 1'b0;
-            end
-            if (redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_eq == 1'b1)
-            begin
-                redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i <= $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i) + $unsigned(2'd2);
-            end
-            else
-            begin
-                redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i <= $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i) + $unsigned(2'd1);
-            end
-        end
-    end
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_q = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_i[1:0];
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_wraddr(REG,223)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_wraddr_q <= $unsigned(2'b10);
-        end
-        else
-        begin
-            redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_wraddr_q <= $unsigned(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_q);
-        end
-    end
-
-    // redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem(DUALMEM,221)
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ia = $unsigned(redist19_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_4_mem_q);
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_aa = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_wraddr_q;
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ab = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_rdcnt_q;
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_reset0 = ~ (resetn);
-    altera_syncram #(
-        .ram_block_type("MLAB"),
-        .operation_mode("DUAL_PORT"),
-        .width_a(64),
-        .widthad_a(2),
-        .numwords_a(3),
-        .width_b(64),
-        .widthad_b(2),
-        .numwords_b(3),
-        .lpm_type("altera_syncram"),
-        .width_byteena_a(1),
-        .address_reg_b("CLOCK0"),
-        .indata_reg_b("CLOCK0"),
-        .rdcontrol_reg_b("CLOCK0"),
-        .byteena_reg_b("CLOCK0"),
-        .outdata_reg_b("CLOCK1"),
-        .outdata_aclr_b("CLEAR1"),
-        .clock_enable_input_a("NORMAL"),
-        .clock_enable_input_b("NORMAL"),
-        .clock_enable_output_b("NORMAL"),
-        .read_during_write_mode_mixed_ports("DONT_CARE"),
-        .power_up_uninitialized("TRUE"),
-        .intended_device_family("Cyclone 10 GX")
-    ) redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_dmem (
-        .clocken1(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_enaAnd_q[0]),
-        .clocken0(1'b1),
-        .clock0(clock),
-        .aclr1(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_reset0),
-        .clock1(clock),
-        .address_a(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_aa),
-        .data_a(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ia),
-        .wren_a(VCC_q[0]),
-        .address_b(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_ab),
-        .q_b(redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_iq),
-        .wren_b(),
-        .rden_a(),
-        .rden_b(),
-        .data_b(),
-        .clocken2(),
-        .clocken3(),
-        .aclr0(),
-        .addressstall_a(),
-        .addressstall_b(),
-        .byteena_a(),
-        .byteena_b(),
-        .eccencbypass(),
-        .eccencparity(),
-        .sclr(),
-        .address2_a(),
-        .address2_b(),
-        .q_a(),
-        .eccstatus()
-    );
-    assign redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_q = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_iq[63:0];
-
-    // redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6(DELAY,179)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_0 <= '0;
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_1 <= '0;
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_2 <= '0;
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_q <= '0;
-        end
-        else
-        begin
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_0 <= $unsigned(redist25_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_2_q);
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_1 <= redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_0;
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_2 <= redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_1;
-            redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_q <= redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_delay_2;
-        end
-    end
-
-    // sync_out_aunroll_x(GPOUT,118)@10
+    // sync_out_aunroll_x(GPOUT,118)@11
     assign out_c0_exi8156_0_tpl = GND_q;
-    assign out_c0_exi8156_1_tpl = redist26_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_6_q;
-    assign out_c0_exi8156_2_tpl = redist20_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_8_mem_q;
+    assign out_c0_exi8156_1_tpl = redist32_i_llvm_fpga_pipeline_keep_going44_atax6_out_data_out_7_q;
+    assign out_c0_exi8156_2_tpl = redist22_i_llvm_fpga_pop_i64_idxprom2791_pop35_atax10_out_data_out_9_mem_q;
     assign out_c0_exi8156_3_tpl = i_llvm_fpga_fp_multadd_mult_add_atax17_out_primWireOut;
-    assign out_c0_exi8156_4_tpl = redist16_i_masked53_atax31_q_6_q;
-    assign out_c0_exi8156_5_tpl = redist23_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_6_q;
-    assign out_c0_exi8156_6_tpl = redist18_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_8_mem_q;
-    assign out_c0_exi8156_7_tpl = redist24_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_6_q;
-    assign out_c0_exi8156_8_tpl = redist22_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_6_q;
+    assign out_c0_exi8156_4_tpl = redist18_i_masked53_atax31_q_7_q;
+    assign out_c0_exi8156_5_tpl = redist28_i_llvm_fpga_pop_i1_forked8790_pop34_atax32_out_data_out_9_q;
+    assign out_c0_exi8156_6_tpl = redist20_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_atax34_out_data_out_9_mem_q;
+    assign out_c0_exi8156_7_tpl = redist30_i_llvm_fpga_pop_i1_exitcond1994_pop37_atax36_out_data_out_9_q;
+    assign out_c0_exi8156_8_tpl = redist26_i_llvm_fpga_pop_i1_notcmp5696_pop38_atax38_out_data_out_9_q;
     assign out_o_valid = valid_fanout_reg0_q;
     assign out_unnamed_atax1 = GND_q;
 

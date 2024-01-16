@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="avalon_conduit_fanout_10/sim/atax_cfan_avalon_conduit_fanout_10_joescla.sv"
+   type="SYSTEM_VERILOG"
+   library="avalon_conduit_fanout_10" />
+ <file
+   path="sim/atax_cfan.v"
+   type="VERILOG"
+   library="atax_cfan"
+   hasInlineConfiguration="true" />
+ <topLevel name="atax_cfan.atax_cfan" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

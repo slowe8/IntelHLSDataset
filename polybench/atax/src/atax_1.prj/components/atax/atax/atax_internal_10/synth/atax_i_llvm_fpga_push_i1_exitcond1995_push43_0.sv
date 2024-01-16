@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_push_i1_exitcond1995_push43_0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -67,10 +67,10 @@ module atax_i_llvm_fpga_push_i1_exitcond1995_push43_0 (
     // c_i7_03(CONSTANT,4)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,5)@2
+    // element_extension2(BITJOIN,5)@4
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i1_exitcond1995_push43_atax1(EXTIFACE,8)@2
+    // i_llvm_fpga_push_i1_exitcond1995_push43_atax1(EXTIFACE,8)@4
     assign i_llvm_fpga_push_i1_exitcond1995_push43_atax1_data_in = element_extension2_q[0:0];
     assign i_llvm_fpga_push_i1_exitcond1995_push43_atax1_dir = in_keep_going28;
     assign i_llvm_fpga_push_i1_exitcond1995_push43_atax1_feedback_stall_in = in_feedback_stall_in_43;
@@ -92,7 +92,7 @@ module atax_i_llvm_fpga_push_i1_exitcond1995_push43_0 (
         .FIFO_DEPTH(1),
         .INF_LOOP(0),
         .INF_LOOP_INITIALIZATION(1'b0),
-        .MIN_FIFO_LATENCY(1),
+        .MIN_FIFO_LATENCY(0),
         .STYLE("REGULAR"),
         .ASYNC_RESET(1),
         .DATA_WIDTH(1),
@@ -120,10 +120,10 @@ module atax_i_llvm_fpga_push_i1_exitcond1995_push43_0 (
     assign out_feedback_out_43 = i_llvm_fpga_push_i1_exitcond1995_push43_atax1_feedback_out;
     assign out_feedback_valid_out_43 = i_llvm_fpga_push_i1_exitcond1995_push43_atax1_feedback_valid_out;
 
-    // sync_out(GPOUT,10)@2
+    // sync_out(GPOUT,10)@4
     assign out_stall_out = i_llvm_fpga_push_i1_exitcond1995_push43_atax1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,13)@2
+    // dupName_0_sync_out_x(GPOUT,13)@4
     assign out_data_out = i_llvm_fpga_push_i1_exitcond1995_push43_atax1_data_out;
     assign out_valid_out = i_llvm_fpga_push_i1_exitcond1995_push43_atax1_valid_out;
 

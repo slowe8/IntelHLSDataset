@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit124_atax0
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -140,7 +140,7 @@ module atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit124_atax0 (
     assign i_llvm_fpga_sfc_exit_s_c0_out_for_body9_ataxs_c0_exit124_atax1_valid_mask[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body9_ataxs_c0_exit124_atax1_valid_mask_bitsignaltemp;
     assign i_llvm_fpga_sfc_exit_s_c0_out_for_body9_ataxs_c0_exit124_atax1_valid_out[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body9_ataxs_c0_exit124_atax1_valid_out_bitsignaltemp;
     acl_enable_sink #(
-        .PIPELINE_DEPTH(1),
+        .PIPELINE_DEPTH(2),
         .SCHEDULEII(1),
         .ASYNC_RESET(1),
         .DATA_WIDTH(448),
@@ -195,7 +195,7 @@ module atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit124_atax0 (
     // ip_dsdk_adapt_bitselect17(BITSELECT,18)
     assign ip_dsdk_adapt_bitselect17_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body9_ataxs_c0_exit124_atax1_data_out[0:0];
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,31)@2
+    // dupName_0_sync_out_aunroll_x(GPOUT,31)@3
     assign out_data_out_0_tpl = ip_dsdk_adapt_bitselect17_b;
     assign out_data_out_1_tpl = ip_dsdk_adapt_bitselect19_b;
     assign out_data_out_2_tpl = ip_dsdk_adapt_bitselect21_b;

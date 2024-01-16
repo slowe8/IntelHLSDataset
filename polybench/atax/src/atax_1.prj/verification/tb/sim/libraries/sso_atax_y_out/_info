@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.prj/verification/tb/sim
+vsso_atax_y_out
+2../../ip/tb/sso_atax_y_out/sim/sso_atax_y_out.v
+!s110 1704253322
+!i10b 1
+!s100 I0B74PCc8L3gFn2;ih:]L0
+I@L_Nb[QKCPG`lTTKNOC:41
+R0
+w1704253291
+8../../ip/tb/sso_atax_y_out/sim/sso_atax_y_out.v
+F../../ip/tb/sso_atax_y_out/sim/sso_atax_y_out.v
+!i122 0
+L0 6 37
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1704253322.000000
+!s107 ../../ip/tb/sso_atax_y_out/sim/sso_atax_y_out.v|
+!s90 +incdir+.|../../ip/tb/sso_atax_y_out/sim/sso_atax_y_out.v|-work|sso_atax_y_out|
+!i113 0
+o-work sso_atax_y_out -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 +incdir+. -work sso_atax_y_out -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

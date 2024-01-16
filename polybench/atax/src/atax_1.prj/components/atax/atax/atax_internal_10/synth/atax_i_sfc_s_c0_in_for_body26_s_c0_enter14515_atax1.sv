@@ -15,7 +15,7 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1
-// SystemVerilog created on Wed Dec 13 00:34:09 2023
+// SystemVerilog created on Tue Jan  2 20:41:09 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -119,20 +119,20 @@ module atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x(BLACKBOX,34)@10
+    // i_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x(BLACKBOX,34)@11
     // in in_mask_valid@20000000
     // in in_stall_in@20000000
     // out out_stall_entry@20000000
-    // out out_valid_out@13
-    // out out_data_out_0_tpl@13
-    // out out_data_out_1_tpl@13
-    // out out_data_out_2_tpl@13
-    // out out_data_out_3_tpl@13
-    // out out_data_out_4_tpl@13
-    // out out_data_out_5_tpl@13
-    // out out_data_out_6_tpl@13
-    // out out_data_out_7_tpl@13
-    // out out_data_out_8_tpl@13
+    // out out_valid_out@14
+    // out out_data_out_0_tpl@14
+    // out out_data_out_1_tpl@14
+    // out out_data_out_2_tpl@14
+    // out out_data_out_3_tpl@14
+    // out out_data_out_4_tpl@14
+    // out out_data_out_5_tpl@14
+    // out out_data_out_6_tpl@14
+    // out out_data_out_7_tpl@14
+    // out out_data_out_8_tpl@14
     atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body26_s_c0_exit157_atax0 thei_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x (
         .in_input_accepted(input_accepted_and_q),
         .in_mask_valid(GND_q),
@@ -174,9 +174,9 @@ module atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1 (
     // i_sfc_logic_s_c0_in_for_body26_ataxs_c0_enter14515_atax0_aunroll_x(BLACKBOX,35)@1
     // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going44_atax6_exiting_stall_out@20000000
     // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going44_atax6_exiting_valid_out@20000000
-    // out out_o_valid@10
+    // out out_o_valid@11
     // out out_pipeline_valid_out@20000000
-    // out out_unnamed_atax1@10
+    // out out_unnamed_atax1@11
     // out out_unnamed_atax12_atax_avm_address@20000000
     // out out_unnamed_atax12_atax_avm_burstcount@20000000
     // out out_unnamed_atax12_atax_avm_byteenable@20000000
@@ -191,15 +191,15 @@ module atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1 (
     // out out_unnamed_atax13_atax_avm_read@20000000
     // out out_unnamed_atax13_atax_avm_write@20000000
     // out out_unnamed_atax13_atax_avm_writedata@20000000
-    // out out_c0_exi8156_0_tpl@10
-    // out out_c0_exi8156_1_tpl@10
-    // out out_c0_exi8156_2_tpl@10
-    // out out_c0_exi8156_3_tpl@10
-    // out out_c0_exi8156_4_tpl@10
-    // out out_c0_exi8156_5_tpl@10
-    // out out_c0_exi8156_6_tpl@10
-    // out out_c0_exi8156_7_tpl@10
-    // out out_c0_exi8156_8_tpl@10
+    // out out_c0_exi8156_0_tpl@11
+    // out out_c0_exi8156_1_tpl@11
+    // out out_c0_exi8156_2_tpl@11
+    // out out_c0_exi8156_3_tpl@11
+    // out out_c0_exi8156_4_tpl@11
+    // out out_c0_exi8156_5_tpl@11
+    // out out_c0_exi8156_6_tpl@11
+    // out out_c0_exi8156_7_tpl@11
+    // out out_c0_exi8156_8_tpl@11
     atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0 thei_sfc_logic_s_c0_in_for_body26_ataxs_c0_enter14515_atax0_aunroll_x (
         .in_flush(in_flush),
         .in_i_valid(input_accepted_and_q),
@@ -306,7 +306,7 @@ module atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1 (
     // dupName_14_regfree_osync_x(GPOUT,33)
     assign out_unnamed_atax13_atax_avm_writedata = i_sfc_logic_s_c0_in_for_body26_ataxs_c0_enter14515_atax0_aunroll_x_out_unnamed_atax13_atax_avm_writedata;
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,37)@13
+    // dupName_0_sync_out_aunroll_x(GPOUT,37)@14
     assign out_c0_exit157_0_tpl = i_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x_out_data_out_0_tpl;
     assign out_c0_exit157_1_tpl = i_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x_out_data_out_1_tpl;
     assign out_c0_exit157_2_tpl = i_llvm_fpga_sfc_exit_s_c0_out_for_body26_ataxs_c0_exit157_atax1_aunroll_x_out_data_out_2_tpl;

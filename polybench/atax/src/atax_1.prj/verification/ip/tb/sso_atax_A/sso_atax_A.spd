@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="hls_sim_stream_source_dpi_bfm_10/sim/hls_sim_stream_source_dpi_bfm.sv"
+   type="SYSTEM_VERILOG"
+   library="hls_sim_stream_source_dpi_bfm_10" />
+ <file
+   path="sim/sso_atax_A.v"
+   type="VERILOG"
+   library="sso_atax_A"
+   hasInlineConfiguration="true" />
+ <topLevel name="sso_atax_A.sso_atax_A" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>
