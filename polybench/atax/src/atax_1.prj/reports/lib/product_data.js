@@ -1,1 +1,0 @@
-var infoJSON={"compileInfo":{"nodes":[{"command":"i++ -march=Cyclone 10 GX -ghdl --clock 10ns --component atax ../src/atax_1.c --simulator none -v -o ../src/atax_1","family":"Cyclone10GX, 10CX220YF780I5G","id":1,"name":"../src/atax_1","product":"HLS","quartus":"23.4.0 Build 79 Pro","time":"Sun Jan 21 01:18:02 2024","version":"23.4.0 Build 31.1"}]}};
