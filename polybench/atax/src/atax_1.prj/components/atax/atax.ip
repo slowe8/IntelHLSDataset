@@ -1,4 +1,17 @@
 <?xml version="1.0" ?>
+<!--Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.-->
 <ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Altera Corporation</ipxact:vendor>
   <ipxact:library>atax</ipxact:library>
@@ -7,10 +20,10 @@
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>clock</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="clock" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -54,10 +67,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>reset</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="reset" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="reset" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="reset" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -95,58 +108,11 @@
       </ipxact:vendorExtensions>
     </ipxact:busInterface>
     <ipxact:busInterface>
-      <ipxact:name>clock2x</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="clock" version="20.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="20.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>clk</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>clock2x</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:slave></ipxact:slave>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="clockRate" type="longint">
-          <ipxact:name>clockRate</ipxact:name>
-          <ipxact:displayName>Clock rate</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="externallyDriven" type="bit">
-          <ipxact:name>externallyDriven</ipxact:name>
-          <ipxact:displayName>Externally driven</ipxact:displayName>
-          <ipxact:value>false</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="ptfSchematicName" type="string">
-          <ipxact:name>ptfSchematicName</ipxact:name>
-          <ipxact:displayName>PTF schematic name</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-      <ipxact:vendorExtensions>
-        <altera:altera_assignments>
-          <ipxact:parameters>
-            <ipxact:parameter parameterId="hls.cosim.name" type="string">
-              <ipxact:name>hls.cosim.name</ipxact:name>
-              <ipxact:value>$clock2x</ipxact:value>
-            </ipxact:parameter>
-          </ipxact:parameters>
-        </altera:altera_assignments>
-      </ipxact:vendorExtensions>
-    </ipxact:busInterface>
-    <ipxact:busInterface>
       <ipxact:name>call</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -198,10 +164,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>return</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -253,10 +219,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>A</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -300,10 +266,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>x</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -347,10 +313,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>y_out</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -394,10 +360,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>avmm_0_rw</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="avalon" version="20.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="avalon" version="23.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="avalon" version="20.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="23.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -668,18 +634,6 @@
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>clock2x</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
         <ipxact:name>start</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
@@ -903,6 +857,11 @@
     </altera:altera_assignments>
     <altera:altera_system_parameters>
       <ipxact:parameters>
+        <ipxact:parameter parameterId="board" type="string">
+          <ipxact:name>board</ipxact:name>
+          <ipxact:displayName>Board</ipxact:displayName>
+          <ipxact:value>default</ipxact:value>
+        </ipxact:parameter>
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
@@ -956,6 +915,11 @@
     &lt;connPtSystemInfos/&gt;
 &lt;/systemInfosDefinition&gt;</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="dflBitArray" type="string">
+          <ipxact:name>dflBitArray</ipxact:name>
+          <ipxact:displayName>dflBitArray</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_system_parameters>
     <altera:altera_interface_boundary>
@@ -976,9 +940,6 @@
       </altera:interface_mapping>
       <altera:interface_mapping altera:name="clock" altera:internal="atax_internal_inst.clock" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="clock" altera:internal="clock"></altera:port_mapping>
-      </altera:interface_mapping>
-      <altera:interface_mapping altera:name="clock2x" altera:internal="atax_internal_inst.clock2x" altera:type="clock" altera:dir="end">
-        <altera:port_mapping altera:name="clock2x" altera:internal="clock2x"></altera:port_mapping>
       </altera:interface_mapping>
       <altera:interface_mapping altera:name="reset" altera:internal="atax_internal_inst.reset" altera:type="reset" altera:dir="end">
         <altera:port_mapping altera:name="resetn" altera:internal="resetn"></altera:port_mapping>

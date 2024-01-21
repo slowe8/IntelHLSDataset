@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="atax" kind="atax" version="1.0" fabric="QSYS">
- <!-- Format version 20.4 72 (Future versions may contain additional information.) -->
- <!-- 2024.01.02.20:41:32 -->
+ <!-- Format version 23.4 79 (Future versions may contain additional information.) -->
+ <!-- 2024.01.21.01:18:02 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -48,6 +48,15 @@
   <valid>true</valid>
   <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
  </parameter>
+ <parameter name="AUTO_BOARD">
+  <type>java.lang.String</type>
+  <value>default</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>BOARD</sysinfo_type>
+ </parameter>
  <parameter name="AUTO_CLOCK_CLOCK_RATE">
   <type>java.lang.Long</type>
   <value>-1</value>
@@ -77,36 +86,6 @@
   <valid>true</valid>
   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
   <sysinfo_arg>clock</sysinfo_arg>
- </parameter>
- <parameter name="AUTO_CLOCK2X_CLOCK_RATE">
-  <type>java.lang.Long</type>
-  <value>-1</value>
-  <derived>false</derived>
-  <enabled>true</enabled>
-  <visible>false</visible>
-  <valid>true</valid>
-  <sysinfo_type>CLOCK_RATE</sysinfo_type>
-  <sysinfo_arg>clock2x</sysinfo_arg>
- </parameter>
- <parameter name="AUTO_CLOCK2X_CLOCK_DOMAIN">
-  <type>java.lang.Integer</type>
-  <value>-1</value>
-  <derived>false</derived>
-  <enabled>true</enabled>
-  <visible>false</visible>
-  <valid>true</valid>
-  <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
-  <sysinfo_arg>clock2x</sysinfo_arg>
- </parameter>
- <parameter name="AUTO_CLOCK2X_RESET_DOMAIN">
-  <type>java.lang.Integer</type>
-  <value>-1</value>
-  <derived>false</derived>
-  <enabled>true</enabled>
-  <visible>false</visible>
-  <valid>true</valid>
-  <sysinfo_type>RESET_DOMAIN</sysinfo_type>
-  <sysinfo_arg>clock2x</sysinfo_arg>
  </parameter>
  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP">
   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
@@ -180,7 +159,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="20.4">
+  <interface name="clock" kind="clock_sink" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -229,7 +208,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="20.4">
+  <interface name="reset" kind="reset_sink" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -278,56 +257,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="clock2x" kind="clock_sink" version="20.4">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <assignment>
-    <name>hls.cosim.name</name>
-    <value>$clock2x</value>
-   </assignment>
-   <parameter name="externallyDriven">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="ptfSchematicName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>clock</type>
-   <isStart>false</isStart>
-   <port>
-    <name>clock2x</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>clk</role>
-   </port>
-  </interface>
-  <interface name="call" kind="conduit_end" version="20.4">
+  <interface name="call" kind="conduit_end" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -390,7 +320,7 @@ parameters are a RESULT of the module parameters. -->
     <role>stall</role>
    </port>
   </interface>
-  <interface name="return" kind="conduit_end" version="20.4">
+  <interface name="return" kind="conduit_end" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -453,7 +383,7 @@ parameters are a RESULT of the module parameters. -->
     <role>stall</role>
    </port>
   </interface>
-  <interface name="A" kind="conduit_end" version="20.4">
+  <interface name="A" kind="conduit_end" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -510,7 +440,7 @@ parameters are a RESULT of the module parameters. -->
     <role>data</role>
    </port>
   </interface>
-  <interface name="x" kind="conduit_end" version="20.4">
+  <interface name="x" kind="conduit_end" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -567,7 +497,7 @@ parameters are a RESULT of the module parameters. -->
     <role>data</role>
    </port>
   </interface>
-  <interface name="y_out" kind="conduit_end" version="20.4">
+  <interface name="y_out" kind="conduit_end" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -624,7 +554,7 @@ parameters are a RESULT of the module parameters. -->
     <role>data</role>
    </port>
   </interface>
-  <interface name="avmm_0_rw" kind="avalon_master" version="20.4">
+  <interface name="avmm_0_rw" kind="avalon_master" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -965,12 +895,12 @@ parameters are a RESULT of the module parameters. -->
   <version>1.0</version>
  </plugin>
  <plugin>
-  <instanceCount>2</instanceCount>
+  <instanceCount>1</instanceCount>
   <name>clock_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>20.4</version>
+  <version>23.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -978,7 +908,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>20.4</version>
+  <version>23.4</version>
  </plugin>
  <plugin>
   <instanceCount>5</instanceCount>
@@ -986,16 +916,16 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>20.4</version>
+  <version>23.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
   <name>avalon_master</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Avalon Memory Mapped Master</displayName>
-  <version>20.4</version>
+  <displayName>Avalon Memory Mapped Host</displayName>
+  <version>23.4</version>
  </plugin>
- <reportVersion>20.4 72</reportVersion>
+ <reportVersion>23.4 79</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

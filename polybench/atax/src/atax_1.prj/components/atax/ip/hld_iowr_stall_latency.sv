@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -42,11 +42,15 @@
 // p4/depot/docs/hld/ip/fifo_merging_across_channels.pptx
 
 `default_nettype none
-`include "hld_memory_depth_quantization.svh"
 
 //refer to hld_iowr.sv for a description of the parameters and ports
 
-module hld_iowr_stall_latency #(
+module hld_iowr_stall_latency
+// hld_memory_depth_quantization_pkg should be imported here; however, there is
+// an issue with the simulator that causes a crash on HLS multi-component
+// designs when SV package files are imported. Case 14017832227 tracks restoring
+// that import once the underlying issues have been resolved.
+#(
     //core spec
     parameter int DATA_WIDTH,
     parameter bit NON_BLOCKING,
@@ -104,6 +108,32 @@ module hld_iowr_stall_latency #(
     output logic                    o_profile_fifo_stall,
     output logic             [31:0] o_channel_fifo_occupancy
 );
+
+    // The following two functions should be imported from
+    // hld_memory_depth_quantization_pkg.sv; however, there is an issue with the
+    // simulator that causes a crash on HLS multi-component designs when SV
+    // package files are imported. Case 14017832227 tracks restoring that import
+    // and removing the function copies from this file once the underlying
+    // issues have been resolved.
+    // If the M20K is narrow, can use a deeper depth.
+    function automatic int quantizeRamDepthUsingWidth;
+    input int depth, width;
+    begin
+        quantizeRamDepthUsingWidth =
+            (depth <= 32)                  ?                    32 :    //fits into min depth MLAB
+            (depth <= 2048 && width <= 10) ?                  2048 :    //fits into single M20K
+            (depth <= 1024 && width <= 20) ?                  1024 :    //fits into single M20K
+            (depth <= 512)                 ?                   512 :    //fits into min depth M20K
+                                             ((depth+511)/512)*512 ;    //round up to nearest multiple of 512
+    end
+    endfunction
+    // Same idea as above, but use a width-aware depth quantization.
+    function automatic int quantizeFifoDepthUsingWidth;
+    input int depth, width;
+    begin
+        quantizeFifoDepthUsingWidth = 2 ** $clog2(quantizeRamDepthUsingWidth(depth, width));
+    end
+    endfunction
 
     ////////////////////////////////////////////////////
     //  Determine the depth and latency of each fifo  //

@@ -33,7 +33,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":5
                   }
                 ]
@@ -66,7 +66,7 @@
             }
             , {
               "type":"inst"
-              , "id":40
+              , "id":36
               , "name":"Loop Input"
               , "debug":
               [
@@ -83,13 +83,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"57"
+                  , "Loops To":"53"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":41
+              , "id":37
               , "name":"End"
               , "details":
               [
@@ -140,7 +140,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":16
                   }
                 ]
@@ -150,11 +150,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
                   , "Loads from":"x"
                   , "Start Cycle":"2"
-                  , "Latency":"31"
+                  , "Latency":"4"
                   , "Reference":
                   [
                     {
@@ -180,7 +180,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":16
                   }
                 ]
@@ -193,7 +193,7 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Stores to":"buff_x"
-                  , "Start Cycle":"34"
+                  , "Start Cycle":"7"
                   , "Latency":"1"
                   , "Reference":
                   [
@@ -220,7 +220,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":17
                   }
                 ]
@@ -233,7 +233,7 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Stores to":"buff_y_out"
-                  , "Start Cycle":"34"
+                  , "Start Cycle":"7"
                   , "Latency":"1"
                   , "Reference":
                   [
@@ -260,7 +260,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":18
                   }
                 ]
@@ -273,8 +273,257 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Stores to":"tmp1"
-                  , "Start Cycle":"34"
+                  , "Start Cycle":"7"
                   , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":38
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":15
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"8"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":39
+              , "name":"End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"11"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"11"
+              , "II":"n/a"
+              , "Subloops":"Yes"
+              , "Pipelined":"No"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":7
+          , "name":"atax.B4"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":23
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":21
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A"
+                  , "Start Cycle":"2"
+                  , "Latency":"4"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":24
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":21
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"buff_A"
+                  , "Start Cycle":"7"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":40
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":20
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"41"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":41
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"11"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"11"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":8
+          , "name":"atax.B5"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"1"
+              , "II":"n/a"
+              , "Subloops":"Yes"
+              , "Pipelined":"No"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":9
+          , "name":"atax.B6"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":25
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":""
+                    , "line":0
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"tmp1"
+                  , "Start Cycle":"2"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -300,8 +549,8 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":15
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":37
                   }
                 ]
               ]
@@ -311,7 +560,7 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"8"
+                  , "Loops To":"13"
                 }
               ]
             }
@@ -323,7 +572,7 @@
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"35"
+                  , "Start Cycle":"9"
                   , "Latency":"1"
                 }
               ]
@@ -333,10 +582,10 @@
           [
             {
               "type":"table"
-              , "Latency":"35"
-              , "II":"2"
+              , "Latency":"9"
+              , "II":"n/a"
               , "Subloops":"Yes"
-              , "Pipelined":"Yes"
+              , "Pipelined":"No"
               , "Fmax Bottlenecks":"No"
               , "Loop Info":"Entry to loop. "
             }
@@ -344,131 +593,11 @@
         }
         , {
           "type":"bb"
-          , "id":7
-          , "name":"atax.B4"
+          , "id":10
+          , "name":"atax.B7"
           , "children":
           [
             {
-              "type":"inst"
-              , "id":23
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":21
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":24
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":21
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":25
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":21
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
               "type":"inst"
               , "id":26
               , "name":"Load"
@@ -476,8 +605,8 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":21
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":31
                   }
                 ]
               ]
@@ -486,11 +615,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"buff_A"
+                  , "Start Cycle":"2"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -511,13 +640,13 @@
             , {
               "type":"inst"
               , "id":27
-              , "name":"Store"
+              , "name":"Load"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":21
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":31
                   }
                 ]
               ]
@@ -525,12 +654,12 @@
               [
                 {
                   "type":"table"
-                  , "Width":"128 bits"
+                  , "Width":"32 bits"
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
-                  , "Stores to":"buff_A"
-                  , "Start Cycle":"35"
-                  , "Latency":"1"
+                  , "Loads from":"buff_x"
+                  , "Start Cycle":"2"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -556,8 +685,8 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":20
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":30
                   }
                 ]
               ]
@@ -579,7 +708,7 @@
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"36"
+                  , "Start Cycle":"13"
                   , "Latency":"1"
                 }
               ]
@@ -589,261 +718,12 @@
           [
             {
               "type":"table"
-              , "Latency":"36"
-              , "II":"1"
+              , "Latency":"13"
+              , "II":"n/a"
               , "Subloops":"No"
-              , "Pipelined":"Yes"
+              , "Pipelined":"No"
               , "Fmax Bottlenecks":"No"
-              , "Loop Info":""
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":8
-          , "name":"atax.B5"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-              , "II":"2"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":9
-          , "name":"atax.B6"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":28
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":31
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"tmp1"
-                  , "Start Cycle":"2"
-                  , "Latency":"4"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":46
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":37
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"13"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":47
-              , "name":"End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"10"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"10"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":10
-          , "name":"atax.B7"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":29
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":31
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"buff_A"
-                  , "Start Cycle":"3"
-                  , "Latency":"3"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":30
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":31
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"buff_x"
-                  , "Start Cycle":"3"
-                  , "Latency":"3"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":48
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":30
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"49"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":49
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"14"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"14"
-              , "II":"4"
-              , "Subloops":"No"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Loop is pipelined with II of 4. See Loops Analysis for more information."
+              , "Loop Info":"Loop is not pipelined. See Loops Analysis for more information."
             }
           ]
         }
@@ -855,14 +735,14 @@
           [
             {
               "type":"inst"
-              , "id":31
+              , "id":28
               , "name":"Store"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":31
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                    , "line":0
                   }
                 ]
               ]
@@ -895,47 +775,7 @@
             }
             , {
               "type":"inst"
-              , "id":32
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                    , "line":40
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"tmp1"
-                  , "Start Cycle":"2"
-                  , "Latency":"4"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":50
+              , "id":46
               , "name":"Begin"
               , "details":
               [
@@ -948,13 +788,13 @@
             }
             , {
               "type":"inst"
-              , "id":51
+              , "id":47
               , "name":"End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"10"
+                  , "Start Cycle":"2"
                   , "Latency":"1"
                 }
               ]
@@ -964,7 +804,7 @@
           [
             {
               "type":"table"
-              , "Latency":"10"
+              , "Latency":"2"
             }
           ]
         }
@@ -976,13 +816,13 @@
           [
             {
               "type":"inst"
-              , "id":33
+              , "id":29
               , "name":"Load"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":40
                   }
                 ]
@@ -995,7 +835,7 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Loads from":"buff_y_out"
-                  , "Start Cycle":"3"
+                  , "Start Cycle":"2"
                   , "Latency":"3"
                   , "Reference":
                   [
@@ -1016,13 +856,13 @@
             }
             , {
               "type":"inst"
-              , "id":34
+              , "id":30
               , "name":"Load"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":40
                   }
                 ]
@@ -1035,7 +875,7 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Loads from":"buff_A"
-                  , "Start Cycle":"3"
+                  , "Start Cycle":"2"
                   , "Latency":"3"
                   , "Reference":
                   [
@@ -1056,13 +896,13 @@
             }
             , {
               "type":"inst"
-              , "id":35
+              , "id":31
               , "name":"Store"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":40
                   }
                 ]
@@ -1075,7 +915,7 @@
                   , "Type":"Pipelined never-stall"
                   , "Stall-free":"Yes"
                   , "Stores to":"buff_y_out"
-                  , "Start Cycle":"11"
+                  , "Start Cycle":"10"
                   , "Latency":"1"
                   , "Reference":
                   [
@@ -1096,13 +936,13 @@
             }
             , {
               "type":"inst"
-              , "id":52
+              , "id":48
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":39
                   }
                 ]
@@ -1113,19 +953,19 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"53"
+                  , "Loops To":"49"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":53
+              , "id":49
               , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"15"
+                  , "Start Cycle":"14"
                   , "Latency":"1"
                 }
               ]
@@ -1135,7 +975,7 @@
           [
             {
               "type":"table"
-              , "Latency":"15"
+              , "Latency":"14"
               , "II":"1"
               , "Subloops":"No"
               , "Pipelined":"Yes"
@@ -1152,10 +992,10 @@
           [
             {
               "type":"table"
-              , "Latency":"0"
-              , "II":"1"
+              , "Latency":"1"
+              , "II":"n/a"
               , "Subloops":"Yes"
-              , "Pipelined":"Yes"
+              , "Pipelined":"No"
               , "Fmax Bottlenecks":"No"
               , "Loop Info":"Exit which branches back to loop. "
             }
@@ -1181,13 +1021,13 @@
           [
             {
               "type":"inst"
-              , "id":36
+              , "id":32
               , "name":"Load"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":46
                   }
                 ]
@@ -1221,13 +1061,13 @@
             }
             , {
               "type":"inst"
-              , "id":37
+              , "id":33
               , "name":"Store"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":46
                   }
                 ]
@@ -1241,7 +1081,7 @@
                   , "Stall-free":"Yes"
                   , "Stores to":"y_out"
                   , "Start Cycle":"6"
-                  , "Latency":"4"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -1261,13 +1101,13 @@
             }
             , {
               "type":"inst"
-              , "id":54
+              , "id":50
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":45
                   }
                 ]
@@ -1278,19 +1118,19 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"55"
+                  , "Loops To":"51"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":55
+              , "id":51
               , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"13"
+                  , "Start Cycle":"12"
                   , "Latency":"1"
                 }
               ]
@@ -1300,7 +1140,7 @@
           [
             {
               "type":"table"
-              , "Latency":"13"
+              , "Latency":"12"
               , "II":"1"
               , "Subloops":"No"
               , "Pipelined":"Yes"
@@ -1317,13 +1157,13 @@
           [
             {
               "type":"inst"
-              , "id":38
+              , "id":34
               , "name":"Stream Write"
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":48
                   }
                 ]
@@ -1356,7 +1196,7 @@
             }
             , {
               "type":"inst"
-              , "id":56
+              , "id":52
               , "name":"Begin"
               , "details":
               [
@@ -1369,7 +1209,7 @@
             }
             , {
               "type":"inst"
-              , "id":57
+              , "id":53
               , "name":"Loop End"
               , "details":
               [
@@ -1396,19 +1236,19 @@
         }
         , {
           "type":"memtype"
-          , "id":61
+          , "id":57
           , "name":"Local Memory"
           , "children":
           [
             {
               "type":"memsys"
-              , "id":62
+              , "id":58
               , "name":"buff_A"
               , "debug":
               [
                 [
                   {
-                    "filename":"atax_1.c"
+                    "filename":"../src/atax_1.c"
                     , "line":8
                   }
                 ]
@@ -1420,8 +1260,8 @@
                   , "Requested size":"16384 bytes"
                   , "Implemented size":"16384 bytes"
                   , "Number of banks":"1"
-                  , "Bank width":"128 bits"
-                  , "Bank depth":"1024 words"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"4096 words"
                   , "Number of replicates":"1"
                   , "Number of private copies":"1"
                   , "Reference":
@@ -1443,13 +1283,13 @@
             }
             , {
               "type":"memsys"
-              , "id":67
+              , "id":63
               , "name":"buff_x"
               , "debug":
               [
                 [
                   {
-                    "filename":"atax_1.c"
+                    "filename":"../src/atax_1.c"
                     , "line":9
                   }
                 ]
@@ -1484,13 +1324,13 @@
             }
             , {
               "type":"memsys"
-              , "id":71
+              , "id":67
               , "name":"buff_y_out"
               , "debug":
               [
                 [
                   {
-                    "filename":"atax_1.c"
+                    "filename":"../src/atax_1.c"
                     , "line":10
                   }
                 ]
@@ -1525,13 +1365,13 @@
             }
             , {
               "type":"memsys"
-              , "id":77
+              , "id":73
               , "name":"tmp1"
               , "debug":
               [
                 [
                   {
-                    "filename":"atax_1.c"
+                    "filename":"../src/atax_1.c"
                     , "line":11
                   }
                 ]
@@ -1547,7 +1387,6 @@
                   , "Bank depth":"64 words"
                   , "Number of replicates":"1"
                   , "Number of private copies":"1"
-                  , "Additional Information":"Running memory at 2x clock to support more concurrent ports"
                   , "Reference":
                   [
                     {
@@ -1577,7 +1416,7 @@
       [
         {
           "type":"memsys"
-          , "id":83
+          , "id":78
           , "name":"0"
           , "details":
           [
@@ -1598,7 +1437,7 @@
       [
         [
           {
-            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
             , "line":5
           }
         ]
@@ -1620,13 +1459,13 @@
     }
     , {
       "type":"stream"
-      , "id":39
+      , "id":35
       , "name":"return.atax"
       , "debug":
       [
         [
           {
-            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
             , "line":5
           }
         ]
@@ -1648,13 +1487,13 @@
     }
     , {
       "type":"interface"
-      , "id":58
+      , "id":54
       , "name":"A"
       , "debug":
       [
         [
           {
-            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
             , "line":5
           }
         ]
@@ -1678,13 +1517,13 @@
     }
     , {
       "type":"interface"
-      , "id":59
+      , "id":55
       , "name":"x"
       , "debug":
       [
         [
           {
-            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
             , "line":5
           }
         ]
@@ -1708,13 +1547,13 @@
     }
     , {
       "type":"interface"
-      , "id":60
+      , "id":56
       , "name":"y_out"
       , "debug":
       [
         [
           {
-            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
             , "line":5
           }
         ]
@@ -1744,84 +1583,80 @@
       , "to":17
     }
     , {
-      "from":38
-      , "to":39
+      "from":34
+      , "to":35
+    }
+    , {
+      "from":54
+      , "to":17
+    }
+    , {
+      "from":55
+      , "to":17
+    }
+    , {
+      "from":56
+      , "to":17
     }
     , {
       "from":58
-      , "to":17
+      , "to":26
     }
     , {
-      "from":59
-      , "to":17
-    }
-    , {
-      "from":60
-      , "to":17
-    }
-    , {
-      "from":27
-      , "to":62
-    }
-    , {
-      "from":62
-      , "to":29
-    }
-    , {
-      "from":62
-      , "to":34
-    }
-    , {
-      "from":67
+      "from":58
       , "to":30
     }
     , {
+      "from":24
+      , "to":58
+    }
+    , {
+      "from":63
+      , "to":27
+    }
+    , {
       "from":20
-      , "to":67
+      , "to":63
     }
     , {
-      "from":71
-      , "to":33
+      "from":67
+      , "to":29
     }
     , {
-      "from":71
-      , "to":36
-    }
-    , {
-      "from":21
-      , "to":71
-    }
-    , {
-      "from":35
-      , "to":71
-    }
-    , {
-      "from":77
-      , "to":28
-    }
-    , {
-      "from":77
+      "from":67
       , "to":32
     }
     , {
-      "from":22
-      , "to":77
+      "from":21
+      , "to":67
     }
     , {
       "from":31
-      , "to":77
+      , "to":67
     }
     , {
-      "from":57
-      , "to":40
+      "from":73
+      , "to":25
+    }
+    , {
+      "from":22
+      , "to":73
+    }
+    , {
+      "from":28
+      , "to":73
+    }
+    , {
+      "from":53
+      , "to":36
     }
     , {
       "from":3
-      , "to":40
+      , "to":36
     }
     , {
       "from":17
-      , "to":41
+      , "to":37
     }
     , {
       "from":8
@@ -1829,26 +1664,50 @@
     }
     , {
       "from":8
-      , "to":42
+      , "to":38
     }
     , {
-      "from":41
-      , "to":42
+      "from":37
+      , "to":38
     }
     , {
       "from":20
-      , "to":43
+      , "to":39
     }
     , {
       "from":21
-      , "to":43
+      , "to":39
     }
     , {
       "from":22
-      , "to":43
+      , "to":39
     }
     , {
-      "from":19
+      "from":41
+      , "to":40
+    }
+    , {
+      "from":39
+      , "to":40
+    }
+    , {
+      "from":24
+      , "to":41
+    }
+    , {
+      "from":41
+      , "to":8
+    }
+    , {
+      "from":13
+      , "to":42
+    }
+    , {
+      "from":5
+      , "to":42
+    }
+    , {
+      "from":25
       , "to":43
     }
     , {
@@ -1860,18 +1719,6 @@
       , "to":44
     }
     , {
-      "from":23
-      , "to":45
-    }
-    , {
-      "from":24
-      , "to":45
-    }
-    , {
-      "from":25
-      , "to":45
-    }
-    , {
       "from":26
       , "to":45
     }
@@ -1881,14 +1728,6 @@
     }
     , {
       "from":45
-      , "to":8
-    }
-    , {
-      "from":13
-      , "to":46
-    }
-    , {
-      "from":5
       , "to":46
     }
     , {
@@ -1904,39 +1743,11 @@
       , "to":48
     }
     , {
-      "from":29
-      , "to":49
-    }
-    , {
-      "from":30
+      "from":31
       , "to":49
     }
     , {
       "from":49
-      , "to":50
-    }
-    , {
-      "from":31
-      , "to":51
-    }
-    , {
-      "from":32
-      , "to":51
-    }
-    , {
-      "from":53
-      , "to":52
-    }
-    , {
-      "from":51
-      , "to":52
-    }
-    , {
-      "from":35
-      , "to":53
-    }
-    , {
-      "from":53
       , "to":13
     }
     , {
@@ -1944,31 +1755,31 @@
       , "to":14
     }
     , {
-      "from":55
-      , "to":54
+      "from":51
+      , "to":50
     }
     , {
       "from":14
-      , "to":54
+      , "to":50
     }
     , {
-      "from":37
-      , "to":55
+      "from":33
+      , "to":51
     }
     , {
-      "from":55
-      , "to":56
+      "from":51
+      , "to":52
     }
     , {
-      "from":38
-      , "to":57
+      "from":34
+      , "to":53
     }
     , {
-      "from":40
+      "from":36
       , "to":17
     }
     , {
-      "from":42
+      "from":38
       , "to":19
     }
     , {
@@ -1976,23 +1787,23 @@
       , "to":20
     }
     , {
-      "from":42
+      "from":38
       , "to":21
     }
     , {
-      "from":42
+      "from":38
       , "to":22
     }
     , {
-      "from":44
+      "from":40
       , "to":23
     }
     , {
-      "from":44
+      "from":23
       , "to":24
     }
     , {
-      "from":44
+      "from":42
       , "to":25
     }
     , {
@@ -2000,19 +1811,7 @@
       , "to":26
     }
     , {
-      "from":23
-      , "to":27
-    }
-    , {
-      "from":24
-      , "to":27
-    }
-    , {
-      "from":25
-      , "to":27
-    }
-    , {
-      "from":26
+      "from":44
       , "to":27
     }
     , {
@@ -2028,7 +1827,11 @@
       , "to":30
     }
     , {
-      "from":50
+      "from":29
+      , "to":31
+    }
+    , {
+      "from":30
       , "to":31
     }
     , {
@@ -2036,7 +1839,7 @@
       , "to":32
     }
     , {
-      "from":52
+      "from":32
       , "to":33
     }
     , {
@@ -2045,47 +1848,15 @@
     }
     , {
       "from":33
-      , "to":35
+      , "to":78
     }
     , {
-      "from":34
-      , "to":35
-    }
-    , {
-      "from":54
-      , "to":36
-    }
-    , {
-      "from":36
-      , "to":37
-    }
-    , {
-      "from":56
-      , "to":38
-    }
-    , {
-      "from":83
-      , "to":23
-    }
-    , {
-      "from":83
-      , "to":26
-    }
-    , {
-      "from":83
+      "from":78
       , "to":19
     }
     , {
-      "from":83
-      , "to":24
-    }
-    , {
-      "from":37
-      , "to":83
-    }
-    , {
-      "from":83
-      , "to":25
+      "from":78
+      , "to":23
     }
   ]
 }

@@ -142,6 +142,8 @@ exports.GanttChart = function (pDiv, pFormat) {
     this.vProcessNeeded = true;
     this.vMinGpLen = 8;
     this.vScrollTo = '';
+    this.vScrollToTop = '';
+    this.vScrollToRelLeft = '';
     this.vHourColWidth = 18;
     this.vDayColWidth = 18;
     this.vWeekColWidth = 36;
@@ -354,7 +356,7 @@ exports.GanttChart = function (pDiv, pFormat) {
                         }
                     }, vTmpRow_1);
                     if (this_1.vTaskList[i_1].getGroup() == 1) {
-                        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, null, vCellContents);
+                        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, "truncatedtooltip", vCellContents);
                         var vTmpSpan = draw_utils_1.newNode(vTmpDiv, 'span', this_1.vDivId + 'group_' + vID, 'gfoldercollapse', (this_1.vTaskList[i_1].getOpen() == 1) ? '-' : '+');
                         this_1.vTaskList[i_1].setGroupSpan(vTmpSpan);
                         events_1.addFolderListeners(this_1, vTmpSpan, vID);
@@ -370,7 +372,7 @@ exports.GanttChart = function (pDiv, pFormat) {
                     else {
                         vCellContents += '\u00A0\u00A0\u00A0\u00A0';
                         var text = draw_utils_1.makeInput(this_1.vTaskList[i_1].getName(), this_1.vEditable, 'text');
-                        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, null, vCellContents + text);
+                        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, "truncatedtooltip", vCellContents + text);  // tooltip to show truncated text for taskname
                         var callback = function (task, e) { return task.setName(e.target.value); };
                         events_1.addListenerInputCell(vTmpCell, this_1.vEventsChange, callback, this_1.vTaskList[i_1], 'taskname', this_1.Draw.bind(this_1));
                         events_1.addListenerClickCell(vTmpCell, this_1.vEvents, this_1.vTaskList[i_1], 'taskname');
@@ -849,6 +851,26 @@ exports.GanttChart = function (pDiv, pFormat) {
                 }
                 this.getChartBody().scrollLeft = vScrollPx;
             }
+            
+            // check if zoom enabled & set saved scroll on zoom if it exists
+            if (this.vUseZoom && this.vScrollToTop){
+                // preserve vertical scroll position since zoom is only horizontal
+                this.getChartBody().scrollTop = parseFloat(this.vScrollToTop);
+                this.vScrollToTop = ''; // set back to empty so that scroll isn't reset when a zoom doesn't happen
+            }
+            if (this.vUseZoom && this.vScrollToRelLeft){
+                // Set horizontal scroll position to be in the middle of the visible graph after zoom happens
+                // Scroll is calculated by taking the relative left scroll position before the zoom and converting to px scroll position using the new zoom size
+                var scrollToLeftOffset = Math.ceil(parseFloat(this.vScrollToRelLeft) * this.getChartBody().scrollWidth - 0.5 * this.getChartBody().clientWidth);
+                if (scrollToLeftOffset < 0){
+                    scrollToLeftOffset = 0;
+                } else if (scrollToLeftOffset > this.getChartBody().scrollLeftMax){
+                    scrollToLeftOffset = this.getChartBody().scrollLeftMax;
+                }
+                this.getChartBody().scrollLeft = scrollToLeftOffset;
+                this.vScrollToRelLeft = ''; // set back to empty so that scroll isn't reset when a zoom doesn't happen
+            }
+
             // currently crashes, but I dont' think we need this since we don't have a today marker
             // if (vMinDate.getTime() <= (new Date()).getTime() && vMaxDate.getTime() >= (new Date()).getTime())
             //     this.vTodayPx = general_utils_1.getOffset(vMinDate, new Date(), vColWidth, this.vFormat, this.vShowWeekends);
@@ -911,7 +933,7 @@ exports.draw_header = function (column, i, vTmpRow, vTaskList, vEditable, vEvent
     if ('vShowRes' == column) {
         vTmpCell = draw_utils_1.newNode(vTmpRow, 'td', null, 'gresource');
         var text = draw_utils_1.makeInput(vTaskList[i].getResource(), vEditable, 'resource', vTaskList[i].getResource(), vResources);
-        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, null, text);
+        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, "truncatedtooltip", text); // tooltip to show truncated text for resource
         var callback = function (task, e) { return task.setResource(e.target.value); };
         events_1.addListenerInputCell(vTmpCell, vEventsChange, callback, vTaskList[i], 'res', Draw, 'change');
         events_1.addListenerClickCell(vTmpCell, vEvents, vTaskList[i], 'res');
@@ -919,7 +941,7 @@ exports.draw_header = function (column, i, vTmpRow, vTaskList, vEditable, vEvent
     else if ('vShowDebugLoc' == column) {
         vTmpCell = draw_utils_1.newNode(vTmpRow, 'td', null, 'gresource');
         var text = draw_utils_1.makeInput(vTaskList[i].getDebugLoc(), vEditable, 'debugloc');
-        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, null, text);
+        vTmpDiv = draw_utils_1.newNode(vTmpCell, 'div', null, "truncatedtooltip", text); // tooltip to show truncated text for resource
         events_1.addListenerInputCell(vTmpCell, vEventsChange, null, vTaskList[i], 'debugloc', Draw);
         events_1.addListenerClickCell(vTmpCell, vEvents, vTaskList[i], 'debugloc');
     }
@@ -1076,6 +1098,7 @@ exports.draw_list_headings = function (column, vTmpRow, vAdditionalHeaders, vGan
         if (vGanttObj && vGanttObj.vUpdateCallback)  // Add listener and update button
             events_1.addListener('click', function () { vGanttObj.vUpdateCallback(); }, draw_utils_1.newNode(vTmpCol, 'span', null, 'gformlabel gselected', 'Update'));
     }
+        draw_utils_1.newNode(vTmpRow, 'td', null, 'gspanning gresource', '\u00A0');
     if ('vShowDebugLoc' == column)
         draw_utils_1.newNode(vTmpRow, 'td', null, 'gspanning gresource', '\u00A0');
     if ('vShowDur' == column)
@@ -1496,6 +1519,9 @@ exports.addFolderListeners = function (pGanttChart, pObj, pID) {
 };
 exports.addFormatListeners = function (pGanttChart, pFormat, pObj) {
     exports.addListener('click', function () { general_utils_1.changeFormat(pFormat, pGanttChart); }, pObj);
+};
+exports.addZoomFormatListeners = function (pGanttChart, pFormat, pObj) {
+    exports.addListener('click', function () { general_utils_1.changeFormat(pFormat, pGanttChart, true); }, pObj);
 };
 exports.addScrollListeners = function (pGanttChart) {
     exports.addListener('resize', function () { pGanttChart.getChartHead().scrollLeft = pGanttChart.getChartBody().scrollLeft; }, window);
@@ -2837,6 +2863,8 @@ exports.includeGetSet = function () {
     this.setWorkingDays = function (workingDays) { this.vWorkingDays = workingDays; };
     this.setMinGpLen = function (pMinGpLen) { this.vMinGpLen = pMinGpLen; };
     this.setScrollTo = function (pDate) { this.vScrollTo = pDate; };
+    this.setScrollToTop = function (pPos) { this.vScrollToTop = pPos; };
+    this.setScrollToRelLeft = function (pPos) { this.vScrollToRelLeft = pPos; };
     this.setHourColWidth = function (pWidth) { this.vHourColWidth = pWidth; };
     this.setDayColWidth = function (pWidth) { this.vDayColWidth = pWidth; };
     this.setWeekColWidth = function (pWidth) { this.vWeekColWidth = pWidth; };
@@ -2941,6 +2969,8 @@ exports.includeGetSet = function () {
     this.getCaptionType = function () { return this.vCaptionType; };
     this.getMinGpLen = function () { return this.vMinGpLen; };
     this.getScrollTo = function () { return this.vScrollTo; };
+    this.getScrollToTop = function () { return this.vScrollToTop; };
+    this.getScrollToRelLeft = function () { return this.vScrollToRelLeft; };
     this.getHourColWidth = function () { return this.vHourColWidth; };
     this.getDayColWidth = function () { return this.vDayColWidth; };
     this.getWeekColWidth = function () { return this.vWeekColWidth; };
@@ -4191,9 +4221,9 @@ exports.drawSelector = function (pPos) {
             // disable zoom out if current_zoom_index is lenght-1 otherwise assign to current_zoom_index + 1;
             zoomout = (current_zoom_index==this.vFormatArr.length-1? -1: parseInt(this.vFormatArr [current_zoom_index+1])); 
 
-            events_1.addFormatListeners(this, zoomin, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatZoomIn' + pPos, 'gformlabel body glyphicon' + ((zoomin == -1) ? ' gdisabled' : ''), "&#xe015;"));
-            events_1.addFormatListeners(this, zoomout, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatZoomOut' + pPos, 'gformlabel body glyphicon' + ((zoomout == -1 ) ? ' gdisabled' : ''), "&#xe016;"));
-            events_1.addFormatListeners(this, zoomFull, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatzoomFull' + pPos, 'gformlabel' + ((this.vFormat == zoomFull ) ? ' gselected gdisabled' : ''), this.vLangs[this.vLang]['zoomFull']));
+            events_1.addZoomFormatListeners(this, zoomin, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatZoomIn' + pPos, 'gformlabel body glyphicon' + ((zoomin == -1) ? ' gdisabled' : ''), "&#xe015;"));
+            events_1.addZoomFormatListeners(this, zoomout, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatZoomOut' + pPos, 'gformlabel body glyphicon' + ((zoomout == -1 ) ? ' gdisabled' : ''), "&#xe016;"));
+            events_1.addZoomFormatListeners(this, zoomFull, exports.newNode(vTmpDiv, 'span', this.vDivId + 'formatzoomFull' + pPos, 'gformlabel' + ((this.vFormat == zoomFull ) ? ' gselected gdisabled' : ''), this.vLangs[this.vLang]['zoomFull']));
         } else {
             var vTmpDiv = exports.newNode(vOutput, 'div', null, 'gselector', this.vLangs[this.vLang]['format'] + ':');
             if (this._UseDateTime) {
@@ -4346,7 +4376,15 @@ exports.findObj = function (theObj, theDoc) {
         foundObj = document.getElementById(theObj);
     return foundObj;
 };
-exports.changeFormat = function (pFormat, ganttObj) {
+exports.changeFormat = function (pFormat, ganttObj, saveScroll = false) {
+    if (saveScroll && ganttObj != 'undefined' && ganttObj.getChartBody() != 'undefined'){
+        // Calculate scrollLeft relative position
+        // scroll will preserve & zoom "into" the middle of current viewable area
+        var scrollRelLeft = (( ganttObj.getChartBody().scrollLeft + 0.5 * ganttObj.getChartBody().clientWidth) / ganttObj.getChartBody().scrollWidth).toFixed(5);
+        ganttObj.setScrollToRelLeft(scrollRelLeft);
+        // vertical scroll doesn't zoom so can keep current value after horizontal zoom
+        ganttObj.setScrollToTop((ganttObj.getChartBody().scrollTop).toString());
+    }
     if (ganttObj)
         ganttObj.setFormat(pFormat);
     else

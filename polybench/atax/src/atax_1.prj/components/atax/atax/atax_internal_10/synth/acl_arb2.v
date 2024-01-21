@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -26,7 +26,7 @@ module acl_arb2
     parameter ASYNC_RESET = 1,                   // 1 = Registers are reset asynchronously. 0 = Registers are reset synchronously -- the reset signal is pipelined before consumption. In both cases, some registesr are not reset at all.
     parameter SYNCHRONIZE_RESET = 0,             // 1 = resetn is synchronized before consumption. The consumption itself is either asynchronous or synchronous, as specified by ASYNC_RESET.
 
-    // Masters
+    // Hosts
     parameter integer DATA_W = 32,               // > 0
     parameter integer BURSTCOUNT_W = 4,          // > 0
     parameter integer ADDRESS_W = 32,            // > 0
@@ -48,11 +48,11 @@ module acl_arb2
 
     localparam                    NUM_RESET_COPIES = 1;
     localparam                    RESET_PIPE_DEPTH = 3;
-    /* 
+    /*
         Currently aclrn and sclrn are not actually consumed at this level of hierarchy and normally we don't keep dead code around, but keeping them here (and hooking them
         up properly) as a reminder to the next developer who adds logic at this level to use these signals.
     */
-    logic                         aclrn;    
+    logic                         aclrn;
     logic [NUM_RESET_COPIES-1:0]  sclrn;
     logic                         resetn_synchronized;
 
@@ -65,14 +65,14 @@ module acl_arb2
         .USE_SYNCHRONIZER       (SYNCHRONIZE_RESET),
         .SYNCHRONIZE_ACLRN      (SYNCHRONIZE_RESET),
         .PIPE_DEPTH             (RESET_PIPE_DEPTH),
-        .NUM_COPIES             (NUM_RESET_COPIES) 
+        .NUM_COPIES             (NUM_RESET_COPIES)
     )
     acl_reset_handler_inst
     (
         .clk                    (clock),
         .i_resetn               (resetn),
         .o_aclrn                (aclrn),
-        .o_resetn_synchronized  (resetn_synchronized),  
+        .o_resetn_synchronized  (resetn_synchronized),
         .o_sclrn                (sclrn)
     );
 
@@ -108,7 +108,7 @@ module acl_arb2
                 if (~sclrn[0]) last_mux_sel_r <= '0;
             end
         end
-        
+
         always_comb begin
             if (m0_intf.req.request && ~m1_intf.req.request) begin              // only m0 is making a request, grant access to port m0
                 mux_sel = 1'b0;
@@ -127,7 +127,7 @@ module acl_arb2
     end
     endgenerate
 
-    // Stall signal for each upstream master.
+    // Stall signal for each upstream host.
     generate
     if( NO_STALL_NETWORK == 1 )
     begin
@@ -145,7 +145,7 @@ module acl_arb2
     // What happens at the output of the arbitration block? Depends on the pipelining option...
     // Each option is responsible for the following:
     //  1. Connecting mout_intf.req: request output of the arbitration block
-    //  2. Connecting mux_intf.stall: upstream (to input masters) stall signal
+    //  2. Connecting mux_intf.stall: upstream (to input hosts) stall signal
     generate
     if( PIPELINE == "none" )
     begin
@@ -213,7 +213,7 @@ module acl_arb2
             .BYTEENA_W( BYTEENA_W ),
             .ID_W( ID_W ),
             .ASYNC_RESET(ASYNC_RESET),
-            .SYNCHRONIZE_RESET(0)            
+            .SYNCHRONIZE_RESET(0)
         )
         staging(
             .clock( clock ),
@@ -250,7 +250,7 @@ module acl_arb2
             .BYTEENA_W( BYTEENA_W ),
             .ID_W( ID_W ),
             .ASYNC_RESET(ASYNC_RESET),
-            .SYNCHRONIZE_RESET(0)            
+            .SYNCHRONIZE_RESET(0)
         )
         pipe(
             .clock( clock ),
@@ -267,7 +267,7 @@ module acl_arb2
             .BYTEENA_W( BYTEENA_W ),
             .ID_W( ID_W ),
             .ASYNC_RESET(ASYNC_RESET),
-            .SYNCHRONIZE_RESET(0)            
+            .SYNCHRONIZE_RESET(0)
         )
         staging(
             .clock( clock ),
@@ -278,7 +278,7 @@ module acl_arb2
         );
 
         // Request for downstream blocks.
-        assign mout_intf.req = staging_intf.req;        
+        assign mout_intf.req = staging_intf.req;
 
         // Stall signal from downstream blocks.
         assign staging_intf.stall = mout_intf.stall;
@@ -304,7 +304,7 @@ module acl_arb2
             .BYTEENA_W( BYTEENA_W ),
             .ID_W( ID_W ),
             .ASYNC_RESET(ASYNC_RESET),
-            .SYNCHRONIZE_RESET(0)            
+            .SYNCHRONIZE_RESET(0)
         )
         staging(
             .clock( clock ),
@@ -321,7 +321,7 @@ module acl_arb2
             .BYTEENA_W( BYTEENA_W ),
             .ID_W( ID_W ),
             .ASYNC_RESET(ASYNC_RESET),
-            .SYNCHRONIZE_RESET(0)            
+            .SYNCHRONIZE_RESET(0)
         )
         pipe(
             .clock( clock ),
@@ -356,7 +356,7 @@ module acl_arb_pipeline_reg #(
     acl_arb_intf in_intf,
     acl_arb_intf out_intf
 );
-    
+
     localparam                    NUM_RESET_COPIES = 1;
     localparam                    RESET_PIPE_DEPTH = 3;
     logic                         aclrn;
@@ -368,14 +368,14 @@ module acl_arb_pipeline_reg #(
         .USE_SYNCHRONIZER       (SYNCHRONIZE_RESET),
         .SYNCHRONIZE_ACLRN      (SYNCHRONIZE_RESET),
         .PIPE_DEPTH             (RESET_PIPE_DEPTH),
-        .NUM_COPIES             (NUM_RESET_COPIES) 
+        .NUM_COPIES             (NUM_RESET_COPIES)
     )
     acl_reset_handler_inst
     (
         .clk                    (clock),
         .i_resetn               (resetn),
         .o_aclrn                (aclrn),
-        .o_resetn_synchronized  (),  
+        .o_resetn_synchronized  (),
         .o_sclrn                (sclrn)
     );
 
@@ -385,7 +385,7 @@ module acl_arb_pipeline_reg #(
         .ADDRESS_W( ADDRESS_W ),
         .BYTEENA_W( BYTEENA_W ),
         .ID_W( ID_W )
-    ) 
+    )
     pipe_r();
 
     // Pipeline register.
@@ -404,7 +404,7 @@ module acl_arb_pipeline_reg #(
             if (!sclrn[0]) begin
                 pipe_r.req.request <= 1'b0;
                 pipe_r.req.read <= 1'b0;
-                pipe_r.req.write <= 1'b0;            
+                pipe_r.req.write <= 1'b0;
             end
         end
     end
@@ -418,7 +418,7 @@ module acl_arb_pipeline_reg #(
     assign out_intf.req.burstcount = pipe_r.req.burstcount ;
     assign out_intf.req.address    = pipe_r.req.address    ;
     assign out_intf.req.byteenable = pipe_r.req.byteenable ;
-    assign out_intf.req.id         = pipe_r.req.id         ;    
+    assign out_intf.req.id         = pipe_r.req.id         ;
 
     // Upstream stall signal.
     assign in_intf.stall = out_intf.stall & pipe_r.req.request;
@@ -454,14 +454,14 @@ module acl_arb_staging_reg #(
         .USE_SYNCHRONIZER       (SYNCHRONIZE_RESET),
         .SYNCHRONIZE_ACLRN      (SYNCHRONIZE_RESET),
         .PIPE_DEPTH             (RESET_PIPE_DEPTH),
-        .NUM_COPIES             (NUM_RESET_COPIES) 
+        .NUM_COPIES             (NUM_RESET_COPIES)
     )
     acl_reset_handler_inst
     (
         .clk                    (clock),
         .i_resetn               (resetn),
         .o_aclrn                (aclrn),
-        .o_resetn_synchronized  (),  
+        .o_resetn_synchronized  (),
         .o_sclrn                (sclrn)
     );
 
@@ -472,7 +472,7 @@ module acl_arb_staging_reg #(
         .ADDRESS_W( ADDRESS_W ),
         .BYTEENA_W( BYTEENA_W ),
         .ID_W( ID_W )
-    ) 
+    )
     staging_r();
 
     // Staging register.
@@ -495,7 +495,7 @@ module acl_arb_staging_reg #(
                 staging_r.req.write <= 1'b0;
             end
         end
-        
+
     end
 
     // Stall register.

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------- 
-// High Level Design Compiler for Intel(R) FPGAs Version 20.4 (Release Build #72)
+// High Level Design Compiler for Intel(R) FPGAs Version 23.4 (Release Build #31.1)
 // 
-// Legal Notice: Copyright 2020 Intel Corporation.  All rights reserved.
+// Legal Notice: Copyright 2022 Intel Corporation.  All rights reserved.
 // Your use of  Intel Corporation's design tools,  logic functions and other
 // software and  tools, and its AMPP partner logic functions, and any output
 // files any  of the foregoing (including  device programming  or simulation
@@ -15,12 +15,13 @@
 // ---------------------------------------------------------------------------
 
 // SystemVerilog created from atax_B12_branch
-// SystemVerilog created on Tue Jan  2 20:41:09 2024
+// Created for function/kernel atax
+// SystemVerilog created on Sun Jan 21 01:17:51 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_B12_branch (
-    input wire [0:0] in_c0_exe2205,
+    input wire [0:0] in_c0_exe2104,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
@@ -34,7 +35,7 @@ module atax_B12_branch (
     wire [0:0] VCC_q;
     wire [0:0] atax_B12_branch_enable_q;
     wire [0:0] atax_B12_branch_enable_not_q;
-    wire [0:0] c0_exe2205_cmp_q;
+    wire [0:0] c0_exe2104_cmp_q;
     wire [0:0] not_stall_in_0_q;
     wire [0:0] not_stall_in_1_q;
     wire [0:0] not_valid_0_q;
@@ -50,11 +51,11 @@ module atax_B12_branch (
     // not_stall_in_1(LOGICAL,10)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe2205_cmp(LOGICAL,4)
-    assign c0_exe2205_cmp_q = ~ (in_c0_exe2205);
+    // c0_exe2104_cmp(LOGICAL,4)
+    assign c0_exe2104_cmp_q = ~ (in_c0_exe2104);
 
     // valid_out_1_and(LOGICAL,21)
-    assign valid_out_1_and_q = in_valid_in & c0_exe2205_cmp_q;
+    assign valid_out_1_and_q = in_valid_in & c0_exe2104_cmp_q;
 
     // valid_1_reg(REG,19)
     always @ (posedge clock or negedge resetn)
@@ -79,7 +80,7 @@ module atax_B12_branch (
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
     // valid_out_0_and(LOGICAL,20)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe2205;
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe2104;
 
     // valid_0_reg(REG,18)
     always @ (posedge clock or negedge resetn)

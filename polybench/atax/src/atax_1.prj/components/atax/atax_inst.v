@@ -11,8 +11,6 @@ atax atax_inst (
   .clock               ( ), // 1-bit clk input
   // Interface: reset (reset end)
   .resetn              ( ), // 1-bit reset_n input
-  // Interface: clock2x (clock end)
-  .clock2x             ( ), // 1-bit clk input
   // Interface: call (conduit sink)
   .start               ( ), // 1-bit valid input
   .busy                ( ), // 1-bit stall output

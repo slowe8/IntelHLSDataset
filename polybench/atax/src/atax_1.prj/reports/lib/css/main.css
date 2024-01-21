@@ -305,7 +305,7 @@ footer
   height: 100%;
 }
 
-#LMEMG, #CSPG, #PVG, #BVG
+#CSPG, #PVG, #BVG
 {
   position: relative;
   padding-top: 0px !important;
@@ -345,11 +345,13 @@ text {
   font-size: 12px;
 }
 
+/*
 .edgePath path {
   stroke: #333;
   stroke-width: 2px;
   opacity: 0.3;
 }
+*/
 
 /* Consolidated details and tooltip to use bootstrap card title */
 .card-title {

@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -22,11 +22,11 @@
 // The compiler is to insert by compiler one IP per loop.
 // For simple loop, it is inserted at the block level.
 // For nested loop, it needs to be inserted at function level where it can
-// connected to slave of stall-valid of header and master of stall-valid of
+// connected to agent of stall-valid of header and host of stall-valid of
 // latch.
 //
 // Usage documentation
-// For simple loop, add the following to the basic block that's a loop with the 
+// For simple loop, add the following to the basic block that's a loop with the
 // following sample connections.
 //   hld_loop_profiler #(
 //     .LOOP_NAME("<BLOCK NAME>")
@@ -48,7 +48,7 @@
 // Parameters:
 //   LOOP_NAME is the name of the loop. Use name of the header or the block
 //   DAISY_WIDTH is the width of profiler counter that is serially chained together
-//   TODO: HLD_PROFILE means add hardware profiler counters when set to 1
+//   HLD_PROFILE indicates whether the hardware profiler is being inserted, and the signals to it have to be exposed
 //
 // Profiler interface control inputs:
 //   i_capture      : 1 means load the output of counter to a capture buffer when ENABLE_DOUBLE_BUFFER = 1.
@@ -62,7 +62,8 @@
 `default_nettype none
 module hld_loop_profiler #(
   parameter string LOOP_NAME,
-  parameter DAISY_WIDTH = 64
+  parameter DAISY_WIDTH = 64,
+  parameter bit HLD_PROFILE = 0
 )
 (
   input  wire                         clock,
@@ -86,21 +87,26 @@ module hld_loop_profiler #(
   input  wire                         i_valid_succ,
 
   // loop backedge for hardware profiling loop occupancy
-  input  wire                         i_valid_loop  // connect to valid_in_0 in block
+  input  wire                         i_valid_loop,  // connect to valid_in_0 in block
+
+  // expose the i_valid signal from the loop for profiler to hook up to (to measure loop occupancy)
+  output logic                        o_profile_valid
 );
+
+  // Expose o_profile_valid for the profiler
+  assign o_profile_valid = i_valid_loop;
 
   // Simulation latency tracker that measures how many clock cycles for one
   // invocation of the loop to finish
-  // TODO: Currently an L2 test will fail at runtime due to hld_sim_latency_tracker. Commenting out for now
-  //hld_sim_latency_tracker #(
-  //  .NAME (LOOP_NAME)
-  //) sim_tracker_inst (
-  // .clock    (clock),
-  // .resetn   (resetn),
-  // .i_enable (1'b1),
-  // .i_start  (i_valid_pred & !i_stall_pred),
-  // .i_end    (i_valid_succ & !i_stall_succ)
-  //);
+  hld_sim_latency_tracker #(
+   .NAME (LOOP_NAME)
+  ) sim_tracker_inst (
+  .clock    (clock),
+  .resetn   (resetn),
+  .i_enable (1'b1),
+  .i_start  (i_valid_pred & !i_stall_pred),
+  .i_end    (i_valid_succ & !i_stall_succ)
+  );
 
   // TODO: case:14011070876 Add hardware profiler counters to measure loop occupancy
 

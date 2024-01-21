@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -25,11 +25,11 @@
 
 `default_nettype none
 
-module lsu_streaming_prefetch_read 
+module lsu_streaming_prefetch_read
 (
-   clk, reset, flush, o_stall, i_valid, i_address, i_stall, i_nop, o_valid, o_readdata, 
+   clk, reset, flush, o_stall, i_valid, i_address, i_stall, i_nop, o_valid, o_readdata,
    o_active, //Debugging signal
-   avm_address, avm_burstcount, avm_read, 
+   avm_address, avm_burstcount, avm_read,
    avm_readdata, avm_waitrequest, avm_byteenable, avm_readdatavalid,
    ecc_err_status
 );
@@ -59,7 +59,7 @@ localparam MAXBURSTCOUNT=2**(BURSTCOUNT_WIDTH-1);
 //   is slow to pull data out we can overlap the next burst with that.  Also
 //   since you can't backpressure responses, you need at least a full burst
 //   of space.
-// Note the burst_read_master requires a fifo depth >= MAXBURSTCOUNT + 5.  This
+// Note the burst_read_host requires a fifo depth >= MAXBURSTCOUNT + 5.  This
 // hardcoded 5 latency could result in half the bandwidth when burst and
 // latency is small, hence double it so we can double buffer.
 localparam _FIFO_DEPTH = MAXBURSTCOUNT + 10 + ((MEMORY_SIDE_MEM_LATENCY * WIDTH_BYTES + MWIDTH_BYTES - 1) / MWIDTH_BYTES);
@@ -70,7 +70,7 @@ localparam FIFO_DEPTH_LOG2=$clog2(FIFO_DEPTH);
 
 // the streaming LSU has a problem when it reaches the top end of the address the top end of the address range and the address 'wraps around' back to 0
 // adding an extra msb to the address tracked internally will prevent this case from ever happening
-localparam AWIDTH_INTERNAL = AWIDTH+1;    
+localparam AWIDTH_INTERNAL = AWIDTH+1;
 
 /********
 * Ports *
@@ -137,7 +137,7 @@ acl_data_fifo #(
   .ASYNC_RESET( ASYNC_RESET ),
   .SYNCHRONIZE_RESET( 0 ),
   .enable_ecc(enable_ecc)
-  
+
 ) avm_buffer (
   .clock(clk),
   .resetn(resetn_synchronized),
@@ -179,13 +179,13 @@ wire                           empty;
 wire  [MWIDTH -1 : 0]          user_data_out;
 wire                           wait_for_read;
 
-// FIFO and burst master communication signals
-wire [AWIDTH_INTERNAL - 1 : 0] fifo2master_read_addr;
-wire                           fifo2master_read;
-wire [BURSTCOUNT_WIDTH -1 : 0] fifo2master_burst_size;
-wire                           fifo2master_data_valid;
-wire           [MWIDTH -1 : 0] fifo2master_data;
-wire                           fifo2master_ready;
+// FIFO and burst host communication signals
+wire [AWIDTH_INTERNAL - 1 : 0] fifo2host_read_addr;
+wire                           fifo2host_read;
+wire [BURSTCOUNT_WIDTH -1 : 0] fifo2host_burst_size;
+wire                           fifo2host_data_valid;
+wire           [MWIDTH -1 : 0] fifo2host_data;
+wire                           fifo2host_ready;
 
 
 /**********************************************************/
@@ -218,7 +218,7 @@ always @(posedge clk or negedge aclrn) begin
           i_valid_rr         <= 1'b0;
           //i_address_rr       <= '0;
         end
-        
+
     end
 end
 
@@ -238,7 +238,7 @@ always @(posedge clk or negedge aclrn) begin
         empty_r <= 1'b1;
         flush_on_fifo_miss_r <= 1'b0;
     end else begin
-           
+
         if (flush) begin
             addr_before_fifo <= 1'b0;
             addr_after_fifo  <= 1'b0;
@@ -254,7 +254,7 @@ always @(posedge clk or negedge aclrn) begin
 
         // use o_stall to retrigger flush if there are two misses in a row
         flush_on_fifo_miss_r <= flush ? 0 : flush_on_fifo_miss & o_stall;
-        
+
         if (~sclrn[0]) begin
             addr_before_fifo <= 1'b0;
             addr_after_fifo  <= 1'b0;
@@ -304,21 +304,21 @@ lsu_streaming_prefetch_fifo #(
         .empty          (empty         ),
         .fifo_high_addr (fifo_high_addr),
 
-        // to burst master
-        .avm_read_addr  (fifo2master_read_addr ),
-        .avm_read       (fifo2master_read      ),
-        .avm_burst_size (fifo2master_burst_size),
-        .avm_data_valid (fifo2master_data_valid),
-        .avm_data       (fifo2master_data      ),
-        .avm_ready      (fifo2master_ready     ),
+        // to burst host
+        .avm_read_addr  (fifo2host_read_addr ),
+        .avm_read       (fifo2host_read      ),
+        .avm_burst_size (fifo2host_burst_size),
+        .avm_data_valid (fifo2host_data_valid),
+        .avm_data       (fifo2host_data      ),
+        .avm_ready      (fifo2host_ready     ),
         .ecc_err_status (ecc_err_status_1      )
-    ); 
+    );
 
     assign ecc_err_status = ecc_err_status_0 | ecc_err_status_1;
 /**********************************************************/
-// Avalon Burst Master
+// Avalon Burst Host
 /**********************************************************/
-lsu_streaming_prefetch_avalon_burst_master #(
+lsu_streaming_prefetch_avalon_burst_host #(
         .AWIDTH           (AWIDTH_INTERNAL ),
         .MWIDTH           (MWIDTH          ),
         .MWIDTH_BYTES     (MWIDTH_BYTES    ),
@@ -326,28 +326,28 @@ lsu_streaming_prefetch_avalon_burst_master #(
         .FIFO_DEPTH_LOG2  (FIFO_DEPTH_LOG2 ),
         .ASYNC_RESET      (ASYNC_RESET     ),
         .SYNCHRONIZE_RESET(0               )
-    ) u_burst_master (
+    ) u_burst_host (
         .clk    (clk),
         .reset  (~resetn_synchronized),
         .flush  (flush | internal_flush),
         .active (o_active),
 
         // from FIFO
-        .fifo_read_addr  (fifo2master_read_addr ),
-        .fifo_read       (fifo2master_read      ),
-        .fifo_burst_size (fifo2master_burst_size),
-        .fifo_data_valid (fifo2master_data_valid),
-        .fifo_data       (fifo2master_data      ),
-        .ready           (fifo2master_ready     ),
+        .fifo_read_addr  (fifo2host_read_addr ),
+        .fifo_read       (fifo2host_read      ),
+        .fifo_burst_size (fifo2host_burst_size),
+        .fifo_data_valid (fifo2host_data_valid),
+        .fifo_data       (fifo2host_data      ),
+        .ready           (fifo2host_ready     ),
 
-        // master inputs and outputs
-        .master_address       (f_avm_address    ),
-        .master_read          (f_avm_read       ),
-        .master_byteenable    (avm_byteenable   ),
-        .master_readdata      (avm_readdata     ),
-        .master_readdatavalid (avm_readdatavalid),
-        .master_burstcount    (f_avm_burstcount ),
-        .master_waitrequest   (f_avm_waitrequest)
+        // host inputs and outputs
+        .host_address       (f_avm_address    ),
+        .host_read          (f_avm_read       ),
+        .host_byteenable    (avm_byteenable   ),
+        .host_readdata      (avm_readdata     ),
+        .host_readdatavalid (avm_readdatavalid),
+        .host_burstcount    (f_avm_burstcount ),
+        .host_waitrequest   (f_avm_waitrequest)
     );
 
 /**********************************************************/
@@ -408,7 +408,7 @@ module lsu_streaming_prefetch_fifo # (
         output reg              empty,
         output wire [AWIDTH - 1 : 0] fifo_high_addr,
 
-        // to burst master
+        // to burst host
         output reg          [AWIDTH - 1 : 0] avm_read_addr,
         output reg                           avm_read,
         output reg [BURSTCOUNT_WIDTH -1 : 0] avm_burst_size,
@@ -424,7 +424,7 @@ module lsu_streaming_prefetch_fifo # (
     //-------------------------------------
 
     // FIFO memory
-    reg [MWIDTH - 1 : 0] mem [0 : DEPTH - 1];    
+    reg [MWIDTH - 1 : 0] mem [0 : DEPTH - 1];
 
     // FIFO ctrl
     wire [LOG2_DEPTH - 1 : 0] rd_fifo_addr;
@@ -475,7 +475,7 @@ module lsu_streaming_prefetch_fifo # (
       .o_sclrn                (sclrn),
       .o_resetn_synchronized  (resetn_synchronized)
    );
-   
+
     //-------------------------------------
     // Logic
     //-------------------------------------
@@ -525,7 +525,7 @@ module lsu_streaming_prefetch_fifo # (
     assign wr_fifo_addr = wr_addr_word & {LOG2_DEPTH{1'b1}};
 
     //assign rd_fifo_addr = user_read_addr_word & {LOG2_DEPTH{1'b1}};
-    assign rd_fifo_addr = wait_for_read_int_r ? (user_read_addr_r_word & {LOG2_DEPTH{1'b1}}) : 
+    assign rd_fifo_addr = wait_for_read_int_r ? (user_read_addr_r_word & {LOG2_DEPTH{1'b1}}) :
                                                 (user_read_addr_word   & {LOG2_DEPTH{1'b1}}) ;
 
     assign fifo_addr_diff = {1'b0, avm_read_addr_word} - {1'b0, user_read_addr_r_word};
@@ -550,7 +550,7 @@ module lsu_streaming_prefetch_fifo # (
     // Memory addresses
     assign fifo_high_addr = avm_read_addr;
 
-    // check if a read is pending from the burst master
+    // check if a read is pending from the burst host
     // delay the output by a cycle to allow the read data to propogate through the FIFO
     //assign wait_for_read_int = (user_read_addr_r >= wr_addr);
     // unless fifo is flushed, the read address and write address will never be more than the fifo depth apart here, so we can compare them with only one additional bit
@@ -573,7 +573,7 @@ module lsu_streaming_prefetch_fifo # (
     assign wait_for_read = wait_for_read_int_r;
     //assign wait_for_read = wait_for_read_int | wait_for_read_int_r;
 
-    // Avalon burst master control
+    // Avalon burst host control
     always @(posedge clk or negedge aclrn) begin
         if (~aclrn) begin
             avm_read_addr  <= '0;
@@ -635,7 +635,7 @@ endmodule
 //------------------------------------------------------------------
 // convert read requests into bursts on the avalon bus
 //------------------------------------------------------------------
-module lsu_streaming_prefetch_avalon_burst_master #(
+module lsu_streaming_prefetch_avalon_burst_host #(
         parameter AWIDTH           = 32,
         parameter MWIDTH           = 256,
         parameter MWIDTH_BYTES     = 32,
@@ -657,14 +657,14 @@ module lsu_streaming_prefetch_avalon_burst_master #(
         output wire                            fifo_data_valid,
         output wire            [MWIDTH -1 : 0] fifo_data,
 
-        // master inputs and outputs
-        output wire           [AWIDTH - 1 : 0] master_address,
-        output wire                            master_read,
-        output wire     [MWIDTH_BYTES - 1 : 0] master_byteenable,
-        input  wire           [MWIDTH - 1 : 0] master_readdata,
-        input  wire                            master_readdatavalid,
-        output wire [BURSTCOUNT_WIDTH - 1 : 0] master_burstcount,
-        input  wire                            master_waitrequest
+        // host inputs and outputs
+        output wire           [AWIDTH - 1 : 0] host_address,
+        output wire                            host_read,
+        output wire     [MWIDTH_BYTES - 1 : 0] host_byteenable,
+        input  wire           [MWIDTH - 1 : 0] host_readdata,
+        input  wire                            host_readdatavalid,
+        output wire [BURSTCOUNT_WIDTH - 1 : 0] host_burstcount,
+        input  wire                            host_waitrequest
     );
 
     reg  [FIFO_DEPTH_LOG2 : 0] pending_reads;
@@ -702,33 +702,33 @@ module lsu_streaming_prefetch_avalon_burst_master #(
         end else begin
             if (flush) begin
                 pending_reads <= 0;
-                pending_discards <= pending_discards + pending_reads - master_readdatavalid;
+                pending_discards <= pending_discards + pending_reads - host_readdatavalid;
             end else begin
-                pending_reads <= pending_reads + (avm_read_accepted ? master_burstcount : 0) - keep_read;
-                pending_discards <= pending_discards - (~finished_discard & master_readdatavalid);
+                pending_reads <= pending_reads + (avm_read_accepted ? host_burstcount : 0) - keep_read;
+                pending_discards <= pending_discards - (~finished_discard & host_readdatavalid);
             end
             if (~sclrn[0]) begin
                 pending_reads <= '0;
                 pending_discards <= '0;
             end
-            
+
         end
     end
 
     assign finished_discard = (pending_discards == 0);
     assign can_discard_full_burst = ~pending_discards[FIFO_DEPTH_LOG2];
-    assign keep_read = finished_discard & master_readdatavalid;
-    assign avm_read_accepted = master_read & !master_waitrequest;
+    assign keep_read = finished_discard & host_readdatavalid;
+    assign avm_read_accepted = host_read & !host_waitrequest;
 
     // check for memory stall
-    assign ready = !master_waitrequest & can_discard_full_burst;
+    assign ready = !host_waitrequest & can_discard_full_burst;
 
-    assign master_address = fifo_read_addr;
-    assign master_read = fifo_read & can_discard_full_burst & !flush;
-    assign master_byteenable = {MWIDTH_BYTES{1'b1}};
-    assign master_burstcount = fifo_burst_size;
+    assign host_address = fifo_read_addr;
+    assign host_read = fifo_read & can_discard_full_burst & !flush;
+    assign host_byteenable = {MWIDTH_BYTES{1'b1}};
+    assign host_burstcount = fifo_burst_size;
 
-    assign fifo_data = master_readdata;
+    assign fifo_data = host_readdata;
     assign fifo_data_valid = keep_read;
 
     assign active = |pending_reads | ~finished_discard;

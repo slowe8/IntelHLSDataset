@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------- 
-// High Level Design Compiler for Intel(R) FPGAs Version 20.4 (Release Build #72)
+// High Level Design Compiler for Intel(R) FPGAs Version 23.4 (Release Build #31.1)
 // 
-// Legal Notice: Copyright 2020 Intel Corporation.  All rights reserved.
+// Legal Notice: Copyright 2022 Intel Corporation.  All rights reserved.
 // Your use of  Intel Corporation's design tools,  logic functions and other
 // software and  tools, and its AMPP partner logic functions, and any output
 // files any  of the foregoing (including  device programming  or simulation
@@ -14,8 +14,9 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from atax_i_llvm_fpga_mem_memdep_7_0
-// SystemVerilog created on Tue Jan  2 20:41:09 2024
+// SystemVerilog created from i_llvm_fpga_mem_memdep_7_atax0
+// Created for function/kernel atax
+// SystemVerilog created on Sun Jan 21 01:17:51 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -117,7 +118,7 @@ module atax_i_llvm_fpga_mem_memdep_7_0 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_memdep_7_atax1(EXTIFACE,12)@6 + 4
+    // i_llvm_fpga_mem_memdep_7_atax1(EXTIFACE,12)@6 + 3
     assign i_llvm_fpga_mem_memdep_7_atax1_avm_readdata = in_memdep_7_atax_avm_readdata;
     assign i_llvm_fpga_mem_memdep_7_atax1_avm_readdatavalid = in_memdep_7_atax_avm_readdatavalid;
     assign i_llvm_fpga_mem_memdep_7_atax1_avm_waitrequest = in_memdep_7_atax_avm_waitrequest;
@@ -169,7 +170,7 @@ module atax_i_llvm_fpga_mem_memdep_7_0 (
         .FORCE_NOP_SUPPORT(1),
         .HIGH_FMAX(1),
         .INPUTFIFO_USEDW_MAXBITS(5),
-        .KERNEL_SIDE_MEM_LATENCY(4),
+        .KERNEL_SIDE_MEM_LATENCY(3),
         .LMEM_ADDR_PERMUTATION_STYLE(0),
         .MEMORY_SIDE_MEM_LATENCY(0),
         .MWIDTH_BYTES(8),
@@ -235,13 +236,13 @@ module atax_i_llvm_fpga_mem_memdep_7_0 (
     assign out_memdep_7_atax_avm_byteenable = i_llvm_fpga_mem_memdep_7_atax1_avm_byteenable;
     assign out_memdep_7_atax_avm_burstcount = i_llvm_fpga_mem_memdep_7_atax1_avm_burstcount;
 
-    // sync_out(GPOUT,15)@10
+    // sync_out(GPOUT,15)@9
     assign out_o_stall = i_llvm_fpga_mem_memdep_7_atax1_o_stall;
 
     // dupName_0_ext_sig_sync_out_x(GPOUT,17)
     assign out_lsu_memdep_7_o_active = i_llvm_fpga_mem_memdep_7_atax1_o_active;
 
-    // dupName_0_sync_out_x(GPOUT,18)@10
+    // dupName_0_sync_out_x(GPOUT,18)@9
     assign out_o_valid = i_llvm_fpga_mem_memdep_7_atax1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_7_atax1_o_writeack;
 

@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //  ACL ECC ENCODER
-//  
+//
 //  This module encodes data using a single error correct, double error detect Hamming code. As the data width get large,
 //  so will the xor network and that would limit fmax. To resolve this, we slice the data into smaller groups and encode
 //  each independently. Essentially we trade off more memory overhead for parity bits in order to limit the fmax
@@ -29,7 +29,7 @@
 //  total encoded bits (see the calculations in localparams below).
 //
 //  Reset: there is no reset. Pipeline stages are purely feed-forward, the intent is that reset will propagate through.
-//  
+//
 //  This module is actually a wrapper around the actual ECC implementation in secded_encoder. Here is the architecture.
 //  For example, suppose DATA_WIDTH is 70 and ECC_GROUP_SIZE is 32, then we will slice input data into 32 + 32 + 6, and
 //  3 encoders are used to produce 39 + 39 + 11 encoded bits.
@@ -56,23 +56,23 @@
 //
 //  Required files:
 //  - acl_ecc_encoder.sv
-//  - secded_encoder.sv
+//  - acl_ecc_pkg.sv
 //
 //  Related files (to do the corresponding decoding that this file encodes):
 //  - acl_ecc_decoder.sv
-//  - secded_decoder.sv
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 `default_nettype none
-`include "acl_ecc.svh"
 
 //BEWARE: do not leave the "clock_enable" input port disconnected if any pipeline stages are used, it will default to 0 and nothing will go through
 
-module acl_ecc_encoder #(
+module acl_ecc_encoder
+import acl_ecc_pkg::*;
+#(
     parameter int DATA_WIDTH,                   //number of bits in the unencoded input data
     parameter int ECC_GROUP_SIZE,               //how many bits of unencoded data to group into one ecc block, see description in header comments
-    parameter int INPUT_PIPELINE_STAGES = 0,    //number of pipeline stages between i_data and the ecc encoder    
+    parameter int INPUT_PIPELINE_STAGES = 0,    //number of pipeline stages between i_data and the ecc encoder
     parameter int OUTPUT_PIPELINE_STAGES = 0    //number of pipeline stages between the ecc encoder and o_encoded
 )
 (
@@ -81,7 +81,7 @@ module acl_ecc_encoder #(
     input  wire  [DATA_WIDTH-1:0]                                        i_data,        //unencoded input data
     output logic [getEncodedBitsEccGroup(DATA_WIDTH,ECC_GROUP_SIZE)-1:0] o_encoded      //encoded output data
 );
-    
+
     //helper functions for determining number of bits are defined in acl_ecc.svh
     localparam int ECC_NUM_GROUPS  = getNumGroups(DATA_WIDTH,ECC_GROUP_SIZE);           //how many groups to slice the data into
     localparam int LAST_GROUP_SIZE = getLastGroupSize(DATA_WIDTH,ECC_GROUP_SIZE);       //all groups have size ECC_GROUP_SIZE except possibly the last group which may be smaller since it gets the remaining bits
@@ -118,7 +118,7 @@ module acl_ecc_encoder #(
         localparam int ENC_BASE = getEncodedBits(ECC_GROUP_SIZE)*g;
         localparam int RAW_WIDTH = (g==ECC_NUM_GROUPS-1) ? LAST_GROUP_SIZE : ECC_GROUP_SIZE;
         localparam int ENC_WIDTH = getEncodedBits(RAW_WIDTH);
-        
+
         secded_encoder #(
             .DATA_WIDTH (RAW_WIDTH)
         )
@@ -163,22 +163,24 @@ endmodule
 
 
 // Hamming code encoder, single error correct, double error detect
-// 
+//
 // This implementation follows the bit mapping as shown on Wikipedia, parity bits are added at power of 2 locations, data bits go in between
 // For example, with DATA_WIDTH = 11, we have 4 Hamming parity bits and one overall parity bit, so the bit locations will looks like this, d means data, p means parity
 // [0] = p0, [1] = p1, [2] = p2, [3] = d0, [4] = p3, [5] = d1, [6] = d2, [7] = d3, [8] = p4, [9] = d4, [10] = d5, [11] = d6, [12] = d7, [13] = d8, [14] = d9, [15] = d10
 
-module secded_encoder #(
+module secded_encoder
+import acl_ecc_pkg::*;
+#(
     parameter int DATA_WIDTH                                    //number of bits in the unencoded input data
 ) (
     input  wire  [DATA_WIDTH-1:0]                 i_data,       //unencoded input data
     output logic [getEncodedBits(DATA_WIDTH)-1:0] o_encoded     //encoded output data
 );
-    
+
     //helper functions for determining number of bits are defined in acl_ecc.svh
     localparam int PARITY_BITS = getParityBits(DATA_WIDTH);
     localparam int ENCODED_BITS = getEncodedBits(DATA_WIDTH);
-    
+
     //parity bits go at power of 2 bit locations, data bits go in between
     //for example, with DATA_WIDTH = 11, we have 5 parity bits and the bit locations will looks like this, d means data, p means parity
     //[0] = p0, [1] = p1, [2] = p2, [3] = d0, [4] = p3, [5] = d1, [6] = d2, [7] = d3, [8] = p4, [9] = d4, [10] = d5, [11] = d6, [12] = d7, [13] = d8, [14] = d9, [15] = d10
@@ -194,7 +196,7 @@ module secded_encoder #(
             end
         end
     end
-    
+
     //compute the parity bits
     logic [PARITY_BITS-1:0] parity;
     always_comb begin
@@ -208,7 +210,7 @@ module secded_encoder #(
         end
         parity[0] = (^parity[PARITY_BITS-1:1]) ^ (^i_data);     //overall parity
     end
-    
+
     //assemble the output data
     always_comb begin
         for (int enc_index=0, parity_index=0; enc_index<ENCODED_BITS; enc_index++) begin : GEN_RANDOM_BLOCK_NAME_R13

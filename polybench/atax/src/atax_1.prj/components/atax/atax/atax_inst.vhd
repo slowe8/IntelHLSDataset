@@ -2,7 +2,6 @@
 		port (
 			clock                : in  std_logic                     := 'X';             -- clk
 			resetn               : in  std_logic                     := 'X';             -- reset_n
-			clock2x              : in  std_logic                     := 'X';             -- clk
 			start                : in  std_logic                     := 'X';             -- valid
 			busy                 : out std_logic;                                        -- stall
 			done                 : out std_logic;                                        -- valid
@@ -23,7 +22,6 @@
 		port map (
 			clock                => CONNECTED_TO_clock,                --     clock.clk
 			resetn               => CONNECTED_TO_resetn,               --     reset.reset_n
-			clock2x              => CONNECTED_TO_clock2x,              --   clock2x.clk
 			start                => CONNECTED_TO_start,                --      call.valid
 			busy                 => CONNECTED_TO_busy,                 --          .stall
 			done                 => CONNECTED_TO_done,                 --    return.valid

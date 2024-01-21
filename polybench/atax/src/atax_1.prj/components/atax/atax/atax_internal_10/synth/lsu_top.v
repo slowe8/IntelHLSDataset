@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -385,7 +385,7 @@ if(WIDE_LSU) begin
   defparam lsu_wide.AVM_READ_DATA_LATENESS = AVM_READ_DATA_LATENESS;
   defparam lsu_wide.WIDE_DATA_SLICING = WIDE_DATA_SLICING;
   
-  //the wrapped LSU doesnt interface directly with the avalon master, so profiling here is more accurate for avm signals
+  //the wrapped LSU doesnt interface directly with the avalon host, so profiling here is more accurate for avm signals
   //two signals generated directly by the LSU need to be passed in
   if(ACL_PROFILE==1)
   begin

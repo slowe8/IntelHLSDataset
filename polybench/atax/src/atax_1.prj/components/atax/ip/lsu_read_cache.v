@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -18,11 +18,11 @@
 
 //
 // Top level module for the "cached" lsu
-// Latency  = 2 
+// Latency  = 2
 // Capacity = 1
 //
-// Description: 
-// 
+// Description:
+//
 // This is essentially a streaming unit where threads can enter out of order
 // It is organized as a direct mapped cache where there are N cache lines
 // Each cache line is CACHESIZE bytes long
@@ -33,13 +33,13 @@
 //
 // Note that this is a read only cache so one has to guarantee that data isn't
 // going to get overwritten by some store within the kernel. The start signal
-// is brought into this LSU to "flush" the cache once the kernel is started 
-// 
+// is brought into this LSU to "flush" the cache once the kernel is started
+//
 // You'll notice that there are many similarities to the streaming unit including
-// a FIFO size. Well, think of a cache as a FIFO where it can be accessed in any 
+// a FIFO size. Well, think of a cache as a FIFO where it can be accessed in any
 // order :-)
 //
-// Note2: It is slightly different from other lsu's in that it needs a kernel start 
+// Note2: It is slightly different from other lsu's in that it needs a kernel start
 // signal that tells it to invalidate it's contents
 //
 
@@ -47,9 +47,9 @@
 
 module lsu_read_cache
 (
-   clk, reset, flush, o_stall, i_valid, i_stall, i_nop, o_valid, o_readdata, 
+   clk, reset, flush, o_stall, i_valid, i_stall, i_nop, o_valid, o_readdata,
    o_active, //Debugging signal
-   i_address, avm_address, avm_burstcount, avm_read, 
+   i_address, avm_address, avm_burstcount, avm_read,
    avm_readdata, avm_waitrequest, avm_byteenable, avm_readdatavalid,
    // profile
    req_cache_hit_count,
@@ -67,7 +67,7 @@ parameter BURSTCOUNT_WIDTH=6;
 parameter KERNEL_SIDE_MEM_LATENCY=1;
 parameter REQUESTED_SIZE=1024;
 parameter ACL_BUFFER_ALIGNMENT=128;
-parameter ACL_PROFILE=0; 
+parameter ACL_PROFILE=0;
 parameter ASYNC_RESET=1;        // set to '1' to consume the incoming reset signal asynchronously (use ACLR port on registers), '0' to use synchronous reset (SCLR port on registers)
 parameter SYNCHRONIZE_RESET=0;  // set to '1' to pass the incoming reset signal through a synchronizer before use
 parameter enable_ecc = "FALSE"; // Enable error correction coding
@@ -78,13 +78,13 @@ localparam MWIDTH=8*MWIDTH_BYTES;
 localparam MBYTE_SELECT_BITS=$clog2(MWIDTH_BYTES);
 localparam BYTE_SELECT_BITS=$clog2(WIDTH_BYTES);
 localparam MAXBURSTCOUNT=2**(BURSTCOUNT_WIDTH-1);
-localparam CACHESIZE=ACL_BUFFER_ALIGNMENT/MWIDTH_BYTES > 1 ? ACL_BUFFER_ALIGNMENT : MWIDTH_BYTES*2 ;  
-localparam FIFO_DEPTH=  CACHESIZE/MWIDTH_BYTES;  
+localparam CACHESIZE=ACL_BUFFER_ALIGNMENT/MWIDTH_BYTES > 1 ? ACL_BUFFER_ALIGNMENT : MWIDTH_BYTES*2 ;
+localparam FIFO_DEPTH=  CACHESIZE/MWIDTH_BYTES;
 localparam FIFO_DEPTH_LOG2=$clog2(FIFO_DEPTH);
 localparam CACHE_ADDRBITS=MBYTE_SELECT_BITS+FIFO_DEPTH_LOG2;
 localparam N=( (REQUESTED_SIZE+CACHESIZE-1) / CACHESIZE) ;
 localparam LOG2N=$clog2(N);
-localparam LOG2N_P=(LOG2N == 0)? 1 : LOG2N; 
+localparam LOG2N_P=(LOG2N == 0)? 1 : LOG2N;
 
 /********
 * Ports *
@@ -159,15 +159,15 @@ reg cache_available_d1;
 wire [MWIDTH-1:0] cache_data;
 wire [WIDTH-1:0] extracted_cache_data;
 
-wire [LOG2N_P-1:0] in_cache, in_cache_unreg;  
+wire [LOG2N_P-1:0] in_cache, in_cache_unreg;
 generate
   if(N==1) begin : GEN_N_IS_1
     assign in_cache = 1'b0;
-    assign in_cache_unreg = 1'b0;      
+    assign in_cache_unreg = 1'b0;
   end
-  else begin : GEN_N_GREATER_THAN_1      
-    assign in_cache = reg_i_address[CACHE_ADDRBITS+LOG2N-1:CACHE_ADDRBITS];    
-    assign in_cache_unreg = i_address[CACHE_ADDRBITS+LOG2N-1:CACHE_ADDRBITS];          
+  else begin : GEN_N_GREATER_THAN_1
+    assign in_cache = reg_i_address[CACHE_ADDRBITS+LOG2N-1:CACHE_ADDRBITS];
+    assign in_cache_unreg = i_address[CACHE_ADDRBITS+LOG2N-1:CACHE_ADDRBITS];
   end
   if(ACL_PROFILE) begin: GEN_ACL_PROFILE
     reg R_thread_valid;
@@ -221,10 +221,10 @@ begin
       begin
          $display("%m is Prefetching a cache block for address {%x} in line%d\n", reg_i_address, in_cache);
 
-         cache_valid[in_cache] <= 1'b1; 
+         cache_valid[in_cache] <= 1'b1;
       end
 
-      if (!stall_out) 
+      if (!stall_out)
       begin
          reg_i_valid <= i_valid;
          reg_i_address <= i_address;
@@ -236,7 +236,7 @@ begin
          output_reg <= extracted_cache_data;
          output_reg_valid <= reg_i_valid && !stall_out;
       end
-      
+
       if (~sclrn[0]) begin
          cache_valid <= {N{1'b0}};
 
@@ -268,7 +268,7 @@ lsu_prefetch_block #(
    .ASYNC_RESET( ASYNC_RESET ),
    .SYNCHRONIZE_RESET( 0 ),
    .enable_ecc(enable_ecc)
-) read_master (
+) read_host (
    .clk(clk),
    .resetn(resetn_synchronized),
    .o_active(prefetch_active),
@@ -287,13 +287,13 @@ lsu_prefetch_block #(
    .user_data_available( cache_available ),
    .read_reg_enable(~stall_out),
 
-   .master_address( avm_address ),
-   .master_read( avm_read ),
-   .master_byteenable( avm_byteenable ),
-   .master_readdata( avm_readdata ),
-   .master_readdatavalid( avm_readdatavalid ),
-   .master_burstcount( avm_burstcount ),
-   .master_waitrequest( avm_waitrequest ),
+   .host_address( avm_address ),
+   .host_read( avm_read ),
+   .host_byteenable( avm_byteenable ),
+   .host_readdata( avm_readdata ),
+   .host_readdatavalid( avm_readdatavalid ),
+   .host_burstcount( avm_burstcount ),
+   .host_waitrequest( avm_waitrequest ),
    .ecc_err_status(ecc_err_status)
 );
 

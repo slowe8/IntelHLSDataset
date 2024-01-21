@@ -1,7 +1,6 @@
 module quartus_compile (
 	  input logic resetn
 	, input logic clock
-	, input logic clock2x
 	, input logic [0:0] atax_start
 	, output logic [0:0] atax_busy
 	, output logic [0:0] atax_done
@@ -62,7 +61,6 @@ module quartus_compile (
 	atax atax_inst (
 		  .resetn(sync_resetn[2])
 		, .clock(clock)
-		, .clock2x(clock2x)
 		, .start(atax_start_reg)
 		, .busy(atax_busy_reg)
 		, .done(atax_done_reg)

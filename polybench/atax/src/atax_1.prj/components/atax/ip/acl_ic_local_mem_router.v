@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -19,7 +19,7 @@
 
 // altera message_off 10036
 
-module acl_ic_local_mem_router #(    
+module acl_ic_local_mem_router #(
     parameter integer DATA_W = 256,
     parameter integer BURSTCOUNT_W = 6,
     parameter integer ADDRESS_W = 32,
@@ -34,7 +34,7 @@ module acl_ic_local_mem_router #(
     // Bank select (one-hot)
     input logic [NUM_BANKS-1:0] bank_select,
 
-    // Master
+    // Host
     input logic m_arb_request,
     input logic m_arb_enable,
     input logic m_arb_read,
@@ -95,13 +95,13 @@ module acl_ic_local_mem_router #(
             m_rrp_datavalid = b_rrp_datavalid[0];
         end else begin
             m_rrp_datavalid = 1'b0;
-            m_rrp_data = '0;        
+            m_rrp_data = '0;
             for( i = 0; i < NUM_BANKS; i = i + 1 )
             begin:b_rrp
                 m_rrp_datavalid |= b_rrp_datavalid[i];
                 m_rrp_data |= (b_rrp_datavalid[i] ? b_rrp_data[i] : '0);
             end
-        end                     
+        end
     end
 
     // Simulation-only assert - should eventually become hardware exception

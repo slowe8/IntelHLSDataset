@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //  ACL ECC DECODER
-//  
+//
 //  This module decodes data using a single error correct, double error detect Hamming code. As the data width get large,
 //  so will the xor network and that would limit fmax. To resolve this, we slice the data into smaller groups and decode
 //  each independently. Essentially we trade off more memory overhead for parity bits in order to limit the fmax
@@ -34,7 +34,7 @@
 //  independent decoders can correct one bit each, so this will be reported as single error corrected.
 //
 //  Reset: there is no reset. Pipeline stages are purely feed-forward, the intent is that reset will propagate through.
-//  
+//
 //  This module is actually a wrapper around the actual ECC implementation in secded_decoder. Here is the architecture.
 //  For example, suppose DATA_WIDTH is 70 and ECC_GROUP_SIZE is 32, then we will slice input data into 32 + 32 + 6, and
 //  3 encoders are used to produce 39 + 39 + 11 encoded bits.
@@ -60,19 +60,20 @@
 //                                o_data[69:0]
 //
 //  Everything decoder related is contained within this file. The related file that does the corresponding encoding is
-//  acl_ecc_encoder.sv.
+//  acl_ecc_encoder.sv. Note both encoder and decoder require acl_ecc_pkg.sv.
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 `default_nettype none
-`include "acl_ecc.svh"
 
 //BEWARE: do not leave the "clock_enable" input port disconnected if any pipeline stages are used, it will default to 0 and nothing will go through
 
-module acl_ecc_decoder #(
+module acl_ecc_decoder
+import acl_ecc_pkg::*;
+#(
     parameter int DATA_WIDTH,                   //number of bits in the decoded output data
     parameter int ECC_GROUP_SIZE,               //how many bits of unencoded data to group into one ecc block, see description in header comments
-    parameter int INPUT_PIPELINE_STAGES = 0,    //number of pipeline stages between i_encoded and the ecc decoder    
+    parameter int INPUT_PIPELINE_STAGES = 0,    //number of pipeline stages between i_encoded and the ecc decoder
     parameter int OUTPUT_PIPELINE_STAGES = 0,   //number of pipeline stages between the ecc decoder and o_data
     parameter int STATUS_PIPELINE_STAGES = 0    //number of pipeline stages between the ecc decoder and o_single_error_corrected/o_double_error_detected
 )
@@ -84,12 +85,12 @@ module acl_ecc_decoder #(
     output logic                                                         o_single_error_corrected,  //at least one ecc decoder corrected a single bit error within their ecc group
     output logic                                                         o_double_error_detected    //at least one ecc decoder detected a double bit error within their ecc group
 );
-    
+
     //helper functions for determining number of bits are defined in acl_ecc.svh
     localparam int ECC_NUM_GROUPS  = getNumGroups(DATA_WIDTH,ECC_GROUP_SIZE);           //how many groups to slice the data into
     localparam int LAST_GROUP_SIZE = getLastGroupSize(DATA_WIDTH,ECC_GROUP_SIZE);       //all groups have size ECC_GROUP_SIZE except possibly the last group which may be smaller since it gets the remaining bits
     localparam int ENCODED_BITS    = getEncodedBitsEccGroup(DATA_WIDTH,ECC_GROUP_SIZE);
-    
+
     //internal signals
     genvar g;
     logic [ENCODED_BITS-1:0] encoded;
@@ -124,7 +125,7 @@ module acl_ecc_decoder #(
         localparam int ENC_BASE = getEncodedBits(ECC_GROUP_SIZE)*g;
         localparam int RAW_WIDTH = (g==ECC_NUM_GROUPS-1) ? LAST_GROUP_SIZE : ECC_GROUP_SIZE;
         localparam int ENC_WIDTH = getEncodedBits(RAW_WIDTH);
-        
+
         secded_decoder #(
             .DATA_WIDTH               (RAW_WIDTH)
         )
@@ -200,12 +201,14 @@ endmodule
 
 
 // Hamming code decoder, single error correct, double error detect
-// 
+//
 // This implementation follows the bit mapping as shown on Wikipedia, parity bits are added at power of 2 locations, data bits go in between
 // For example, with DATA_WIDTH = 11, we have 4 Hamming parity bits and one overall parity bit, so the bit locations will looks like this, d means data, p means parity
 // [0] = p0, [1] = p1, [2] = p2, [3] = d0, [4] = p3, [5] = d1, [6] = d2, [7] = d3, [8] = p4, [9] = d4, [10] = d5, [11] = d6, [12] = d7, [13] = d8, [14] = d9, [15] = d10
 
-module secded_decoder #(
+module secded_decoder
+import acl_ecc_pkg::*;
+#(
     parameter int DATA_WIDTH
 ) (
     input  wire  [getEncodedBits(DATA_WIDTH)-1:0] i_encoded,                //encoded input data
@@ -213,11 +216,11 @@ module secded_decoder #(
     output logic                                  o_single_error_corrected, //asserts when one bit of encoded data is wrong, this will be reported and corrected
     output logic                                  o_double_error_detected   //asserts when two bits of encoded data are wrong, this will only be reported and not corrected
 );
-    
+
     //helper functions for determining number of bits are defined in acl_ecc.svh
     localparam int PARITY_BITS = getParityBits(DATA_WIDTH);
     localparam int ENCODED_BITS = getEncodedBits(DATA_WIDTH);
-    
+
     //compute the parity bits
     logic [PARITY_BITS-1:0] parity;
     always_comb begin
@@ -231,15 +234,15 @@ module secded_decoder #(
         end
         parity[0] = ^i_encoded; //overall parity
     end
-    
+
     //syndrome indicates which bits was wrong, if any
     logic [PARITY_BITS-2:0] syndrome;
     assign syndrome = parity[PARITY_BITS-1:1];
-    
+
     //report if there was 1 bit or 2 bit errors respectively
     assign o_single_error_corrected = parity[0];    //odd number of errors, 1 error gets corrected, 3 errors is not correctable and mapping to the word of minimum hamming distance will give incorrect data
     assign o_double_error_detected = ~parity[0] && (syndrome != 0);    //even number of errors, 0 errors results in syndrome == 0, 2 error will have a nonzero syndrome
-    
+
     //extract out the data bits, and correct if there is a single bit error
     //parity bits are at power of 2 bit locations, data bits are in between
     //for example, with DATA_WIDTH = 11, we have 5 parity bits and the bit locations will looks like this, d means data, p means parity

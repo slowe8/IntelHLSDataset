@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -54,6 +54,7 @@ module hld_sim_latency_tracker #(
   input  wire i_end
 );
 //synthesis translate_off
+`ifdef COSIM_LIB
   import "DPI-C" context function void __ihc_hls_dbgs(string msg);
   import "DPI-C" context function void __ihc_hls_register_component_invocation_info(string component_name, longint unsigned start_time, longint unsigned end_time, longint unsigned  concurrent_threads, longint unsigned first_in_set);
   import "DPI-C" context function void __ihc_register_inst_invocation_info(string component_name, longint unsigned start_time, longint unsigned end_time, longint unsigned  concurrent_threads, longint unsigned first_in_set, int unsigned is_component);
@@ -112,6 +113,7 @@ module hld_sim_latency_tracker #(
       end
     end
   end
+`endif  // COSIM_LIB
 //synthesis translate_on
 
 endmodule

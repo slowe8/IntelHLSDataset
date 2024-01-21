@@ -7,10 +7,10 @@
     <ipxact:busInterfaces>
         <ipxact:busInterface>
             <ipxact:name>clock</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="clock" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="clock" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -54,10 +54,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>reset</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="reset" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="reset" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="reset" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -95,58 +95,11 @@
             </ipxact:vendorExtensions>
         </ipxact:busInterface>
         <ipxact:busInterface>
-            <ipxact:name>clock2x</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="clock" version="20.4"/>
-            <ipxact:abstractionTypes>
-                <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="20.4"/>
-                    <ipxact:portMaps>
-                        <ipxact:portMap>
-                            <ipxact:logicalPort>
-                                <ipxact:name>clk</ipxact:name>
-                            </ipxact:logicalPort>
-                            <ipxact:physicalPort>
-                                <ipxact:name>clock2x</ipxact:name>
-                            </ipxact:physicalPort>
-                        </ipxact:portMap>
-                    </ipxact:portMaps>
-                </ipxact:abstractionType>
-            </ipxact:abstractionTypes>
-            <ipxact:slave/>
-            <ipxact:parameters>
-                <ipxact:parameter parameterId="clockRate" type="longint">
-                    <ipxact:name>clockRate</ipxact:name>
-                    <ipxact:displayName>Clock rate</ipxact:displayName>
-                    <ipxact:value>0</ipxact:value>
-                </ipxact:parameter>
-                <ipxact:parameter parameterId="externallyDriven" type="bit">
-                    <ipxact:name>externallyDriven</ipxact:name>
-                    <ipxact:displayName>Externally driven</ipxact:displayName>
-                    <ipxact:value>false</ipxact:value>
-                </ipxact:parameter>
-                <ipxact:parameter parameterId="ptfSchematicName" type="string">
-                    <ipxact:name>ptfSchematicName</ipxact:name>
-                    <ipxact:displayName>PTF schematic name</ipxact:displayName>
-                    <ipxact:value></ipxact:value>
-                </ipxact:parameter>
-            </ipxact:parameters>
-            <ipxact:vendorExtensions>
-                <altera:altera_assignments>
-                    <ipxact:parameters>
-                        <ipxact:parameter parameterId="hls.cosim.name" type="string">
-                            <ipxact:name>hls.cosim.name</ipxact:name>
-                            <ipxact:value>$clock2x</ipxact:value>
-                        </ipxact:parameter>
-                    </ipxact:parameters>
-                </altera:altera_assignments>
-            </ipxact:vendorExtensions>
-        </ipxact:busInterface>
-        <ipxact:busInterface>
             <ipxact:name>call</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -198,10 +151,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>return</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -253,10 +206,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>A</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -300,10 +253,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>x</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -347,10 +300,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>y_out</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -394,10 +347,10 @@
         </ipxact:busInterface>
         <ipxact:busInterface>
             <ipxact:name>avmm_0_rw</ipxact:name>
-            <ipxact:busType vendor="altera" library="altera" name="avalon" version="20.4"/>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="23.4"/>
             <ipxact:abstractionTypes>
                 <ipxact:abstractionType>
-                    <ipxact:abstractionRef vendor="altera" library="altera" name="avalon" version="20.4"/>
+                    <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="23.4"/>
                     <ipxact:portMaps>
                         <ipxact:portMap>
                             <ipxact:logicalPort>
@@ -668,18 +621,6 @@
                 </ipxact:wire>
             </ipxact:port>
             <ipxact:port>
-                <ipxact:name>clock2x</ipxact:name>
-                <ipxact:wire>
-                    <ipxact:direction>in</ipxact:direction>
-                    <ipxact:wireTypeDefs>
-                        <ipxact:wireTypeDef>
-                            <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-                            <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-                        </ipxact:wireTypeDef>
-                    </ipxact:wireTypeDefs>
-                </ipxact:wire>
-            </ipxact:port>
-            <ipxact:port>
                 <ipxact:name>start</ipxact:name>
                 <ipxact:wire>
                     <ipxact:direction>in</ipxact:direction>
@@ -891,6 +832,14 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/acl_ecc_pkg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/acl_data_fifo.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -932,14 +881,6 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/acl_ecc_encoder.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_ecc.svh</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1163,6 +1104,14 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/hld_memory_depth_quantization_pkg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/hld_iord.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -1180,14 +1129,6 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/hld_iord_stall_valid.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/hld_memory_depth_quantization.svh</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1275,7 +1216,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/lsu_burst_master.v</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/lsu_burst_host.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1515,14 +1456,6 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_loop_limiter.v</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/hld_loop_profiler.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -1532,6 +1465,14 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/hld_sim_latency_tracker.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/acl_loop_limiter.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1667,7 +1608,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_i_23622_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1675,7 +1616,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_0_reg.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_24_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1755,7 +1696,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body69_s_c0_enter19913_atax1.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body69_s_c0_enter984_atax1.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1763,7 +1704,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body69_s_c0_exit203_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body69_s_c0_exit102_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1771,7 +1712,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_atax1_full_detector.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0004_atax1_full_detector.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1779,7 +1720,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t203_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t102_atax1_data_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1787,7 +1728,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body69_s_c0_enter19913_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body69_s_c0_enter984_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1795,7 +1736,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024f32_y_out4423_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024f32_y_out4416_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1811,7 +1752,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_18_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_25_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1827,7 +1768,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_334_pop22_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_334_pop11_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1835,7 +1776,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_cleanups_pop24_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_cleanups_pop13_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1843,7 +1784,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop23_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop12_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1851,7 +1792,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv20_pop21_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop10_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1875,7 +1816,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_334_push22_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_334_push11_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1883,7 +1824,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i4_cleanups_push24_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i4_cleanups_push13_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1891,7 +1832,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push23_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push12_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1899,7 +1840,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv20_push21_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv11_push10_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1939,7 +1880,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax19_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax26_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1956,6 +1897,134 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B1_start.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B1_start_branch.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B1_start_merge.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B1_start_stall_region.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B1_start_merge_reg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024a64f32_unnamed_3_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024f32_unnamed_4_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024f32_unnamed_5_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax2_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter1_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going67_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond68_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -1995,6 +2064,358 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B3.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B3_branch.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B3_merge.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B3_stall_region.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B3_merge_reg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body_s_c0_enter712_atax1.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit72_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_atax1_full_detector.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it72_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter712_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_inc1920_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024f32_x4315_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_7_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i64_unnamed_8_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_2_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_3_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_6_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B4.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B4_branch.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B4_merge.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B4_stall_region.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_B4_merge_reg.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body9_s_c0_enter745_atax1.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit77_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it77_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body9_s_c0_enter745_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i64_idxprom18_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i64_idxprom19_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024a64f32_a4214_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_4_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_10_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going54_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups57_pop17_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations52_pop16_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_039_pop15_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv_pop14_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration56_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond64_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups57_push17_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations52_push16_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_039_push15_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv_push14_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_bb_B5.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -2020,6 +2441,22 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_bb_B5_stall_region.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_i_04017_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_11_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2067,7 +2504,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_cond24_preheader_s_c0_enter12712_atax1.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_cond24_preheader_s_c0_enter803_atax1.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2075,7 +2512,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000r_s_c0_exit135_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000er_s_c0_exit82_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2091,7 +2528,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000t135_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000it82_atax1_data_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2099,7 +2536,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_cond24_preh0000_c0_enter12712_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_cond24_preh0000_s_c0_enter803_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2107,7 +2544,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_arrayidx28_promoted2_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_inc4131_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2115,7 +2552,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going58_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_inc6532_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2123,7 +2560,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_138_pop19_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_f32_unnamed_16_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2131,7 +2568,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv17_pop18_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_12_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2139,7 +2576,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond59_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_13_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2147,7 +2584,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_138_push19_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i64_unnamed_14_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2155,7 +2592,15 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv17_push18_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p67f32_unnamed_15_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_arrayidx28_promoted1_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2203,7 +2648,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body26_s_c0_enter14515_atax1.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body26_s_c0_enter846_atax2.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2211,7 +2656,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body26_s_c0_exit157_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body26_s_c0_exit87_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2219,7 +2664,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_atax1_full_detector.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_atax1_full_detector.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2227,7 +2672,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t157_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it87_atax1_data_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2235,7 +2680,31 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter14515_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body26_s_c0_enter846_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_f32_arrayidx28_promoted127_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i64_idxprom2724_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_f32_unnamed_20_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2251,7 +2720,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_12_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_18_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2259,175 +2728,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_13_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going44_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_f32_add41_pop31_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond1994_pop37_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_forked8790_pop34_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp5696_pop38_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups47_pop33_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_137_pop32_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom2791_pop35_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv11_pop30_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_p67f32_arrayidx28893_pop36_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_f32_add41_push31_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond1994_push37_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_forked8790_push34_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration46_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp5696_push38_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond54_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups47_push33_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_137_push32_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom2791_push35_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv11_push30_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_p67f32_arrayidx28893_push36_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_19_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2467,7 +2768,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_f32_add28_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2475,7 +2776,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0_reg.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_i_13821_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2483,7 +2784,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_inc40_s_c0_enter168_atax3.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p67f32_arrayidx28525_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2491,7 +2792,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_inc40_s_c0_exit172_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_i32_unnamed_21_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2499,39 +2800,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_i0000_atax1_full_detector.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_i0000t172_atax1_data_fifo.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_inc40_s_c0_enter168_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_5206_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_14_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_5_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2579,7 +2848,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body48_s_c0_enter18016_atax1.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body48_s_c0_enter907_atax1.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2587,7 +2856,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body48_s_c0_exit192_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body48_s_c0_exit94_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2595,7 +2864,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_atax1_full_detector.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2603,7 +2872,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t192_atax1_data_fifo.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it94_atax1_data_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2611,7 +2880,23 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body48_s_c0_enter18016_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body48_s_c0_enter907_atax0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_f32_add29_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_i32_i_23623_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2635,7 +2920,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_16_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_22_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2643,7 +2928,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_17_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_23_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2651,7 +2936,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going38_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2659,7 +2944,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_f32_pop45_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups41_pop21_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2667,7 +2952,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond1995_pop43_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations36_pop20_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2675,7 +2960,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop2098_pop46_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_235_pop19_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2683,7 +2968,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp5697_pop44_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv8_pop18_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2691,7 +2976,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups31_pop41_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration40_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2699,7 +2984,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_235_pop40_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond48_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2707,7 +2992,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom2792_pop42_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups41_push21_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2715,7 +3000,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv14_pop39_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations36_push20_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2723,7 +3008,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_f32_push45_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_235_push19_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2731,7 +3016,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond1995_push43_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv8_push18_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2739,7 +3024,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration30_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going38_6_sr.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2747,7 +3032,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop2098_push46_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going38_6_valid_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2755,7 +3040,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp5697_push44_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going54_6_sr.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2763,7 +3048,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond38_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going54_6_valid_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2771,7 +3056,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups31_push41_0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going67_1_sr.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2779,111 +3064,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_235_push40_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom2792_push42_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv14_push39_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_6_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_6_valid_fifo.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going44_6_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going44_6_valid_fifo.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going58_2_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going58_2_valid_fifo.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going65_6_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going65_6_valid_fifo.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going79_0_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going83_1_sr.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going83_1_valid_fifo.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going67_1_valid_fifo.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -2987,126 +3168,6 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B1_start.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B1_start_branch.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B1_start_merge.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B1_start_stall_region.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B1_start_merge_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024f32_unnamed_4_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax2_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_s_struct_z40000_unnamed_atax3_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter11_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter11_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going83_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond84_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_bb_B2_sr_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -3115,183 +3176,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B3.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B3_branch.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B3_merge.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B3_stall_region.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_3_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_4_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_6_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_readdata_reg_unnamed_6_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going79_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going79_0_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_040_pop17_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_040_pop17_3_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv8_pop16_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv8_pop16_13_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond80_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond80_17_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_040_push17_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_040_push17_21_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv8_push16_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i7_fpga_indvars_iv8_push16_19_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B3_merge_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_s_struct_z4pa0000_unnamed_atax5_atax0.sv</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B3_sr_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3300,254 +3185,6 @@
             </ipxact:file>
             <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_bb_B3_sr_1.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B4.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B4_branch.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B4_merge.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_bb_B4_stall_region.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_10_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_readdata_reg_unnamed_10_atax3.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_11_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_readdata_reg_unnamed_11_atax4.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_8_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_readdata_reg_unnamed_8_atax1.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_9_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_readdata_reg_unnamed_9_atax2.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_B4_merge_reg.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_1_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body9_s_c0_enter12214_atax1.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit124_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body9_s_c0_enter12214_atax0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going65_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp7789_pop29_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups68_pop27_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_039_pop26_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i5_fpga_indvars_iv_pop25_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom88_pop28_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration67_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp7789_push29_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond75_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups68_push27_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_039_push26_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i5_fpga_indvars_iv_push25_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom88_push28_0.sv</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_s_struct_z4pa0000_unnamed_atax7_atax0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3571,7 +3208,23 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B6_sr_0.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_bb_B6_sr_1.sv</ipxact:name>
+                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
+                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
+                <ipxact:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>atax_internal_10/synth/atax_bb_B7_sr_0.sv</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3611,7 +3264,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_ic_master_endpoint.v</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/acl_ic_host_endpoint.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3635,7 +3288,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_ic_slave_endpoint.v</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/acl_ic_agent_endpoint.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3643,7 +3296,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_ic_slave_rrp.v</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/acl_ic_agent_rrp.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3651,7 +3304,7 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_ic_slave_wrp.v</ipxact:name>
+                <ipxact:name>atax_internal_10/synth/acl_ic_agent_wrp.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
                 <ipxact:vendorExtensions>
@@ -3803,14 +3456,6 @@
                 </ipxact:vendorExtensions>
             </ipxact:file>
             <ipxact:file>
-                <ipxact:name>atax_internal_10/synth/acl_mem2x.v</ipxact:name>
-                <ipxact:fileType>systemVerilogSource</ipxact:fileType>
-                <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
-                <ipxact:vendorExtensions>
-                    <altera:altera_hdl_compilation_library>atax</altera:altera_hdl_compilation_library>
-                </ipxact:vendorExtensions>
-            </ipxact:file>
-            <ipxact:file>
                 <ipxact:name>atax_internal_10/synth/atax_internal.v</ipxact:name>
                 <ipxact:fileType>systemVerilogSource</ipxact:fileType>
                 <ipxact:isIncludeFile>false</ipxact:isIncludeFile>
@@ -3862,6 +3507,11 @@
                     <ipxact:displayName>Auto DEVICE_SPEEDGRADE</ipxact:displayName>
                     <ipxact:value>5</ipxact:value>
                 </ipxact:parameter>
+                <ipxact:parameter parameterId="AUTO_BOARD" type="string">
+                    <ipxact:name>AUTO_BOARD</ipxact:name>
+                    <ipxact:displayName>Auto BOARD</ipxact:displayName>
+                    <ipxact:value>default</ipxact:value>
+                </ipxact:parameter>
                 <ipxact:parameter parameterId="AUTO_CLOCK_CLOCK_RATE" type="longint">
                     <ipxact:name>AUTO_CLOCK_CLOCK_RATE</ipxact:name>
                     <ipxact:displayName>Auto CLOCK_RATE</ipxact:displayName>
@@ -3874,21 +3524,6 @@
                 </ipxact:parameter>
                 <ipxact:parameter parameterId="AUTO_CLOCK_RESET_DOMAIN" type="longint">
                     <ipxact:name>AUTO_CLOCK_RESET_DOMAIN</ipxact:name>
-                    <ipxact:displayName>Auto RESET_DOMAIN</ipxact:displayName>
-                    <ipxact:value>-1</ipxact:value>
-                </ipxact:parameter>
-                <ipxact:parameter parameterId="AUTO_CLOCK2X_CLOCK_RATE" type="longint">
-                    <ipxact:name>AUTO_CLOCK2X_CLOCK_RATE</ipxact:name>
-                    <ipxact:displayName>Auto CLOCK_RATE</ipxact:displayName>
-                    <ipxact:value>-1</ipxact:value>
-                </ipxact:parameter>
-                <ipxact:parameter parameterId="AUTO_CLOCK2X_CLOCK_DOMAIN" type="longint">
-                    <ipxact:name>AUTO_CLOCK2X_CLOCK_DOMAIN</ipxact:name>
-                    <ipxact:displayName>Auto CLOCK_DOMAIN</ipxact:displayName>
-                    <ipxact:value>-1</ipxact:value>
-                </ipxact:parameter>
-                <ipxact:parameter parameterId="AUTO_CLOCK2X_RESET_DOMAIN" type="longint">
-                    <ipxact:name>AUTO_CLOCK2X_RESET_DOMAIN</ipxact:name>
                     <ipxact:displayName>Auto RESET_DOMAIN</ipxact:displayName>
                     <ipxact:value>-1</ipxact:value>
                 </ipxact:parameter>

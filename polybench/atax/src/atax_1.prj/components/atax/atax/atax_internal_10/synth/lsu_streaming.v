@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -23,15 +23,15 @@
 //              (see lsu_top.v for details)
 //
 // Description: Streaming units may be used when all requests are guaranteed
-//              to be in order with no NOP instructions in between (NOP 
-//              requests at the end are permitted and garbage data is 
+//              to be in order with no NOP instructions in between (NOP
+//              requests at the end are permitted and garbage data is
 //              returned).  Requests are buffered or pre-fetched so the
 //              back-end must verify that the requests are hazard-safe.
 
 /*****************************************************************************/
 // Streaming read unit:
 //   Pre-fetch a stream of size data words beginning at base_address.  The
-//   inputs are assumed to be valid once the first i_valid signal is asserted.  
+//   inputs are assumed to be valid once the first i_valid signal is asserted.
 //   Once all data is consumed, further requests are verified to be NOP
 //   requests in which case garbage data is returned and the thread passes
 //   through the unit.
@@ -39,11 +39,11 @@
 
 `default_nettype none
 
-module lsu_streaming_read 
+module lsu_streaming_read
 (
-   clk, reset, o_stall, i_valid, i_stall, i_nop, o_valid, o_readdata, 
+   clk, reset, o_stall, i_valid, i_stall, i_nop, o_valid, o_readdata,
    o_active, //Debugging signal
-   base_address, size, avm_address, avm_burstcount, avm_read, 
+   base_address, size, avm_address, avm_burstcount, avm_read,
    avm_readdata, avm_waitrequest, avm_byteenable, avm_readdatavalid,
    ecc_err_status
 );
@@ -73,7 +73,7 @@ localparam MAXBURSTCOUNT=2**(BURSTCOUNT_WIDTH-1);
 //   is slow to pull data out we can overlap the next burst with that.  Also
 //   since you can't backpressure responses, you need at least a full burst
 //   of space.
-// Note the burst_read_master requires a fifo depth >= MAXBURSTCOUNT + 5.  This
+// Note the burst_read_host requires a fifo depth >= MAXBURSTCOUNT + 5.  This
 // hardcoded 5 latency could result in half the bandwidth when burst and
 // latency is small, hence double it so we can double buffer.
 localparam _FIFO_DEPTH = MAXBURSTCOUNT + 10 + ((MEMORY_SIDE_MEM_LATENCY * WIDTH_BYTES + MWIDTH_BYTES - 1) / MWIDTH_BYTES);
@@ -164,7 +164,7 @@ acl_data_fifo #(
 wire [AWIDTH-1:0] aligned_base_address;
 wire [AWIDTH-1:0] base_offset;
 
-// Read master signals
+// Read host signals
 wire rm_done;
 wire rm_valid;
 wire rm_go;
@@ -196,12 +196,12 @@ begin
       i_reg_valid <= 1'b0;
       reg_base_address <= 'x;
       reg_size <= 'x;
-      reg_rm_size_partial <= 'x; 
+      reg_rm_size_partial <= 'x;
       i_reg_nop <= 'x;
    end
    else
    begin
-      if (!o_stall) 
+      if (!o_stall)
       begin
          i_reg_nop <= i_nop;
          i_reg_valid <= i_valid;
@@ -239,15 +239,15 @@ assign rm_base_address = ((aligned_base_address >> MBYTE_SELECT_BITS) << MBYTE_S
 
 // Requests come in based on WIDTH sized words.  The memory bus is MWIDTH
 // sized, so we need to fix up the read-length and base-address alignment
-// before using the lsu_burst_read_master.
+// before using the lsu_burst_read_host.
 assign base_offset = aligned_base_address[MBYTE_SELECT_BITS-1:0];
 assign rm_size = ((reg_rm_size_partial + MWIDTH_BYTES - 1) >> MBYTE_SELECT_BITS) << MBYTE_SELECT_BITS;
 
 // Load in a new set of parameters if a new ND-Range is beginning (determined
-// by checking if the current ND-Range completed or the read_master is 
+// by checking if the current ND-Range completed or the read_host is
 // currently inactive).
 assign rm_go = i_reg_valid && (threads_rem == 0) && !rm_valid && !i_reg_nop;
-lsu_burst_read_master #(
+lsu_burst_read_host #(
    .DATAWIDTH( MWIDTH ),
    .MAXBURSTCOUNT( MAXBURSTCOUNT ),
    .BURSTCOUNTWIDTH( BURSTCOUNT_WIDTH ),
@@ -259,7 +259,7 @@ lsu_burst_read_master #(
    .ASYNC_RESET( ASYNC_RESET ),
    .SYNCHRONIZE_RESET( 0 ),
    .enable_ecc(enable_ecc)
-) read_master (
+) read_host (
    .clk(clk),
    .reset(~resetn_synchronized),
    .o_active(o_active),
@@ -275,13 +275,13 @@ lsu_burst_read_master #(
    .user_buffer_data( rm_data ),
    .user_data_available( rm_valid ),
 
-   .master_address( f_avm_address ),
-   .master_read( f_avm_read ),
-   .master_byteenable( avm_byteenable ),
-   .master_readdata( avm_readdata ),
-   .master_readdatavalid( avm_readdatavalid ),
-   .master_burstcount( f_avm_burstcount ),
-   .master_waitrequest( f_avm_waitrequest ),
+   .host_address( f_avm_address ),
+   .host_read( f_avm_read ),
+   .host_byteenable( avm_byteenable ),
+   .host_readdata( avm_readdata ),
+   .host_readdatavalid( avm_readdatavalid ),
+   .host_burstcount( f_avm_burstcount ),
+   .host_waitrequest( f_avm_waitrequest ),
    .ecc_err_status(ecc_err_status_1)
 );
 assign ecc_err_status = ecc_err_status_0 | ecc_err_status_1;
@@ -293,7 +293,7 @@ begin
    reg [MBYTE_SELECT_BITS-BYTE_SELECT_BITS-1:0] wa_word_counter;
 
    // Width adapting logic - a counter is used to track which word is active from
-   // each MWIDTH sized line from main memory.  The counter is initialized from 
+   // each MWIDTH sized line from main memory.  The counter is initialized from
    // the lower address bits of the initial request.
    always@(posedge clk or negedge aclrn)
    begin
@@ -329,15 +329,15 @@ endmodule
 // are buffered until sufficient data is availble to generate a large burst
 // write request.
 //
-// Since the burst-master doesn't support width adaptation, the first and last
+// Since the burst-host doesn't support width adaptation, the first and last
 // words are written by the wrapper unit.
 //
-// Based off code for the "write_burst_master" template available on the Altera
+// Based off code for the "write_burst_host" template available on the Altera
 // website.
 /*****************************************************************************/
 module lsu_streaming_write
 (
-   clk, reset, o_stall, i_valid, i_stall, i_writedata, i_nop, i_byteenable, o_valid, 
+   clk, reset, o_stall, i_valid, i_stall, i_writedata, i_nop, i_byteenable, o_valid,
    o_active, //Debugging signal
    base_address, size, avm_address, avm_burstcount, avm_write, avm_writeack, avm_writedata,
    avm_byteenable, avm_waitrequest,
@@ -478,7 +478,7 @@ reg [31:0] c_length;
 reg [31:0] c_length_reenc;
 reg [31:0] ack_counter;
 
-// Write master signals
+// Write host signals
 reg wm_first_xfer;
 reg [AWIDTH-1:0] wm_address;
    // burstcount counts the total number of words in the current burst
@@ -553,7 +553,7 @@ begin
    end
 end
 
-// Force address alignment bits to 0.  They should already be 0, but forcing 
+// Force address alignment bits to 0.  They should already be 0, but forcing
 // them to 0 here lets Quartus see the alignment and optimize the design
 assign aligned_base_address = ((base_address >> ALIGNMENT_ABITS) << ALIGNMENT_ABITS);
 
@@ -630,7 +630,7 @@ begin
          // Keep track of the number of threads serviced
          threads_remaining_to_be_serviced <= (i_valid && !o_stall && !i_nop) ? (threads_remaining_to_be_serviced - 1) : threads_remaining_to_be_serviced;
       end
-      
+
       if(~sclrn[0]) begin
          wm_first_xfer <= 1'b0;
          wm_address <= {AWIDTH{1'b0}};
@@ -644,7 +644,7 @@ begin
          fw_out_enable <= 1'b0;
          threads_remaining_to_be_serviced <= {32{1'b0}};
       end
-      
+
    end
 end
 
@@ -675,7 +675,7 @@ assign b_ready = (fifo_used > MAXBURSTCOUNT) || ((fifo_used == MAXBURSTCOUNT) &&
 // Begin a new burst whenever one of the burst stages is ready with burst data
 // and the previous burst is complete or about to complete
 assign burst_begin = ((fsb_enable && fsb_ready) || (lsb_enable && lsb_ready) || (b_ready)) &&
-                     !c_done && ((wm_burst_counter == 0) || ((wm_burst_counter == 1) && 
+                     !c_done && ((wm_burst_counter == 0) || ((wm_burst_counter == 1) &&
                      !f_avm_waitrequest && (c_length > (MAXBURSTCOUNT << MBYTE_SELECT_BITS))));
 assign burst_count = fsb_enable ? fsb_count :
                      lsb_enable ? lsb_count : MAXBURSTCOUNT;
@@ -715,7 +715,7 @@ generate
    for(n=0; n<NUM_FIFOS; n++)
    begin : fifo_n
 
-      
+
       if (USE_BYTE_EN)
       begin
          acl_scfifo_wrapped #(
@@ -771,17 +771,17 @@ generate
            .sclr( ~sclrn[0] ),
            .ecc_err_status ({ecc_err_status_for_1[n], ecc_err_status_for_0[n]})
         );
-        assign fifo_byteenable_out[n*WIDTH_BYTES +: WIDTH_BYTES] = {WIDTH_BYTES{ 1'b1}};     
+        assign fifo_byteenable_out[n*WIDTH_BYTES +: WIDTH_BYTES] = {WIDTH_BYTES{ 1'b1}};
       end
-      
+
       assign fifo_wrreq_n[n] = i_valid && !o_stall && !i_nop && (fifo_next_word == n);
       assign fifo_byteenable[n*WIDTH_BYTES +: WIDTH_BYTES] = {WIDTH_BYTES{ fifo_wrreq_n[n] }};
-      
+
       assign fifo_read_enable[n] = fw_out_enable ? fw_byteenable[n*WIDTH_BYTES] : (lw_out_enable ? lw_byteenable[n*WIDTH_BYTES] :1'b1);
    end
 endgenerate
 
-assign ecc_err_status = ecc_err_status_0 | ecc_err_status_1; 
+assign ecc_err_status = ecc_err_status_0 | ecc_err_status_1;
 
 // Only the last fifo's full/used signals matter to the rest of the design
 assign fifo_full = fifo_full_n[NUM_FIFOS-1];

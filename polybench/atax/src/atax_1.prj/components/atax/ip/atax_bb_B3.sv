@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------- 
-// High Level Design Compiler for Intel(R) FPGAs Version 20.4 (Release Build #72)
+// High Level Design Compiler for Intel(R) FPGAs Version 23.4 (Release Build #31.1)
 // 
-// Legal Notice: Copyright 2020 Intel Corporation.  All rights reserved.
+// Legal Notice: Copyright 2022 Intel Corporation.  All rights reserved.
 // Your use of  Intel Corporation's design tools,  logic functions and other
 // software and  tools, and its AMPP partner logic functions, and any output
 // files any  of the foregoing (including  device programming  or simulation
@@ -14,15 +14,46 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from atax_bb_B3
-// SystemVerilog created on Tue Jan  2 20:41:09 2024
+// SystemVerilog created from bb_atax_B3
+// Created for function/kernel atax
+// SystemVerilog created on Sun Jan 21 01:17:51 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_bb_B3 (
-    output wire [0:0] out_exiting_stall_out,
-    output wire [0:0] out_exiting_valid_out,
-    output wire [63:0] out_idxprom,
+    input wire [0:0] in_flush,
+    input wire [0:0] in_forked_0,
+    input wire [0:0] in_forked_1,
+    input wire [63:0] in_intel_reserved_ffwd_1_0,
+    input wire [31:0] in_intel_reserved_ffwd_5_0,
+    input wire [31:0] in_memdep_2_atax_avm_readdata,
+    input wire [0:0] in_memdep_2_atax_avm_readdatavalid,
+    input wire [0:0] in_memdep_2_atax_avm_waitrequest,
+    input wire [0:0] in_memdep_2_atax_avm_writeack,
+    input wire [31:0] in_memdep_3_atax_avm_readdata,
+    input wire [0:0] in_memdep_3_atax_avm_readdatavalid,
+    input wire [0:0] in_memdep_3_atax_avm_waitrequest,
+    input wire [0:0] in_memdep_3_atax_avm_writeack,
+    input wire [31:0] in_memdep_atax_avm_readdata,
+    input wire [0:0] in_memdep_atax_avm_readdatavalid,
+    input wire [0:0] in_memdep_atax_avm_waitrequest,
+    input wire [0:0] in_memdep_atax_avm_writeack,
+    input wire [0:0] in_stall_in_0,
+    input wire [63:0] in_unnamed_atax6_atax_avm_readdata,
+    input wire [0:0] in_unnamed_atax6_atax_avm_readdatavalid,
+    input wire [0:0] in_unnamed_atax6_atax_avm_waitrequest,
+    input wire [0:0] in_unnamed_atax6_atax_avm_writeack,
+    input wire [0:0] in_valid_in_0,
+    input wire [0:0] in_valid_in_1,
+    output wire [31:0] out_intel_reserved_ffwd_3_0,
+    output wire [63:0] out_intel_reserved_ffwd_4_0,
+    output wire [31:0] out_memdep_2_atax_avm_address,
+    output wire [0:0] out_memdep_2_atax_avm_burstcount,
+    output wire [3:0] out_memdep_2_atax_avm_byteenable,
+    output wire [0:0] out_memdep_2_atax_avm_enable,
+    output wire [0:0] out_memdep_2_atax_avm_read,
+    output wire [0:0] out_memdep_2_atax_avm_write,
+    output wire [31:0] out_memdep_2_atax_avm_writedata,
     output wire [31:0] out_memdep_3_atax_avm_address,
     output wire [0:0] out_memdep_3_atax_avm_burstcount,
     output wire [3:0] out_memdep_3_atax_avm_byteenable,
@@ -30,13 +61,6 @@ module atax_bb_B3 (
     output wire [0:0] out_memdep_3_atax_avm_read,
     output wire [0:0] out_memdep_3_atax_avm_write,
     output wire [31:0] out_memdep_3_atax_avm_writedata,
-    output wire [31:0] out_memdep_4_atax_avm_address,
-    output wire [0:0] out_memdep_4_atax_avm_burstcount,
-    output wire [3:0] out_memdep_4_atax_avm_byteenable,
-    output wire [0:0] out_memdep_4_atax_avm_enable,
-    output wire [0:0] out_memdep_4_atax_avm_read,
-    output wire [0:0] out_memdep_4_atax_avm_write,
-    output wire [31:0] out_memdep_4_atax_avm_writedata,
     output wire [31:0] out_memdep_atax_avm_address,
     output wire [0:0] out_memdep_atax_avm_burstcount,
     output wire [3:0] out_memdep_atax_avm_byteenable,
@@ -44,7 +68,6 @@ module atax_bb_B3 (
     output wire [0:0] out_memdep_atax_avm_read,
     output wire [0:0] out_memdep_atax_avm_write,
     output wire [31:0] out_memdep_atax_avm_writedata,
-    output wire [0:0] out_notcmp77,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_stall_out_1,
     output wire [63:0] out_unnamed_atax6_atax_avm_address,
@@ -57,48 +80,25 @@ module atax_bb_B3 (
     output wire [0:0] out_valid_in_0,
     output wire [0:0] out_valid_in_1,
     output wire [0:0] out_valid_out_0,
-    input wire [0:0] in_pipeline_stall_in,
-    output wire [0:0] out_pipeline_valid_out,
-    input wire [0:0] in_flush,
-    input wire [0:0] in_forked86_0,
-    input wire [0:0] in_forked86_1,
-    input wire [31:0] in_memdep_3_atax_avm_readdata,
-    input wire [0:0] in_memdep_3_atax_avm_readdatavalid,
-    input wire [0:0] in_memdep_3_atax_avm_waitrequest,
-    input wire [0:0] in_memdep_3_atax_avm_writeack,
-    input wire [31:0] in_memdep_4_atax_avm_readdata,
-    input wire [0:0] in_memdep_4_atax_avm_readdatavalid,
-    input wire [0:0] in_memdep_4_atax_avm_waitrequest,
-    input wire [0:0] in_memdep_4_atax_avm_writeack,
-    input wire [31:0] in_memdep_atax_avm_readdata,
-    input wire [0:0] in_memdep_atax_avm_readdatavalid,
-    input wire [0:0] in_memdep_atax_avm_waitrequest,
-    input wire [0:0] in_memdep_atax_avm_writeack,
-    input wire [0:0] in_stall_in_0,
-    input wire [63:0] in_unnamed_atax6_atax_avm_readdata,
-    input wire [0:0] in_unnamed_atax6_atax_avm_readdatavalid,
-    input wire [0:0] in_unnamed_atax6_atax_avm_waitrequest,
-    input wire [0:0] in_unnamed_atax6_atax_avm_writeack,
-    input wire [0:0] in_valid_in_0,
-    input wire [0:0] in_valid_in_1,
-    input wire [63:0] in_intel_reserved_ffwd_0_0_0_tpl,
-    input wire [63:0] in_intel_reserved_ffwd_0_0_1_tpl,
-    input wire [63:0] in_intel_reserved_ffwd_0_0_2_tpl,
     input wire clock,
     input wire resetn
     );
 
-    wire [63:0] atax_B3_branch_out_idxprom;
-    wire [0:0] atax_B3_branch_out_notcmp77;
     wire [0:0] atax_B3_branch_out_stall_out;
     wire [0:0] atax_B3_branch_out_valid_out_0;
-    wire [0:0] atax_B3_merge_out_forked86;
+    wire [0:0] atax_B3_merge_out_forked;
     wire [0:0] atax_B3_merge_out_stall_out_0;
     wire [0:0] atax_B3_merge_out_stall_out_1;
     wire [0:0] atax_B3_merge_out_valid_out;
-    wire [0:0] bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_stall_out;
-    wire [0:0] bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_valid_out;
-    wire [63:0] bb_atax_B3_stall_region_out_idxprom;
+    wire [31:0] bb_atax_B3_stall_region_out_intel_reserved_ffwd_3_0;
+    wire [63:0] bb_atax_B3_stall_region_out_intel_reserved_ffwd_4_0;
+    wire [31:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_address;
+    wire [0:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_burstcount;
+    wire [3:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_byteenable;
+    wire [0:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_enable;
+    wire [0:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_read;
+    wire [0:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_write;
+    wire [31:0] bb_atax_B3_stall_region_out_memdep_2_atax_avm_writedata;
     wire [31:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_address;
     wire [0:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_burstcount;
     wire [3:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_byteenable;
@@ -106,13 +106,6 @@ module atax_bb_B3 (
     wire [0:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_read;
     wire [0:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_write;
     wire [31:0] bb_atax_B3_stall_region_out_memdep_3_atax_avm_writedata;
-    wire [31:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_address;
-    wire [0:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_burstcount;
-    wire [3:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_byteenable;
-    wire [0:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_enable;
-    wire [0:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_read;
-    wire [0:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_write;
-    wire [31:0] bb_atax_B3_stall_region_out_memdep_4_atax_avm_writedata;
     wire [31:0] bb_atax_B3_stall_region_out_memdep_atax_avm_address;
     wire [0:0] bb_atax_B3_stall_region_out_memdep_atax_avm_burstcount;
     wire [3:0] bb_atax_B3_stall_region_out_memdep_atax_avm_byteenable;
@@ -120,8 +113,6 @@ module atax_bb_B3 (
     wire [0:0] bb_atax_B3_stall_region_out_memdep_atax_avm_read;
     wire [0:0] bb_atax_B3_stall_region_out_memdep_atax_avm_write;
     wire [31:0] bb_atax_B3_stall_region_out_memdep_atax_avm_writedata;
-    wire [0:0] bb_atax_B3_stall_region_out_notcmp77;
-    wire [0:0] bb_atax_B3_stall_region_out_pipeline_valid_out;
     wire [0:0] bb_atax_B3_stall_region_out_stall_out;
     wire [63:0] bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_address;
     wire [0:0] bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_burstcount;
@@ -135,12 +126,8 @@ module atax_bb_B3 (
 
     // atax_B3_branch(BLACKBOX,2)
     atax_B3_branch theatax_B3_branch (
-        .in_idxprom(bb_atax_B3_stall_region_out_idxprom),
-        .in_notcmp77(bb_atax_B3_stall_region_out_notcmp77),
         .in_stall_in_0(in_stall_in_0),
         .in_valid_in(bb_atax_B3_stall_region_out_valid_out),
-        .out_idxprom(atax_B3_branch_out_idxprom),
-        .out_notcmp77(atax_B3_branch_out_notcmp77),
         .out_stall_out(atax_B3_branch_out_stall_out),
         .out_valid_out_0(atax_B3_branch_out_valid_out_0),
         .clock(clock),
@@ -149,12 +136,12 @@ module atax_bb_B3 (
 
     // atax_B3_merge(BLACKBOX,3)
     atax_B3_merge theatax_B3_merge (
-        .in_forked86_0(in_forked86_0),
-        .in_forked86_1(in_forked86_1),
+        .in_forked_0(in_forked_0),
+        .in_forked_1(in_forked_1),
         .in_stall_in(bb_atax_B3_stall_region_out_stall_out),
         .in_valid_in_0(in_valid_in_0),
         .in_valid_in_1(in_valid_in_1),
-        .out_forked86(atax_B3_merge_out_forked86),
+        .out_forked(atax_B3_merge_out_forked),
         .out_stall_out_0(atax_B3_merge_out_stall_out_0),
         .out_stall_out_1(atax_B3_merge_out_stall_out_1),
         .out_valid_out(atax_B3_merge_out_valid_out),
@@ -165,32 +152,36 @@ module atax_bb_B3 (
     // bb_atax_B3_stall_region(BLACKBOX,4)
     atax_bb_B3_stall_region thebb_atax_B3_stall_region (
         .in_flush(in_flush),
-        .in_forked86(atax_B3_merge_out_forked86),
+        .in_forked(atax_B3_merge_out_forked),
+        .in_intel_reserved_ffwd_1_0(in_intel_reserved_ffwd_1_0),
+        .in_intel_reserved_ffwd_5_0(in_intel_reserved_ffwd_5_0),
+        .in_memdep_2_atax_avm_readdata(in_memdep_2_atax_avm_readdata),
+        .in_memdep_2_atax_avm_readdatavalid(in_memdep_2_atax_avm_readdatavalid),
+        .in_memdep_2_atax_avm_waitrequest(in_memdep_2_atax_avm_waitrequest),
+        .in_memdep_2_atax_avm_writeack(in_memdep_2_atax_avm_writeack),
         .in_memdep_3_atax_avm_readdata(in_memdep_3_atax_avm_readdata),
         .in_memdep_3_atax_avm_readdatavalid(in_memdep_3_atax_avm_readdatavalid),
         .in_memdep_3_atax_avm_waitrequest(in_memdep_3_atax_avm_waitrequest),
         .in_memdep_3_atax_avm_writeack(in_memdep_3_atax_avm_writeack),
-        .in_memdep_4_atax_avm_readdata(in_memdep_4_atax_avm_readdata),
-        .in_memdep_4_atax_avm_readdatavalid(in_memdep_4_atax_avm_readdatavalid),
-        .in_memdep_4_atax_avm_waitrequest(in_memdep_4_atax_avm_waitrequest),
-        .in_memdep_4_atax_avm_writeack(in_memdep_4_atax_avm_writeack),
         .in_memdep_atax_avm_readdata(in_memdep_atax_avm_readdata),
         .in_memdep_atax_avm_readdatavalid(in_memdep_atax_avm_readdatavalid),
         .in_memdep_atax_avm_waitrequest(in_memdep_atax_avm_waitrequest),
         .in_memdep_atax_avm_writeack(in_memdep_atax_avm_writeack),
-        .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_stall_in(atax_B3_branch_out_stall_out),
         .in_unnamed_atax6_atax_avm_readdata(in_unnamed_atax6_atax_avm_readdata),
         .in_unnamed_atax6_atax_avm_readdatavalid(in_unnamed_atax6_atax_avm_readdatavalid),
         .in_unnamed_atax6_atax_avm_waitrequest(in_unnamed_atax6_atax_avm_waitrequest),
         .in_unnamed_atax6_atax_avm_writeack(in_unnamed_atax6_atax_avm_writeack),
         .in_valid_in(atax_B3_merge_out_valid_out),
-        .in_intel_reserved_ffwd_0_0_0_tpl(in_intel_reserved_ffwd_0_0_0_tpl),
-        .in_intel_reserved_ffwd_0_0_1_tpl(in_intel_reserved_ffwd_0_0_1_tpl),
-        .in_intel_reserved_ffwd_0_0_2_tpl(in_intel_reserved_ffwd_0_0_2_tpl),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_stall_out(bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_valid_out(bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_valid_out),
-        .out_idxprom(bb_atax_B3_stall_region_out_idxprom),
+        .out_intel_reserved_ffwd_3_0(bb_atax_B3_stall_region_out_intel_reserved_ffwd_3_0),
+        .out_intel_reserved_ffwd_4_0(bb_atax_B3_stall_region_out_intel_reserved_ffwd_4_0),
+        .out_memdep_2_atax_avm_address(bb_atax_B3_stall_region_out_memdep_2_atax_avm_address),
+        .out_memdep_2_atax_avm_burstcount(bb_atax_B3_stall_region_out_memdep_2_atax_avm_burstcount),
+        .out_memdep_2_atax_avm_byteenable(bb_atax_B3_stall_region_out_memdep_2_atax_avm_byteenable),
+        .out_memdep_2_atax_avm_enable(bb_atax_B3_stall_region_out_memdep_2_atax_avm_enable),
+        .out_memdep_2_atax_avm_read(bb_atax_B3_stall_region_out_memdep_2_atax_avm_read),
+        .out_memdep_2_atax_avm_write(bb_atax_B3_stall_region_out_memdep_2_atax_avm_write),
+        .out_memdep_2_atax_avm_writedata(bb_atax_B3_stall_region_out_memdep_2_atax_avm_writedata),
         .out_memdep_3_atax_avm_address(bb_atax_B3_stall_region_out_memdep_3_atax_avm_address),
         .out_memdep_3_atax_avm_burstcount(bb_atax_B3_stall_region_out_memdep_3_atax_avm_burstcount),
         .out_memdep_3_atax_avm_byteenable(bb_atax_B3_stall_region_out_memdep_3_atax_avm_byteenable),
@@ -198,13 +189,6 @@ module atax_bb_B3 (
         .out_memdep_3_atax_avm_read(bb_atax_B3_stall_region_out_memdep_3_atax_avm_read),
         .out_memdep_3_atax_avm_write(bb_atax_B3_stall_region_out_memdep_3_atax_avm_write),
         .out_memdep_3_atax_avm_writedata(bb_atax_B3_stall_region_out_memdep_3_atax_avm_writedata),
-        .out_memdep_4_atax_avm_address(bb_atax_B3_stall_region_out_memdep_4_atax_avm_address),
-        .out_memdep_4_atax_avm_burstcount(bb_atax_B3_stall_region_out_memdep_4_atax_avm_burstcount),
-        .out_memdep_4_atax_avm_byteenable(bb_atax_B3_stall_region_out_memdep_4_atax_avm_byteenable),
-        .out_memdep_4_atax_avm_enable(bb_atax_B3_stall_region_out_memdep_4_atax_avm_enable),
-        .out_memdep_4_atax_avm_read(bb_atax_B3_stall_region_out_memdep_4_atax_avm_read),
-        .out_memdep_4_atax_avm_write(bb_atax_B3_stall_region_out_memdep_4_atax_avm_write),
-        .out_memdep_4_atax_avm_writedata(bb_atax_B3_stall_region_out_memdep_4_atax_avm_writedata),
         .out_memdep_atax_avm_address(bb_atax_B3_stall_region_out_memdep_atax_avm_address),
         .out_memdep_atax_avm_burstcount(bb_atax_B3_stall_region_out_memdep_atax_avm_burstcount),
         .out_memdep_atax_avm_byteenable(bb_atax_B3_stall_region_out_memdep_atax_avm_byteenable),
@@ -212,8 +196,6 @@ module atax_bb_B3 (
         .out_memdep_atax_avm_read(bb_atax_B3_stall_region_out_memdep_atax_avm_read),
         .out_memdep_atax_avm_write(bb_atax_B3_stall_region_out_memdep_atax_avm_write),
         .out_memdep_atax_avm_writedata(bb_atax_B3_stall_region_out_memdep_atax_avm_writedata),
-        .out_notcmp77(bb_atax_B3_stall_region_out_notcmp77),
-        .out_pipeline_valid_out(bb_atax_B3_stall_region_out_pipeline_valid_out),
         .out_stall_out(bb_atax_B3_stall_region_out_stall_out),
         .out_unnamed_atax6_atax_avm_address(bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_address),
         .out_unnamed_atax6_atax_avm_burstcount(bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_burstcount),
@@ -227,118 +209,109 @@ module atax_bb_B3 (
         .resetn(resetn)
     );
 
-    // out_exiting_stall_out(GPOUT,5)
-    assign out_exiting_stall_out = bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_stall_out;
+    // out_intel_reserved_ffwd_3_0(GPOUT,29)
+    assign out_intel_reserved_ffwd_3_0 = bb_atax_B3_stall_region_out_intel_reserved_ffwd_3_0;
 
-    // out_exiting_valid_out(GPOUT,6)
-    assign out_exiting_valid_out = bb_atax_B3_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_atax0_exiting_valid_out;
+    // out_intel_reserved_ffwd_4_0(GPOUT,30)
+    assign out_intel_reserved_ffwd_4_0 = bb_atax_B3_stall_region_out_intel_reserved_ffwd_4_0;
 
-    // out_idxprom(GPOUT,7)
-    assign out_idxprom = atax_B3_branch_out_idxprom;
+    // out_memdep_2_atax_avm_address(GPOUT,31)
+    assign out_memdep_2_atax_avm_address = bb_atax_B3_stall_region_out_memdep_2_atax_avm_address;
 
-    // out_memdep_3_atax_avm_address(GPOUT,8)
+    // out_memdep_2_atax_avm_burstcount(GPOUT,32)
+    assign out_memdep_2_atax_avm_burstcount = bb_atax_B3_stall_region_out_memdep_2_atax_avm_burstcount;
+
+    // out_memdep_2_atax_avm_byteenable(GPOUT,33)
+    assign out_memdep_2_atax_avm_byteenable = bb_atax_B3_stall_region_out_memdep_2_atax_avm_byteenable;
+
+    // out_memdep_2_atax_avm_enable(GPOUT,34)
+    assign out_memdep_2_atax_avm_enable = bb_atax_B3_stall_region_out_memdep_2_atax_avm_enable;
+
+    // out_memdep_2_atax_avm_read(GPOUT,35)
+    assign out_memdep_2_atax_avm_read = bb_atax_B3_stall_region_out_memdep_2_atax_avm_read;
+
+    // out_memdep_2_atax_avm_write(GPOUT,36)
+    assign out_memdep_2_atax_avm_write = bb_atax_B3_stall_region_out_memdep_2_atax_avm_write;
+
+    // out_memdep_2_atax_avm_writedata(GPOUT,37)
+    assign out_memdep_2_atax_avm_writedata = bb_atax_B3_stall_region_out_memdep_2_atax_avm_writedata;
+
+    // out_memdep_3_atax_avm_address(GPOUT,38)
     assign out_memdep_3_atax_avm_address = bb_atax_B3_stall_region_out_memdep_3_atax_avm_address;
 
-    // out_memdep_3_atax_avm_burstcount(GPOUT,9)
+    // out_memdep_3_atax_avm_burstcount(GPOUT,39)
     assign out_memdep_3_atax_avm_burstcount = bb_atax_B3_stall_region_out_memdep_3_atax_avm_burstcount;
 
-    // out_memdep_3_atax_avm_byteenable(GPOUT,10)
+    // out_memdep_3_atax_avm_byteenable(GPOUT,40)
     assign out_memdep_3_atax_avm_byteenable = bb_atax_B3_stall_region_out_memdep_3_atax_avm_byteenable;
 
-    // out_memdep_3_atax_avm_enable(GPOUT,11)
+    // out_memdep_3_atax_avm_enable(GPOUT,41)
     assign out_memdep_3_atax_avm_enable = bb_atax_B3_stall_region_out_memdep_3_atax_avm_enable;
 
-    // out_memdep_3_atax_avm_read(GPOUT,12)
+    // out_memdep_3_atax_avm_read(GPOUT,42)
     assign out_memdep_3_atax_avm_read = bb_atax_B3_stall_region_out_memdep_3_atax_avm_read;
 
-    // out_memdep_3_atax_avm_write(GPOUT,13)
+    // out_memdep_3_atax_avm_write(GPOUT,43)
     assign out_memdep_3_atax_avm_write = bb_atax_B3_stall_region_out_memdep_3_atax_avm_write;
 
-    // out_memdep_3_atax_avm_writedata(GPOUT,14)
+    // out_memdep_3_atax_avm_writedata(GPOUT,44)
     assign out_memdep_3_atax_avm_writedata = bb_atax_B3_stall_region_out_memdep_3_atax_avm_writedata;
 
-    // out_memdep_4_atax_avm_address(GPOUT,15)
-    assign out_memdep_4_atax_avm_address = bb_atax_B3_stall_region_out_memdep_4_atax_avm_address;
-
-    // out_memdep_4_atax_avm_burstcount(GPOUT,16)
-    assign out_memdep_4_atax_avm_burstcount = bb_atax_B3_stall_region_out_memdep_4_atax_avm_burstcount;
-
-    // out_memdep_4_atax_avm_byteenable(GPOUT,17)
-    assign out_memdep_4_atax_avm_byteenable = bb_atax_B3_stall_region_out_memdep_4_atax_avm_byteenable;
-
-    // out_memdep_4_atax_avm_enable(GPOUT,18)
-    assign out_memdep_4_atax_avm_enable = bb_atax_B3_stall_region_out_memdep_4_atax_avm_enable;
-
-    // out_memdep_4_atax_avm_read(GPOUT,19)
-    assign out_memdep_4_atax_avm_read = bb_atax_B3_stall_region_out_memdep_4_atax_avm_read;
-
-    // out_memdep_4_atax_avm_write(GPOUT,20)
-    assign out_memdep_4_atax_avm_write = bb_atax_B3_stall_region_out_memdep_4_atax_avm_write;
-
-    // out_memdep_4_atax_avm_writedata(GPOUT,21)
-    assign out_memdep_4_atax_avm_writedata = bb_atax_B3_stall_region_out_memdep_4_atax_avm_writedata;
-
-    // out_memdep_atax_avm_address(GPOUT,22)
+    // out_memdep_atax_avm_address(GPOUT,45)
     assign out_memdep_atax_avm_address = bb_atax_B3_stall_region_out_memdep_atax_avm_address;
 
-    // out_memdep_atax_avm_burstcount(GPOUT,23)
+    // out_memdep_atax_avm_burstcount(GPOUT,46)
     assign out_memdep_atax_avm_burstcount = bb_atax_B3_stall_region_out_memdep_atax_avm_burstcount;
 
-    // out_memdep_atax_avm_byteenable(GPOUT,24)
+    // out_memdep_atax_avm_byteenable(GPOUT,47)
     assign out_memdep_atax_avm_byteenable = bb_atax_B3_stall_region_out_memdep_atax_avm_byteenable;
 
-    // out_memdep_atax_avm_enable(GPOUT,25)
+    // out_memdep_atax_avm_enable(GPOUT,48)
     assign out_memdep_atax_avm_enable = bb_atax_B3_stall_region_out_memdep_atax_avm_enable;
 
-    // out_memdep_atax_avm_read(GPOUT,26)
+    // out_memdep_atax_avm_read(GPOUT,49)
     assign out_memdep_atax_avm_read = bb_atax_B3_stall_region_out_memdep_atax_avm_read;
 
-    // out_memdep_atax_avm_write(GPOUT,27)
+    // out_memdep_atax_avm_write(GPOUT,50)
     assign out_memdep_atax_avm_write = bb_atax_B3_stall_region_out_memdep_atax_avm_write;
 
-    // out_memdep_atax_avm_writedata(GPOUT,28)
+    // out_memdep_atax_avm_writedata(GPOUT,51)
     assign out_memdep_atax_avm_writedata = bb_atax_B3_stall_region_out_memdep_atax_avm_writedata;
 
-    // out_notcmp77(GPOUT,29)
-    assign out_notcmp77 = atax_B3_branch_out_notcmp77;
-
-    // out_stall_out_0(GPOUT,30)
+    // out_stall_out_0(GPOUT,52)
     assign out_stall_out_0 = atax_B3_merge_out_stall_out_0;
 
-    // out_stall_out_1(GPOUT,31)
+    // out_stall_out_1(GPOUT,53)
     assign out_stall_out_1 = atax_B3_merge_out_stall_out_1;
 
-    // out_unnamed_atax6_atax_avm_address(GPOUT,32)
+    // out_unnamed_atax6_atax_avm_address(GPOUT,54)
     assign out_unnamed_atax6_atax_avm_address = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_address;
 
-    // out_unnamed_atax6_atax_avm_burstcount(GPOUT,33)
+    // out_unnamed_atax6_atax_avm_burstcount(GPOUT,55)
     assign out_unnamed_atax6_atax_avm_burstcount = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_burstcount;
 
-    // out_unnamed_atax6_atax_avm_byteenable(GPOUT,34)
+    // out_unnamed_atax6_atax_avm_byteenable(GPOUT,56)
     assign out_unnamed_atax6_atax_avm_byteenable = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_byteenable;
 
-    // out_unnamed_atax6_atax_avm_enable(GPOUT,35)
+    // out_unnamed_atax6_atax_avm_enable(GPOUT,57)
     assign out_unnamed_atax6_atax_avm_enable = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_enable;
 
-    // out_unnamed_atax6_atax_avm_read(GPOUT,36)
+    // out_unnamed_atax6_atax_avm_read(GPOUT,58)
     assign out_unnamed_atax6_atax_avm_read = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_read;
 
-    // out_unnamed_atax6_atax_avm_write(GPOUT,37)
+    // out_unnamed_atax6_atax_avm_write(GPOUT,59)
     assign out_unnamed_atax6_atax_avm_write = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_write;
 
-    // out_unnamed_atax6_atax_avm_writedata(GPOUT,38)
+    // out_unnamed_atax6_atax_avm_writedata(GPOUT,60)
     assign out_unnamed_atax6_atax_avm_writedata = bb_atax_B3_stall_region_out_unnamed_atax6_atax_avm_writedata;
 
-    // out_valid_in_0(GPOUT,39)
+    // out_valid_in_0(GPOUT,61)
     assign out_valid_in_0 = in_valid_in_0;
 
-    // out_valid_in_1(GPOUT,40)
+    // out_valid_in_1(GPOUT,62)
     assign out_valid_in_1 = in_valid_in_1;
 
-    // out_valid_out_0(GPOUT,41)
+    // out_valid_out_0(GPOUT,63)
     assign out_valid_out_0 = atax_B3_branch_out_valid_out_0;
-
-    // pipeline_valid_out_sync(GPOUT,43)
-    assign out_pipeline_valid_out = bb_atax_B3_stall_region_out_pipeline_valid_out;
 
 endmodule

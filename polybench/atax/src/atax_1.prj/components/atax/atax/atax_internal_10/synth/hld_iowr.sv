@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -215,8 +215,14 @@ module hld_iowr #(
         assign profile_i_stall = ~o_empty & delayed_i_stall;                                                                //we want to send a valid but downstream is stalling
         assign profile_o_stall = (USE_STALL_LATENCY_UPSTREAM) ? stall_latency_profile_o_stall : (i_valid & o_stall);        //upstream wants to send a valid but we are stalling
         assign profile_total_req = profile_i_valid & ~i_predicate;                                                          //upstream has sent a nonpredicated valid to us
-        assign profile_fifo_stall = (USE_STALL_LATENCY_UPSTREAM) ? stall_latency_profile_fifo_stall : ~i_fifoready & i_valid & ~i_predicate;    //upstream wants to send a nonpredicated valid but channel is full
         assign profile_idle = ( ~profile_i_valid & ~profile_fifo_stall );
+        
+        if (NON_BLOCKING) begin
+            assign profile_fifo_stall  = '0; // cannot stall in a non-blocking write
+        end else begin
+            assign profile_fifo_stall = (USE_STALL_LATENCY_UPSTREAM) ? stall_latency_profile_fifo_stall : ~i_fifoready & i_valid & ~i_predicate;    // upstream wants to send a nonpredicated valid but channel is full
+        end
+        
         // Count channel depth when the iowr is either writing, or being stalled by the channel (ie. it is interacting with the channel)
         assign profile_total_fifo_size = (USE_STALL_LATENCY_SIDEPATH) ? (o_fifovalid | profile_fifo_stall) : ((o_fifovalid & i_fifoready) | profile_fifo_stall);
         assign profile_total_fifo_size_incr = i_fifosize;                                                                   // increment by channel depth amounts

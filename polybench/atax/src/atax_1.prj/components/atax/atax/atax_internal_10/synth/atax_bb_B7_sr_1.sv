@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------- 
-// High Level Design Compiler for Intel(R) FPGAs Version 20.4 (Release Build #72)
+// High Level Design Compiler for Intel(R) FPGAs Version 23.4 (Release Build #31.1)
 // 
-// Legal Notice: Copyright 2020 Intel Corporation.  All rights reserved.
+// Legal Notice: Copyright 2022 Intel Corporation.  All rights reserved.
 // Your use of  Intel Corporation's design tools,  logic functions and other
 // software and  tools, and its AMPP partner logic functions, and any output
 // files any  of the foregoing (including  device programming  or simulation
@@ -14,30 +14,23 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from atax_bb_B7_sr_1
-// SystemVerilog created on Tue Jan  2 20:41:09 2024
+// SystemVerilog created from bb_atax_B7_sr_1
+// Created for function/kernel atax
+// SystemVerilog created on Sun Jan 21 01:17:51 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_bb_B7_sr_1 (
     input wire [0:0] in_i_stall,
     input wire [0:0] in_i_valid,
-    input wire [0:0] in_i_data_0_tpl,
-    input wire [0:0] in_i_data_1_tpl,
-    input wire [63:0] in_i_data_2_tpl,
-    input wire [63:0] in_i_data_3_tpl,
-    input wire [31:0] in_i_data_4_tpl,
-    input wire [0:0] in_i_data_5_tpl,
-    input wire [0:0] in_i_data_6_tpl,
+    input wire [31:0] in_i_data_0_tpl,
+    input wire [31:0] in_i_data_1_tpl,
+    input wire [0:0] in_i_data_2_tpl,
     output wire [0:0] out_o_stall,
     output wire [0:0] out_o_valid,
-    output wire [0:0] out_o_data_0_tpl,
-    output wire [0:0] out_o_data_1_tpl,
-    output wire [63:0] out_o_data_2_tpl,
-    output wire [63:0] out_o_data_3_tpl,
-    output wire [31:0] out_o_data_4_tpl,
-    output wire [0:0] out_o_data_5_tpl,
-    output wire [0:0] out_o_data_6_tpl,
+    output wire [31:0] out_o_data_0_tpl,
+    output wire [31:0] out_o_data_1_tpl,
+    output wire [0:0] out_o_data_2_tpl,
     input wire clock,
     input wire resetn
     );
@@ -48,26 +41,14 @@ module atax_bb_B7_sr_1 (
     reg [0:0] sr_valid_q;
     wire [0:0] stall_and_valid_q;
     wire [0:0] data_mux_0_x_s;
-    reg [0:0] data_mux_0_x_q;
+    reg [31:0] data_mux_0_x_q;
     wire [0:0] data_mux_1_x_s;
-    reg [0:0] data_mux_1_x_q;
+    reg [31:0] data_mux_1_x_q;
     wire [0:0] data_mux_2_x_s;
-    reg [63:0] data_mux_2_x_q;
-    wire [0:0] data_mux_3_x_s;
-    reg [63:0] data_mux_3_x_q;
-    wire [0:0] data_mux_4_x_s;
-    reg [31:0] data_mux_4_x_q;
-    wire [0:0] data_mux_5_x_s;
-    reg [0:0] data_mux_5_x_q;
-    wire [0:0] data_mux_6_x_s;
-    reg [0:0] data_mux_6_x_q;
-    reg [0:0] sr_0_x_q;
-    reg [0:0] sr_1_x_q;
-    reg [63:0] sr_2_x_q;
-    reg [63:0] sr_3_x_q;
-    reg [31:0] sr_4_x_q;
-    reg [0:0] sr_5_x_q;
-    reg [0:0] sr_6_x_q;
+    reg [0:0] data_mux_2_x_q;
+    reg [31:0] sr_0_x_q;
+    reg [31:0] sr_1_x_q;
+    reg [0:0] sr_2_x_q;
 
 
     // combined_valid(LOGICAL,2)
@@ -89,25 +70,25 @@ module atax_bb_B7_sr_1 (
         end
     end
 
-    // out_o_stall(GPOUT,23)
+    // out_o_stall(GPOUT,15)
     assign out_o_stall = sr_valid_q;
 
-    // out_o_valid(GPOUT,24)
+    // out_o_valid(GPOUT,16)
     assign out_o_valid = combined_valid_q;
 
     // not_sr_valid(LOGICAL,3)
     assign not_sr_valid_q = ~ (sr_valid_q);
 
-    // sr_0_x(REG,32)
+    // sr_0_x(REG,20)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            sr_0_x_q <= $unsigned(1'b0);
+            sr_0_x_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else if (not_sr_valid_q == 1'b1)
         begin
-            sr_0_x_q <= in_i_data_0_tpl;
+            sr_0_x_q <= $unsigned(in_i_data_0_tpl);
         end
     end
 
@@ -121,19 +102,19 @@ module atax_bb_B7_sr_1 (
         unique case (data_mux_0_x_s)
             1'b0 : data_mux_0_x_q = in_i_data_0_tpl;
             1'b1 : data_mux_0_x_q = sr_0_x_q;
-            default : data_mux_0_x_q = 1'b0;
+            default : data_mux_0_x_q = 32'b0;
         endcase
     end
 
-    // out_o_data_0_tpl(GPOUT,25)
+    // out_o_data_0_tpl(GPOUT,17)
     assign out_o_data_0_tpl = data_mux_0_x_q;
 
-    // sr_1_x(REG,33)
+    // sr_1_x(REG,21)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            sr_1_x_q <= $unsigned(1'b0);
+            sr_1_x_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else if (not_sr_valid_q == 1'b1)
         begin
@@ -148,19 +129,19 @@ module atax_bb_B7_sr_1 (
         unique case (data_mux_1_x_s)
             1'b0 : data_mux_1_x_q = in_i_data_1_tpl;
             1'b1 : data_mux_1_x_q = sr_1_x_q;
-            default : data_mux_1_x_q = 1'b0;
+            default : data_mux_1_x_q = 32'b0;
         endcase
     end
 
-    // out_o_data_1_tpl(GPOUT,26)
+    // out_o_data_1_tpl(GPOUT,18)
     assign out_o_data_1_tpl = data_mux_1_x_q;
 
-    // sr_2_x(REG,34)
+    // sr_2_x(REG,22)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            sr_2_x_q <= $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
+            sr_2_x_q <= $unsigned(1'b0);
         end
         else if (not_sr_valid_q == 1'b1)
         begin
@@ -175,119 +156,11 @@ module atax_bb_B7_sr_1 (
         unique case (data_mux_2_x_s)
             1'b0 : data_mux_2_x_q = in_i_data_2_tpl;
             1'b1 : data_mux_2_x_q = sr_2_x_q;
-            default : data_mux_2_x_q = 64'b0;
+            default : data_mux_2_x_q = 1'b0;
         endcase
     end
 
-    // out_o_data_2_tpl(GPOUT,27)
+    // out_o_data_2_tpl(GPOUT,19)
     assign out_o_data_2_tpl = data_mux_2_x_q;
-
-    // sr_3_x(REG,35)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            sr_3_x_q <= $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
-        end
-        else if (not_sr_valid_q == 1'b1)
-        begin
-            sr_3_x_q <= in_i_data_3_tpl;
-        end
-    end
-
-    // data_mux_3_x(MUX,10)
-    assign data_mux_3_x_s = sr_valid_q;
-    always @(data_mux_3_x_s or in_i_data_3_tpl or sr_3_x_q)
-    begin
-        unique case (data_mux_3_x_s)
-            1'b0 : data_mux_3_x_q = in_i_data_3_tpl;
-            1'b1 : data_mux_3_x_q = sr_3_x_q;
-            default : data_mux_3_x_q = 64'b0;
-        endcase
-    end
-
-    // out_o_data_3_tpl(GPOUT,28)
-    assign out_o_data_3_tpl = data_mux_3_x_q;
-
-    // sr_4_x(REG,36)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            sr_4_x_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (not_sr_valid_q == 1'b1)
-        begin
-            sr_4_x_q <= $unsigned(in_i_data_4_tpl);
-        end
-    end
-
-    // data_mux_4_x(MUX,11)
-    assign data_mux_4_x_s = sr_valid_q;
-    always @(data_mux_4_x_s or in_i_data_4_tpl or sr_4_x_q)
-    begin
-        unique case (data_mux_4_x_s)
-            1'b0 : data_mux_4_x_q = in_i_data_4_tpl;
-            1'b1 : data_mux_4_x_q = sr_4_x_q;
-            default : data_mux_4_x_q = 32'b0;
-        endcase
-    end
-
-    // out_o_data_4_tpl(GPOUT,29)
-    assign out_o_data_4_tpl = data_mux_4_x_q;
-
-    // sr_5_x(REG,37)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            sr_5_x_q <= $unsigned(1'b0);
-        end
-        else if (not_sr_valid_q == 1'b1)
-        begin
-            sr_5_x_q <= in_i_data_5_tpl;
-        end
-    end
-
-    // data_mux_5_x(MUX,12)
-    assign data_mux_5_x_s = sr_valid_q;
-    always @(data_mux_5_x_s or in_i_data_5_tpl or sr_5_x_q)
-    begin
-        unique case (data_mux_5_x_s)
-            1'b0 : data_mux_5_x_q = in_i_data_5_tpl;
-            1'b1 : data_mux_5_x_q = sr_5_x_q;
-            default : data_mux_5_x_q = 1'b0;
-        endcase
-    end
-
-    // out_o_data_5_tpl(GPOUT,30)
-    assign out_o_data_5_tpl = data_mux_5_x_q;
-
-    // sr_6_x(REG,38)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            sr_6_x_q <= $unsigned(1'b0);
-        end
-        else if (not_sr_valid_q == 1'b1)
-        begin
-            sr_6_x_q <= in_i_data_6_tpl;
-        end
-    end
-
-    // data_mux_6_x(MUX,13)
-    assign data_mux_6_x_s = sr_valid_q;
-    always @(data_mux_6_x_s or in_i_data_6_tpl or sr_6_x_q)
-    begin
-        unique case (data_mux_6_x_s)
-            1'b0 : data_mux_6_x_q = in_i_data_6_tpl;
-            1'b1 : data_mux_6_x_q = sr_6_x_q;
-            default : data_mux_6_x_q = 1'b0;
-        endcase
-    end
-
-    // out_o_data_6_tpl(GPOUT,31)
-    assign out_o_data_6_tpl = data_mux_6_x_q;
 
 endmodule

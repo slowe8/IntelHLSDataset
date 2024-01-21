@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -207,7 +207,7 @@ generate
     reg R_flush;
     reg [CACHE_ADDR_W:0] flush_cnt;
     reg cache_status_ready;
-    
+
     //Case:1409442892 -- add bypass logic so that mixed port read during write behaves as new data mode
     //it is okay to have old data mode if we are flushing, that will just result in a cache miss, actually having a cache hit but treating it like a miss will still be functionally correct
     logic update_cache_previous;                    //did we update to the cache (not due to flushing) on the previous clock cycle
@@ -222,7 +222,7 @@ generate
     logic use_bypass_0, use_bypass_1;
     assign use_bypass_0 = update_cache_previous & (wr_c_index_previous == rd_c_index[0]);
     assign use_bypass_1 = update_cache_previous & (wr_c_index_previous == rd_c_index[1]);
-    
+
     assign rd_c_index[0] = R_addr[CACHE_ADDR_W-1+MB_W:MB_W];
     assign rd_c_index[1] = R_addr_next[CACHE_ADDR_W-1+MB_W:MB_W];
     //Case:1409442892 -- use the bypass if on the previous clock cycle we wrote to the address being read right now
@@ -703,7 +703,7 @@ generate
       .underflow_checking ( "ON"),
       .use_eab ( "ON"),
       .almost_full_value(OFFSET_FIFO_DEPTH - 10),
-      .enable_ecc (enable_ecc)  
+      .enable_ecc (enable_ecc)
     ) offset_fifo (
       .clock (clk),
       .data (offset_fifo_din),
@@ -733,7 +733,7 @@ generate
       .underflow_checking ( "ON"),
       .use_eab ( "OFF"), // not instantiate block ram
       .almost_full_value(OFFSET_FIFO_DEPTH - 10),
-      .enable_ecc (enable_ecc)       
+      .enable_ecc (enable_ecc)
     ) offset_fifo (
       .clock (clk),
       .data (offset_fifo_din),
@@ -766,7 +766,7 @@ acl_scfifo_wrapped #(
   .use_eab ( "ON"),
   .almost_full_value(20),
   .almost_empty_value(3),
-  .enable_ecc (enable_ecc)   
+  .enable_ecc (enable_ecc)
 ) rd_request_fifo (
   .clock (clk),
   .data ({i_address, i_burst_count}),
@@ -1062,7 +1062,7 @@ acl_scfifo_wrapped #(
   .overflow_checking ( "OFF"),
   .underflow_checking ( "ON"),
   .use_eab ( "ON"),
-  .enable_ecc (enable_ecc) 
+  .enable_ecc (enable_ecc)
 ) rd_back_wfifo (
   .clock (clk),
   .data (avm_readdata),
@@ -1199,16 +1199,16 @@ else begin : ENABLE_COALESCE
       end
       o_num_burst <= num_burst;
       o_page_addr <= addr_hold;
-  
+
       if(i_valid | reset_cnt) time_out_cnt <= 0;  // nop is valid thread, should reset time_out counter too
       else if(!time_out_cnt[TIME_OUT_W-1] & valid_burst) time_out_cnt <= time_out_cnt + 1;
-  
+
       if(reset_cnt) thread_cnt <= i_valid;
       else if(i_valid & !thread_cnt[THREAD_W-1]) thread_cnt <= thread_cnt + 1;
-  
+
       if(o_page_addr_valid) delay_cnt <= 1;
       else if(!delay_cnt[3]) delay_cnt <= delay_cnt + 1;
-  
+
       if(reset_cnt) begin
         num_burst <= i_valid & !match_current_wire;
         addr_hold <= page_addr;
@@ -1524,7 +1524,7 @@ localparam _WRITE_FIFO_DEPTH = ( __WRITE_FIFO_DEPTH < 64 ) ? __WRITE_FIFO_DEPTH 
 localparam WRITE_FIFO_DEPTH = ( _WRITE_FIFO_DEPTH > 8 ) ? _WRITE_FIFO_DEPTH : 8;
 
 // Determine the maximum # of threads to group into a burst-coalesced request
-// TODO: Create a new parameter with proper name to control this instead of using MEMORY_SIDE_MEM_LATENCY 
+// TODO: Create a new parameter with proper name to control this instead of using MEMORY_SIDE_MEM_LATENCY
 localparam MAX_THREADS= MEMORY_SIDE_MEM_LATENCY;
 
 //
@@ -1542,7 +1542,7 @@ localparam UNALIGN_BITS = $clog2(WIDTH_BYTES)-ALIGNMENT_ABITS;
 // Determines the max writes 'in-flight'
 localparam MAX_IN_FLIGHT= (USE_WRITE_ACK ? KERNEL_SIDE_MEM_LATENCY : (2*MWIDTH_BYTES/WIDTH_BYTES*MAX_BURST));
 localparam COUNTER_WIDTH=(($clog2(MAX_IN_FLIGHT)+1 < $clog2(MAX_CAPACITY+1)) ?
-                          $clog2(MAX_CAPACITY+1) : ($clog2(MAX_IN_FLIGHT)+1)); 
+                          $clog2(MAX_CAPACITY+1) : ($clog2(MAX_IN_FLIGHT)+1));
 
 /********
 * Ports *
@@ -1700,11 +1700,11 @@ begin
   wire [SEGMENT_SELECT_BITS-1:0] segment_select;
   assign segment_select = i_address[BYTE_SELECT_BITS-1:ALIGNMENT_ABITS];
   if(UNALIGN) begin : GEN_UNALIGN
-    assign cnt_valid = i_thread_valid; 
-    always@(*) begin         
+    assign cnt_valid = i_thread_valid;
+    always@(*) begin
       wm_wide_wdata = i_2nd_en? (i_2nd_data << (i_2nd_offset*SEGMENT_WIDTH)) | {{(MWIDTH-(WIDTH-SEGMENT_WIDTH)){1'b0}}, i_writedata[WIDTH-SEGMENT_WIDTH-1:0]} : i_writedata << (segment_select*SEGMENT_WIDTH);
       wm_wide_be = '0;
-      wm_wide_be = ((i_2nd_byte_en & {WIDTH_BYTES{i_2nd_en}}) << (i_2nd_offset*SEGMENT_WIDTH_BYTES)) | (word_byte_enable << (segment_select*SEGMENT_WIDTH_BYTES));        
+      wm_wide_be = ((i_2nd_byte_en & {WIDTH_BYTES{i_2nd_en}}) << (i_2nd_offset*SEGMENT_WIDTH_BYTES)) | (word_byte_enable << (segment_select*SEGMENT_WIDTH_BYTES));
     end
   end // end GEN_UNALIGN
   else begin: GEN_ALIGN
@@ -1910,7 +1910,7 @@ begin
         o_active <= occ_counter_neg[COUNTER_WIDTH-1] | ack_counter_neg[COUNTER_WIDTH-1] | coalescer_active; // do not use num_threads_written, because it takes extra resource
       end
       burstcounter <= write_accepted ? ((burstcounter == avm_burstcount) ? 6'b000001 : burstcounter+1) : burstcounter;
-      
+
       if (~sclrn[0]) begin
          occ_counter <= {COUNTER_WIDTH{1'b0}};
          occ_counter_neg <= {COUNTER_WIDTH{1'b0}};
@@ -1965,7 +1965,7 @@ parameter MAX_THREADS=64;     // Must be a power of 2
 parameter USECACHING=0;
 parameter ASYNC_RESET=1;         // set to '1' to consume the incoming reset signal asynchronously (use ACLR port on registers), '0' to use synchronous reset (SCLR port on registers)
 
-localparam SLAVE_MAX_BURST=2**(BURSTCOUNT_WIDTH-1);
+localparam AGENT_MAX_BURST=2**(BURSTCOUNT_WIDTH-1);
 localparam THREAD_COUNTER_WIDTH=$clog2(MAX_THREADS+1);
 
 input wire clk;

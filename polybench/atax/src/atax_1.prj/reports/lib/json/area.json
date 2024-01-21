@@ -4,9 +4,9 @@
   , "debug_enabled":"true"
   , "type":"module"
   , "total_percent":
-  [4.4184, 2.99141, 1.72694, 2.04429, 1.04167]
+  [1.2497, 0.784887, 0.535292, 1.70358, 1.04167]
   , "total":
-  [2866, 5549, 12, 2, 97]
+  [981, 1720, 10, 2, 14]
   , "name":"System"
   , "max_resources":
   [160660, 321320, 587, 192, 8033]
@@ -17,9 +17,9 @@
       , "compute_units":1
       , "type":"function"
       , "total_percent":
-      [4.4184, 2.99141, 1.72694, 2.04429, 1.04167]
+      [1.2497, 0.784887, 0.535292, 1.70358, 1.04167]
       , "total_kernel_resources":
-      [2866, 5549, 12, 2, 97]
+      [981, 1720, 10, 2, 14]
       , "details":
       [
         {
@@ -71,12 +71,12 @@
           "name":"Variable: \n - 'i' (atax_1.c:7)"
           , "type":"resource"
           , "data":
-          [100, 354, 0, 0, 0]
+          [14, 47, 0, 0, 0]
           , "debug":
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":7
               }
             ]
@@ -89,23 +89,15 @@
             }
             , {
               "type":"text"
-              , "text":"2 registers of width 7 and depth 1"
+              , "text":"1 register of width 7 bits and depth 1"
             }
             , {
               "type":"text"
-              , "text":"1 register of width 7 and depth 4 (depth was increased by a factor of 2 due to a loop initiation interval of 2.)"
-            }
-            , {
-              "type":"text"
-              , "text":"2 registers of width 32 and depth 1"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 32 and depth 4 (depth was increased by a factor of 2 due to a loop initiation interval of 2.)"
+              , "text":"1 register of width 32 bits and depth 1"
             }
             , {
               "type":"brief"
-              , "text":"Register,\n2 regs, 7 width by 1 depth,\n1 reg, 7 width by 4 depth"
+              , "text":"Register,\n1 reg, 7 width by 1 depth,\n1 reg, 32 width by 1 depth"
             }
           ]
         }
@@ -113,12 +105,12 @@
           "name":"Variable: \n - 'j' (atax_1.c:7)"
           , "type":"resource"
           , "data":
-          [59, 259, 0, 0, 0]
+          [28, 94, 0, 0, 0]
           , "debug":
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":7
               }
             ]
@@ -131,23 +123,15 @@
             }
             , {
               "type":"text"
-              , "text":"1 register of width 7 and depth 1"
+              , "text":"2 registers of width 7 bits and depth 1"
             }
             , {
               "type":"text"
-              , "text":"1 register of width 7 and depth 4 (depth was increased by a factor of 4 due to a loop initiation interval of 4.)"
-            }
-            , {
-              "type":"text"
-              , "text":"2 registers of width 32 and depth 1"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 32 and depth 4 (depth was increased by a factor of 4 due to a loop initiation interval of 4.)"
+              , "text":"2 registers of width 32 bits and depth 1"
             }
             , {
               "type":"brief"
-              , "text":"Register,\n1 reg, 7 width by 1 depth,\n1 reg, 7 width by 4 depth"
+              , "text":"Register,\n2 regs, 7 width by 1 depth,\n2 regs, 32 width by 1 depth"
             }
           ]
         }
@@ -160,7 +144,7 @@
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":10
               }
             ]
@@ -200,12 +184,12 @@
           "name":"atax_1.c:11 (tmp1)"
           , "type":"resource"
           , "data":
-          [33, 256, 1, 0, 0]
+          [0, 0, 1, 0, 0]
           , "debug":
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":11
               }
             ]
@@ -223,12 +207,11 @@
               , "Bank depth":"64 words"
               , "Number of replicates":"1"
               , "Number of private copies":"1"
-              , "Clock":"Running memory at 2x clock to support more concurrent ports"
               , "Additional information":
               [
                 {
                   "type":"text"
-                  , "text":"Requested size 256 bytes, implemented size 256 bytes, stall-free, 2 reads and 2 writes. "
+                  , "text":"Requested size 256 bytes, implemented size 256 bytes, stall-free, 1 read and 2 writes. "
                 }
                 , {
                   "type":"text"
@@ -251,7 +234,7 @@
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":8
               }
             ]
@@ -265,8 +248,8 @@
               , "Implemented size":"16384 bytes"
               , "Memory Usage":"7 RAMs"
               , "Number of banks":"1"
-              , "Bank width":"128 bits"
-              , "Bank depth":"1024 words"
+              , "Bank width":"32 bits"
+              , "Bank depth":"4096 words"
               , "Number of replicates":"1"
               , "Number of private copies":"1"
               , "Additional information":
@@ -296,7 +279,7 @@
           [
             [
               {
-                "filename":"atax_1.c"
+                "filename":"../src/atax_1.c"
                 , "line":9
               }
             ]
@@ -331,7 +314,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [1, 256, 0, 0, 0]
+              [1, 192, 0, 0, 0]
               , "details":
               [
                 {
@@ -364,22 +347,7 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [0, 64, 0, 0, 0]
-                }
-                , {
-                  "name":"atax_1.c:5"
-                  , "type":"resource"
-                  , "data":
                   [1, 192, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":5
-                      }
-                    ]
-                  ]
                 }
               ]
             }
@@ -417,7 +385,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":5
                       }
                     ]
@@ -456,7 +424,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":5
                       }
                     ]
@@ -483,24 +451,32 @@
           , "children":
           [
             {
-              "name":"Feedback"
+              "name":"State"
               , "type":"resource"
               , "data":
-              [27, 19, 0, 0, 0]
+              [1, 32, 0, 0, 0]
               , "details":
               [
                 {
                   "type":"brief"
-                  , "text":"Loop-carried dependencies"
+                  , "text":"Live values and control logic"
                 }
                 , {
                   "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
                   , "details":
                   [
                     {
                       "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
                     }
                   ]
                 }
@@ -508,19 +484,52 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:40"
+                  "name":"atax_1.c:37"
                   , "type":"resource"
                   , "data":
-                  [27, 19, 0, 0, 0]
+                  [1, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":40
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":37
                       }
                     ]
                   ]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"atax_1.c:37"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":37
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
                 }
               ]
             }
@@ -535,7 +544,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [28, 93, 0, 0, 0]
+              [26, 90, 0, 0, 0]
               , "details":
               [
                 {
@@ -568,7 +577,7 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [28, 93, 0, 0, 0]
+                  [26, 90, 0, 0, 0]
                 }
               ]
             }
@@ -606,7 +615,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":45
                       }
                     ]
@@ -621,7 +630,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":7
                       }
                     ]
@@ -660,7 +669,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":45
                       }
                     ]
@@ -707,7 +716,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":46
                       }
                     ]
@@ -736,7 +745,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"10"
                             }
                           ]
@@ -820,7 +829,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":48
                       }
                     ]
@@ -850,7 +859,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [105, 103, 1, 0, 3]
+              [14, 101, 0, 0, 0]
               , "details":
               [
                 {
@@ -883,46 +892,19 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [105, 103, 1, 0, 3]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [51, 58, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
+                  [14, 37, 0, 0, 0]
                 }
                 , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"atax_1.c:15"
+                  "name":"atax_1.c:16"
                   , "type":"resource"
                   , "data":
-                  [13, 11, 0, 0, 0]
+                  [0, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":15
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":16
                       }
                     ]
                   ]
@@ -931,16 +913,33 @@
                   "name":"atax_1.c:7"
                   , "type":"resource"
                   , "data":
-                  [38, 47, 0, 0, 0]
+                  [0, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":7
                       }
                     ]
                   ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [8, 6, 0, 0, 1]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
                 }
               ]
             }
@@ -950,41 +949,27 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:15"
+                  "name":"atax_1.c:7"
                   , "type":"resource"
                   , "data":
-                  [12, 8, 0, 0, 0]
+                  [16, 0, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":15
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":7
                       }
                     ]
                   ]
                   , "children":
                   [
                     {
-                      "name":"1-bit Xor"
+                      "name":"32-bit Select"
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [1, 1, 0, 0, 0]
-                    }
-                    , {
-                      "name":"7-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"Iteration Initiation"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [9, 7, 0, 0, 0]
+                      [16, 0, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"
@@ -993,12 +978,12 @@
                   "name":"atax_1.c:16"
                   , "type":"resource"
                   , "data":
-                  [285, 245, 0, 0, 7]
+                  [60, 65, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":16
                       }
                     ]
@@ -1010,16 +995,16 @@
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [251, 221, 0, 0, 7]
+                      [26, 41, 0, 0, 0]
                       , "details":
                       [
                         {
                           "type":"text"
-                          , "text":"Load uses a Pipelined LSU"
+                          , "text":"Load uses a Pipelined never-stall LSU"
                         }
                         , {
                           "type":"brief"
-                          , "text":"Pipelined LSU"
+                          , "text":"Pipelined never-stall LSU"
                         }
                       ]
                     }
@@ -1045,7 +1030,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"9"
                             }
                           ]
@@ -1064,7 +1049,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":17
                       }
                     ]
@@ -1093,7 +1078,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"10"
                             }
                           ]
@@ -1112,7 +1097,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":18
                       }
                     ]
@@ -1141,7 +1126,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"11"
                             }
                           ]
@@ -1164,7 +1149,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [74, 265, 1, 0, 4]
+              [21, 60, 0, 0, 0]
               , "details":
               [
                 {
@@ -1197,7 +1182,7 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [74, 265, 1, 0, 4]
+                  [21, 60, 0, 0, 0]
                 }
               ]
             }
@@ -1205,7 +1190,7 @@
               "name":"Feedback"
               , "type":"resource"
               , "data":
-              [49, 104, 0, 0, 0]
+              [34, 28, 0, 0, 0]
               , "details":
               [
                 {
@@ -1227,45 +1212,15 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:15"
-                  , "type":"resource"
-                  , "data":
-                  [8, 5, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":15
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"atax_1.c:16"
-                  , "type":"resource"
-                  , "data":
-                  [8, 68, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":16
-                      }
-                    ]
-                  ]
-                }
-                , {
                   "name":"atax_1.c:20"
                   , "type":"resource"
                   , "data":
-                  [31, 31, 0, 0, 0]
+                  [32, 28, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":20
                       }
                     ]
@@ -1280,7 +1235,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":7
                       }
                     ]
@@ -1292,7 +1247,7 @@
               "name":"Cluster logic"
               , "type":"resource"
               , "data":
-              [1, 0, 0, 0, 0]
+              [8, 6, 0, 0, 1]
               , "details":
               [
                 {
@@ -1319,7 +1274,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":20
                       }
                     ]
@@ -1348,7 +1303,7 @@
                       [2, 0, 0, 0, 0]
                     }
                     , {
-                      "name":"5-bit Integer Compare"
+                      "name":"7-bit Integer Compare"
                       , "type":"resource"
                       , "count":1
                       , "data":
@@ -1361,12 +1316,12 @@
                   "name":"atax_1.c:21"
                   , "type":"resource"
                   , "data":
-                  [1038, 908, 0, 0, 28]
+                  [60, 65, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":21
                       }
                     ]
@@ -1376,18 +1331,18 @@
                     {
                       "name":"Load"
                       , "type":"resource"
-                      , "count":4
+                      , "count":1
                       , "data":
-                      [1004, 884, 0, 0, 28]
+                      [26, 41, 0, 0, 0]
                       , "details":
                       [
                         {
                           "type":"text"
-                          , "text":"Load uses a Pipelined LSU"
+                          , "text":"Load uses a Pipelined never-stall LSU"
                         }
                         , {
                           "type":"brief"
-                          , "text":"Pipelined LSU"
+                          , "text":"Pipelined never-stall LSU"
                         }
                       ]
                     }
@@ -1413,12 +1368,102 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"8"
                             }
                           ]
                         }
                       ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"atax.B5"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [1, 32, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"atax_1.c:15"
+                  , "type":"resource"
+                  , "data":
+                  [1, 32, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":15
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"atax_1.c:15"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":15
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"
@@ -1436,7 +1481,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [18, 81, 0, 0, 8]
+              [2, 195, 0, 0, 0]
               , "details":
               [
                 {
@@ -1469,46 +1514,19 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [18, 81, 0, 0, 8]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [9, 7, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
+                  [2, 37, 0, 0, 0]
                 }
                 , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"atax_1.c:37"
+                  "name":"atax_1.c:31"
                   , "type":"resource"
                   , "data":
-                  [7, 7, 0, 0, 0]
+                  [0, 94, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":37
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":31
                       }
                     ]
                   ]
@@ -1517,12 +1535,12 @@
                   "name":"atax_1.c:7"
                   , "type":"resource"
                   , "data":
-                  [2, 0, 0, 0, 0]
+                  [0, 64, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":7
                       }
                     ]
@@ -1534,7 +1552,7 @@
               "name":"Cluster logic"
               , "type":"resource"
               , "data":
-              [8, 6, 0, 0, 9]
+              [8, 6, 0, 0, 1]
               , "details":
               [
                 {
@@ -1553,7 +1571,7 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:31"
+                  "name":"No Source Line"
                   , "type":"resource"
                   , "data":
                   [26, 41, 0, 0, 0]
@@ -1561,8 +1579,8 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":31
+                        "filename":""
+                        , "line":0
                       }
                     ]
                   ]
@@ -1590,7 +1608,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"11"
                             }
                           ]
@@ -1598,30 +1616,29 @@
                       ]
                     }
                   ]
-                  , "replace_name":"true"
                 }
                 , {
-                  "name":"atax_1.c:37"
+                  "name":"atax_1.c:7"
                   , "type":"resource"
                   , "data":
-                  [2, 0, 0, 0, 0]
+                  [32, 0, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":37
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":7
                       }
                     ]
                   ]
                   , "children":
                   [
                     {
-                      "name":"7-bit Integer Compare"
+                      "name":"32-bit Select"
                       , "type":"resource"
-                      , "count":1
+                      , "count":2
                       , "data":
-                      [2, 0, 0, 0, 0]
+                      [32, 0, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"
@@ -1639,7 +1656,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [80, 406, 0, 0, 14]
+              [40, 123, 0, 0, 3]
               , "details":
               [
                 {
@@ -1672,91 +1689,19 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [80, 406, 0, 0, 14]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [212, 940, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"atax_1.c:30"
-                  , "type":"resource"
-                  , "data":
-                  [58, 46, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":30
-                      }
-                    ]
-                  ]
+                  [40, 91, 0, 0, 3]
                 }
                 , {
                   "name":"atax_1.c:31"
                   , "type":"resource"
                   , "data":
-                  [91, 852, 0, 0, 0]
+                  [0, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":31
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"atax_1.c:37"
-                  , "type":"resource"
-                  , "data":
-                  [60, 42, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":37
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"atax_1.c:7"
-                  , "type":"resource"
-                  , "data":
-                  [3, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":7
                       }
                     ]
                   ]
@@ -1767,7 +1712,7 @@
               "name":"Cluster logic"
               , "type":"resource"
               , "data":
-              [8, 6, 0, 0, 9]
+              [8, 6, 0, 0, 2]
               , "details":
               [
                 {
@@ -1786,15 +1731,41 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:30"
+                  "name":"atax_1.c:7"
                   , "type":"resource"
                   , "data":
-                  [6, 1, 0, 0, 0]
+                  [32, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":7
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"atax_1.c:30"
+                  , "type":"resource"
+                  , "data":
+                  [10, 1, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":30
                       }
                     ]
@@ -1802,32 +1773,11 @@
                   , "children":
                   [
                     {
-                      "name":"1-bit And"
+                      "name":"32-bit Integer Compare"
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [1, 1, 0, 0, 0]
-                    }
-                    , {
-                      "name":"1-bit Or"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [1, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"2-bit Select"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"7-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
+                      [10, 1, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"
@@ -1841,7 +1791,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":31
                       }
                     ]
@@ -1877,7 +1827,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"8"
                             }
                           ]
@@ -1900,7 +1850,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [73, 233, 0, 0, 5]
+              [2, 32, 0, 0, 0]
               , "details":
               [
                 {
@@ -1930,69 +1880,19 @@
               , "children":
               [
                 {
-                  "name":"No Source Line"
+                  "name":"atax_1.c:27"
                   , "type":"resource"
                   , "data":
-                  [73, 233, 0, 0, 5]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [7, 2, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"atax_1.c:40"
-                  , "type":"resource"
-                  , "data":
-                  [7, 2, 0, 0, 0]
+                  [2, 32, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":40
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":27
                       }
                     ]
                   ]
-                }
-              ]
-            }
-            , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [8, 6, 0, 0, 2]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
                 }
               ]
             }
@@ -2002,16 +1902,16 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:31"
+                  "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [34, 24, 0, 0, 0]
+                  [35, 24, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":31
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                        , "line":0
                       }
                     ]
                   ]
@@ -2022,7 +1922,7 @@
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [34, 24, 0, 0, 0]
+                      [35, 24, 0, 0, 0]
                       , "details":
                       [
                         {
@@ -2039,7 +1939,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"11"
                             }
                           ]
@@ -2047,55 +1947,6 @@
                       ]
                     }
                   ]
-                  , "replace_name":"true"
-                }
-                , {
-                  "name":"atax_1.c:40"
-                  , "type":"resource"
-                  , "data":
-                  [26, 41, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":40
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"Load"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [26, 41, 0, 0, 0]
-                      , "details":
-                      [
-                        {
-                          "type":"text"
-                          , "text":"Load uses a Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"brief"
-                          , "text":"Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"text"
-                          , "text":"Stall-free read from memory declared on %L."
-                          , "links":
-                          [
-                            {
-                              "filename":"atax_1.c"
-                              , "line":"11"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                  , "replace_name":"true"
                 }
               ]
             }
@@ -2110,7 +1961,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [52, 313, 0, 0, 6]
+              [23, 42, 0, 0, 4]
               , "details":
               [
                 {
@@ -2143,7 +1994,7 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [52, 313, 0, 0, 6]
+                  [23, 42, 0, 0, 4]
                 }
               ]
             }
@@ -2151,7 +2002,7 @@
               "name":"Feedback"
               , "type":"resource"
               , "data":
-              [67, 144, 0, 0, 0]
+              [34, 28, 0, 0, 0]
               , "details":
               [
                 {
@@ -2173,61 +2024,16 @@
               , "children":
               [
                 {
-                  "name":"atax_1.c:31"
-                  , "type":"resource"
-                  , "data":
-                  [8, 68, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":31
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"atax_1.c:37"
-                  , "type":"resource"
-                  , "data":
-                  [17, 13, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":37
-                      }
-                    ]
-                  ]
-                }
-                , {
                   "name":"atax_1.c:39"
                   , "type":"resource"
                   , "data":
-                  [24, 22, 0, 0, 0]
+                  [32, 28, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":39
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"atax_1.c:40"
-                  , "type":"resource"
-                  , "data":
-                  [16, 41, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                        , "line":40
                       }
                     ]
                   ]
@@ -2241,7 +2047,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":7
                       }
                     ]
@@ -2280,7 +2086,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":39
                       }
                     ]
@@ -2327,7 +2133,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":40
                       }
                     ]
@@ -2363,7 +2169,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"8"
                             }
                           ]
@@ -2392,7 +2198,7 @@
                           , "links":
                           [
                             {
-                              "filename":"atax_1.c"
+                              "filename":"../src/atax_1.c"
                               , "line":"10"
                             }
                           ]

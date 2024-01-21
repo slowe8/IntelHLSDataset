@@ -14,7 +14,7 @@
         [
           [
             {
-              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
               , "line":5
             }
           ]
@@ -32,12 +32,12 @@
       {
         "name":"atax"
         , "data":
-        [2866, 5549, 12, 2, 97]
+        [981, 1720, 10, 2, 14]
         , "debug":
         [
           [
             {
-              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
               , "line":5
             }
           ]
@@ -48,9 +48,9 @@
         , "classes":
         ["summary-highlight", "nohover"]
         , "data":
-        [2866, 5549, 12, 2, 97]
+        [981, 1720, 10, 2, 14]
         , "data_percent":
-        [1.78389, 1.72694, 2.04429, 1.04167]
+        [0.610606, 0.535292, 1.70358, 1.04167]
       }
       , {
         "name":"Available"

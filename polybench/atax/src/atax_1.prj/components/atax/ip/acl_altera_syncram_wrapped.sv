@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -17,7 +17,7 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-//                                                                                   // 
+//                                                                                   //
 // ACL ALTERA SYNCRAM WRAPPED                                                        //
 //                                                                                   //
 // DESCRIPTION                                                                       //
@@ -27,7 +27,7 @@
 // module has the added (soft) ECC feature.                                          //
 //                                                                                   //
 // The module has the exact same interface except for                                //
-//   * Two addtional parameters:                                                     //  
+//   * Two addtional parameters:                                                     //
 //     - "enable_ecc": accepts "TRUE" or "FALSE". The default is "FALSE"             //
 //     - "connect_clr_to_ram": accepts 1'b0 or 1'b1 and controls whether the aclr    //
 //       and the sclr signals need to be connected to the altera_syncram component   //
@@ -41,11 +41,12 @@
 //       10           Error detected and corrected (single bit error)                //
 //       x1           Error detected but uncorrectable (double bit error)            //
 //       ----------------------------------------------------------------            //
-//                                                                                   // 
+//                                                                                   //
 // Required files                                                                    //
 // ==============                                                                    //
 //    acl_ecc_encoder.sv                                                             //
 //    acl_ecc_decoder.sv                                                             //
+//    acl_ecc_pkg.sv                                                                 //
 //                                                                                   //
 // Usage                                                                             //
 // =====                                                                             //
@@ -89,9 +90,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 
 `default_nettype none
-`include "acl_ecc.svh"
 
-module acl_altera_syncram_wrapped #(  
+module acl_altera_syncram_wrapped
+import acl_ecc_pkg::*;
+#(
 
   /*------------------------------------\
   |  Original altera_syncram paramters  |
@@ -128,18 +130,18 @@ module acl_altera_syncram_wrapped #(
   parameter clock_enable_output_b = "NORMAL",         // Valid possible values: NORMAL, BYPASS
   parameter clock_enable_core_a   = "USE_INPUT_CLKEN",  // Valid possible values: USE_INPUT_CLKEN, NORMAL, BYPASS, ALTERNATE
   parameter clock_enable_core_b   = "USE_INPUT_CLKEN",  // Valid possible values: USE_INPUT_CLKEN, NORMAL, BYPASS, ALTERNATE
-  
+
   // Read During Write Paramters
   parameter read_during_write_mode_port_a      = "NEW_DATA_NO_NBE_READ",
   parameter read_during_write_mode_port_b      = "NEW_DATA_NO_NBE_READ",
   parameter read_during_write_mode_mixed_ports = "DONT_CARE",
-  
+
    // NADDER NEW FEATURES
   parameter outdata_sclr_a            = "NONE",
   parameter outdata_sclr_b            = "NONE",
   parameter enable_coherent_read      = "FALSE",
   parameter enable_force_to_zero      = "FALSE",
-    
+
   // GLOBAL PARAMETERS
   parameter operation_mode            = "BIDIR_DUAL_PORT",
   parameter byte_size                 = 0,
@@ -160,14 +162,14 @@ module acl_altera_syncram_wrapped #(
   // ECC RELATED PARAMETERS
   parameter enable_ecc                = "FALSE", // in the future, this may turn on hard ecc or soft ecc, depending on the RAM type, for now only soft ecc is supported
   parameter connect_clr_to_ram        = 0,       // If 1, the pass in the aclr and sclr signal to RAM ,aclr and scrl will now also be used for register from ecc decoder signals
-  
+
   parameter do_not_connect_addressstall = 0,  // Prevent connecting addressstall when unused because this prevents Quartus from putting AUTO into an MLAB
   parameter do_not_connect_read_enable  = 0,  // If 1, then do not connect read enable ports
 
 
   // BYTE ENABLE SUPPORT
   parameter use_byteena               = 0        // If 1, then byte enables are truly used and we must handle that case separately when ECC is ON.
-) 
+)
 (
 
   /*------------------------------------\
@@ -189,14 +191,14 @@ module acl_altera_syncram_wrapped #(
   //           2. output register can be clocked by either clock0, clock1 or none.
   // Port B -- 1. all input registered must be clocked by either clock0 or clock1.
   //           2. output register can be clocked by either clock0, clock1 or none.
-  
+
   input wire  clock0,
   input wire  clock1,
 
   // clock enable inputs and here are their usage
   // clocken0 -- can only be used for enabling clock0.
   // clocken1 -- can only be used for enabling clock1.
-  
+
   input wire clocken0,
   input wire clocken1,
 
@@ -205,7 +207,7 @@ module acl_altera_syncram_wrapped #(
   //           2. output register can be cleared by either clear0, clear1 or none.
   // Port B -- 1. all input registers can be cleared by clear0, clear1 or none.
   //           2. output register can be cleared by either clear0, clear1 or none.
-  
+
   input wire aclr0,
   input wire aclr1,
 
@@ -218,7 +220,7 @@ module acl_altera_syncram_wrapped #(
 
   // Nadder new features - Stratix 10 onwards
   input wire sclr,
-  
+
   // OUTPUT PORT DECLARATION
   output logic [width_a-1:0] q_a, // Port A output
   output logic [width_b-1:0] q_b, // Port B output
@@ -231,7 +233,7 @@ module acl_altera_syncram_wrapped #(
   output logic         [1:0] ecc_err_status  //10 = error detected and corrected (memory in not updated), 01 = error detected but uncorrectable
 );
 
-  // Check if the two port widths match in the case where width_b is set by the user (that is != 1). We do not support different port widths. 
+  // Check if the two port widths match in the case where width_b is set by the user (that is != 1). We do not support different port widths.
   // Also check if the enable_ecc parameter is legal.
   // The checks are done in Quartus pro and Modelsim, they are disabled in Quartus standard because they results in a syntax error (parser is based on an older systemverilog standard)
   // the workaround is to use synthesis translate to hide this from Quartus standard, ALTERA_RESERVED_QHD is only defined in Quartus pro, and Modelsim ignores the synthesis comment
@@ -251,10 +253,10 @@ module acl_altera_syncram_wrapped #(
   `else
   //synthesis translate_on
   `endif
- 
-  // Calculate the internal memory width (width of the codewords) 
-  // Even though we compute both memory_width_a and memory_width_b, we do not currently support different port widths. 
-  // We make the distinction here to avoid errors in the single port case. 
+
+  // Calculate the internal memory width (width of the codewords)
+  // Even though we compute both memory_width_a and memory_width_b, we do not currently support different port widths.
+  // We make the distinction here to avoid errors in the single port case.
   localparam int MAX_ECC_WIDTH    = (use_byteena) ? 8 : 32;  //this value should be ECC_GROUP_SIZE and can be swept to tradeoff fmax vs memory overhead. Do not set this value larger than 64 due to altecc implementation
   localparam int NUM_GROUPS       = getNumGroups(width_a, MAX_ECC_WIDTH);
   localparam int MEMORY_WIDTH_A   = (enable_ecc == "TRUE") ? getEncodedBitsEccGroup(width_a, MAX_ECC_WIDTH) : width_a; // width of codewords coming out of the encoder at port a
@@ -271,10 +273,10 @@ module acl_altera_syncram_wrapped #(
   // signals for making internal connections
   //
   // Data flow diagram:
-  //         ---------                  ------------                    ----------------                    -------------                  --------- 
+  //         ---------                  ------------                    ----------------                    -------------                  ---------
   // data--->|encoder|---codeword_wr--->|pad groups|---i_codeword_wr--->|altera_syncram|---i_codeword_rd--->|trim groups|---codeword_rd--->|decoder|--->q
-  //         ---------                  ------------                    ----------------                    -------------                  --------- 
-  // If ECC is OFF: the encoder, the decoder, the padding, and the trimming blocks are pass-through 
+  //         ---------                  ------------                    ----------------                    -------------                  ---------
+  // If ECC is OFF: the encoder, the decoder, the padding, and the trimming blocks are pass-through
   // If ECC is ON and use_byteena = 1, all the blocks are there.
   // If ECC is ON and use_byteena = 0, the padding and the trimming blocks are pass-through.
 
@@ -287,7 +289,7 @@ module acl_altera_syncram_wrapped #(
 
   logic   [I_MEMORY_WIDTH_A-1:0] i_codeword_wr_a;
   logic   [I_MEMORY_WIDTH_A-1:0] i_codeword_rd_a;
-                                                 
+
   logic   [I_MEMORY_WIDTH_B-1:0] i_codeword_wr_b;
   logic   [I_MEMORY_WIDTH_B-1:0] i_codeword_rd_b;
 
@@ -314,25 +316,25 @@ module acl_altera_syncram_wrapped #(
   wire i_clocken1_b;
   wire i_clocken0_b;
   wire i_in_data_clken_b;
-  
+
   wire i_ecc_enc_clk_a;
   wire i_ecc_dec_clk_a;
   wire i_ecc_enc_clk_b;
   wire i_ecc_dec_clk_b;
-  
+
   wire i_ecc_aclr;
 
   // SIGNAL ASSIGNMENT
   // Clock signal assignment  for ecc encoder and decoder
   assign i_ecc_enc_clk_a                = clock0; // Port A input register is always clocked with clock0
-  assign i_ecc_dec_clk_a                = (outdata_reg_a == "CLOCK0") ? 
-                                          clock0 : (outdata_reg_a == "CLOCK1") ? 
+  assign i_ecc_dec_clk_a                = (outdata_reg_a == "CLOCK0") ?
+                                          clock0 : (outdata_reg_a == "CLOCK1") ?
                                           clock1 :  i_ecc_enc_clk_a; // If output is unregistered, use the input clock.
-  
+
   // Clear box doesn't understand it if clock1 is set to 1'b1 when the wrapper is instantiated.
   // Therefore, we need to use heuristics here to manually disconnect to drive some of the ports, based on the
   // combination of parameters.
-  // This needs to be done for clock1 and clocken1 
+  // This needs to be done for clock1 and clocken1
   // *****************************************
   // legal operations for all operation modes:
   //      |  PORT A  |  PORT B  |
@@ -345,12 +347,12 @@ module acl_altera_syncram_wrapped #(
 
   // Note that the clock for indata_reg_b should be equal to the clock address_reg_b
   assign i_clock1   = (operation_mode == "ROM")
-                      || ((operation_mode == "SINGLE_PORT") &&  (outdata_reg_a !="CLOCK1")) 
+                      || ((operation_mode == "SINGLE_PORT") &&  (outdata_reg_a !="CLOCK1"))
                       || ((operation_mode == "DUAL_PORT") && (outdata_reg_b != "CLOCK1") && (address_reg_b != "CLOCK1"))
                       || ((operation_mode == "BIDIR_DUAL_PORT") && (outdata_reg_a != "CLOCK1") && (outdata_reg_b != "CLOCK1" ) && (address_reg_b != "CLOCK1")) ?
                       1'b1 : clock1;
   assign i_clocken1 = (operation_mode == "ROM")
-                      || ((operation_mode == "SINGLE_PORT") &&  (outdata_reg_a !="CLOCK1")) 
+                      || ((operation_mode == "SINGLE_PORT") &&  (outdata_reg_a !="CLOCK1"))
                       || ((operation_mode == "DUAL_PORT") && (outdata_reg_b != "CLOCK1") && (address_reg_b != "CLOCK1"))
                       || ((operation_mode == "BIDIR_DUAL_PORT") && (outdata_reg_a != "CLOCK1") && (outdata_reg_b != "CLOCK1" ) && (address_reg_b != "CLOCK1")) ?
                       1'b1 : clocken1;
@@ -358,8 +360,8 @@ module acl_altera_syncram_wrapped #(
   // Note that clock for indata_reg_b should be equal to the clock for address_reg_b
   assign i_ecc_enc_clk_b                = (address_reg_b == "CLOCK0") ?
                                           clock0 : clock1; // Port A input register is always clocked with clock0
-  assign i_ecc_dec_clk_b                = (outdata_reg_b == "CLOCK0") ? 
-                                          clock0 : (outdata_reg_b == "CLOCK1") ? 
+  assign i_ecc_dec_clk_b                = (outdata_reg_b == "CLOCK0") ?
+                                          clock0 : (outdata_reg_b == "CLOCK1") ?
                                           clock1 :  i_ecc_enc_clk_b; // If output is unregistered, use the input clock.
 
   // Clock enable signal assignment
@@ -373,7 +375,7 @@ module acl_altera_syncram_wrapped #(
                                           1'b1 : (outdata_reg_b == "CLOCK1") ?
                                           clocken1 : (outdata_reg_b == "CLOCK0") ?
                                           clocken0 : 1'b1;
-  
+
   assign i_ecc_aclr                     = aclr0 | aclr1;   // The pulse extender and the latch for both ports should reset on any clear.
 
   assign i_clocken0                     = (clock_enable_input_a == "BYPASS") ?
@@ -386,8 +388,8 @@ module acl_altera_syncram_wrapped #(
                                           1'b1 : clocken1;
 
   assign i_in_data_clken_b              = (address_reg_b == "CLOCK0") ? i_clocken0_b : i_clocken1_b;
- 
-  // aclr and sclr assignments. 
+
+  // aclr and sclr assignments.
   generate
     if( connect_clr_to_ram != 1) begin
       assign aclr0_int = 1'b0;
@@ -396,14 +398,14 @@ module acl_altera_syncram_wrapped #(
     end else begin
       assign aclr0_int = aclr0;
       assign aclr1_int = aclr1;
-      assign sclr_int  = sclr; 
+      assign sclr_int  = sclr;
   end
   endgenerate
- 
+
   genvar i;
   generate
     if (enable_ecc == "TRUE") begin                           : GEN_ECC_ENABLED
-       
+
       logic err_corrected_int_a;
       logic err_corrected_pulse_extended_a;
 
@@ -415,48 +417,48 @@ module acl_altera_syncram_wrapped #(
 
       logic err_fatal_int_b;
       logic err_fatal_latched_b;
-      
+
       logic [ERR_CORRECTED_PULSE_EXTENSION_WIDTH-1:0] d_a;
       logic [ERR_CORRECTED_PULSE_EXTENSION_WIDTH-1:0] d_b;
 
       // instantiate the ECC encoder for port a
       acl_ecc_encoder #(
-         .DATA_WIDTH                    (width_a),     
-         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),            
+         .DATA_WIDTH                    (width_a),
+         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),
          .INPUT_PIPELINE_STAGES         (0),
          .OUTPUT_PIPELINE_STAGES        (0)
       ) acl_ecc_encoder_inst_a (
          .clock                         (i_ecc_enc_clk_a),
-         .clock_enable                  (i_clocken0),        // This will be added after ecc_enc/dec update 
-         .i_data                        (data_a),                 
-         .o_encoded                     (codeword_wr_a)   
+         .clock_enable                  (i_clocken0),        // This will be added after ecc_enc/dec update
+         .i_data                        (data_a),
+         .o_encoded                     (codeword_wr_a)
       );
- 
+
       // instantiate the ECC encoder for port b
       acl_ecc_encoder #(
-         .DATA_WIDTH                    (width_b),     
-         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),            
+         .DATA_WIDTH                    (width_b),
+         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),
          .INPUT_PIPELINE_STAGES         (0),
          .OUTPUT_PIPELINE_STAGES        (0)
       ) acl_ecc_encoder_inst_b (
          .clock                         (i_ecc_enc_clk_b),
-         .clock_enable                  (i_in_data_clken_b),   // This will be added after ecc_enc/dec update 
-         .i_data                        (data_b),       
+         .clock_enable                  (i_in_data_clken_b),   // This will be added after ecc_enc/dec update
+         .i_data                        (data_b),
          .o_encoded                     (codeword_wr_b)
-      );   
-     
+      );
+
       if (use_byteena) begin
         genvar g;
         for (g = 0; g < NUM_GROUPS; g++) begin : pad_codewords
            localparam int new_enc_base = g*MAX_ECC_WIDTH*2;
-           localparam int old_enc_base = g*getEncodedBits(MAX_ECC_WIDTH); 
+           localparam int old_enc_base = g*getEncodedBits(MAX_ECC_WIDTH);
            localparam int enc_width    = getEncodedBits(MAX_ECC_WIDTH);
 
            assign i_codeword_wr_a[new_enc_base +: enc_width] = codeword_wr_a[old_enc_base +: enc_width];
-           assign i_codeword_wr_a[new_enc_base+enc_width +: 2*MAX_ECC_WIDTH-enc_width] = '0; 
+           assign i_codeword_wr_a[new_enc_base+enc_width +: 2*MAX_ECC_WIDTH-enc_width] = '0;
 
            assign i_codeword_wr_b[new_enc_base +: enc_width] = codeword_wr_b[old_enc_base +: enc_width];
-           assign i_codeword_wr_b[new_enc_base+enc_width +: 2*MAX_ECC_WIDTH-enc_width] = '0; 
+           assign i_codeword_wr_b[new_enc_base+enc_width +: 2*MAX_ECC_WIDTH-enc_width] = '0;
 
            assign codeword_rd_a[old_enc_base +: enc_width] = i_codeword_rd_a[new_enc_base +: enc_width];
 
@@ -472,7 +474,7 @@ module acl_altera_syncram_wrapped #(
            assign i_byteena_b[2*g]   = byteena_b[g];
            assign i_byteena_b[2*g+1] = byteena_b[g];
         end
-      end 
+      end
       else begin
         assign i_codeword_wr_a = codeword_wr_a;
         assign i_codeword_wr_b = codeword_wr_b;
@@ -484,15 +486,15 @@ module acl_altera_syncram_wrapped #(
 
       // instantiate the ECC decoder for port a
       acl_ecc_decoder #(
-         .DATA_WIDTH                    (width_a),     
-         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),           
+         .DATA_WIDTH                    (width_a),
+         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),
          .INPUT_PIPELINE_STAGES         (0),
          .OUTPUT_PIPELINE_STAGES        (0),
          .STATUS_PIPELINE_STAGES        (0)
       ) acl_ecc_decoder_inst_a (
          .clock                         (i_ecc_dec_clk_a),
          .clock_enable                  (i_outdata_clken_a), // This will be added after ecc_enc/dec update
-         .i_encoded                     (codeword_rd_a),    
+         .i_encoded                     (codeword_rd_a),
          .o_single_error_corrected      (err_corrected_int_a),      //Flag signal to reflect the status of data received. Denotes single-bit error found and corrected. You can use the data because it has already been corrected.
          .o_double_error_detected       (err_fatal_int_a),          // Flag signal to reflect the status of data received. Denotes double-bit error found, but not corrected. You must not use the data if this signal is asserted.
          .o_data                        (q_a)
@@ -500,20 +502,20 @@ module acl_altera_syncram_wrapped #(
 
       // instantiate the ECC decoder for port b
       acl_ecc_decoder #(
-         .DATA_WIDTH                    (width_b),     
-         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),            
+         .DATA_WIDTH                    (width_b),
+         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),
          .INPUT_PIPELINE_STAGES         (0),
          .OUTPUT_PIPELINE_STAGES        (0),
-         .STATUS_PIPELINE_STAGES        (0) 
+         .STATUS_PIPELINE_STAGES        (0)
       ) acl_ecc_decoder_inst_b (
          .clock                         (i_ecc_dec_clk_b),
          .clock_enable                  (i_outdata_clken_b), // This will be added after ecc_enc/dec update
-         .i_encoded                     (codeword_rd_b),    
+         .i_encoded                     (codeword_rd_b),
          .o_single_error_corrected      (err_corrected_int_b),      //Flag signal to reflect the status of data received. Denotes single-bit error found and corrected. You can use the data because it has already been corrected.
          .o_double_error_detected       (err_fatal_int_b),          // Flag signal to reflect the status of data received. Denotes double-bit error found, but not corrected. You must not use the data if this signal is asserted.
          .o_data                        (q_b)
       );
-      
+
       always_ff @(posedge i_ecc_dec_clk_a or posedge i_ecc_aclr) begin
          if (i_ecc_aclr) begin
             err_fatal_latched_a            <= 1'b0;
@@ -523,7 +525,7 @@ module acl_altera_syncram_wrapped #(
          else begin
             if (rden_a) begin
                err_fatal_latched_a <= err_fatal_latched_a | err_fatal_int_a;
-                
+
                d_a[0] <= err_corrected_int_a;
                for (int i = 1; i < ERR_CORRECTED_PULSE_EXTENSION_WIDTH; i++) begin : pulse_extend_a
                   d_a[i] <= d_a[i-1];
@@ -539,14 +541,14 @@ module acl_altera_syncram_wrapped #(
             end
          end
       end
-      
+
       always_ff @(posedge i_ecc_dec_clk_b or posedge i_ecc_aclr) begin
          if (i_ecc_aclr) begin
             err_fatal_latched_b            <= 1'b0;
             err_corrected_pulse_extended_b <= 1'b0;
             d_b                            <=  'b0;
 
-         end 
+         end
          else begin
             if (rden_b) begin
                err_fatal_latched_b <= err_fatal_latched_b | err_fatal_int_b;
@@ -565,16 +567,16 @@ module acl_altera_syncram_wrapped #(
             end
          end
       end
-      
 
-      // Note that the latched and pulse extended registers from port A and port B may generally be clocked differently. 
-      // We are oring them here asyncronously, since from here, resulting or is async. This will not cause a problem as long as 
+
+      // Note that the latched and pulse extended registers from port A and port B may generally be clocked differently.
+      // We are oring them here asyncronously, since from here, resulting or is async. This will not cause a problem as long as
       // both of the ports use the same clock (currently always the case in OpenCL), or the status goes into a syncronizer.
-      
+
       assign err_fatal      = err_fatal_latched_a            | err_fatal_latched_b;
       assign err_corrected  = err_corrected_pulse_extended_a | err_corrected_pulse_extended_b;
       assign ecc_err_status = {err_corrected,err_fatal};
-      
+
     end else begin                                  : GEN_ECC_DISABLED   // soft_ecc is false
 
        assign err_corrected    = 1'b0;
@@ -588,13 +590,13 @@ module acl_altera_syncram_wrapped #(
        assign i_byteena_b      = byteena_b;
 
     end
-     
+
   endgenerate
- 
+
   /*----------------------------------------\
   |  Internal altera_syncram instantiation  |
   \----------------------------------------*/
-  
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //                                                                                                                                        //
   // If ECC is ON                                                                                                                           //
@@ -606,7 +608,7 @@ module acl_altera_syncram_wrapped #(
   //                                                                                                                                        //
   // -------------------------------------------------------------------------------------------------------------------------------------- //
   // ECC   Mode                        use_byteena   | byteena_a      byteena_b      addressstall_a  addressstall_b                         //
-  // -------------------------------------------------------------------------------------------------------------------------------------- //  
+  // -------------------------------------------------------------------------------------------------------------------------------------- //
   // ON     (BIDIR_DUAL_PORT or MLAB)  1              Connected       Connected      Not Connected   Not Connected                          //
   // ON    !(BIDIR_DUAL_PORT or MLAB)  1              connected       Connected      Connected       Connected                              //
   // ON     (BIDIR_DUAL_PORT or MLAB)  0              Not Connected   Not Connected  Not Connected   Not Connected                          //
@@ -614,7 +616,7 @@ module acl_altera_syncram_wrapped #(
   // -------------------------------------------------------------------------------------------------------------------------------------- //
   //                                                                                                                                        //
   // If ECC is OFF                                                                                                                          //
-  // There are 8 possible altera_syncram instantiations. The different                                                                      // 
+  // There are 8 possible altera_syncram instantiations. The different                                                                      //
   // settings are summarized below. Every other port is the same among all                                                                  //
   // instantiations.  the default value for width_byteena_a and width_byteena_b                                                             //
   // is 1. In BIDIR_DUAL_PORT mode or MLAB block type, addressstall_a and                                                                   //
@@ -623,7 +625,7 @@ module acl_altera_syncram_wrapped #(
   //                                                                                                                                        //
   // -------------------------------------------------------------------------------------------------------------------------------------- //
   // ECC   Mode                        width_byteena_a   width_byteena_b   | byteena_a      byteena_b      addressstall_a  addressstall_b   //
-  // -------------------------------------------------------------------------------------------------------------------------------------- //  
+  // -------------------------------------------------------------------------------------------------------------------------------------- //
   // OFF    (BIDIR_DUAL_PORT or MLAB)  ==1               ==1                 Not Connected  Not Connected  Not Connected   Not Connected    //
   // OFF    (BIDIR_DUAL_PORT or MLAB)  !=1               !=1                 Connected      Connected      Not Connected   Not Connected    //
   // OFF    (BIDIR_DUAL_PORT or MLAB)  !=1               ==1                 Connected      Not Connected  Not Connected   Not Connected    //
@@ -646,7 +648,7 @@ module acl_altera_syncram_wrapped #(
   // -------------------------------------------------------------------------------------------------------------------------------------- //
   //                                                                                                                                        //
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // All the common parameters for all the cases
   `define COMMON_ALTERA_SYNCRAM_PARAMS \
          .width_a                                (I_MEMORY_WIDTH_A),\
@@ -697,7 +699,7 @@ module acl_altera_syncram_wrapped #(
          .lpm_type                               (lpm_type),\
          .implement_in_les                       (implement_in_les),\
          .power_up_uninitialized                 (power_up_uninitialized)
-  
+
   // All the common ports for all 8 cases
   `define COMMON_ALTERA_SYNCRAM_PORTS \
          .wren_a               (wren_a),\
@@ -732,7 +734,7 @@ module acl_altera_syncram_wrapped #(
       if (enable_ecc == "TRUE") begin
         if (use_byteena == 1) begin
           if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
               .rden_a               (1'b1),
               .rden_b               (1'b1),
@@ -756,7 +758,7 @@ module acl_altera_syncram_wrapped #(
         end
         else begin
           if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
               .rden_a               (1'b1),
               .rden_b               (1'b1),
@@ -785,7 +787,7 @@ module acl_altera_syncram_wrapped #(
         // First four cases: BIDIR_DUAL_PORT
         if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
           if ((width_byteena_a == 1) && (width_byteena_b == 1)) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
               .rden_a               (1'b1),
               .rden_b               (1'b1),
@@ -794,7 +796,7 @@ module acl_altera_syncram_wrapped #(
              .addressstall_a       (),
              .addressstall_b       ()
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b != 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -805,7 +807,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (),
               .addressstall_b       ()
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b == 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -828,7 +830,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_b       ()
             );
           end
-         end 
+         end
 
          // Second four cases: NOT BIDIR_DUAL_PORT
          else begin
@@ -842,7 +844,7 @@ module acl_altera_syncram_wrapped #(
              .addressstall_a       (addressstall_a),
              .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b != 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -853,7 +855,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (addressstall_a),
               .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b == 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -864,7 +866,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (addressstall_a),
               .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -880,11 +882,11 @@ module acl_altera_syncram_wrapped #(
       end
     end
     // do_not_connect_read_enable = 0
-    else begin 
+    else begin
       if (enable_ecc == "TRUE") begin
         if (use_byteena == 1) begin
           if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
               .rden_a               (rden_a),
               .rden_b               (rden_b),
@@ -908,7 +910,7 @@ module acl_altera_syncram_wrapped #(
         end
         else begin
           if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
               .rden_a               (rden_a),
               .rden_b               (rden_b),
@@ -937,7 +939,7 @@ module acl_altera_syncram_wrapped #(
         // First four cases: BIDIR_DUAL_PORT
         if (operation_mode == "BIDIR_DUAL_PORT" || ram_block_type == "MLAB" || do_not_connect_addressstall == 1) begin
           if ((width_byteena_a == 1) && (width_byteena_b == 1)) begin
-            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst ( 
+            altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
              `COMMON_ALTERA_SYNCRAM_PORTS,
              .rden_a               (rden_a),
              .rden_b               (rden_b),
@@ -946,7 +948,7 @@ module acl_altera_syncram_wrapped #(
              .addressstall_a       (),
              .addressstall_b       ()
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b != 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -957,7 +959,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (),
               .addressstall_b       ()
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b == 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -980,7 +982,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_b       ()
             );
           end
-         end 
+         end
 
          // Second four cases: NOT BIDIR_DUAL_PORT
          else begin
@@ -994,7 +996,7 @@ module acl_altera_syncram_wrapped #(
              .addressstall_a       (addressstall_a),
              .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b != 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -1005,7 +1007,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (addressstall_a),
               .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else if ((width_byteena_a != 1) && (width_byteena_b == 1)) begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -1016,7 +1018,7 @@ module acl_altera_syncram_wrapped #(
               .addressstall_a       (addressstall_a),
               .addressstall_b       (addressstall_b)
             );
-          end 
+          end
           else begin
             altera_syncram #( `COMMON_ALTERA_SYNCRAM_PARAMS ) altera_syncram_inst (
               `COMMON_ALTERA_SYNCRAM_PORTS,
@@ -1033,6 +1035,6 @@ module acl_altera_syncram_wrapped #(
     end
   endgenerate
 
-endmodule // acl_altera_syncram_wrapped   
+endmodule // acl_altera_syncram_wrapped
 
 `default_nettype wire

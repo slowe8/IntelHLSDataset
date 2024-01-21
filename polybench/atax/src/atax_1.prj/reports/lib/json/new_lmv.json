@@ -3,7 +3,7 @@
   [
     {
       "name":"atax"
-      , "id":3041475528
+      , "id":1047869096
       , "type":"component"
       , "children":
       [
@@ -28,31 +28,31 @@
                       , "links":
                       [
                         {
-                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                           , "line":"8"
                         }
                       ]
                     }
                   ]
                   , "Requested size":"16 kilobytes"
-                  , "Implemented size":"16 kilobytes = (1024 words per bank) x (16 bytes per word)"
+                  , "Implemented size":"16 kilobytes = (4096 words per bank) x (4 bytes per word)"
                   , "Memory Usage":"7 RAMs"
                   , "Number of banks":"1"
-                  , "Bank width (word size)":"16 bytes"
-                  , "Bank depth":"1024 words"
+                  , "Bank width (word size)":"4 bytes"
+                  , "Bank depth":"4096 words"
                   , "Number of replicates":"1"
                   , "Number of private copies":"1"
-                  , "RAM Mode":"True dual-port"
+                  , "RAM Mode":"Simple dual-port"
                   , "Pump configuration":"Single-pumped"
-                  , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-1023] and has 4 array elements per memory word."
-                  , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td></td><td></td><td></td><td></td></tr></table>"
+                  , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-4095] and has 1 array element per memory word."
+                  , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                 }
               ]
               , "debug":
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":8
                   }
                 ]
@@ -68,21 +68,21 @@
                     {
                       "type":"table"
                       , "Memory Usage":"7 RAMs"
-                      , "Bank width":"16 bytes"
-                      , "Bank depth":"1024 words"
-                      , "Implemented bank size":"16 kilobytes = (1024 words) x (16 bytes per word)"
+                      , "Bank width":"4 bytes"
+                      , "Bank depth":"4096 words"
+                      , "Implemented bank size":"16 kilobytes = (4096 words) x (4 bytes per word)"
                       , "Number of active ports":"2"
                       , "Number of read ports":"1"
-                      , "Number of shared (RW) ports":"1"
-                      , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-1023] and has 4 array elements per memory word."
-                      , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td></td><td></td><td></td><td></td></tr></table>"
+                      , "Number of write ports":"1"
+                      , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-4095] and has 1 array element per memory word."
+                      , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                     }
                   ]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":8
                       }
                     ]
@@ -93,24 +93,26 @@
                     {
                       "name":"Replicate 0"
                       , "id":4
+                      , "padding":"0"
+                      , "depth":"4096"
                       , "details":
                       [
                         {
                           "type":"table"
-                          , "Implemented size":"16 kilobytes = (1024 words) x (16 bytes per word)"
+                          , "Implemented size":"16 kilobytes = (4096 words) x (4 bytes per word)"
                           , "Memory Usage":"7 RAMs"
                           , "Number of physical ports":"2"
                           , "Number of read ports":"1"
-                          , "Number of shared (RW) ports":"1"
-                          , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-1023] and has 4 array elements per memory word."
-                          , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td></td><td></td><td></td><td></td></tr></table>"
+                          , "Number of write ports":"1"
+                          , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-4095] and has 1 array element per memory word."
+                          , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                         }
                       ]
                       , "debug":
                       [
                         [
                           {
-                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                             , "line":8
                           }
                         ]
@@ -119,12 +121,12 @@
                       , "children":
                       [
                         {
-                          "name":"RW"
+                          "name":"R"
                           , "id":5
                           , "type":"port"
                         }
                         , {
-                          "name":"R"
+                          "name":"W"
                           , "id":7
                           , "type":"port"
                         }
@@ -136,11 +138,11 @@
                         [
                           {
                             "type":"table"
-                            , "Width":"16 bytes"
-                            , "Depth per copy":"1024 words"
+                            , "Width":"4 bytes"
+                            , "Depth per copy (including padding)":"4096 words"
                             , "Number of private copies":"1"
-                            , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-1023] and has 4 array elements per memory word."
-                            , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td></td><td></td><td></td><td></td></tr></table>"
+                            , "Additional information":"In each private copy:</br>  Variable 'buff_A' occupies memory words [0-4095] and has 1 array element per memory word."
+                            , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>13</sub></td><td>b<sub>12</sub></td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                           }
                         ]
                       }
@@ -164,7 +166,7 @@
                       , "links":
                       [
                         {
-                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                           , "line":"9"
                         }
                       ]
@@ -188,7 +190,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":9
                   }
                 ]
@@ -218,7 +220,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":9
                       }
                     ]
@@ -229,6 +231,8 @@
                     {
                       "name":"Replicate 0"
                       , "id":10
+                      , "padding":"0"
+                      , "depth":"64"
                       , "details":
                       [
                         {
@@ -246,7 +250,7 @@
                       [
                         [
                           {
-                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                             , "line":9
                           }
                         ]
@@ -273,7 +277,7 @@
                           {
                             "type":"table"
                             , "Width":"4 bytes"
-                            , "Depth per copy":"64 words"
+                            , "Depth per copy (including padding)":"64 words"
                             , "Number of private copies":"1"
                             , "Additional information":"In each private copy:</br>  Variable 'buff_x' occupies memory words [0-63] and has 1 array element per memory word."
                             , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
@@ -300,7 +304,7 @@
                       , "links":
                       [
                         {
-                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                           , "line":"10"
                         }
                       ]
@@ -324,7 +328,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":10
                   }
                 ]
@@ -354,7 +358,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":10
                       }
                     ]
@@ -365,6 +369,8 @@
                     {
                       "name":"Replicate 0"
                       , "id":15
+                      , "padding":"0"
+                      , "depth":"64"
                       , "details":
                       [
                         {
@@ -382,7 +388,7 @@
                       [
                         [
                           {
-                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                             , "line":10
                           }
                         ]
@@ -409,7 +415,7 @@
                           {
                             "type":"table"
                             , "Width":"4 bytes"
-                            , "Depth per copy":"64 words"
+                            , "Depth per copy (including padding)":"64 words"
                             , "Number of private copies":"1"
                             , "Additional information":"In each private copy:</br>  Variable 'buff_y_out' occupies memory words [0-63] and has 1 array element per memory word."
                             , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
@@ -436,7 +442,7 @@
                       , "links":
                       [
                         {
-                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                          "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                           , "line":"11"
                         }
                       ]
@@ -451,18 +457,8 @@
                   , "Number of replicates":"1"
                   , "Number of private copies":"1"
                   , "RAM Mode":"Simple dual-port"
-                  , "Pump configuration":"Double-pumped"
-                  , "Additional information":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"In each private copy:</br>  Variable 'tmp1' occupies memory words [0-63] and has 1 array element per memory word."
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"Running memory at 2x clock to support more concurrent ports"
-                    }
-                  ]
+                  , "Pump configuration":"Single-pumped"
+                  , "Additional information":"In each private copy:</br>  Variable 'tmp1' occupies memory words [0-63] and has 1 array element per memory word."
                   , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                 }
               ]
@@ -470,7 +466,7 @@
               [
                 [
                   {
-                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                     , "line":11
                   }
                 ]
@@ -489,10 +485,9 @@
                       , "Bank width":"4 bytes"
                       , "Bank depth":"64 words"
                       , "Implemented bank size":"256 bytes = (64 words) x (4 bytes per word)"
-                      , "Number of active ports":"3"
-                      , "Number of read ports":"2"
+                      , "Number of active ports":"2"
+                      , "Number of read ports":"1"
                       , "Number of write ports":"1"
-                      , "Number of un-used ports":"1"
                       , "Additional information":"In each private copy:</br>  Variable 'tmp1' occupies memory words [0-63] and has 1 array element per memory word."
                       , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                     }
@@ -501,7 +496,7 @@
                   [
                     [
                       {
-                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                         , "line":11
                       }
                     ]
@@ -512,16 +507,17 @@
                     {
                       "name":"Replicate 0"
                       , "id":22
+                      , "padding":"0"
+                      , "depth":"64"
                       , "details":
                       [
                         {
                           "type":"table"
                           , "Implemented size":"256 bytes = (64 words) x (4 bytes per word)"
                           , "Memory Usage":"1 RAM"
-                          , "Number of physical ports":"4"
-                          , "Number of read ports":"2"
+                          , "Number of physical ports":"2"
+                          , "Number of read ports":"1"
                           , "Number of write ports":"1"
-                          , "Number of un-used ports":"1"
                           , "Additional information":"In each private copy:</br>  Variable 'tmp1' occupies memory words [0-63] and has 1 array element per memory word."
                           , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                         }
@@ -530,7 +526,7 @@
                       [
                         [
                           {
-                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                             , "line":11
                           }
                         ]
@@ -544,13 +540,8 @@
                           , "type":"port"
                         }
                         , {
-                          "name":"R"
-                          , "id":24
-                          , "type":"port"
-                        }
-                        , {
                           "name":"W"
-                          , "id":25
+                          , "id":24
                           , "type":"port"
                         }
                       ]
@@ -562,7 +553,7 @@
                           {
                             "type":"table"
                             , "Width":"4 bytes"
-                            , "Depth per copy":"64 words"
+                            , "Depth per copy (including padding)":"64 words"
                             , "Number of private copies":"1"
                             , "Additional information":"In each private copy:</br>  Variable 'tmp1' occupies memory words [0-63] and has 1 array element per memory word."
                             , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
@@ -578,7 +569,7 @@
         }
         , {
           "name":"Load"
-          , "id":3041922304
+          , "id":1047727112
           , "details":
           [
             {
@@ -587,7 +578,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Loads from":"buff_A"
-              , "Start cycle":"3"
+              , "Start cycle":"2"
               , "Latency":"3"
               , "Reference":
               [
@@ -609,7 +600,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":31
               }
             ]
@@ -618,7 +609,7 @@
         }
         , {
           "name":"Load"
-          , "id":3041952512
+          , "id":1048595256
           , "details":
           [
             {
@@ -627,7 +618,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Loads from":"buff_A"
-              , "Start cycle":"3"
+              , "Start cycle":"2"
               , "Latency":"3"
               , "Reference":
               [
@@ -649,7 +640,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":40
               }
             ]
@@ -658,16 +649,16 @@
         }
         , {
           "name":"Store"
-          , "id":3041904320
+          , "id":1048566888
           , "details":
           [
             {
               "type":"table"
-              , "Width":"128 bits"
+              , "Width":"32 bits"
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Stores to":"buff_A"
-              , "Start cycle":"35"
+              , "Start cycle":"7"
               , "Latency":"1"
               , "Reference":
               [
@@ -689,7 +680,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":21
               }
             ]
@@ -710,7 +701,7 @@
         }
         , {
           "name":"Load"
-          , "id":3041922928
+          , "id":1048585336
           , "details":
           [
             {
@@ -719,7 +710,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Loads from":"buff_x"
-              , "Start cycle":"3"
+              , "Start cycle":"2"
               , "Latency":"3"
               , "Reference":
               [
@@ -741,7 +732,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":31
               }
             ]
@@ -750,7 +741,7 @@
         }
         , {
           "name":"Store"
-          , "id":3041644688
+          , "id":1048558120
           , "details":
           [
             {
@@ -759,7 +750,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Stores to":"buff_x"
-              , "Start cycle":"34"
+              , "Start cycle":"7"
               , "Latency":"1"
               , "Reference":
               [
@@ -781,7 +772,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":16
               }
             ]
@@ -790,47 +781,7 @@
         }
         , {
           "name":"Load"
-          , "id":3041951344
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Width":"32 bits"
-              , "Stall-free":"Yes"
-              , "Type":"Pipelined never-stall"
-              , "Loads from":"buff_y_out"
-              , "Start cycle":"3"
-              , "Latency":"3"
-              , "Reference":
-              [
-                {
-                  "type":"text"
-                  , "text":"See %L for more information"
-                  , "links":
-                  [
-                    {
-                      "guide":"Reference Manual"
-                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                , "line":40
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Load"
-          , "id":3041965120
+          , "id":1048594536
           , "details":
           [
             {
@@ -861,7 +812,47 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                , "line":40
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Load"
+          , "id":1048607768
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Width":"32 bits"
+              , "Stall-free":"Yes"
+              , "Type":"Pipelined never-stall"
+              , "Loads from":"buff_y_out"
+              , "Start cycle":"2"
+              , "Latency":"3"
+              , "Reference":
+              [
+                {
+                  "type":"text"
+                  , "text":"See %L for more information"
+                  , "links":
+                  [
+                    {
+                      "guide":"Reference Manual"
+                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":46
               }
             ]
@@ -870,7 +861,7 @@
         }
         , {
           "name":"Store"
-          , "id":3041864624
+          , "id":1048558968
           , "details":
           [
             {
@@ -879,7 +870,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Stores to":"buff_y_out"
-              , "Start cycle":"34"
+              , "Start cycle":"7"
               , "Latency":"1"
               , "Reference":
               [
@@ -901,7 +892,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":17
               }
             ]
@@ -910,7 +901,7 @@
         }
         , {
           "name":"Store"
-          , "id":3041953680
+          , "id":1048596264
           , "details":
           [
             {
@@ -919,7 +910,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Stores to":"buff_y_out"
-              , "Start cycle":"11"
+              , "Start cycle":"10"
               , "Latency":"1"
               , "Reference":
               [
@@ -941,7 +932,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":40
               }
             ]
@@ -974,7 +965,7 @@
         }
         , {
           "name":"Load"
-          , "id":3041911136
+          , "id":1047733464
           , "details":
           [
             {
@@ -984,7 +975,7 @@
               , "Type":"Pipelined never-stall"
               , "Loads from":"tmp1"
               , "Start cycle":"2"
-              , "Latency":"4"
+              , "Latency":"3"
               , "Reference":
               [
                 {
@@ -1000,61 +991,12 @@
                 }
               ]
             }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                , "line":31
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Load"
-          , "id":3041694608
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Width":"32 bits"
-              , "Stall-free":"Yes"
-              , "Type":"Pipelined never-stall"
-              , "Loads from":"tmp1"
-              , "Start cycle":"2"
-              , "Latency":"4"
-              , "Reference":
-              [
-                {
-                  "type":"text"
-                  , "text":"See %L for more information"
-                  , "links":
-                  [
-                    {
-                      "guide":"Reference Manual"
-                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                , "line":40
-              }
-            ]
           ]
           , "type":"inst"
         }
         , {
           "name":"Store"
-          , "id":3041865120
+          , "id":1048559816
           , "details":
           [
             {
@@ -1063,7 +1005,7 @@
               , "Stall-free":"Yes"
               , "Type":"Pipelined never-stall"
               , "Stores to":"tmp1"
-              , "Start cycle":"34"
+              , "Start cycle":"7"
               , "Latency":"1"
               , "Reference":
               [
@@ -1085,7 +1027,7 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":18
               }
             ]
@@ -1094,7 +1036,7 @@
         }
         , {
           "name":"Store"
-          , "id":3041942480
+          , "id":1048588488
           , "details":
           [
             {
@@ -1121,20 +1063,11 @@
               ]
             }
           ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                , "line":31
-              }
-            ]
-          ]
           , "type":"inst"
         }
         , {
           "name":"SHARE"
-          , "id":26
+          , "id":25
           , "details":
           [
             {
@@ -1155,26 +1088,22 @@
     }
     , {
       "from":6
-      , "to":5
+      , "to":1047727112
     }
     , {
       "from":6
-      , "to":3041922304
+      , "to":1048595256
     }
     , {
-      "from":3041904320
-      , "to":6
-    }
-    , {
-      "from":7
-      , "to":3041952512
+      "from":1048566888
+      , "to":7
     }
     , {
       "from":11
-      , "to":3041922928
+      , "to":1048585336
     }
     , {
-      "from":3041644688
+      "from":1048558120
       , "to":12
     }
     , {
@@ -1183,43 +1112,39 @@
     }
     , {
       "from":17
-      , "to":3041951344
+      , "to":1048594536
     }
     , {
       "from":17
-      , "to":3041965120
+      , "to":1048607768
     }
     , {
       "from":19
       , "to":18
     }
     , {
-      "from":3041864624
+      "from":1048558968
       , "to":19
     }
     , {
-      "from":3041953680
+      "from":1048596264
       , "to":19
     }
     , {
       "from":23
-      , "to":3041911136
+      , "to":1047733464
     }
     , {
-      "from":24
-      , "to":3041694608
+      "from":25
+      , "to":24
     }
     , {
-      "from":26
+      "from":1048559816
       , "to":25
     }
     , {
-      "from":3041865120
-      , "to":26
-    }
-    , {
-      "from":3041942480
-      , "to":26
+      "from":1048588488
+      , "to":25
     }
   ]
 }

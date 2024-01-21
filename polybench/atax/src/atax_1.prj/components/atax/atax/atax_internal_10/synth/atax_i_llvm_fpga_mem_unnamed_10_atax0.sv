@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------- 
-// High Level Design Compiler for Intel(R) FPGAs Version 20.4 (Release Build #72)
+// High Level Design Compiler for Intel(R) FPGAs Version 23.4 (Release Build #31.1)
 // 
-// Legal Notice: Copyright 2020 Intel Corporation.  All rights reserved.
+// Legal Notice: Copyright 2022 Intel Corporation.  All rights reserved.
 // Your use of  Intel Corporation's design tools,  logic functions and other
 // software and  tools, and its AMPP partner logic functions, and any output
 // files any  of the foregoing (including  device programming  or simulation
@@ -14,36 +14,38 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from atax_i_llvm_fpga_mem_unnamed_10_atax0
-// SystemVerilog created on Tue Jan  2 20:41:09 2024
+// SystemVerilog created from i_llvm_fpga_mem_unnamed_atax10_atax0
+// Created for function/kernel atax
+// SystemVerilog created on Sun Jan 21 01:17:51 2024
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_i_llvm_fpga_mem_unnamed_10_atax0 (
-    input wire [0:0] in_flush,
     input wire [63:0] in_unnamed_atax10_atax_avm_readdata,
-    input wire [0:0] in_unnamed_atax10_atax_avm_readdatavalid,
-    input wire [0:0] in_unnamed_atax10_atax_avm_waitrequest,
     input wire [0:0] in_unnamed_atax10_atax_avm_writeack,
+    input wire [0:0] in_unnamed_atax10_atax_avm_waitrequest,
+    input wire [0:0] in_unnamed_atax10_atax_avm_readdatavalid,
     output wire [63:0] out_unnamed_atax10_atax_avm_address,
+    output wire [0:0] out_unnamed_atax10_atax_avm_enable,
+    output wire [0:0] out_unnamed_atax10_atax_avm_read,
+    output wire [0:0] out_unnamed_atax10_atax_avm_write,
+    output wire [63:0] out_unnamed_atax10_atax_avm_writedata,
+    output wire [7:0] out_unnamed_atax10_atax_avm_byteenable,
+    output wire [0:0] out_unnamed_atax10_atax_avm_burstcount,
+    input wire [0:0] in_flush,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     input wire [63:0] in_i_address,
     input wire [0:0] in_i_predicate,
     input wire [0:0] in_i_valid,
-    output wire [0:0] out_unnamed_atax10_atax_avm_burstcount,
     output wire [31:0] out_o_readdata,
     output wire [0:0] out_o_valid,
-    output wire [7:0] out_unnamed_atax10_atax_avm_byteenable,
-    output wire [0:0] out_unnamed_atax10_atax_avm_enable,
-    output wire [0:0] out_unnamed_atax10_atax_avm_read,
-    output wire [0:0] out_unnamed_atax10_atax_avm_write,
-    output wire [63:0] out_unnamed_atax10_atax_avm_writedata,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
+    wire [0:0] VCC_q;
     wire [31:0] c_i32_010_q;
     wire [2:0] c_i3_09_q;
     wire [3:0] c_i4_05_q;
@@ -96,41 +98,26 @@ module atax_i_llvm_fpga_mem_unnamed_10_atax0 (
     wire i_llvm_fpga_mem_unnamed_atax10_atax1_o_writeack_bitsignaltemp;
     wire [31:0] i_llvm_fpga_mem_unnamed_atax10_atax1_profile_avm_burstcount_total_incr;
     wire [31:0] i_llvm_fpga_mem_unnamed_atax10_atax1_profile_bw_incr;
-    wire [31:0] readdata_reg_unnamed_atax10_atax3_out_data_out;
-    wire [0:0] readdata_reg_unnamed_atax10_atax3_out_stall_out;
-    wire [0:0] readdata_reg_unnamed_atax10_atax3_out_valid_out;
+    reg [31:0] readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_data_reg_x_q;
+    reg [0:0] readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_valid_reg_x_q;
 
 
-    // readdata_reg_unnamed_atax10_atax3(BLACKBOX,12)@20000000
-    // out out_data_out@20000001
-    // out out_valid_out@20000001
-    atax_readdata_reg_unnamed_10_atax3 thereaddata_reg_unnamed_atax10_atax3 (
-        .in_data_in(i_llvm_fpga_mem_unnamed_atax10_atax1_o_readdata),
-        .in_stall_in(in_i_stall),
-        .in_valid_in(i_llvm_fpga_mem_unnamed_atax10_atax1_o_valid),
-        .out_data_out(readdata_reg_unnamed_atax10_atax3_out_data_out),
-        .out_stall_out(readdata_reg_unnamed_atax10_atax3_out_stall_out),
-        .out_valid_out(readdata_reg_unnamed_atax10_atax3_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // c_i32_010(CONSTANT,3)
+    // c_i32_010(CONSTANT,4)
     assign c_i32_010_q = $unsigned(32'b00000000000000000000000000000000);
 
-    // c_i4_05(CONSTANT,7)
+    // c_i4_05(CONSTANT,8)
     assign c_i4_05_q = $unsigned(4'b0000);
 
-    // c_i64_02(CONSTANT,8)
+    // c_i64_02(CONSTANT,9)
     assign c_i64_02_q = $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
 
-    // c_i3_09(CONSTANT,6)
+    // c_i3_09(CONSTANT,7)
     assign c_i3_09_q = $unsigned(3'b000);
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_unnamed_atax10_atax1(EXTIFACE,10)
+    // i_llvm_fpga_mem_unnamed_atax10_atax1(EXTIFACE,13)@2 + 4
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_avm_readdata = in_unnamed_atax10_atax_avm_readdata;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_avm_readdatavalid = in_unnamed_atax10_atax_avm_readdatavalid;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_avm_waitrequest = in_unnamed_atax10_atax_avm_waitrequest;
@@ -143,7 +130,7 @@ module atax_i_llvm_fpga_mem_unnamed_10_atax0 (
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_byteenable = c_i4_05_q;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_cmpdata = c_i32_010_q;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_predicate = in_i_predicate;
-    assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_stall = readdata_reg_unnamed_atax10_atax3_out_stall_out;
+    assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_stall = GND_q;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_valid = in_i_valid;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_i_writedata = c_i32_010_q;
     assign i_llvm_fpga_mem_unnamed_atax10_atax1_stream_base_addr = c_i64_02_q;
@@ -178,22 +165,22 @@ module atax_i_llvm_fpga_mem_unnamed_10_atax0 (
         .AWIDTH(64),
         .BURSTCOUNT_WIDTH(1),
         .ENABLE_BANKED_MEMORY(0),
-        .FORCE_NOP_SUPPORT(0),
+        .FORCE_NOP_SUPPORT(1),
         .HIGH_FMAX(1),
         .INPUTFIFO_USEDW_MAXBITS(5),
-        .KERNEL_SIDE_MEM_LATENCY(31),
+        .KERNEL_SIDE_MEM_LATENCY(4),
         .LMEM_ADDR_PERMUTATION_STYLE(0),
         .MEMORY_SIDE_MEM_LATENCY(0),
         .MWIDTH_BYTES(8),
         .NUMBER_BANKS(1),
         .PROFILE_ADDR_TOGGLE(0),
         .READ(1),
-        .STALLFREE(0),
+        .STALLFREE(1),
         .STYLE("PIPELINED"),
         .SYNCHRONIZE_RESET(0),
         .USECACHING(0),
-        .USEINPUTFIFO(1),
-        .USEOUTPUTFIFO(1),
+        .USEINPUTFIFO(0),
+        .USEOUTPUTFIFO(0),
         .USE_BYTE_EN(0),
         .USE_STALL_LATENCY(0),
         .USE_WRITE_ACK(1),
@@ -237,32 +224,49 @@ module atax_i_llvm_fpga_mem_unnamed_10_atax0 (
         .resetn(resetn)
     );
 
-    // regfree_osync(GPOUT,18)
+    // ext_sig_sync_out(GPOUT,12)
     assign out_unnamed_atax10_atax_avm_address = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_address;
-
-    // sync_out(GPOUT,20)@20000000
-    assign out_o_stall = i_llvm_fpga_mem_unnamed_atax10_atax1_o_stall;
-
-    // dupName_0_regfree_osync_x(GPOUT,22)
+    assign out_unnamed_atax10_atax_avm_enable = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_enable;
+    assign out_unnamed_atax10_atax_avm_read = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_read;
+    assign out_unnamed_atax10_atax_avm_write = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_write;
+    assign out_unnamed_atax10_atax_avm_writedata = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_writedata;
+    assign out_unnamed_atax10_atax_avm_byteenable = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_byteenable;
     assign out_unnamed_atax10_atax_avm_burstcount = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_burstcount;
 
-    // dupName_0_sync_out_x(GPOUT,23)@35
-    assign out_o_readdata = readdata_reg_unnamed_atax10_atax3_out_data_out;
-    assign out_o_valid = readdata_reg_unnamed_atax10_atax3_out_valid_out;
+    // sync_out(GPOUT,17)@6
+    assign out_o_stall = i_llvm_fpga_mem_unnamed_atax10_atax1_o_stall;
 
-    // dupName_1_regfree_osync_x(GPOUT,24)
-    assign out_unnamed_atax10_atax_avm_byteenable = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_byteenable;
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // dupName_2_regfree_osync_x(GPOUT,25)
-    assign out_unnamed_atax10_atax_avm_enable = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_enable;
+    // readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_valid_reg_x(REG,23)@6 + 1
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_valid_reg_x_q <= $unsigned(1'b0);
+        end
+        else
+        begin
+            readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_valid_reg_x_q <= i_llvm_fpga_mem_unnamed_atax10_atax1_o_valid;
+        end
+    end
 
-    // dupName_3_regfree_osync_x(GPOUT,26)
-    assign out_unnamed_atax10_atax_avm_read = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_read;
+    // readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_data_reg_x(REG,22)@6 + 1
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_data_reg_x_q <= $unsigned(32'b00000000000000000000000000000000);
+        end
+        else
+        begin
+            readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_data_reg_x_q <= $unsigned(i_llvm_fpga_mem_unnamed_atax10_atax1_o_readdata);
+        end
+    end
 
-    // dupName_4_regfree_osync_x(GPOUT,27)
-    assign out_unnamed_atax10_atax_avm_write = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_write;
-
-    // dupName_5_regfree_osync_x(GPOUT,28)
-    assign out_unnamed_atax10_atax_avm_writedata = i_llvm_fpga_mem_unnamed_atax10_atax1_avm_writedata;
+    // dupName_0_sync_out_x(GPOUT,19)@7
+    assign out_o_readdata = readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_data_reg_x_q;
+    assign out_o_valid = readdata_reg_unnamed_atax10_atax1_readdata_reg_unnamed_atax10_atax1_valid_reg_x_q;
 
 endmodule

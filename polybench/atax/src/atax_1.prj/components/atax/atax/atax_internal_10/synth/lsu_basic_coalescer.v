@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -27,20 +27,20 @@
 //              access the same page of memory.
 
 // Basic coalesced read unit:
-//    Accept read requests on the upstream interface.  Requests are sent to 
+//    Accept read requests on the upstream interface.  Requests are sent to
 //    the avalon bus as soon as they are recieved.  If the avalon bus is
 //    stalling, requests to the same global-memory word are coalesced into
-//    a single request to improve efficiency.  
+//    a single request to improve efficiency.
 //
-//    The request FIFO stores the byte-address to select the appropriate word 
-//    out of the response data as well as an extra bit to indicate if the 
-//    request is coalesced with the previous request or if a new request was 
+//    The request FIFO stores the byte-address to select the appropriate word
+//    out of the response data as well as an extra bit to indicate if the
+//    request is coalesced with the previous request or if a new request was
 //    made.  The output port looks ahead to the next pending request to
 //    determine whether the current response data can be thrown away or
 //    must be kept to service the next coalesced request.
 module lsu_basic_coalesced_read
 (
-    clk, reset, o_stall, i_valid, i_address, i_stall, o_valid, o_readdata, 
+    clk, reset, o_stall, i_valid, i_address, i_stall, o_valid, o_readdata,
     o_active, //Debugging signal
     avm_address, avm_read, avm_readdata, avm_waitrequest, avm_byteenable,
     avm_readdatavalid,
@@ -118,7 +118,7 @@ wire [MWIDTH-1:0] rm_data;
 wire rm_stall_in;
 logic [1:0] ecc_err_status_0, ecc_err_status_1;
 
-// Coalescer - Groups subsequent requests together if they are compatible and 
+// Coalescer - Groups subsequent requests together if they are compatible and
 // the avalon bus is stalled.
 assign page_addr = i_address[AWIDTH-1:BYTE_SELECT_BITS];
 basic_coalescer #(
@@ -136,7 +136,7 @@ basic_coalescer #(
     .i_stall(rm_stall)
 );
 
-// Response FIFO - Buffers the requests so they can be extracted from the 
+// Response FIFO - Buffers the requests so they can be extracted from the
 // wider memory bus.  Stores the segment address to extract the requested
 // word from the response data, and a bit indicating if the request comes
 // from a new page.
@@ -158,7 +158,7 @@ lookahead_fifo #(
     .DEPTH( REQUEST_FIFO_DEPTH ),
     .enable_ecc(enable_ecc)
 ) request_fifo (
-    .clk(clk), 
+    .clk(clk),
     .reset(reset),
     .i_data( rf_data_in ),
     .i_valid( i_valid && !c_stall ),
@@ -171,7 +171,7 @@ lookahead_fifo #(
     .ecc_err_status(ecc_err_status_0)
 );
 
-// Read master - Handles pipelined read transactions through MM-Avalon.
+// Read host - Handles pipelined read transactions through MM-Avalon.
 lsu_pipelined_read #(
     .AWIDTH( AWIDTH ),
     .WIDTH_BYTES( MWIDTH_BYTES ),
@@ -182,7 +182,7 @@ lsu_pipelined_read #(
     .USEINPUTFIFO( 1 ),       // Add the latency adjusting input fifos
     .PIPELINE_INPUT( 1 ), // Let's add a pipline input to the input side just to help with Fmax
     .enable_ecc(enable_ecc)
-) read_master (
+) read_host (
     .clk(clk),
     .resetn(~reset),
     .o_stall(rm_stall),
@@ -230,7 +230,7 @@ endmodule
 //    Subsequent requests are coalesced together as long as the output register
 //    stage is occupied (i.e. the avalon bus is stalling).
 //
-// TODO: The byte enable format is not actually compliant with the 
+// TODO: The byte enable format is not actually compliant with the
 // Avalon spec.  Essentially we should not enable non-adjacent words in a write
 // request.  This is OK for the DDR Memory Controller as it accepts our
 // non-compliant format.  This needs to be investigated further.
@@ -409,7 +409,7 @@ begin
 end
 endgenerate
 
-// Track the current write burst data - coalesce writes together until the 
+// Track the current write burst data - coalesce writes together until the
 // output registers are ready for a new request.
 always@(posedge clk or posedge reset)
 begin
@@ -486,12 +486,12 @@ endmodule
 /******************************************************************************/
 
 /* RESPONSE FIFO */
-// lookahead_fifo - A simple sc_fifo instantiation with an additional 
+// lookahead_fifo - A simple sc_fifo instantiation with an additional
 // shift-register stage at the end to provide access to the next two data
 // items.
 module lookahead_fifo
 (
-    clk, reset, i_data, i_valid, o_full, i_stall, o_valid, o_data, 
+    clk, reset, i_data, i_valid, o_full, i_stall, o_valid, o_data,
     o_next_valid, o_next_data, ecc_err_status
 );
 
@@ -555,9 +555,9 @@ endmodule
 // basic_coalescer - Accept new inputs as long as the unit is not stalled,
 // or the new request can be coalesced with the pending (stalled) request.
 module basic_coalescer
-( 
-    clk, reset, i_page_addr, i_valid, o_stall, o_new_page, o_req_addr, 
-    o_req_valid, i_stall 
+(
+    clk, reset, i_page_addr, i_valid, o_stall, o_new_page, o_req_addr,
+    o_req_valid, i_stall
 );
 
 parameter PAGE_ADDR_WIDTH=32;

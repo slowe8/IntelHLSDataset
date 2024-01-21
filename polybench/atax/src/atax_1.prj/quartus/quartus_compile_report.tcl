@@ -1,4 +1,4 @@
-# (c) 1992-2020 Intel Corporation.                            
+# (c) 1992-2023 Intel Corporation.                            
 # Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 # and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 # and/or other countries. Other marks and brands may be claimed as the property  
@@ -34,7 +34,7 @@ if {[file exist "quartus_resource_json_writer.tcl"]} {
 
 # Return values: [retval panel_id row_index]
 #   panel_id and row_index are only valid if the query is successful
-# retval: 
+# retval:
 #    0: success
 #   -1: not found
 #   -2: panel not found (could be report not loaded)
@@ -79,14 +79,14 @@ proc find_report_panel_row { panel_name col_index string_op string_pattern } {
 # compensate additional slack for for PLL jitter.
 # The return value is a 2-element list consisting of the maximum clock frequency in MHz
 # and clk name.
-# retval for frequency: 
+# retval for frequency:
 #   -2: not found
 proc get_fmax_from_report { project_rev clkname required } {
     # Find the clock period.
     set result [find_report_panel_row "*Timing Analyzer||Clocks" 0 match $clkname]
     set retval [lindex $result 0]
 
-    if {$retval < 0} { 
+    if {$retval < 0} {
         post_message -type warning "Could not find clock: $clkname."
         return [list -2 $clkname]
     }
@@ -116,7 +116,7 @@ proc get_fmax_from_report { project_rev clkname required } {
     # Find the "Fmax Summary" numbers reported in Quartus.  This may not
     # account for clock transfers but it does account for pos-to-neg edge same
     # clock transfers.  Whatever we calculate should be less than this.
-    
+
     # Set the fmax panel name according to the Quartus version
     set db_version [get_database_version $project_rev]
     regexp {Version ([0-9,.]*)} $db_version matched_range matched_str
@@ -132,14 +132,14 @@ proc get_fmax_from_report { project_rev clkname required } {
     } else {
       set fmax_panel_name "*Timing Analyzer||* Model||* Fmax Summary"
     }
-    
+
     foreach panel_name [get_report_panel_names] {
       if {[string match $fmax_panel_name $panel_name] == 1} {
         set result [find_report_panel_row $panel_name 2 equal $clkname]
         set retval [lindex $result 0]
         if {$retval == 0} {
           set restricted_fmax_field [get_report_panel_data -id [lindex $result 1] -row [lindex $result 2] -col 1]
-          regexp {([0-9\.]+)} $restricted_fmax_field restricted_fmax 
+          regexp {([0-9\.]+)} $restricted_fmax_field restricted_fmax
           if {$restricted_fmax < $fmax_from_summary} {
             set fmax_from_summary $restricted_fmax
           }
@@ -212,7 +212,7 @@ proc generate_hls_report { project_name project_rev has_2x_clock component_list 
   set clock_summary_dict [gatherClockFrequency $c_fmax $fmax1 $clk1x_info $fmax2 $clk2x_info]
 
   # Get the project's target family and resource utilization by individual functions
-  set function_res_dict [getFitterResourceByFunction $work_dir "component" $component_list]
+  set function_res_dict [getFitterResourceByFunction $work_dir $project_rev "component" $component_list]
 
   unload_report
 
@@ -245,7 +245,7 @@ proc generate_opencl_report { project_name project_rev work_dir clk1x_info clk2x
   set clock_summary_dict [gatherClockFrequency $k_fmax $fmax1 $clk1x_name $fmax2 $clk2x_name $a_fmax]
 
   # Get the project's target family and resource utilization by individual functions
-  set function_res_dict [getFitterResourceByFunction $work_dir]
+  set function_res_dict [getFitterResourceByFunction $work_dir $project_rev]
 
   unload_report
 

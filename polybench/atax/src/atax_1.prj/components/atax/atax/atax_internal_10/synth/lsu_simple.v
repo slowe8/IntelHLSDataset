@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -27,8 +27,8 @@
 
 // Simple read unit:
 //    Accept read requests on the upstream interface.  When a request is
-//    received, set the pending register to true to stall any subsequent 
-//    requests until the transaction is complete.  Since an avalon master
+//    received, set the pending register to true to stall any subsequent
+//    requests until the transaction is complete.  Since an avalon host
 //    cannot stall a response, staging registers are used at the output to
 //    provide a storage location until the downstream block is ready to accept
 //    data.  Once the output registers are cleared and there are no pending
@@ -38,7 +38,7 @@
 
 module lsu_simple_read
 (
-    clk, reset, o_stall, i_valid, i_address, i_stall, o_valid, o_readdata, 
+    clk, reset, o_stall, i_valid, i_address, i_stall, o_valid, o_readdata,
     o_active,  // Debugging signal
     avm_address, avm_read, avm_readdata, avm_waitrequest, avm_byteenable,
     avm_readdatavalid,
@@ -180,13 +180,13 @@ acl_staging_reg #(
     .ASYNC_RESET(ASYNC_RESET),
     .SYNCHRONIZE_RESET(0)
 ) staging_reg (
-    .clk(clk), 
-    .reset(~resetn_synchronized), 
-    .i_data(rdata), 
-    .i_valid(avm_readdatavalid), 
-    .o_stall(sr_stall), 
-    .o_data(o_readdata), 
-    .o_valid(o_valid), 
+    .clk(clk),
+    .reset(~resetn_synchronized),
+    .i_data(rdata),
+    .i_valid(avm_readdatavalid),
+    .o_stall(sr_stall),
+    .o_data(o_readdata),
+    .o_valid(o_valid),
     .i_stall (i_stall)
 );
 
@@ -369,13 +369,13 @@ acl_staging_reg #(
     .ASYNC_RESET(ASYNC_RESET),
     .SYNCHRONIZE_RESET(0)
 ) staging_reg (
-    .clk(clk), 
-    .reset(~resetn_synchronized), 
-    .i_data(1'b0), 
-    .i_valid(avm_writeack), 
-    .o_stall(sr_stall), 
-    .o_data(), 
-    .o_valid(o_valid), 
+    .clk(clk),
+    .reset(~resetn_synchronized),
+    .i_data(1'b0),
+    .i_valid(avm_writeack),
+    .o_stall(sr_stall),
+    .o_data(),
+    .o_valid(o_valid),
     .i_stall (i_stall)
 );
 

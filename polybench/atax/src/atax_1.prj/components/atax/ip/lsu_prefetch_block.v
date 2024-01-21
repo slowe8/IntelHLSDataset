@@ -1,4 +1,4 @@
-// (c) 1992-2020 Intel Corporation.                            
+// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -17,17 +17,17 @@
 
 
 
-// This is almost an exact copy of the lsu_burst_master, but has special support
+// This is almost an exact copy of the lsu_burst_host, but has special support
 // for placing items into a a block ram rather than a fifo. I'd rather leave them
 // as separate files rather than complicating the already existing lsu's which are
 // are known to work.
 //
-// Helper module to handle bursting large sequential blocks of memory to or 
+// Helper module to handle bursting large sequential blocks of memory to or
 // from global memory.
 //
 
 /*****************************************************************************/
-// Burst read master:
+// Burst read host:
 //   Keeps a local buffer populated with data from a sequential block of
 //   global memory.  The block of global memory is specified by a base address
 //   and size.
@@ -48,23 +48,23 @@ module lsu_prefetch_block (
         cache_line_to_write_to,
    control_done,
    control_early_done,
-   
+
    // user logic inputs and outputs
    cache_line_to_read_from,
    user_buffer_address,
    user_buffer_data,
    user_data_available,
    read_reg_enable,
- 
-   // master inputs and outputs
-   master_address,
-   master_read,
-   master_byteenable,
-   master_readdata,
-   master_readdatavalid,
-   master_burstcount,
-   master_waitrequest,
-   
+
+   // host inputs and outputs
+   host_address,
+   host_read,
+   host_byteenable,
+   host_readdata,
+   host_readdatavalid,
+   host_burstcount,
+   host_waitrequest,
+
    ecc_err_status // ecc status signals
 );
    /*************
@@ -84,7 +84,7 @@ module lsu_prefetch_block (
    parameter ASYNC_RESET=1;        // set to '1' to consume the incoming reset signal asynchronously (use ACLR port on registers), '0' to use synchronous reset (SCLR port on registers)
    parameter SYNCHRONIZE_RESET=0;  // set to '1' to pass the incoming reset signal through a synchronizer before use
    parameter enable_ecc = "FALSE"; // Enable error correction coding
-   
+
    /********
    * Ports *
    ********/
@@ -101,24 +101,24 @@ module lsu_prefetch_block (
    input wire [LOG2N-1:0] cache_line_to_write_to;
    output wire control_done;
    output wire control_early_done;  // don't use this unless you know what you are doing, it's going to fire when the last read is posted, not when the last data returns!
-   
+
    // user logic inputs and outputs
    input wire [LOG2N-1:0] cache_line_to_read_from;
    input wire [FIFODEPTH_LOG2-1:0] user_buffer_address;
    output wire [DATAWIDTH-1:0] user_buffer_data;
    output wire user_data_available;
    input wire read_reg_enable;
-   
-   // master inputs and outputs
-   input wire master_waitrequest;
-   input wire master_readdatavalid;
-   input wire [DATAWIDTH-1:0] master_readdata;
-   output wire [ADDRESSWIDTH-1:0] master_address;
-   output wire master_read;
-   output wire [BYTEENABLEWIDTH-1:0] master_byteenable;
-   output wire [BURSTCOUNTWIDTH-1:0] master_burstcount;
+
+   // host inputs and outputs
+   input wire host_waitrequest;
+   input wire host_readdatavalid;
+   input wire [DATAWIDTH-1:0] host_readdata;
+   output wire [ADDRESSWIDTH-1:0] host_address;
+   output wire host_read;
+   output wire [BYTEENABLEWIDTH-1:0] host_byteenable;
+   output wire [BURSTCOUNTWIDTH-1:0] host_burstcount;
    output logic  [1:0] ecc_err_status; // ecc status signals
-   
+
    /***************
    * Architecture *
    ***************/
@@ -159,8 +159,8 @@ module lsu_prefetch_block (
       .o_sclrn                (sclrn),
       .o_resetn_synchronized  (resetn_synchronized)
    );
-   
-   
+
+
    // registering the control_fixed_location bit
    always @ (posedge clk or negedge aclrn)
    begin
@@ -178,7 +178,7 @@ module lsu_prefetch_block (
       end
    end
 
-   // master address logic 
+   // host address logic
    always @ (posedge clk or negedge aclrn)
    begin
       if (~aclrn)
@@ -199,7 +199,7 @@ module lsu_prefetch_block (
       end
    end
 
-   // user buffer address logic 
+   // user buffer address logic
    always @ (posedge clk or negedge aclrn)
    begin
       if (~aclrn)
@@ -212,7 +212,7 @@ module lsu_prefetch_block (
          begin
             w_user_buffer_address <= 0;
          end
-         else 
+         else
          begin
             w_user_buffer_address <= w_user_buffer_address + r_avm_readdatavalid;
          end
@@ -220,7 +220,7 @@ module lsu_prefetch_block (
       end
    end
 
-   // master length logic
+   // host length logic
    always @ (posedge clk or negedge aclrn)
    begin
       if (~aclrn)
@@ -239,28 +239,28 @@ module lsu_prefetch_block (
          end
          if (~sclrn[0]) length <= '0;
       end
-   end   
+   end
 
-   // controlled signals going to the master/control ports
-   assign master_address = address;
-   assign master_byteenable = -1;  // all ones, always performing word size accesses
-   assign master_burstcount = burst_count;
+   // controlled signals going to the host/control ports
+   assign host_address = address;
+   assign host_byteenable = -1;  // all ones, always performing word size accesses
+   assign host_burstcount = burst_count;
    assign control_done = 1'b0;
-   assign control_early_done = 1'b0;  
+   assign control_early_done = 1'b0;
 
-   assign master_read = (too_many_reads_pending == 0) & (length != 0);
+   assign host_read = (too_many_reads_pending == 0) & (length != 0);
    assign burst_boundary_word_address = ((address / BYTEENABLEWIDTH) & (MAXBURSTCOUNT - 1));
    assign first_short_burst_enable = (burst_boundary_word_address != 0);
    assign final_short_burst_enable = (length < (MAXBURSTCOUNT * BYTEENABLEWIDTH));
-   
+
    assign first_short_burst_count = ((burst_boundary_word_address & 1'b1) == 1'b1)? 1 :  // if the burst boundary isn't a multiple of 2 then must post a burst of 1 to get to a multiple of 2 for the next burst
                              (((MAXBURSTCOUNT - burst_boundary_word_address) < (length / BYTEENABLEWIDTH))?
                              (MAXBURSTCOUNT - burst_boundary_word_address) : (length / BYTEENABLEWIDTH));
    assign final_short_burst_count = (length / BYTEENABLEWIDTH);
-   
-   assign burst_count = (first_short_burst_enable == 1)? first_short_burst_count :  // this will get the transfer back on a burst boundary, 
+
+   assign burst_count = (first_short_burst_enable == 1)? first_short_burst_count :  // this will get the transfer back on a burst boundary,
                    (final_short_burst_enable == 1)? final_short_burst_count : MAXBURSTCOUNT;
-   assign increment_address = (too_many_reads_pending == 0) & (master_waitrequest == 0) & (length != 0);
+   assign increment_address = (too_many_reads_pending == 0) & (host_waitrequest == 0) & (length != 0);
    assign too_many_reads_pending = 0;
 
 /* --- Pipeline Return Path --- */
@@ -274,8 +274,8 @@ module lsu_prefetch_block (
       end
       else
       begin
-         r_avm_readdata <= master_readdata;
-         r_avm_readdatavalid <= master_readdatavalid;
+         r_avm_readdata <= host_readdata;
+         r_avm_readdatavalid <= host_readdatavalid;
          if (~sclrn[0]) r_avm_readdatavalid <= 1'b0;
       end
    end

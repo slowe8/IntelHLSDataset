@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -43,14 +43,14 @@ module hld_lsu_write_data_alignment #(
 ) (
     input  wire                         clock,
     input  wire                         resetn,
-    
+
     //from word coalescer
     input  wire                         i_cmd_more_wide_sections,
     input  wire                         i_cmd_spans_two,
     input  wire                         i_cmd_spans_three,
     input  wire  [INTRA_ADDR_WIDTH-1:0] i_cmd_addr_modulo,
     input  wire  [INTRA_ADDR_WIDTH-1:0] i_cmd_addr,
-    
+
     //from unaligned controller
     input  wire                         i_can_read_cmd_fifo,
     input  wire                         i_cmd_fifo_rd_ack,
@@ -58,13 +58,13 @@ module hld_lsu_write_data_alignment #(
     input  wire                         i_cmd_at_third_cycle,
     input  wire                         i_cmd_is_coalescing,
     input  wire                         i_cmd_first_access_in_word,
-    
+
     //read side of input fifos -- guaranteed to not underflow
     input  wire    [KER_DATA_BYTES-1:0] i_input_byteenable_fifo_rd_data,
     output logic                        o_input_byteenable_fifo_rd_ack,
     input  wire  [8*KER_DATA_BYTES-1:0] i_input_writedata_fifo_rd_data,
     output logic                        o_input_writedata_fifo_rd_ack,
-    
+
     //avm wr data fifo -- this will combine with addr and burst count from burst coalescer to make the full avalon transaction
     output logic                        o_avm_wr_data_fifo_almost_full,
     output logic                        o_avm_wr_data_fifo_empty,
@@ -72,74 +72,74 @@ module hld_lsu_write_data_alignment #(
     output logic [8*MEM_DATA_BYTES-1:0] o_avm_writedata,
     output logic   [MEM_DATA_BYTES-1:0] o_avm_byteenable
 );
-    
-    
+
+
     //disregarding address alignment, this is how many 2:1 mux stages the data aligner would have needed
     localparam int RAW_SHIFT_TO_ALIGN_WIDTH = (HIGH_THROUGHPUT_MODE) ? (($clog2(KER_DATA_BYTES) > INTRA_ADDR_WIDTH) ? INTRA_ADDR_WIDTH : $clog2(KER_DATA_BYTES)) : $clog2(KER_DATA_BYTES);
-    
+
     //this is how many 2:1 mux stages the data aligner will need
     localparam int SHIFT_TO_ALIGN_WIDTH = RAW_SHIFT_TO_ALIGN_WIDTH - ADDR_ALIGNMENT_BITS;
-    
+
     //latency = ceiling(mux stages needed / max mux stages per pipe), but 0 means use combinational logic
     localparam int DATA_ALIGNER_LATENCY = (DATA_ALIGNER_MUX_PER_PIPE == 0) ? 0 : ((SHIFT_TO_ALIGN_WIDTH + DATA_ALIGNER_MUX_PER_PIPE - 1) / DATA_ALIGNER_MUX_PER_PIPE);
-    
+
     //1 clock from almost full to unaligned controller, 2 clock cycles until start of data alignment, DATA_ALIGNER_LATENCY to do alignment, 1 clock for the register stage that accumulates the write data for avm data fifo
     localparam int AVM_WR_DATA_FIFO_ALMOST_FULL_CUTOFF = DATA_ALIGNER_LATENCY + 4;
-    
+
     //based on the kernel width, memory width, and address alignment, determine how far the kernel word can go into the second or third memory word
     //anything past this does not need a buffer, those bits can be assigned x so that quartus can trim it away
     //it is highly unlikely that quartus can figure out the range analysis to trim away the upper bits of the buffer which are unreachable
     localparam int WIDE_LIMIT = (HIGH_THROUGHPUT_MODE) ? (MEM_DATA_BYTES + KER_DATA_BYTES - (2**ADDR_ALIGNMENT_BITS)) : MEM_DATA_BYTES;
-    
-    
-    
+
+
+
     ///////////////
     //  Signals  //
     ///////////////
-    
+
     genvar g;
-    
+
     //reset
     logic                               aclrn, sclrn, resetn_synchronized;
-    
+
     //address range analysis
-    logic        [INTRA_ADDR_WIDTH-1:0] prep_master_lo_limit, prep_master_hi_limit;
-    logic        [INTRA_ADDR_WIDTH-1:0] addr_master_lo_limit, addr_master_hi_limit;
-    logic          [MEM_DATA_BYTES-1:0] late_addr_master_mask_lo, late_addr_master_mask_hi;
+    logic        [INTRA_ADDR_WIDTH-1:0] prep_host_lo_limit, prep_host_hi_limit;
+    logic        [INTRA_ADDR_WIDTH-1:0] addr_host_lo_limit, addr_host_hi_limit;
+    logic          [MEM_DATA_BYTES-1:0] late_addr_host_mask_lo, late_addr_host_mask_hi;
     logic                               late_prep_not_in_first, late_prep_not_in_last, late_prep_spans_two, late_prep_spans_three;
     logic                               late_addr_not_in_first, late_addr_not_in_last, late_addr_spans_two, late_addr_spans_three;
     logic        [3*MEM_DATA_BYTES-1:0] late_addr_decode_lo, late_addr_decode_hi, late_addr_decode;
-    
+
     //byteenable alignment
     logic    [SHIFT_TO_ALIGN_WIDTH-1:0] shift_to_align_byteenable;
     logic        [3*MEM_DATA_BYTES-1:0] aligned_byteenable;
-    
+
     //data alignment
     logic    [SHIFT_TO_ALIGN_WIDTH-1:0] shift_to_align_writedata;
     logic      [3*8*MEM_DATA_BYTES-1:0] aligned_writedata;
-    
+
     //which bytes of kernel word to accumulate into memory word
     logic                               aligned_byteenable_valid, aligned_writedata_valid;
     logic        [3*MEM_DATA_BYTES-1:0] load_enable;
-    
+
     //aligned byteenable and writedata capture
     logic          [MEM_DATA_BYTES-1:0] captured_load_enable;       //only used by high throughput mode
     logic        [8*MEM_DATA_BYTES-1:0] captured_aligned_writedata; //only used by high throughput mode
     logic                               captured_kernel_word_valid, current_kernel_word_valid;
-    
+
     //avm wr data fifo
     logic                               prep_clear_byteenables, clear_byteenables;
     logic                               prep_write_to_fifo, write_to_fifo;
     logic                               avm_wr_data_fifo_wr_req;
     logic        [8*MEM_DATA_BYTES-1:0] avm_wr_data_fifo_wr_writedata;
     logic          [MEM_DATA_BYTES-1:0] avm_wr_data_fifo_wr_byteenable;
-    
-    
-    
+
+
+
     /////////////
     //  Reset  //
     /////////////
-    
+
     acl_reset_handler
     #(
         .ASYNC_RESET            (ASYNC_RESET),
@@ -156,71 +156,71 @@ module hld_lsu_write_data_alignment #(
         .o_resetn_synchronized  (resetn_synchronized),
         .o_sclrn                (sclrn)
     );
-    
-    
-    
+
+
+
     //////////////////////////////
     //  Address Range Analysis  //
     //////////////////////////////
-    
+
     //based on the address and size of the kernel word, determine which bytes of memory will be affected
     //we have DATA_ALIGNER_LATENCY+1 clock cycles to produce a mask that will integrate with the aligned byteenables, and that becomes the load enable for assembling the write data for the avm_wr_data_fifo
     //one kernel word can span up to 3 memory words, for example suppose the memory width is 4, kernel width is 8, and address is 3
     //in this example, the first byte of memory affected is address 3, and the last byte (inclusive) is address 10
     //it touches address 3 in the first memory word, addresses 4 through 7 in the second, and addresses 8 through 10 in the third
-    //the way address decoding is implemented, we will produce one master mask (which is the width of one memory word), then derive an individual masks for each of the up to 3 memory words
-    //the master mask is defined by the lowest and highest (inclusive) bytes of memory affected, modulo the memory width, so lo=3 and hi=2 in this example, the mask has ones in the indexes between lo and hi inclusive
+    //the way address decoding is implemented, we will produce one host mask (which is the width of one memory word), then derive an individual masks for each of the up to 3 memory words
+    //the host mask is defined by the lowest and highest (inclusive) bytes of memory affected, modulo the memory width, so lo=3 and hi=2 in this example, the mask has ones in the indexes between lo and hi inclusive
     //if the kernel word only spans one memory word, then hi>lo and the mask can be used without modification
     //if the kernel word spans two memory words, then hi is ignored when constructing the mask for the first memory word, and lo is ignored when constructing the mask for the second memory word
     //if the kernel word spans three memory words, then hi is ignored in the first memory word, both hi and lo are ignored in the second word, and lo is ignored in the third memory word
     //in this example, we would end up with these masks: first = 1000 (lo=3, ignore hi), second = 1111 (ignore lo and hi), third = 0111 (ignored lo, hi=2)
-    
-    //determine the high and low limits for the master mask
+
+    //determine the high and low limits for the host mask
     //same clock cycle as i_can_read_cmd_fifo
-    assign prep_master_lo_limit = i_cmd_addr;
-    assign prep_master_hi_limit = i_cmd_addr + ((i_cmd_more_wide_sections) ? (KER_DATA_BYTES-1) : (KER_DATA_BYTES_LAST-1));
-    
+    assign prep_host_lo_limit = i_cmd_addr;
+    assign prep_host_hi_limit = i_cmd_addr + ((i_cmd_more_wide_sections) ? (KER_DATA_BYTES-1) : (KER_DATA_BYTES_LAST-1));
+
     acl_shift_register_no_reset #(
         .WIDTH  (2*INTRA_ADDR_WIDTH),
         .STAGES (DATA_ALIGNER_LATENCY)
     )
-    addr_master_limits_inst
+    addr_host_limits_inst
     (
         .clock  (clock),
-        .D      ({prep_master_hi_limit, prep_master_lo_limit}),
-        .Q      ({addr_master_hi_limit, addr_master_lo_limit})      //DATA_ALIGNER_LATENCY clocks after i_can_read_cmd_fifo
+        .D      ({prep_host_hi_limit, prep_host_lo_limit}),
+        .Q      ({addr_host_hi_limit, addr_host_lo_limit})      //DATA_ALIGNER_LATENCY clocks after i_can_read_cmd_fifo
     );
-    
+
     //convert the high and low limits into a mask
     //DATA_ALIGNER_LATENCY+1 clocks after i_can_read_cmd_fifo
     generate
-    if (MAX_MEM_WORDS_PER_KER_WORD == 1) begin : NO_MASTER_MASK_HI  //LSU is aligned, use equality to do the decode, need to figure out which half, quarter, eighth, etc. of the memory word to update
+    if (MAX_MEM_WORDS_PER_KER_WORD == 1) begin : NO_HOST_MASK_HI  //LSU is aligned, use equality to do the decode, need to figure out which half, quarter, eighth, etc. of the memory word to update
         always_ff @(posedge clock) begin
             for (int i=0; i<MEM_DATA_BYTES; i++) begin : GEN_RANDOM_BLOCK_NAME_R93
-                late_addr_master_mask_lo[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) == addr_master_lo_limit);
+                late_addr_host_mask_lo[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) == addr_host_lo_limit);
             end
         end
-        //late_addr_master_mask_hi not needed
+        //late_addr_host_mask_hi not needed
     end
-    else begin : GEN_MASTER_MASK_HI                                 //LSU is unaligned, no special tricks to decode the high and low limits into a mask
+    else begin : GEN_HOST_MASK_HI                                 //LSU is unaligned, no special tricks to decode the high and low limits into a mask
         always_ff @(posedge clock) begin
             for (int i=0; i<MEM_DATA_BYTES; i++) begin : GEN_RANDOM_BLOCK_NAME_R94
-                late_addr_master_mask_lo[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) >= addr_master_lo_limit);   //if ADDR_ALIGNMENT_BITS=2, then indexes 0, 1, 2, and 3 produce the same result, quartus should remove duplicates
-                late_addr_master_mask_hi[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) <= addr_master_hi_limit);   //the idea is that if we are 4 byte aligned, only every 4th index of the master mask actually needs to be computed
+                late_addr_host_mask_lo[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) >= addr_host_lo_limit);   //if ADDR_ALIGNMENT_BITS=2, then indexes 0, 1, 2, and 3 produce the same result, quartus should remove duplicates
+                late_addr_host_mask_hi[i] <= ((i & ~((1<<ADDR_ALIGNMENT_BITS)-1)) <= addr_host_hi_limit);   //the idea is that if we are 4 byte aligned, only every 4th index of the host mask actually needs to be computed
             end
         end
     end
     endgenerate
-    
-    //determine the filters to convert the master mask into the masks for each of the three memory words
+
+    //determine the filters to convert the host mask into the masks for each of the three memory words
     //one clock cycle after i_can_read_cmd_fifo
     always_ff @(posedge clock) begin
-        late_prep_not_in_first <= i_cmd_at_second_cycle | i_cmd_at_third_cycle;                                             //ignore master mask lo when not in the first memory word
-        late_prep_not_in_last <= ~i_cmd_at_third_cycle & ((i_cmd_at_second_cycle) ? i_cmd_spans_three : i_cmd_spans_two);   //ignore master mask hi when not in the last memory word
-        late_prep_spans_two <= i_cmd_spans_two;         //in high throughput mode, ignore master mask hi when in the first memory word if kernel word spans at least 2 memory words
-        late_prep_spans_three <= i_cmd_spans_three;     //in high throughput mode, ignreo master mask hi when in the second memory word if kernel word spans 3 memory words
+        late_prep_not_in_first <= i_cmd_at_second_cycle | i_cmd_at_third_cycle;                                             //ignore host mask lo when not in the first memory word
+        late_prep_not_in_last <= ~i_cmd_at_third_cycle & ((i_cmd_at_second_cycle) ? i_cmd_spans_three : i_cmd_spans_two);   //ignore host mask hi when not in the last memory word
+        late_prep_spans_two <= i_cmd_spans_two;         //in high throughput mode, ignore host mask hi when in the first memory word if kernel word spans at least 2 memory words
+        late_prep_spans_three <= i_cmd_spans_three;     //in high throughput mode, ignreo host mask hi when in the second memory word if kernel word spans 3 memory words
     end
-    
+
     acl_shift_register_no_reset #(
         .WIDTH  (4),
         .STAGES (DATA_ALIGNER_LATENCY)
@@ -231,53 +231,53 @@ module hld_lsu_write_data_alignment #(
         .D      ({late_prep_spans_three, late_prep_spans_two, late_prep_not_in_last, late_prep_not_in_first}),
         .Q      ({late_addr_spans_three, late_addr_spans_two, late_addr_not_in_last, late_addr_not_in_first})   //DATA_ALIGNER_LATENCY+1 clocks after i_can_read_cmd_fifo
     );
-    
+
     //apply the filters, DATA_ALIGNER_LATENCY+1 clocks after i_can_read_cmd_fifo
-    
+
     //in high throughput mode this is for the first memory word, in low throughput mode all memory words time-share this
-    assign late_addr_decode_lo[MEM_DATA_BYTES-1:0] = (late_addr_not_in_first) ? '1 : late_addr_master_mask_lo;
-    assign late_addr_decode_hi[MEM_DATA_BYTES-1:0] = ((HIGH_THROUGHPUT_MODE) ? late_addr_spans_two : late_addr_not_in_last) ? '1 : late_addr_master_mask_hi;
-    
+    assign late_addr_decode_lo[MEM_DATA_BYTES-1:0] = (late_addr_not_in_first) ? '1 : late_addr_host_mask_lo;
+    assign late_addr_decode_hi[MEM_DATA_BYTES-1:0] = ((HIGH_THROUGHPUT_MODE) ? late_addr_spans_two : late_addr_not_in_last) ? '1 : late_addr_host_mask_hi;
+
     //second memory word for high throughput mode only (low throughput mode doesn't use this)
     assign late_addr_decode_lo[2*MEM_DATA_BYTES-1:MEM_DATA_BYTES] = '1;
-    assign late_addr_decode_hi[2*MEM_DATA_BYTES-1:MEM_DATA_BYTES] = (late_addr_spans_three) ? '1 : late_addr_master_mask_hi;
-    
+    assign late_addr_decode_hi[2*MEM_DATA_BYTES-1:MEM_DATA_BYTES] = (late_addr_spans_three) ? '1 : late_addr_host_mask_hi;
+
     //third memory word for high throughput mode only (low throughput mode doesn't use this)
     assign late_addr_decode_lo[3*MEM_DATA_BYTES-1:2*MEM_DATA_BYTES] = '1;
-    assign late_addr_decode_hi[3*MEM_DATA_BYTES-1:2*MEM_DATA_BYTES] = late_addr_master_mask_hi;
-    
+    assign late_addr_decode_hi[3*MEM_DATA_BYTES-1:2*MEM_DATA_BYTES] = late_addr_host_mask_hi;
+
     //combine low and high masks
     generate
     if (ADDR_ALIGNMENT_BITS == INTRA_ADDR_WIDTH) begin : TRIVIAL_ADDR_DECODE    //kernel word is same size as memory word and exactly aligns, trivial address decode
         assign late_addr_decode = '1;
     end
-    else if (MAX_MEM_WORDS_PER_KER_WORD == 1) begin : ALIGNED_ADDR_DECODE       //LSU is aligned, ignore late_addr_decode_hi since late_addr_master_mask_lo was decoded using equality and therefore contains high and low limits
+    else if (MAX_MEM_WORDS_PER_KER_WORD == 1) begin : ALIGNED_ADDR_DECODE       //LSU is aligned, ignore late_addr_decode_hi since late_addr_host_mask_lo was decoded using equality and therefore contains high and low limits
         assign late_addr_decode = late_addr_decode_lo;
     end
     else begin : UNALIGNED_ADDR_DECODE                                          //LSU is unaligned
         assign late_addr_decode = late_addr_decode_lo & late_addr_decode_hi;
     end
     endgenerate
-    
-    
-    
+
+
+
     ////////////////////////////
     //  Byteenable Alignment  //
     ////////////////////////////
-    
+
     //the state of the unaligned controller indicates how far along we currently are in processing a kernel word
     //there is one clock cycle of pipelining from this state to the steering logic for the byteenables
     //for example, if the unaligned controller is in the second memory word of kernel word N at time T, then how much to shift the byteenables for the second memory word of kernel word N must be known at time T+1
     //if the unaligned controller is completely done with kernel word N at time X, send a read ack to input byteenable fifo at time X+1
-    
+
     always_ff @(posedge clock) begin
         o_input_byteenable_fifo_rd_ack <= i_cmd_fifo_rd_ack;
     end
-    
+
     generate
     if (SHIFT_TO_ALIGN_WIDTH > 0) begin : GEN_SHIFT_TO_ALIGN
         logic [SHIFT_TO_ALIGN_WIDTH+ADDR_ALIGNMENT_BITS-1:0] shift_to_align_raw;     //this is how much to shift if we disregard address alignment info
-        
+
         if ($clog2(KER_DATA_BYTES) < INTRA_ADDR_WIDTH) begin : NARROW   //kernel width is no more than half the memory width (impossible to get into third memory word), use modulo which has a narrower bit width
             if (HIGH_THROUGHPUT_MODE) begin : HI
                 always_ff @(posedge clock) begin
@@ -305,7 +305,7 @@ module hld_lsu_write_data_alignment #(
                 end
             end
         end
-        
+
         //if ADDR_ALIGNMENT_BITS=1 then shift_to_align_raw is even, instead of shifting each 8 bit section of data by using shift_to_align_raw, we should shift each 16 bit section of data by shift_to_align_raw/2
         assign shift_to_align_byteenable = shift_to_align_raw[SHIFT_TO_ALIGN_WIDTH+ADDR_ALIGNMENT_BITS-1:ADDR_ALIGNMENT_BITS];
     end
@@ -313,7 +313,7 @@ module hld_lsu_write_data_alignment #(
         assign shift_to_align_byteenable = 'x;
     end
     endgenerate
-    
+
     //now that we know how much to shift the byteenables, actually do it
     generate
     if (!USE_BYTE_ENABLE) begin : NO_ALIGN_BYTEENABLE
@@ -338,22 +338,22 @@ module hld_lsu_write_data_alignment #(
         );
     end
     endgenerate
-    
-    
-    
+
+
+
     //////////////////////
     //  Data Alignment  //
     //////////////////////
-    
+
     //byteenable is one clock later than unaligned controller, writedata is two clocks later than unaligned controller
-    
+
     //input byteenable fifo has no stall in earliness, but input writedata fifo has stall in earliness of 1, so writedata will arrive one clock later than byteenable
     assign o_input_writedata_fifo_rd_ack = o_input_byteenable_fifo_rd_ack;
-    
+
     always_ff @(posedge clock) begin
         shift_to_align_writedata <= shift_to_align_byteenable;
     end
-    
+
     hld_lsu_data_aligner #(
         .LATENCY        (DATA_ALIGNER_LATENCY),
         .DIRECTION      (0), //shift right
@@ -370,15 +370,15 @@ module hld_lsu_write_data_alignment #(
         .i_shift        (shift_to_align_writedata),
         .o_data         (aligned_writedata)
     );
-    
-    
-    
+
+
+
     /////////////////////////////////////////////////////////////////
     //  Which Bytes of Kernel Word to Accumulate into Memory Word  //
     /////////////////////////////////////////////////////////////////
-    
+
     //byteenable is scheduled one clock earlier than writedata in the pipeline so that we have one clock cycle to combine address range analysis and the aligned byteenables
-    
+
     acl_shift_register_no_reset #(
         .WIDTH  (1),
         .STAGES (DATA_ALIGNER_LATENCY+1)
@@ -389,7 +389,7 @@ module hld_lsu_write_data_alignment #(
         .D      (i_can_read_cmd_fifo),
         .Q      (aligned_byteenable_valid)
     );
-    
+
     generate
     for (g=0; g<3*MEM_DATA_BYTES; g++) begin : LOAD_ENABLE
         if (g < WIDE_LIMIT) begin : GEN_LOAD_ENABLE
@@ -405,25 +405,25 @@ module hld_lsu_write_data_alignment #(
     always_ff @(posedge clock) begin
         aligned_writedata_valid <= aligned_byteenable_valid;    //output of the writedata aligner is valid one clock after the output of the byteenable aligner
     end
-    
-    
-    
+
+
+
     ////////////////////////////////////////////////
     //  Aligned Byteenable and Writedata Capture  //
     ////////////////////////////////////////////////
-    
+
     //in high throughput mode, the data aligner is used once per kernel word no matter how many memory words it spans
     //can only write one memory word at a time to avm_wr_data_fifo, so need to keep up to 2 other memory words live for writing to the fifo later on
-    
+
     generate
     if (HIGH_THROUGHPUT_MODE && MAX_MEM_WORDS_PER_KER_WORD >= 2) begin : GEN_WRITEDATA_BUFFERS
-        
+
         //write data for avm_wr_data_fifo can come from both aligned_writedata and captured_aligned_writedata, control when to load from each
         logic prep_captured_kernel_word_valid;  //in DATA_ALIGNER_LATENCY+2 clocks from now, should the write data for avm_wr_data_fifo accumulate from captured_aligned_writedata
         logic prep_current_kernel_word_valid;   //in DATA_ALIGNER_LATENCY+2 clocks from now, should the write data for avm_wr_data_fifo accumulate from aligned_writedata
         logic prep_capture_to_load_from_hi;     //in DATA_ALIGNER_LATENCY+2 clocks from now, should captured_aligned_writedata load from captured_aligned_writedata_hi instead of aligned_writedata
         logic capture_to_load_from_hi;
-        
+
         always_ff @(posedge clock or negedge aclrn) begin
             if (~aclrn) prep_captured_kernel_word_valid <= 1'b0;
             else begin
@@ -433,7 +433,7 @@ module hld_lsu_write_data_alignment #(
         end
         assign prep_current_kernel_word_valid = ~i_cmd_at_second_cycle & ~i_cmd_at_third_cycle;
         assign prep_capture_to_load_from_hi = i_cmd_at_second_cycle;
-        
+
         acl_shift_register_no_reset #(
             .WIDTH  (3),
             .STAGES (DATA_ALIGNER_LATENCY+2)
@@ -444,7 +444,7 @@ module hld_lsu_write_data_alignment #(
             .D      ({prep_captured_kernel_word_valid, prep_current_kernel_word_valid, prep_capture_to_load_from_hi}),
             .Q      ({     captured_kernel_word_valid,      current_kernel_word_valid,      capture_to_load_from_hi})
         );
-        
+
         //capture the second and third memory words of the kernel word so that it can written into avm_wr_data_fifo later on
         if (MAX_MEM_WORDS_PER_KER_WORD == 2) begin : TWO_MEM_WORDS
             for (g=0; g<MEM_DATA_BYTES; g++) begin : GEN_RANDOM_BLOCK_NAME_R95
@@ -498,19 +498,19 @@ module hld_lsu_write_data_alignment #(
         assign current_kernel_word_valid = 1'b1;    //low throughput mode always sources from aligned_writedata
     end
     endgenerate
-    
-    
-    
+
+
+
     /////////////////////
     //  Avm Data FIFO  //
     /////////////////////
-    
+
     always_ff @(posedge clock) begin
         //1 clock after i_can_read_cmd_fifo
         prep_clear_byteenables <= i_can_read_cmd_fifo & i_cmd_first_access_in_word;     //first access in this memory word, clear out whatever the byteenables have accumulated from the previous memory word
         prep_write_to_fifo <= i_can_read_cmd_fifo & ~i_cmd_is_coalescing;               //done accumulating kernel words into this memory word
     end
-    
+
     acl_shift_register_no_reset #(
         .WIDTH  (2),
         .STAGES (DATA_ALIGNER_LATENCY+1)
@@ -521,14 +521,14 @@ module hld_lsu_write_data_alignment #(
         .D      ({prep_write_to_fifo, prep_clear_byteenables}),
         .Q      ({     write_to_fifo,      clear_byteenables})
     );
-    
+
     always_ff @(posedge clock) begin
         //write when we have finished consuming kernel words to fully construct this memory word
         avm_wr_data_fifo_wr_req <= write_to_fifo;
-        
+
         //clear byteenables if first write
         if (clear_byteenables) avm_wr_data_fifo_wr_byteenable <= '0;
-        
+
         //only high throughput mode can integrate in previous captured data
         if (captured_kernel_word_valid) begin
             for (int i=0; i<MEM_DATA_BYTES; i++) begin : GEN_RANDOM_BLOCK_NAME_R97
@@ -538,7 +538,7 @@ module hld_lsu_write_data_alignment #(
                 end
             end
         end
-        
+
         //integrate in aligned_writedata
         //low throughput mode gets all of the data through aligned_writedata by shifting the kernel word by different amounts over different clock cycles
         //in high throughput mode, only the first memory word comes in through here, later memory words from the same kernel word are captured for writing later (possibly together with first memory word of next kernel word)
@@ -551,7 +551,7 @@ module hld_lsu_write_data_alignment #(
             end
         end
     end
-    
+
     hld_fifo #(
         .WIDTH              (MEM_DATA_BYTES + 8*MEM_DATA_BYTES),
         .DEPTH              (M20K_WIDE_FIFO_DEPTH),
@@ -576,10 +576,9 @@ module hld_lsu_write_data_alignment #(
         .o_empty            (o_avm_wr_data_fifo_empty),
         .ecc_err_status     ()
     );
-    
+
 endmodule
 
 `default_nettype wire
 
-    
-    
+

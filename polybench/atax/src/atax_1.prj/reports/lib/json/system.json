@@ -3,38 +3,13 @@
   [
     {
       "name":"atax"
-      , "id":3041475528
+      , "id":1047869096
       , "type":"component"
       , "children":
       [
         {
-          "name":"Stream Read"
-          , "id":3041811952
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Basic Block":"atax.B1.start"
-              , "Width":"192 bits"
-              , "Depth":"0"
-              , "Stall-free":"No"
-              , "Latency":"0"
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
-                , "line":5
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
           "name":"Stream Write"
-          , "id":3041971024
+          , "id":1048614592
           , "details":
           [
             {
@@ -50,8 +25,33 @@
           [
             [
               {
-                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_1.c"
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
                 , "line":48
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Read"
+          , "id":1046891296
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"atax.B1.start"
+              , "Width":"192 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/templates/../src/atax_1.c"
+                , "line":5
               }
             ]
           ]
@@ -60,27 +60,8 @@
       ]
     }
     , {
-      "name":"call.atax"
-      , "id":3041632488
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Width":"192 bits"
-          , "Depth":"0"
-          , "Ready Latency":"0"
-          , "Bits per Symbol":"192 bits"
-          , "Uses Packets":"No"
-          , "Uses Valid":"Yes"
-          , "Uses Empty":"No"
-          , "First symbol in high order bits":"No"
-        }
-      ]
-      , "type":"stream"
-    }
-    , {
       "name":"return.atax"
-      , "id":3041632616
+      , "id":1047872656
       , "details":
       [
         {
@@ -97,20 +78,39 @@
       ]
       , "type":"stream"
     }
+    , {
+      "name":"call.atax"
+      , "id":1048014976
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"192 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"192 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
   ]
   , "links":
   [
     {
-      "from":3041632488
-      , "to":3041811952
+      "from":1048614592
+      , "to":1047872656
     }
     , {
-      "from":3041971024
-      , "to":3041632616
+      "from":1048014976
+      , "to":1046891296
     }
     , {
-      "from":3041811952
-      , "to":3041971024
+      "from":1046891296
+      , "to":1048614592
     }
   ]
 }

@@ -1,4 +1,4 @@
-# (c) 1992-2020 Intel Corporation.                            
+# (c) 1992-2023 Intel Corporation.                            
 # Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 # and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 # and/or other countries. Other marks and brands may be claimed as the property  
@@ -34,7 +34,7 @@ proc get_entity_resources_incl_subhier { fit_rpt_resource } {
 # \param[in] dsp_col is column number used to locate information of DSP usage.
 # \param[in] ram_col is column number used to locate information of RAM usage.
 # \param[in] mem_alm_col is column number used to locate information of mem usage.
-# 
+#
 proc getFitterResourceRow {r by_entity_panel_id alms_col registers_col dsp_col ram_col mem_alm_col} {
   set func_alms      [get_entity_resources_incl_subhier [get_report_panel_data -id $by_entity_panel_id -row $r -col $alms_col     ] ]
   set func_registers [get_entity_resources_incl_subhier [get_report_panel_data -id $by_entity_panel_id -row $r -col $registers_col] ]
@@ -49,12 +49,13 @@ proc getFitterResourceRow {r by_entity_panel_id alms_col registers_col dsp_col r
 #
 # Documented global proc \c getFitterResourceByFunction gets the resources broken down by function
 # \param[in] workdir is the working directory which kernel_report.tcl resides.
-# \param[in] function_prefix is an optional argument. Value can either be "kernel" or "component". It's used for appending the proper string 
+# \param[in] project_rev is the revision of Quartus currently being used
+# \param[in] function_prefix is an optional argument. Value can either be "kernel" or "component". It's used for appending the proper string
 #            to user-friendly function name. Default is "kernel".
-# \param[in] function_list is an optional argument. It a list of entity names to query for the resource in design. When supplied, it will 
+# \param[in] function_list is an optional argument. It a list of entity names to query for the resource in design. When supplied, it will
 #            When not supplied, it ignored workdir value. The default is use "kernel_report.tcl" that's generated during compilation in the workdir.
-# 
-proc getFitterResourceByFunction {workdir {function_prefix "kernel"} {function_list 0}} {
+#
+proc getFitterResourceByFunction {workdir project_rev {function_prefix "kernel"} {function_list 0}} {
   # initialize undefined arguments
   if {$function_list == 0} {
     # Load design dependent utility for report
@@ -89,6 +90,10 @@ proc getFitterResourceByFunction {workdir {function_prefix "kernel"} {function_l
     set entity_name_col 16
   }
 
+  set db_version [get_database_version $project_rev]
+  regexp {Version ([0-9,.]*)} $db_version matched_range matched_str
+  set q_version [join [lrange [split $matched_str "."] 0 1] "."]
+
   # TODO: Clean up the code is have a function dedicated to setup column values and names based on family
   # Setup the columns to be analyzed based on family
   set alms_col       1
@@ -97,11 +102,31 @@ proc getFitterResourceByFunction {workdir {function_prefix "kernel"} {function_l
   set ram_col       10
   set mem_alm_col    5
   set full_name_col 15
-  if { [string compare $family "Stratix10"] == 0 || [string compare $family "Stratix 10"] == 0 || [string compare $family "Agilex"] == 0 } {
-    # Stratix 10 does not have virtual pin in by entity report
-    set full_name_col 14
-    if { $is_kernel } {
-      set entity_name_col 15
+
+  if {$q_version >= 23.1} {
+    # Quartus 23.1 adds two additional columns for DSPs, totalling three columns for DSP blocks:
+    # - DSP Blocks needed [=A-B]
+    # - [A] DSP Blocks used in final placement
+    # - [B] Estimate of DSPs recoverable by dense merging
+    # Previous versions only had the first
+    if { [string compare $family "Stratix10"] == 0 || [string compare $family "Stratix 10"] == 0 || [string compare $family "Agilex"] == 0 || [string compare $family "Agilex 7"] == 0 || [string compare $family "Agilex7"] == 0 } {
+      # Stratix 10 does not have virtual pin in by entity report
+      set full_name_col 16
+      if { $is_kernel } {
+        set entity_name_col 17
+      }
+    } else {
+      set full_name_col 17
+    }
+  } else {
+    if { [string compare $family "Stratix10"] == 0 || [string compare $family "Stratix 10"] == 0 || [string compare $family "Agilex"] == 0 || [string compare $family "Agilex 7"] == 0 || [string compare $family "Agilex7"] == 0 } {
+      # Stratix 10 does not have virtual pin in by entity report
+      set full_name_col 14
+      if { $is_kernel } {
+        set entity_name_col 15
+      }
+    } else {
+      set full_name_col 15
     }
   }
 
@@ -197,9 +222,9 @@ proc addAttribute {dbVar key val} {
 # \param[in] fmax1 is the theortical maximum on clock1x domain.
 # \param[in] clock2x_fmax is the frequency on the 2x clock. -1 means does not exist, -2 means error when get data from
 #            Quartus report panel.
-# \param[in] clock1x_actual is used by OpenCL to show the final frequency after finding the PLL settings that achieve 
+# \param[in] clock1x_actual is used by OpenCL to show the final frequency after finding the PLL settings that achieve
 #            closest value to clock1x_fmax.
-# 
+#
 proc gatherClockFrequency {clock1x_fmax fmax1 clock1x_name clock2x_fmax clock2x_name {clock1x_actual -1}} {
   dict set clk_sum_dict name "Quartus Fitter: Clock Frequency (MHz)"
   if { $clock1x_fmax < 0 } {
@@ -230,7 +255,7 @@ proc gatherClockFrequency {clock1x_fmax fmax1 clock1x_name clock2x_fmax clock2x_
   } elseif { $clock2x_fmax > 0 } {
     set clock2x_freq [format "%.2f" $clock2x_fmax]
     addAttribute clk_sum_dict $clock2x_name $clock2x_freq
-    if { $fmax1 > $clock1x_fmax } { 
+    if { $fmax1 > $clock1x_fmax } {
       # Higher 1x clock fmax could be achieved without the 2x clock. This condition means clock1x_fmax was reduced by clock2x_fmax
       # We don't use the clock2x_fmax because that value could be post-PLL adjust. And so we just compute the original value.
       set fmax_freq [format "%.2f" $fmax1]
@@ -279,7 +304,7 @@ proc serializeQuartusJSON {path fitter_clk_freq_node fitter_res_usage_nodes json
   } else {
     json::write indented true
   }
-  
+
   # TODO: check for empty fitter_clk_freq_node
 
   # fitter clock summary

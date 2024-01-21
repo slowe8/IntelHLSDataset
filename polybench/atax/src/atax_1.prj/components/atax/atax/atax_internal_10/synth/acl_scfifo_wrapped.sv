@@ -1,4 +1,4 @@
-//// (c) 1992-2020 Intel Corporation.                            
+//// (c) 1992-2023 Intel Corporation.                            
 // Intel, the Intel logo, Intel, MegaCore, NIOS II, Quartus and TalkBack words    
 // and logos are trademarks of Intel Corporation or its subsidiaries in the U.S.  
 // and/or other countries. Other marks and brands may be claimed as the property  
@@ -17,7 +17,7 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-//                                                                                   // 
+//                                                                                   //
 // ACL SCFIFO WRAPPED                                                                //
 //                                                                                   //
 // DESCRIPTION                                                                       //
@@ -27,7 +27,7 @@
 // module has the added (soft) ECC feature.                                          //
 //                                                                                   //
 // The module has the exact same interface except for                                //
-//   * One addtional parameter:                                                      //  
+//   * One addtional parameter:                                                      //
 //     - "enable_ecc": accepts "TRUE" or "FALSE". The default is "FALSE"             //
 //   * One additional output port:                                                   //
 //     - "ecc_err_status": this is a 2-bit status signal that behaves as follows:    //
@@ -38,11 +38,12 @@
 //       10           Error detected and corrected (single bit error)                //
 //       x1           Error detected but uncorrectable (double bit error)            //
 //       ----------------------------------------------------------------            //
-//                                                                                   // 
+//                                                                                   //
 // Required files                                                                    //
 // ==============                                                                    //
 //    acl_ecc_encoder.sv                                                             //
 //    acl_ecc_decoder.sv                                                             //
+//    acl_ecc_pkg.sv                                                                 //
 //                                                                                   //
 // Usage                                                                             //
 // =====                                                                             //
@@ -53,12 +54,13 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 
 `default_nettype none
-`include "acl_ecc.svh"
 
-module acl_scfifo_wrapped #(  
+module acl_scfifo_wrapped
+import acl_ecc_pkg::*;
+#(
   // GLOBAL PARAMETER DECLARATION
   parameter lpm_width               = 1,             //Specifies the width of the data and q ports
-  parameter lpm_widthu              = 1,             //Specifies the width of the usedw port 
+  parameter lpm_widthu              = 1,             //Specifies the width of the usedw port
   parameter lpm_numwords            = 2,             //Specifies the depths of the FIFO you require. The value must be at least 4. The value assigned must comply to the following equation: 2^LPM_WIDTHU
   parameter lpm_showahead           = "OFF",         //Specifies whether the FIFO is in normal mode (OFF) or show-ahead mode (ON).
   parameter lpm_type                = "scfifo",      //Identifies the library of parameterized modules (LPM) entity name. The values are SCFIFO and DCFIFO.
@@ -68,12 +70,12 @@ module acl_scfifo_wrapped #(
   parameter overflow_checking       = "ON",
   parameter allow_rwcycle_when_full = "OFF",
   parameter use_eab                 = "ON",          //Specifies whether or not the FIFO IP core is constructed using the RAM blocks. The values are ON or OFF.
-  parameter add_ram_output_register = "OFF",         //Specifies whether to register the q output of the internal scfifo before going into the decoder. 
+  parameter add_ram_output_register = "OFF",         //Specifies whether to register the q output of the internal scfifo before going into the decoder.
   parameter almost_full_value       = 0,
   parameter almost_empty_value      = 0,
-  parameter maximum_depth           = 0,    
+  parameter maximum_depth           = 0,
   parameter enable_ecc              = "FALSE"
-) 
+)
 (
   // INPUT PORT DECLARATION
   input wire    [lpm_width-1:0] data,           //Holds the data to be written in the FIFO IP core when the wrreq signal is asserted
@@ -85,11 +87,11 @@ module acl_scfifo_wrapped #(
 
   // OUTPUT PORT DECLARATION
   output logic  [lpm_width-1:0] q,              //Shows the data read from the read request operation
-  output logic [lpm_widthu-1:0] usedw,          //Asserted when the usedw signal is greater than or equal to the almost_full_value parameter. 
+  output logic [lpm_widthu-1:0] usedw,          //Asserted when the usedw signal is greater than or equal to the almost_full_value parameter.
   output logic                  full,           //When asserted, the FIFO IP core is considered full. Do not perform write request operation when the FIFO IP core is full.
   output logic                  empty,          //When asserted, the FIFO IP core is considered empty. Do not perform read request operation when the FIFO IP core is empty
-  output logic                  almost_full,    //Asserted when the usedw signal is greater than or equal to the almost_full_value parameter. 
-  output logic                  almost_empty,   //Asserted when the usedw signal is less than the almost_empty_value parameter. 
+  output logic                  almost_full,    //Asserted when the usedw signal is greater than or equal to the almost_full_value parameter.
+  output logic                  almost_empty,   //Asserted when the usedw signal is less than the almost_empty_value parameter.
   output logic            [1:0] ecc_err_status  //10 = error detected and corrected (memory in not updated), 01 = error detected but uncorrectable
 );
 
@@ -111,7 +113,7 @@ module acl_scfifo_wrapped #(
     if (enable_ecc == "TRUE") begin                           : GEN_ECC_ENABLED
       logic err_corrected_int;
       logic err_corrected_pulse_extended;
-      
+
       logic err_fatal_int;
       logic err_fatal_latched;
 
@@ -119,28 +121,28 @@ module acl_scfifo_wrapped #(
 
        // instantiate the ECC encoder for port a
       acl_ecc_encoder #(
-        .DATA_WIDTH                     (lpm_width),     
-        .ECC_GROUP_SIZE                 (MAX_ECC_WIDTH),            
+        .DATA_WIDTH                     (lpm_width),
+        .ECC_GROUP_SIZE                 (MAX_ECC_WIDTH),
         .INPUT_PIPELINE_STAGES          (0),
-        .OUTPUT_PIPELINE_STAGES         (0) 
+        .OUTPUT_PIPELINE_STAGES         (0)
       ) altecc_encoder_inst_a (
          .clock                         (clock),
          .clock_enable                  (1'b1),
-         .i_data                        (data),               
-         .o_encoded                     (codeword_wr)   
+         .i_data                        (data),
+         .o_encoded                     (codeword_wr)
       );
-       
+
       // instantiate the ECC decoder for port a
       acl_ecc_decoder #(
-         .DATA_WIDTH                    (lpm_width),     
-         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),           
+         .DATA_WIDTH                    (lpm_width),
+         .ECC_GROUP_SIZE                (MAX_ECC_WIDTH),
          .INPUT_PIPELINE_STAGES         (0),
          .OUTPUT_PIPELINE_STAGES        (0),
-         .STATUS_PIPELINE_STAGES        (0) 
+         .STATUS_PIPELINE_STAGES        (0)
       ) altecc_decoder_inst_a (
          .clock                         (clock),
          .clock_enable                  (1'b1),
-         .i_encoded                     (codeword_rd),    
+         .i_encoded                     (codeword_rd),
          .o_single_error_corrected      (err_corrected_int),      //Flag signal to reflect the status of data received. Denotes single-bit error found and corrected. You can use the data because it has already been corrected.
          .o_double_error_detected       (err_fatal_int),          // Flag signal to reflect the status of data received. Denotes double-bit error found, but not corrected. You must not use the data if this signal is asserted.
          .o_data                        (q)
@@ -152,9 +154,9 @@ module acl_scfifo_wrapped #(
           err_fatal_latched            <= 1'b0;
           err_corrected_pulse_extended <= 1'b0;
           d                            <=  'b0;
-        
+
         end else begin
-          
+
           if (!empty) begin
              err_fatal_latched <= err_fatal_latched | err_fatal_int;
 
@@ -173,11 +175,11 @@ module acl_scfifo_wrapped #(
           end
         end
       end
-      
+
       assign err_fatal      = err_fatal_latched;
       assign err_corrected  = err_corrected_pulse_extended;
       assign ecc_err_status = {err_corrected,err_fatal};
-      
+
     end else begin                                  : GEN_ECC_DISABLED   // soft_ecc is false
 
       assign err_corrected  = 1'b0;
@@ -187,36 +189,36 @@ module acl_scfifo_wrapped #(
       assign q              = codeword_rd;
 
     end
-     
+
   endgenerate
 
   scfifo #(
     .add_ram_output_register       (add_ram_output_register),
-    .lpm_numwords                  (lpm_numwords),  
-    .lpm_showahead                 (lpm_showahead), 
+    .lpm_numwords                  (lpm_numwords),
+    .lpm_showahead                 (lpm_showahead),
     .lpm_type                      (lpm_type),
     .lpm_hint                      (lpm_hint),
     .lpm_width                     (SCFIFO_WIDTH),
     .lpm_widthu                    (lpm_widthu),
-    .intended_device_family        (intended_device_family),  
+    .intended_device_family        (intended_device_family),
     .overflow_checking             (overflow_checking),
     .underflow_checking            (underflow_checking),
     .allow_rwcycle_when_full       (allow_rwcycle_when_full),
-    .use_eab                       (use_eab), 
+    .use_eab                       (use_eab),
     .almost_full_value             (almost_full_value),
     .almost_empty_value            (almost_empty_value),
     .maximum_depth                 (maximum_depth),
-    .enable_ecc                    ("FALSE")  
+    .enable_ecc                    ("FALSE")
   ) scfifo_inst (
     .data                          (codeword_wr),
     .clock                         (clock),
     .wrreq                         (wrreq),
     .rdreq                         (rdreq),
     .aclr                          (aclr),
-    .sclr                          (sclr),  
+    .sclr                          (sclr),
     .q                             (codeword_rd),
     .usedw                         (usedw),
-    .full                          (full),                          
+    .full                          (full),
     .empty                         (empty),
     .almost_full                   (almost_full),
     .almost_empty                  (almost_empty),
