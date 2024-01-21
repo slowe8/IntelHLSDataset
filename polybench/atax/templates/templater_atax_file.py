@@ -7,7 +7,6 @@
 #           to generate some hand written design iterations automatically
 #           Only includes a set of directives for atax.* benchmark
 
-from jinja2 import Environment, FileSystemLoader
 import sys
 import os
 
@@ -128,22 +127,3 @@ for directive in directives:
 atax.close()
 print("\ntemplating complete.")
 
-'''
-count = 0 # Design counter for naming convention
-
-# Loop through each set of directives for the given benchmark
-for directive in directives:
-	filename = f"{working_dir}/polybench/atax/src/atax_{str(count)}.c"
-	content = template.render(directive) # render the design (tag substitution)
-
-        # output the deign to the source directory of the benchmark
-	with open(filename, mode="w", encoding="utf-8") as output:
-		output.write(content)
-		print("... wrote", filename)
-
-	count = count + 1
-
-atax.close()
-
-print("\ntemplating complete.")
-'''
