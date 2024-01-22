@@ -9,6 +9,7 @@
 
 import sys
 import os
+import math
 
 #############################################################
 
@@ -57,14 +58,26 @@ def gen_strategy(partition_factor, unroll_factor):
     
     return lp_d
 
-# TODO add hls_bankbits for arrays
 def build_directives(lp_d):
 	directives = []
 	for spec in lp_d:
 		if spec[9] == 'd1d2':
 			 continue # ignore second dimension partition for now
-		directive = {"lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
-		directive["lprd_2"] = "#pragma unroll " + str(spec[0]) + '\n'
+		directive = {"buff_A": "\0","buff_x": "\0","buff_y_out": "\0","tmp1":"\0","lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
+		
+        bankbits = "("
+        top_bit = math.ceil(math.log(spec[0],2)) - 1
+        for i in range(top_bit + 1):
+            if i == top_bit:
+                bankbits = bankbits + str(i) + ")"
+            else:
+                bankbits = bankbits + str(i) + ","
+        
+        directive["buff_A"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
+        directive["buff_x"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
+        directive["buff_y_out"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
+        directive["tmp1"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
+        directive["lprd_2"] = "#pragma unroll " + str(spec[0]) + '\n'
 		directive["lpwr_1"] = "#pragma unroll " + str(spec[0]) + '\n'
 		if spec[1] == 'n':
 			directive["lp1"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[2] + '\n'
@@ -92,7 +105,9 @@ def build_directives(lp_d):
 
 atax = open(f'{working_directory}/atax.c', 'r')
 
-objects = [ 'lprd_1', 'lprd_2', 'lpwr_1', 'lp1', 'lp2', 'lp3', 'lp4' ]
+loops = [ 'lprd_1', 'lprd_2', 'lpwr_1', 'lp1', 'lp2', 'lp3', 'lp4']
+arrs =  ['buff_A', 'buff_x', 'buff_y_out', 'tmp1']
+
 
 # Specify the environment and template for the given benchmark (from cmdline args)
 # env = Environment(loader=FileSystemLoader(f"{working_dir}/polybench/atax/templates"))
@@ -112,13 +127,16 @@ for directive in directives:
 
     for line in atax:
         new_line = line
-        for obj in objects:
-            if obj in line:
-                new_atax.write(directive[obj])
+        for loop in loops:
+            if loop in line:
+                new_atax.write(directive[loop])
 
-                to_remove = obj + ': '
+                to_remove = loop + ': '
                 new_line = new_line.replace(to_remove, '')
-        
+        for arr in arrs:
+            if ("DATA_TYPE " + arr) in line:
+                new_atax.write(directive[arr])
+
         new_atax.write(new_line)
     
     new_atax.close()
@@ -126,4 +144,3 @@ for directive in directives:
 
 atax.close()
 print("\ntemplating complete.")
-
