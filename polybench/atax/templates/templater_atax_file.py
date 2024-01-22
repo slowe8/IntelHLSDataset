@@ -59,12 +59,12 @@ def gen_strategy(partition_factor, unroll_factor):
     return lp_d
 
 def build_directives(lp_d):
-	directives = []
-	for spec in lp_d:
-		if spec[9] == 'd1d2':
-			 continue # ignore second dimension partition for now
-		directive = {"buff_A": "\0","buff_x": "\0","buff_y_out": "\0","tmp1":"\0","lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
-		
+    directives = []
+    for spec in lp_d:
+        if spec[9] == 'd1d2':
+             continue # ignore second dimension partition for now
+        directive = {"buff_A": "\0","buff_x": "\0","buff_y_out": "\0","tmp1":"\0","lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
+        
         bankbits = "("
         top_bit = math.ceil(math.log(spec[0],2)) - 1
         for i in range(top_bit + 1):
@@ -73,35 +73,35 @@ def build_directives(lp_d):
             else:
                 bankbits = bankbits + str(i) + ","
         
-        directive["buff_A"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
-        directive["buff_x"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
-        directive["buff_y_out"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
-        directive["tmp1"] = "hls_numbanks " + str(spec[0]) + "\nhls_bankbits" + bankbits + "\n"
+        directive["buff_A"] = "hls_numbanks(" + str(spec[0]) + ")\nhls_bankbits" + bankbits + "\n"
+        directive["buff_x"] = "hls_numbanks(" + str(spec[0]) + ")\nhls_bankbits" + bankbits + "\n"
+        directive["buff_y_out"] = "hls_numbanks(" + str(spec[0]) + ")\nhls_bankbits" + bankbits + "\n"
+        directive["tmp1"] = "hls_numbanks(" + str(spec[0]) + ")\nhls_bankbits" + bankbits + "\n"
         directive["lprd_2"] = "#pragma unroll " + str(spec[0]) + '\n'
-		directive["lpwr_1"] = "#pragma unroll " + str(spec[0]) + '\n'
-		if spec[1] == 'n':
-			directive["lp1"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[2] + '\n'
-		else :
-			directive["lp1"] = "#pragma unroll " + spec[2] + '\n'
+        directive["lpwr_1"] = "#pragma unroll " + str(spec[0]) + '\n'
+        if spec[1] == 'n':
+            directive["lp1"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[2] + '\n'
+        else :
+            directive["lp1"] = "#pragma unroll " + spec[2] + '\n'
 
-		if spec[3] == 'n':
-			directive["lp2"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[4] + '\n'
-		else :
-			directive["lp2"] = "#pragma unroll " + spec[4] + '\n'
+        if spec[3] == 'n':
+            directive["lp2"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[4] + '\n'
+        else :
+            directive["lp2"] = "#pragma unroll " + spec[4] + '\n'
 
-		if spec[5] == 'n':
-			directive["lp3"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[6] + '\n'
-		else :
-			directive["lp3"] = "#pragma unroll " + spec[6] + '\n'
+        if spec[5] == 'n':
+            directive["lp3"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[6] + '\n'
+        else :
+            directive["lp3"] = "#pragma unroll " + spec[6] + '\n'
 
-		if spec[7] == 'n':
-			directive["lp4"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[8] + '\n'
-		else :
-			directive["lp4"] = "#pragma unroll " + spec[8] + '\n'
-		
-		directives.append(directive)
-	
-	return directives
+        if spec[7] == 'n':
+            directive["lp4"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[8] + '\n'
+        else :
+            directive["lp4"] = "#pragma unroll " + spec[8] + '\n'
+        
+        directives.append(directive)
+    
+    return directives
 
 atax = open(f'{working_directory}/atax.c', 'r')
 
