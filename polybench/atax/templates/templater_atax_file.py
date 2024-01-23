@@ -61,9 +61,12 @@ def gen_strategy(partition_factor, unroll_factor):
 def build_directives(lp_d):
 	directives = []
 	for spec in lp_d:
-		if spec[9] == 'd1d2':
-			 continue # ignore second dimension partition for now
-		directive = {"lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
+		directive = {'buff_A':'\0', 'buff_x':'\0', 'buff_y_out':'\0', 'tmp1':'\0', "lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
+        if spec[9] == 'd1d2' or spec[9] == 'd1':
+            directive['buff_A'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';    
+			directive['buff_x'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
+            directive['buff_y_out'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
+            directive['tmp1'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
 		directive["lprd_2"] = "#pragma unroll " + str(spec[0]) + '\n'
 		directive["lpwr_1"] = "#pragma unroll " + str(spec[0]) + '\n'
 		if spec[1] == 'n':
