@@ -7,12 +7,10 @@
 #           to generate some hand written design iterations automatically
 #           Only includes a set of directives for atax.* benchmark
 
+from jinja2 import Environment, FileSystemLoader
 import sys
-import os
 
 #############################################################
-
-working_directory = os.getcwd()
 
 # adapted from the PowerGear auto_run.py script
 def gen_strategy(partition_factor, unroll_factor):
@@ -61,72 +59,58 @@ def gen_strategy(partition_factor, unroll_factor):
 def build_directives(lp_d):
 	directives = []
 	for spec in lp_d:
-		directive = {'buff_A':'\0', 'buff_x':'\0', 'buff_y_out':'\0', 'tmp1':'\0', "lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1\n", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
-        if spec[9] == 'd1d2' or spec[9] == 'd1':
-            directive['buff_A'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';    
-			directive['buff_x'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
-            directive['buff_y_out'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
-            directive['tmp1'] = 'hls_numbanks('+ spec[0] + ')\nhls_bankwidth(sizeof(int)*' + spec[0] + ')\n';
-		directive["lprd_2"] = "#pragma unroll " + str(spec[0]) + '\n'
-		directive["lpwr_1"] = "#pragma unroll " + str(spec[0]) + '\n'
+		if spec[9] == 'd1d2':
+			 continue # ignore second dimension partition for now
+		directive = {"lprd_1":"#pragma disable_loop_pipelining\n#pragma unroll 1", "lprd_2":"\0", "lp1":"\0", "lp2":"\0","lp3":"\0", "lp4":"\0", "lpwr_1":"\0"}
+		directive["lprd_2"] = "#pragma unroll " + str(spec[0])
+		directive["lpwr_1"] = "#pragma unroll " + str(spec[0])
 		if spec[1] == 'n':
-			directive["lp1"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[2] + '\n'
+			directive["lp1"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[2]
 		else :
-			directive["lp1"] = "#pragma unroll " + spec[2] + '\n'
+			directive["lp1"] = "#pragma unroll " + spec[2]
 
 		if spec[3] == 'n':
-			directive["lp2"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[4] + '\n'
+			directive["lp2"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[4]
 		else :
-			directive["lp2"] = "#pragma unroll " + spec[4] + '\n'
+			directive["lp2"] = "#pragma unroll " + spec[4]
 
 		if spec[5] == 'n':
-			directive["lp3"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[6] + '\n'
+			directive["lp3"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[6]
 		else :
-			directive["lp3"] = "#pragma unroll " + spec[6] + '\n'
+			directive["lp3"] = "#pragma unroll " + spec[6]
 
 		if spec[7] == 'n':
-			directive["lp4"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[8] + '\n'
+			directive["lp4"] = "#pragma disable_loop_pipelining\n#pragma unroll " + spec[8]
 		else :
-			directive["lp4"] = "#pragma unroll " + spec[8] + '\n'
+			directive["lp4"] = "#pragma unroll " + spec[8]
 		
 		directives.append(directive)
 	
 	return directives
 
-atax = open(f'{working_directory}/atax.c', 'r')
-
-objects = [ 'lprd_1', 'lprd_2', 'lpwr_1', 'lp1', 'lp2', 'lp3', 'lp4' ]
+working_dir = "/misc/scratch/ans5695/IntelHLSDataset" # allison's personal path, CHANGE THIS
 
 # Specify the environment and template for the given benchmark (from cmdline args)
-# env = Environment(loader=FileSystemLoader(f"{working_dir}/polybench/atax/templates"))
-# template = env.get_template(f"atax_template.c")
+env = Environment(loader=FileSystemLoader(f"{working_dir}/polybench/atax/templates"))
+template = env.get_template(f"atax_template.c")
 
 partition_factor = [1,2,4,8]
 unroll_factor = [1,2,4,8]
 lp_d = gen_strategy(partition_factor, unroll_factor)
 directives = build_directives(lp_d)
 
+count = 0 # Design counter for naming convention
 
-count = 0
+# Loop through each set of directives for the given benchmark
 for directive in directives:
-    atax.seek(0,0)
-    filename = '../src/atax_' + str(count) + '.c'
-    new_atax = open(filename, 'a+')
+	filename = f"{working_dir}/polybench/atax/src/atax_{str(count)}.c"
+	content = template.render(directive) # render the design (tag substitution)
 
-    for line in atax:
-        new_line = line
-        for obj in objects:
-            if obj in line:
-                new_atax.write(directive[obj])
+        # output the deign to the source directory of the benchmark
+	with open(filename, mode="w", encoding="utf-8") as output:
+		output.write(content)
+		print("... wrote", filename)
 
-                to_remove = obj + ': '
-                new_line = new_line.replace(to_remove, '')
-        
-        new_atax.write(new_line)
-    
-    new_atax.close()
-    count += 1
+	count = count + 1
 
-atax.close()
 print("\ntemplating complete.")
-
