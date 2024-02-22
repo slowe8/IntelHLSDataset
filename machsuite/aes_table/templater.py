@@ -11,6 +11,7 @@ arrs = []
 partition_factors = []
 loop_names = []
 loop_factors = []
+loop_pipeline = []
 
 
 class Node:
@@ -48,7 +49,7 @@ def create_factors(node, factor_list, level, total):
         return False
 
 
-
+isLoop = False
 while True:
     line = template_file.readline()
     if not line:
@@ -68,18 +69,29 @@ while True:
         for n in factors:
             partition_factors[-1].append(int(n))
 
-    elif 'pipeline,' in line: #change to something more generic? this assumes pipelining every time
+    elif 'loop_opt,' in line:
+        isLoop = True
+        continue
+
+    elif isLoop: 
         line_s = line.split(',')
+        if line_s[2] == 'pipeline':
+            pipelined = True
+        else :
+            pipelined = False
+
         if '/' in line_s[1]:
             loopNamesTemp = line_s[1].split('/')
         else:
             loopNamesTemp = [line_s[1]]
-        factors = line_s[4].replace('[', '')
+        factors = line_s[-1].replace('[', '')
         factors = factors.replace(']','')
         factors = factors.split()
         for name in loopNamesTemp:
             loop_names.append(name)
             loop_factors.append(factors)
+            loop_pipeline.append(pipelined)
+        isLoop = False
 
 
 root = populate(None, loop_names, loop_factors, 0, 0)
@@ -92,6 +104,8 @@ try:
         factor_list = dict()
 except IndexError:
     print("index error here idk why\n")
+
+
 
 count = 1
 for factor_list in all_factors:
@@ -106,11 +120,13 @@ for factor_list in all_factors:
     for line in bench:
         new_line = line
         for name in factor_list:
-            if name in line:
-                new_bench.write("#pragma unroll " + factor_list[name] + '\n')
+            nameString = name + " : "
+            if nameString in line:
+                if not loop_pipeline[loop_names.index(name)] :
+                    new_bench.write("#pragma disable_loop_pipelining\n")
 
-                to_remove = name + ' : '
-                new_line = new_line.replace(to_remove, '')
+                new_bench.write("#pragma unroll " + factor_list[name] + '\n')
+                new_line = new_line.replace(nameString, '')
 
         new_bench.write(new_line)
     
