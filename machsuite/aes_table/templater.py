@@ -120,13 +120,15 @@ for factor_list in all_factors:
     for line in bench:
         new_line = line
         for name in factor_list:
-            nameString = name + " : "
-            if nameString in line:
+            if name in line and ":" in line:
                 if not loop_pipeline[loop_names.index(name)] :
                     new_bench.write("#pragma disable_loop_pipelining\n")
 
                 new_bench.write("#pragma unroll " + factor_list[name] + '\n')
-                new_line = new_line.replace(nameString, '')
+                lineParsed = line.split(":")
+                new_line = lineParsed[1]
+        if "register" in new_line:
+            new_line = new_line.replace("register", "")
 
         new_bench.write(new_line)
     
