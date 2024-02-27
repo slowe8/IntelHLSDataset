@@ -1,5 +1,4 @@
 BENCHMARKS=\
-	aes/aes \
 	bfs/bulk \
 	bfs/queue \
 	fft/strided \

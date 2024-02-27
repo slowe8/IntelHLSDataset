@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
     aes256_encrypt_ecb(&ctx,key, buf);
 
     DUMP("enc: ", i, buf, sizeof(buf));
-    printf("tst: 8e a2 b7 ca 51 67 45 bf ea fc 49 90 4b 49 60 89\n");
+    //printf("tst: 8e a2 b7 ca 51 67 45 bf ea fc 49 90 4b 49 60 89\n");
 
     //aes256_init(&ctx, key);
     //aes256_decrypt_ecb(&ctx, buf);

@@ -1,6 +1,6 @@
 import os
 import sys
-
+import re
 
 template_file = open(sys.argv[1], 'r')
 bench = open(sys.argv[2], 'r')
@@ -117,7 +117,31 @@ for factor_list in all_factors:
     for line in bench:
         new_line = line
 
-        for array in 
+        for array in arrs:
+            if array in line:
+                if 'component' in line:
+                    split_function = re.split('[()[\]{}\s]', line)
+                    array_idx = 0
+                    
+                    new_line = ''
+
+                    for i in range(len(split_function)):
+                        if array == split_function[i]:
+                            array_idx = i
+                            break
+                    
+                    array_type = split_function[i - 1]
+                    array_dim = split_function[i + 1]
+
+                    new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                    new_line_e = array_type  + " *" + array
+
+                    # Add directives here
+                    directives = ''
+
+                    line_to_replace = array_type + ' ' + array + '[' + str(array_dim) + ']'
+                    new_line = new_line.replace(line_to_replace, new_line_b + directives + new_line_e)
+
 
         for name in factor_list:
             if name in line and ":" in line:

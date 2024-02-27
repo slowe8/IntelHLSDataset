@@ -5,9 +5,10 @@ M. D. Lam, E. E. Rothberg, and M. E. Wolf
 ASPLOS 1991
 */
 
-#include <stdio.h>
+#include <HLS/stdio.h>
 #include <stdlib.h>
-#include "../../common/support.h"
+#include "../common/support.h"
+#include <HLS/hls.h>
 
 //Data Type
 #define TYPE double
@@ -26,7 +27,7 @@ ASPLOS 1991
 //Set number of iterations to execute
 #define MAX_ITERATION 1
 
-void bbgemm(TYPE m1[N], TYPE m2[N], TYPE prod[N]);
+component void bbgemm(hls_avalon_slave_memory_argument(N) TYPE *m1, hls_avalon_slave_memory_argument(N) TYPE *m2, hls_avalon_slave_memory_argument(N) TYPE *prod);
 ////////////////////////////////////////////////////////////////////////////////
 // Test harness interface code.
 
