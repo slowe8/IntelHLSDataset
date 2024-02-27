@@ -53,7 +53,7 @@ uint8_t rj_xtime(uint8_t x)
 /* -------------------------------------------------------------------------- */
 void aes_subBytes(uint8_t *buf)
 {
-    register uint8_t i = 16;
+    hls_register uint8_t i = 16;
 
     sub : while (i--) buf[i] = rj_sbox(buf[i]);
 } /* aes_subBytes */
@@ -61,7 +61,7 @@ void aes_subBytes(uint8_t *buf)
 /* -------------------------------------------------------------------------- */
 void aes_addRoundKey(uint8_t *buf, uint8_t *key)
 {
-    register uint8_t i = 16;
+    hls_register uint8_t i = 16;
 
     addkey : while (i--) buf[i] ^= key[i];
 } /* aes_addRoundKey */
@@ -69,7 +69,7 @@ void aes_addRoundKey(uint8_t *buf, uint8_t *key)
 /* -------------------------------------------------------------------------- */
 void aes_addRoundKey_cpy(uint8_t *buf, uint8_t *key, uint8_t *cpk)
 {
-    register uint8_t i = 16;
+    hls_register uint8_t i = 16;
 
     cpkey : while (i--)  buf[i] ^= (cpk[i] = key[i]), cpk[16+i] = key[16 + i];
 } /* aes_addRoundKey_cpy */
@@ -78,7 +78,7 @@ void aes_addRoundKey_cpy(uint8_t *buf, uint8_t *key, uint8_t *cpk)
 /* -------------------------------------------------------------------------- */
 void aes_shiftRows(uint8_t *buf)
 {
-    register uint8_t i, j; /* to make it potentially parallelable :) */
+    hls_register uint8_t i, j; /* to make it potentially parallelable :) */
 
     i = buf[1]; buf[1] = buf[5]; buf[5] = buf[9]; buf[9] = buf[13]; buf[13] = i;
     i = buf[10]; buf[10] = buf[2]; buf[2] = i;
@@ -90,7 +90,7 @@ void aes_shiftRows(uint8_t *buf)
 /* -------------------------------------------------------------------------- */
 void aes_mixColumns(uint8_t *buf)
 {
-    register uint8_t i, a, b, c, d, e;
+    hls_register uint8_t i, a, b, c, d, e;
 
     mix : for (i = 0; i < 16; i += 4)
     {
@@ -104,7 +104,7 @@ void aes_mixColumns(uint8_t *buf)
 /* -------------------------------------------------------------------------- */
 void aes_expandEncKey(uint8_t *k, uint8_t *rc)
 {
-    register uint8_t i;
+    hls_register uint8_t i;
 
     k[0] ^= rj_sbox(k[29]) ^ (*rc);
     k[1] ^= rj_sbox(k[30]);
@@ -125,7 +125,7 @@ void aes_expandEncKey(uint8_t *k, uint8_t *rc)
 } /* aes_expandEncKey */
 
 /* -------------------------------------------------------------------------- */
-void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
+component void aes256_encrypt_ecb(aes256_context *ctx, hls_avalon_slave_memory_argument(32) hls_numbanks(4) hls_bankwidth(sizeof(uint8_t)) uint8_t * k, hls_avalon_slave_memory_argument(16) hls_numbanks(4) hls_bankwidth(sizeof(uint8_t)) uint8_t * buf)
 {
     //INIT
     uint8_t rcon = 1;

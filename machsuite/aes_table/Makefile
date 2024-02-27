@@ -17,7 +17,7 @@ generate: $(FILES) generate.c
 	./generate
 
 hls: $(KERN).c $(ALG).h
-	vivado_hls hls.tcl
+	i++ -march=Arria10 $(SRCS) -ghdl -v -o $(KERN)
 
 clean:
 	rm -f $(KERN) generate output.data
