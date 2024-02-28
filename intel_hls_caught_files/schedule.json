@@ -1,0 +1,2924 @@
+{
+  "327071480":
+  {
+    "nodes":
+    [
+      {
+        "name":"atax.B0.runOnce"
+        , "id":327699024
+        , "start":"0"
+        , "end":"2"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"?"
+            , "id":355296944
+            , "start":"1"
+            , "end":"2"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B1.start"
+        , "id":327692624
+        , "start":"2"
+        , "end":"4"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"?"
+            , "id":355643264
+            , "start":"3"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"RD"
+            , "id":355657632
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Read"
+                , "Width":"192 bits"
+                , "Depth":"0"
+                , "Stream Name":"call.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":355673504
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":355292800
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":339604688
+            , "start":"4"
+            , "end":"4"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 0"
+            , "id":326124768
+            , "start":"3"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_wt_entry_ataxs_c0_enter1_atax0"
+                , "Cluster Type":"Stall-Enable"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"0"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Exit"
+                , "id":354461776
+                , "start":"3"
+                , "end":"3"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"1"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B3"
+        , "id":327693792
+        , "start":"4"
+        , "end":"15"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 1"
+            , "id":327846128
+            , "start":"5"
+            , "end":"15"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body_ataxs_c0_enter542_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"10"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"FFwd Dest"
+                , "id":355829296
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":15
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Select"
+                , "id":355831520
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Select"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355864864
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355862640
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355855488
+                , "start":"6"
+                , "end":"11"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":355858128
+                , "start":"11"
+                , "end":"12"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355848336
+                , "start":"6"
+                , "end":"11"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":17
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":355850976
+                , "start":"11"
+                , "end":"12"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":17
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355841184
+                , "start":"6"
+                , "end":"11"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355832224
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355834448
+                , "start":"6"
+                , "end":"6"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355836256
+                , "start":"6"
+                , "end":"11"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"Yes"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":355843824
+                , "start":"11"
+                , "end":"12"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355224480
+                , "start":"12"
+                , "end":"15"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"8"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B4"
+        , "id":327693872
+        , "start":"15"
+        , "end":"26"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 2"
+            , "id":331758288
+            , "start":"16"
+            , "end":"26"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body13_ataxs_c0_enter575_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"10"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'j'"
+                , "id":355889328
+                , "start":"17"
+                , "end":"17"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":355914544
+                , "start":"17"
+                , "end":"17"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":20
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355892112
+                , "start":"17"
+                , "end":"17"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355894336
+                , "start":"17"
+                , "end":"17"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355896560
+                , "start":"17"
+                , "end":"17"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":21
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355899408
+                , "start":"17"
+                , "end":"22"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"Yes"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":21
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355904128
+                , "start":"22"
+                , "end":"22"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"7"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":16
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355906352
+                , "start":"17"
+                , "end":"22"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"5"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":21
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":355910240
+                , "start":"22"
+                , "end":"23"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":21
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355247456
+                , "start":"23"
+                , "end":"26"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"8"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"24"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B5"
+        , "id":327693952
+        , "start":"26"
+        , "end":"28"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"FFwd Dest"
+            , "id":331150208
+            , "start":"26"
+            , "end":"27"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"0"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":7
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"+"
+            , "id":331149344
+            , "start":"27"
+            , "end":"27"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":15
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":339974160
+            , "start":"27"
+            , "end":"27"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":15
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":339413120
+            , "start":"27"
+            , "end":"28"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Compare"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":15
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B2"
+        , "id":327693712
+        , "start":"28"
+        , "end":"28"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"Fused loop atax.B6"
+        , "id":327694032
+        , "start":"28"
+        , "end":"37"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 3"
+            , "id":332419008
+            , "start":"29"
+            , "end":"37"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_cond28_preheader_ataxs_c0_enter633_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"8"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"FFwd Dest"
+                , "id":355474816
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Select"
+                , "id":355477040
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Select"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355490320
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355477392
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":27
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Select"
+                , "id":355479616
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Select"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355492544
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355488096
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355480320
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355494768
+                , "start":"30"
+                , "end":"30"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355482960
+                , "start":"30"
+                , "end":"34"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355496992
+                , "start":"34"
+                , "end":"34"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355259136
+                , "start":"34"
+                , "end":"37"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"6"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B7"
+        , "id":327694112
+        , "start":"37"
+        , "end":"50"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"+"
+            , "id":334141024
+            , "start":"38"
+            , "end":"50"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"1"
+                , "Latency":"12"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":30
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":339782112
+            , "start":"50"
+            , "end":"50"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Compare"
+                , "Start Cycle":"13"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":30
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 4"
+            , "id":332717952
+            , "start":"38"
+            , "end":"50"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body30_ataxs_c0_enter676_atax2"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"12"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Ptr. Comp."
+                , "id":355519376
+                , "start":"38"
+                , "end":"39"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355522016
+                , "start":"39"
+                , "end":"43"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355504992
+                , "start":"39"
+                , "end":"39"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Select"
+                , "id":355507424
+                , "start":"39"
+                , "end":"40"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Select"
+                    , "Start Cycle":"2"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355508128
+                , "start":"39"
+                , "end":"39"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355510352
+                , "start":"38"
+                , "end":"39"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355514240
+                , "start":"39"
+                , "end":"43"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":355527152
+                , "start":"43"
+                , "end":"47"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":355527504
+                , "start":"47"
+                , "end":"47"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"10"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355270976
+                , "start":"47"
+                , "end":"50"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"10"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"64"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B8"
+        , "id":327694192
+        , "start":"50"
+        , "end":"52"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"FFwd Dest"
+            , "id":339999920
+            , "start":"50"
+            , "end":"51"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"0"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":7
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"+"
+            , "id":339477184
+            , "start":"51"
+            , "end":"51"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":27
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":331287968
+            , "start":"51"
+            , "end":"51"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":27
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Dest"
+            , "id":339733184
+            , "start":"50"
+            , "end":"51"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"0"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":31
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Dest"
+            , "id":333177824
+            , "start":"50"
+            , "end":"51"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"0"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":31
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":332062992
+            , "start":"51"
+            , "end":"52"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined never-stall"
+                , "Stall-free":"Yes"
+                , "Global Memory":"No"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Dest"
+            , "id":332413712
+            , "start":"51"
+            , "end":"52"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":7
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":336809696
+            , "start":"52"
+            , "end":"52"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"2"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":41
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B9"
+        , "id":327694272
+        , "start":"52"
+        , "end":"66"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"+"
+            , "id":355295968
+            , "start":"53"
+            , "end":"66"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"1"
+                , "Latency":"13"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":40
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":355296320
+            , "start":"66"
+            , "end":"66"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Compare"
+                , "Start Cycle":"14"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":40
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 5"
+            , "id":333182928
+            , "start":"53"
+            , "end":"66"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body52_ataxs_c0_enter737_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"13"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Ptr. Comp."
+                , "id":355536192
+                , "start":"53"
+                , "end":"54"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355538832
+                , "start":"54"
+                , "end":"58"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355543968
+                , "start":"54"
+                , "end":"54"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355546192
+                , "start":"53"
+                , "end":"54"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":355550080
+                , "start":"54"
+                , "end":"58"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":355555216
+                , "start":"58"
+                , "end":"58"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":355557648
+                , "start":"58"
+                , "end":"62"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":355558000
+                , "start":"62"
+                , "end":"63"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"10"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":41
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355281888
+                , "start":"63"
+                , "end":"66"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"11"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B10"
+        , "id":327694352
+        , "start":"66"
+        , "end":"68"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"FFwd Dest"
+            , "id":355297552
+            , "start":"66"
+            , "end":"67"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Destination"
+                , "Start Cycle":"0"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":7
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"+"
+            , "id":354516624
+            , "start":"67"
+            , "end":"67"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Add"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":37
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"FFwd Src"
+            , "id":354517328
+            , "start":"67"
+            , "end":"67"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"FFwd Source"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":37
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":354516976
+            , "start":"67"
+            , "end":"68"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Compare"
+                , "Start Cycle":"1"
+                , "Latency":"1"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":37
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B11"
+        , "id":327694432
+        , "start":"68"
+        , "end":"68"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B12"
+        , "id":327694512
+        , "start":"68"
+        , "end":"80"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 6"
+            , "id":333618496
+            , "start":"69"
+            , "end":"80"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body73_ataxs_c0_enter774_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"1"
+                , "Cluster Latency":"11"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":355586144
+                , "start":"70"
+                , "end":"70"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":356089168
+                , "start":"70"
+                , "end":"70"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":46
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":355588928
+                , "start":"70"
+                , "end":"70"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":47
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":356075376
+                , "start":"70"
+                , "end":"74"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":47
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":356080304
+                , "start":"74"
+                , "end":"74"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":356082528
+                , "start":"70"
+                , "end":"74"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"2"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":47
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":356084864
+                , "start":"74"
+                , "end":"77"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"Yes"
+                    , "Start Cycle":"6"
+                    , "Latency":"3"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                      , "line":47
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":355819376
+                , "start":"77"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"9"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"32"
+                    , "Exit FIFO Width":"24"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B13"
+        , "id":327694592
+        , "start":"80"
+        , "end":"81"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"WR"
+            , "id":355311168
+            , "start":"80"
+            , "end":"80"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Write"
+                , "Width":"1 bit"
+                , "Depth":"0"
+                , "Stream Name":"return.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"0"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                  , "line":49
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":327694592
+        , "to":327692624
+      }
+      , {
+        "from":355588928
+        , "to":356075376
+      }
+      , {
+        "from":327694512
+        , "to":327694592
+      }
+      , {
+        "from":327694432
+        , "to":327694512
+      }
+      , {
+        "from":354516624
+        , "to":354516976
+      }
+      , {
+        "from":354516624
+        , "to":354517328
+      }
+      , {
+        "from":327694352
+        , "to":327694432
+      }
+      , {
+        "from":327694352
+        , "to":327694032
+      }
+      , {
+        "from":355550080
+        , "to":355557648
+      }
+      , {
+        "from":355295968
+        , "to":355296320
+      }
+      , {
+        "from":356082528
+        , "to":356084864
+      }
+      , {
+        "from":327694272
+        , "to":327694352
+      }
+      , {
+        "from":332413712
+        , "to":336809696
+      }
+      , {
+        "from":355555216
+        , "to":355557648
+      }
+      , {
+        "from":355899408
+        , "to":355910240
+      }
+      , {
+        "from":355894336
+        , "to":355896560
+      }
+      , {
+        "from":339477184
+        , "to":331287968
+      }
+      , {
+        "from":355889328
+        , "to":355896560
+      }
+      , {
+        "from":355889328
+        , "to":355906352
+      }
+      , {
+        "from":355889328
+        , "to":355914544
+      }
+      , {
+        "from":355836256
+        , "to":355843824
+      }
+      , {
+        "from":356075376
+        , "to":356084864
+      }
+      , {
+        "from":355832224
+        , "to":355834448
+      }
+      , {
+        "from":355477040
+        , "to":355490320
+      }
+      , {
+        "from":355896560
+        , "to":355899408
+      }
+      , {
+        "from":356080304
+        , "to":356082528
+      }
+      , {
+        "from":327694032
+        , "to":327694112
+      }
+      , {
+        "from":355906352
+        , "to":355910240
+      }
+      , {
+        "from":355527152
+        , "to":355270976
+      }
+      , {
+        "from":355527152
+        , "to":355527504
+      }
+      , {
+        "from":327694192
+        , "to":327694272
+      }
+      , {
+        "from":355848336
+        , "to":355850976
+      }
+      , {
+        "from":355536192
+        , "to":355538832
+      }
+      , {
+        "from":355536192
+        , "to":355558000
+      }
+      , {
+        "from":355834448
+        , "to":355836256
+      }
+      , {
+        "from":327699024
+        , "to":327692624
+      }
+      , {
+        "from":355519376
+        , "to":355522016
+      }
+      , {
+        "from":355657632
+        , "to":339604688
+      }
+      , {
+        "from":355657632
+        , "to":355292800
+      }
+      , {
+        "from":355657632
+        , "to":355673504
+      }
+      , {
+        "from":327692624
+        , "to":327693792
+      }
+      , {
+        "from":355514240
+        , "to":355527152
+      }
+      , {
+        "from":331149344
+        , "to":339413120
+      }
+      , {
+        "from":331149344
+        , "to":339974160
+      }
+      , {
+        "from":327693872
+        , "to":327693952
+      }
+      , {
+        "from":355892112
+        , "to":355896560
+      }
+      , {
+        "from":355297552
+        , "to":354516624
+      }
+      , {
+        "from":355643264
+        , "to":355657632
+      }
+      , {
+        "from":355510352
+        , "to":355514240
+      }
+      , {
+        "from":355482960
+        , "to":355496992
+      }
+      , {
+        "from":355543968
+        , "to":355546192
+      }
+      , {
+        "from":355557648
+        , "to":355558000
+      }
+      , {
+        "from":355474816
+        , "to":355477040
+      }
+      , {
+        "from":327694112
+        , "to":327694192
+      }
+      , {
+        "from":355831520
+        , "to":355834448
+      }
+      , {
+        "from":355831520
+        , "to":355841184
+      }
+      , {
+        "from":355831520
+        , "to":355848336
+      }
+      , {
+        "from":355831520
+        , "to":355855488
+      }
+      , {
+        "from":355831520
+        , "to":355862640
+      }
+      , {
+        "from":355831520
+        , "to":355864864
+      }
+      , {
+        "from":339999920
+        , "to":339477184
+      }
+      , {
+        "from":355841184
+        , "to":355843824
+      }
+      , {
+        "from":331150208
+        , "to":331149344
+      }
+      , {
+        "from":355538832
+        , "to":355557648
+      }
+      , {
+        "from":333177824
+        , "to":332062992
+      }
+      , {
+        "from":355477392
+        , "to":355479616
+      }
+      , {
+        "from":334141024
+        , "to":339782112
+      }
+      , {
+        "from":355479616
+        , "to":355480320
+      }
+      , {
+        "from":355479616
+        , "to":355488096
+      }
+      , {
+        "from":355479616
+        , "to":355492544
+      }
+      , {
+        "from":355507424
+        , "to":355527152
+      }
+      , {
+        "from":355480320
+        , "to":355482960
+      }
+      , {
+        "from":355480320
+        , "to":355494768
+      }
+      , {
+        "from":355855488
+        , "to":355858128
+      }
+      , {
+        "from":355508128
+        , "to":355510352
+      }
+      , {
+        "from":355586144
+        , "to":355588928
+      }
+      , {
+        "from":355586144
+        , "to":356082528
+      }
+      , {
+        "from":355586144
+        , "to":356089168
+      }
+      , {
+        "from":355829296
+        , "to":355831520
+      }
+      , {
+        "from":327693952
+        , "to":327693712
+      }
+      , {
+        "from":327693952
+        , "to":327693792
+      }
+      , {
+        "from":355522016
+        , "to":355527152
+      }
+      , {
+        "from":327693792
+        , "to":327693872
+      }
+      , {
+        "from":355504992
+        , "to":355507424
+      }
+      , {
+        "from":355546192
+        , "to":355550080
+      }
+      , {
+        "from":327693712
+        , "to":327694032
+      }
+      , {
+        "from":355904128
+        , "to":355906352
+      }
+      , {
+        "from":339733184
+        , "to":332062992
+      }
+    ]
+  }
+}

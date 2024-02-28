@@ -1,0 +1,31 @@
+*******************************************************
+ i++ debug log file                                    
+ This file contains diagnostic information. Any errors 
+ or unexpected behavior encountered when running i++   
+ should be reported as bugs. Thank you.                
+*******************************************************
+
+Compiler Command: i++ -march=Arria10 -ghdl --simulator none -v atax_0.c -o atax_0
+
+***************************************************************
+Quartus is a registered trademark of Intel Corporation in the
+US and other countries.  Portions of the Quartus Prime software
+code, and other portions of the code included in this download
+or on this DVD, are licensed to Intel Corporation and are the
+copyrighted property of third parties. For license details,
+refer to the End User License Agreement at
+http://fpgasoftware.intel.com/eula.
+***************************************************************
+
+2024.02.28.14:41:58 Info: Doing: qsys-script --script=atax.tcl --quartus-project=none
+***************************************************************
+Quartus is a registered trademark of Intel Corporation in the
+US and other countries.  Portions of the Quartus Prime software
+code, and other portions of the code included in this download
+or on this DVD, are licensed to Intel Corporation and are the
+copyrighted property of third parties. For license details,
+refer to the End User License Agreement at
+http://fpgasoftware.intel.com/eula.
+***************************************************************
+
+2024.02.28.14:41:59 Error: Error opening /mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.prj/components/atax/atax.ip.

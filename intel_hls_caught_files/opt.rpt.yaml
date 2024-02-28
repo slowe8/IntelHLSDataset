@@ -1,0 +1,813 @@
+--- !Passed
+Pass:            assign-diagnostic-ids
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 8, Column: 59 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - Pid:             '1'
+  - Sid:             ''
+  - Type:            '[64 x [64 x float]]*'
+  - DisplayName:     buff_A
+  - Transformation:  StartingState
+...
+--- !Passed
+Pass:            assign-diagnostic-ids
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 9, Column: 43 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - Pid:             '2'
+  - Sid:             ''
+  - Type:            '[64 x float]*'
+  - DisplayName:     buff_x
+  - Transformation:  StartingState
+...
+--- !Passed
+Pass:            assign-diagnostic-ids
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 10, Column: 43 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - Pid:             '3'
+  - Sid:             ''
+  - Type:            '[64 x float]*'
+  - DisplayName:     buff_y_out
+  - Transformation:  StartingState
+...
+--- !Passed
+Pass:            assign-diagnostic-ids
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 11, Column: 43 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - Pid:             '4'
+  - Sid:             ''
+  - Type:            '[64 x float]*'
+  - DisplayName:     tmp1
+  - Transformation:  StartingState
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 42 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 41, Column: 42 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 57 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 41, Column: 57 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 57 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'hoisting '
+  - Inst:            load
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 41, Column: 57 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 20 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 31, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 20 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 31, Column: 20 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 20 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            PromoteLoopAccessesToScalar
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 18 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          Moving accesses to memory location out of the loop
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        _Z4ataxPA64_fPfS1_
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Passed
+Pass:            promotepriv
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 8, Column: 0 }
+GlobalVar:       atax.buff_A.pmem
+Args:
+  - Pid:             '1'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x [64 x float]]]]*'
+  - AddrSpace:       '0'
+  - DisplayName:     buff_A
+  - Transformation:  AllocaToGV
+...
+--- !Passed
+Pass:            promotepriv
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 9, Column: 0 }
+GlobalVar:       atax.buff_x.pmem
+Args:
+  - Pid:             '2'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]]*'
+  - AddrSpace:       '0'
+  - DisplayName:     buff_x
+  - Transformation:  AllocaToGV
+...
+--- !Passed
+Pass:            promotepriv
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 10, Column: 0 }
+GlobalVar:       atax.buff_y_out.pmem
+Args:
+  - Pid:             '3'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]]*'
+  - AddrSpace:       '0'
+  - DisplayName:     buff_y_out
+  - Transformation:  AllocaToGV
+...
+--- !Passed
+Pass:            promotepriv
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 11, Column: 0 }
+GlobalVar:       atax.tmp1.pmem
+Args:
+  - Pid:             '4'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]]*'
+  - AddrSpace:       '0'
+  - DisplayName:     tmp1
+  - Transformation:  AllocaToGV
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 18, Column: 17 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 45 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 16, Column: 19 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 57 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 0, Column: 0 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 26 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 17, Column: 20 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 18, Column: 17 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 45 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 16, Column: 19 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 57 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 0, Column: 0 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 26 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 17, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 16, Column: 21 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 11, Column: 2 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 18, Column: 17 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 31, Column: 45 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 16, Column: 19 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 57 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 0, Column: 0 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 41, Column: 26 }
+Function:        atax
+Args:
+  - String:          'load of type '
+  - Type:            float
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 17, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Missed
+Pass:            loop-fusion-hld
+Name:            FusionFailed
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 15, Column: 5 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           wt.entry
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:15:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 15, Column: 5 }
+  - String:          ' and '
+  - Cand2:           for.cond25.preheader
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:27:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 27, Column: 5 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Dependencies prevent fusion
+...
+--- !Missed
+Pass:            loop-fusion-hld
+Name:            FusionFailed
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 15, Column: 5 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           wt.entry
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:15:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 15, Column: 5 }
+  - String:          ' and '
+  - Cand2:           for.end46
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:37:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 37, Column: 5 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Loops are not adjacent
+...
+--- !Missed
+Pass:            loop-fusion-hld
+Name:            FusionFailed
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 15, Column: 5 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           wt.entry
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:15:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 15, Column: 5 }
+  - String:          ' and '
+  - Cand2:           for.end70
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:46:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 46, Column: 5 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Loops are not adjacent
+...
+--- !Passed
+Pass:            loop-fusion-hld
+Name:            FuseCounter
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 27, Column: 5 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           for.cond25.preheader
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:27:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 27, Column: 5 }
+  - String:          ' and '
+  - Cand2:           for.end46
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:37:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 37, Column: 5 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Loops fused
+...
+--- !Missed
+Pass:            loop-fusion-hld
+Name:            FusionFailed
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 37, Column: 5 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           for.cond25.preheader
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:37:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 37, Column: 5 }
+  - String:          ' and '
+  - Cand2:           for.end70
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:46:5'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 46, Column: 5 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Dependencies prevent fusion
+...
+--- !Missed
+Pass:            loop-fusion-hld
+Name:            FusionFailed
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 30, Column: 9 }
+Function:        atax
+Args:
+  - String:          '['
+  - String:          atax
+  - String:          ']: '
+  - Cand1:           for.cond28.preheader
+  - String:          ' at location: '
+  - Cand1Loc:        'atax_0.c:30:9'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 30, Column: 9 }
+  - String:          ' and '
+  - Cand2:           for.inc44
+  - String:          ' at location: '
+  - OuterLoc:        'atax_0.c:40:9'
+    DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                       Line: 40, Column: 9 }
+  - String:          ' due to '
+  - reason:          auto
+  - String:          ': '
+  - String:          Loop has a non-empty preheader
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            pick-mem-config
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 8, Column: 0 }
+GlobalVar:       atax.buff_A.pmem
+Args:
+  - Pid:             '1'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x [64 x float]]]] addrspace(64)*'
+  - AddrSpace:       '64'
+  - DisplayName:     buff_A
+  - Transformation:  GVToMemory
+...
+--- !Passed
+Pass:            pick-mem-config
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 9, Column: 0 }
+GlobalVar:       atax.buff_x.pmem
+Args:
+  - Pid:             '2'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]] addrspace(65)*'
+  - AddrSpace:       '65'
+  - DisplayName:     buff_x
+  - Transformation:  GVToMemory
+...
+--- !Passed
+Pass:            pick-mem-config
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 10, Column: 0 }
+GlobalVar:       atax.buff_y_out.pmem
+Args:
+  - Pid:             '3'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]] addrspace(66)*'
+  - AddrSpace:       '66'
+  - DisplayName:     buff_y_out
+  - Transformation:  GVToMemory
+...
+--- !Passed
+Pass:            pick-mem-config
+Name:            MemoryDiagnostic
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 11, Column: 0 }
+GlobalVar:       atax.tmp1.pmem
+Args:
+  - Pid:             '4'
+  - Sid:             ''
+  - Type:            '[1 x [1 x [64 x float]]] addrspace(67)*'
+  - AddrSpace:       '67'
+  - DisplayName:     tmp1
+  - Transformation:  GVToMemory
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Passed
+Pass:            licm
+Name:            InstSunk
+Function:        atax
+Args:
+  - String:          'sinking '
+  - Inst:            extractvalue
+...
+--- !Missed
+Pass:            pre-loop-pipelining
+Name:            loop_speculation
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 46, Column: 5 }
+Function:        atax
+Args:
+  - String:          'Loop has old-style speculation of '
+  - String:          '3'
+  - String:          ' iterations'
+...
+--- !Missed
+Pass:            pre-loop-pipelining
+Name:            loop_speculation
+DebugLoc:        { File: '/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c', 
+                   Line: 20, Column: 6 }
+Function:        atax
+Args:
+  - String:          'Loop has old-style speculation of '
+  - String:          '1'
+  - String:          ' iterations'
+...
+--- !Missed
+Pass:            pre-loop-pipelining
+Name:            loop_speculation
+Function:        atax
+Args:
+  - String:          'Loop has old-style speculation of '
+  - String:          '0'
+  - String:          ' iterations'
+...

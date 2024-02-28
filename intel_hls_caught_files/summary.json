@@ -1,0 +1,71 @@
+{
+  "functionNameMapping":
+  {
+    "name":"Synthesized Function Name Mapping"
+    , "columns":
+    ["User-defined Function Name", "Mapped Function Name"]
+    , "children":
+    [
+      {
+        "name":"atax(float (*) [64], float*, float*)"
+        , "data":
+        ["atax"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+              , "line":5
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  , "estimatedResources":
+  {
+    "name":"Estimated Resource Usage"
+    , "columns":
+    ["Function Name", "ALUTs ", "FFs  ", "RAMs ", "DSPs ", "MLABs"]
+    , "children":
+    [
+      {
+        "name":"atax"
+        , "data":
+        [962, 1694, 64, 2, 399]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+              , "line":5
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"Total"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [962, 1694, 64, 2, 399]
+        , "data_percent":
+        [0.112594, 0.0991339, 2.35901, 0.131752]
+      }
+      , {
+        "name":"Available"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [854400, 1708800, 2713, 1518, 0]
+      }
+    ]
+  }
+  , "compileWarnings":
+  {
+    "name":"Compile Warnings"
+    , "children":
+    [
+    ]
+  }
+}

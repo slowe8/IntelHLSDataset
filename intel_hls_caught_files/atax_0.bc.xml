@@ -1,0 +1,761 @@
+<KERNEL_LIST>
+	<PROGRAM_GLOBAL_MEM_SIZE value="0" />
+	<ENABLE_HYPER_OPTIMIZATIONS value="0" />
+	<USE_SYNC_RESET value="0" />
+	<TOP_LEVEL_RESET_EXTENDER value="0" />
+	<ENABLE_STALL_LATENCY value="0" />
+	<ENABLE_ECC value="0" />
+	<GLOBAL_WRITE_LSU_IC_DATA_LATENESS value="0" />
+	<GLOBAL_READ_LSU_IC_DATA_LATENESS value="0" />
+	<GLOBAL_LSU_IC_WIDE_DATA_SLICING value="0" />
+	<ALLOW_HIGH_SPEED_FIFO_USAGE value="0" />
+	<KERNEL_BUNDLE name="atax" kname="atax" compute_units="1">
+	<KERNEL name="atax" kname="atax" filename="components/atax/ip/atax_function_wrapper.sv" entity_name="atax_function_wrapper" version="1" cosim_name="_Z4ataxPA64_fPfS1_" enable_global_profiling="1" workgroup_invariant="0" workitem_invariant="0" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0" is_stall_free_return="0" hls_invocation_interface="avalon_streaming">
+		<RESOURCE_INFO>
+			<ID value="0" />
+			<LOCAL_MEM aspace="64" begin="0" next="16384" banks="1" width="2048" static_demand="16384" num_groups="1" has_atomics="0" ports="2" write_ports="2" rdw_mode="0" repl_fac="1" ic_req_latency="0" ic_rrp_latency="0" ic_wrp_latency="0" req_pipe_interval="0" ret_fanout="0" num_ports_per_phys_mem="2" phys_mem_latency="3" minimize_memory_usage="0" enable="0" lmem_type="AUTO" ram_mode="0" use_mif_file="0" use_2x_mem="0" num_words="64" address_width="6" num_words_per_bank="64" bank_address_width="6" use_byteena="1">
+				<BANK id="0">
+					<PORT id="0" register="0" />
+					<PORT id="1" register="0" />
+				</BANK>
+			</LOCAL_MEM>
+			<LOCAL_MEM aspace="65" begin="0" next="512" banks="1" width="2048" static_demand="256" num_groups="1" has_atomics="0" ports="2" write_ports="2" rdw_mode="0" repl_fac="1" ic_req_latency="0" ic_rrp_latency="0" ic_wrp_latency="0" req_pipe_interval="0" ret_fanout="0" num_ports_per_phys_mem="2" phys_mem_latency="3" minimize_memory_usage="0" enable="0" lmem_type="AUTO" ram_mode="0" use_mif_file="0" use_2x_mem="0" num_words="2" address_width="1" num_words_per_bank="2" bank_address_width="1" use_byteena="1">
+				<BANK id="0">
+					<PORT id="0" register="0" />
+					<PORT id="1" register="0" />
+				</BANK>
+			</LOCAL_MEM>
+			<LOCAL_MEM aspace="66" begin="0" next="512" banks="1" width="2048" static_demand="256" num_groups="1" has_atomics="0" ports="2" write_ports="2" rdw_mode="0" repl_fac="1" ic_req_latency="0" ic_rrp_latency="0" ic_wrp_latency="0" req_pipe_interval="0" ret_fanout="0" num_ports_per_phys_mem="2" phys_mem_latency="3" minimize_memory_usage="0" enable="0" lmem_type="AUTO" ram_mode="0" use_mif_file="0" use_2x_mem="0" num_words="2" address_width="1" num_words_per_bank="2" bank_address_width="1" use_byteena="1">
+				<BANK id="0">
+					<PORT id="0" register="0" />
+					<PORT id="1" register="0" />
+				</BANK>
+			</LOCAL_MEM>
+			<LOCAL_MEM aspace="67" begin="0" next="512" banks="1" width="2048" static_demand="256" num_groups="1" has_atomics="0" ports="2" write_ports="2" rdw_mode="0" repl_fac="1" ic_req_latency="0" ic_rrp_latency="0" ic_wrp_latency="0" req_pipe_interval="0" ret_fanout="0" num_ports_per_phys_mem="2" phys_mem_latency="3" minimize_memory_usage="0" enable="0" lmem_type="AUTO" ram_mode="0" use_mif_file="0" use_2x_mem="0" num_words="2" address_width="1" num_words_per_bank="2" bank_address_width="1" use_byteena="1">
+				<BANK id="0">
+					<PORT id="0" register="0" />
+					<PORT id="1" register="0" />
+				</BANK>
+			</LOCAL_MEM>
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="17152" />
+			<MAX_WORK_GROUP_SIZE num="3" values="1, 1, 1" />
+			<REQUIRED_WORK_GROUP_SIZE x="1" y="1" z="1" />
+			<FAST_RELAUNCH_DEPTH value="0" />
+			<USES_GLOBAL_WORK_OFFSET value="1" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock1x"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/linux64/lib/hld_backend/Libraries/sv/base/dspba_library_ver.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc_pkg.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_altera_syncram_wrapped.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_scfifo_wrapped.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc_decoder.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc_encoder.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_mid_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_latency_one_ram_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_latency_zero_ram_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_mlab_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_parameter_assert.svh" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_pop.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_push.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_token_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_pipeline.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_enable_sink.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_memory_depth_quantization_pkg.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iord.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iord_stall_latency.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iord_stall_valid.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_shift_register_no_reset.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ffwdsrc.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ffwddst.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_host.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_global_load_store.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_burst_coalescer.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_coalescer_dynamic_timeout.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_data_aligner.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_read_cache.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_read_data_alignment.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_unaligned_controller.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_word_coalescer.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_write_data_alignment.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_write_kernel_downstream.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_full_detector.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_decr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iowr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iowr_stall_latency.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_iowr_stall_valid.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_loop_profiler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_sim_latency_tracker.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_loop_limiter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_wire.v" />
+			<FILE name="ip/atax_function_wrapper.sv" />
+			<FILE name="ip/atax_function.sv" />
+			<FILE name="ip/atax_bb_B0_runOnce.sv" />
+			<FILE name="ip/atax_B0_runOnce_branch.sv" />
+			<FILE name="ip/atax_B0_runOnce_merge.sv" />
+			<FILE name="ip/atax_bb_B0_runOnce_stall_region.sv" />
+			<FILE name="ip/atax_B0_runOnce_merge_reg.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_token_i1_wt_limpop_0_reg.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_token_i1_wt_limpush_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv" />
+			<FILE name="ip/atax_bb_B10.sv" />
+			<FILE name="ip/atax_B10_branch.sv" />
+			<FILE name="ip/atax_B10_merge.sv" />
+			<FILE name="ip/atax_bb_B10_stall_region.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_i_23620_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_26_atax0.sv" />
+			<FILE name="ip/atax_bb_B11.sv" />
+			<FILE name="ip/atax_B11_branch.sv" />
+			<FILE name="ip/atax_B11_merge.sv" />
+			<FILE name="ip/atax_bb_B11_stall_region.sv" />
+			<FILE name="ip/atax_bb_B12.sv" />
+			<FILE name="ip/atax_B12_branch.sv" />
+			<FILE name="ip/atax_B12_merge.sv" />
+			<FILE name="ip/atax_bb_B12_stall_region.sv" />
+			<FILE name="ip/atax_B12_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_body73_s_c0_enter774_atax1.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body73_s_c0_exit81_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0004_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it81_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_body73_s_c0_enter774_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_p1024f32_y_out4413_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_7_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_27_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i32_i_334_pop9_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i4_cleanups_pop11_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i4_initerations_pop10_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv8_pop8_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i1_lastiniteration_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i1_notexitcond_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i32_i_334_push9_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i4_cleanups_push11_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i4_initerations_push10_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i7_fpga_indvars_iv8_push8_0.sv" />
+			<FILE name="ip/atax_bb_B13.sv" />
+			<FILE name="ip/atax_B13_branch.sv" />
+			<FILE name="ip/atax_B13_merge.sv" />
+			<FILE name="ip/atax_bb_B13_stall_region.sv" />
+			<FILE name="ip/atax_i_iowr_bl_return_unnamed_atax28_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_token_i1_throttle_push_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv" />
+			<FILE name="ip/atax_bb_B1_start.sv" />
+			<FILE name="ip/atax_B1_start_branch.sv" />
+			<FILE name="ip/atax_B1_start_merge.sv" />
+			<FILE name="ip/atax_bb_B1_start_stall_region.sv" />
+			<FILE name="ip/atax_B1_start_merge_reg.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_p1024a64f32_unnamed_3_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_p1024f32_unnamed_4_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_p1024f32_unnamed_5_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv" />
+			<FILE name="ip/atax_i_iord_bl_call_unnamed_atax2_atax0.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter1_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_atax0.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going50_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i1_notexitcond51_0.sv" />
+			<FILE name="ip/atax_bb_B2.sv" />
+			<FILE name="ip/atax_B2_branch.sv" />
+			<FILE name="ip/atax_B2_merge.sv" />
+			<FILE name="ip/atax_bb_B2_stall_region.sv" />
+			<FILE name="ip/atax_bb_B3.sv" />
+			<FILE name="ip/atax_B3_branch.sv" />
+			<FILE name="ip/atax_B3_merge.sv" />
+			<FILE name="ip/atax_bb_B3_stall_region.sv" />
+			<FILE name="ip/atax_B3_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_body_s_c0_enter542_atax1.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit55_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it55_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter542_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_inc2318_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_p1024f32_x4312_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_7_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i64_unnamed_8_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_2_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_3_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_6_atax0.sv" />
+			<FILE name="ip/atax_bb_B4.sv" />
+			<FILE name="ip/atax_B4_branch.sv" />
+			<FILE name="ip/atax_B4_merge.sv" />
+			<FILE name="ip/atax_bb_B4_stall_region.sv" />
+			<FILE name="ip/atax_B4_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_body13_s_c0_enter575_atax1.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body13_s_c0_exit60_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it60_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_body13_s_c0_enter575_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i64_idxprom15_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i64_idxprom17_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_p1024a64f32_a4211_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_4_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_10_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going37_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i2_cleanups40_pop15_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i2_initerations35_pop14_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i32_j_039_pop13_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pop_i7_fpga_indvars_iv_pop12_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i1_lastiniteration39_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i1_notexitcond47_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i2_cleanups40_push15_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i2_initerations35_push14_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i32_j_039_push13_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_push_i7_fpga_indvars_iv_push12_0.sv" />
+			<FILE name="ip/atax_bb_B5.sv" />
+			<FILE name="ip/atax_B5_branch.sv" />
+			<FILE name="ip/atax_B5_merge.sv" />
+			<FILE name="ip/atax_bb_B5_stall_region.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_i_04014_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_11_atax0.sv" />
+			<FILE name="ip/atax_bb_B6.sv" />
+			<FILE name="ip/atax_B6_branch.sv" />
+			<FILE name="ip/atax_B6_merge.sv" />
+			<FILE name="ip/atax_bb_B6_stall_region.sv" />
+			<FILE name="ip/atax_B6_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_cond28_preheader_s_c0_enter633_atax1.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000er_s_c0_exit65_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_c0000it65_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_cond28_preh0000_s_c0_enter633_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_inc4529_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_inc6931_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_f32_unnamed_16_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_12_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_13_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i64_unnamed_14_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_p67f32_unnamed_15_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_arrayidx32_promoted1_0.sv" />
+			<FILE name="ip/atax_bb_B7.sv" />
+			<FILE name="ip/atax_B7_branch.sv" />
+			<FILE name="ip/atax_B7_merge.sv" />
+			<FILE name="ip/atax_bb_B7_stall_region.sv" />
+			<FILE name="ip/atax_B7_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_body30_s_c0_enter676_atax2.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body30_s_c0_exit70_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it70_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_body30_s_c0_enter676_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_f32_arrayidx32_promoted125_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i64_idxprom3122_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_f32_unnamed_20_atax0.sv" />
+			<FILE name="ip/atax_flt_i_sfc_logic_s_c0_in_for_body30_0000xk5id06uq0cp0jv34qcz.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_18_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_19_atax0.sv" />
+			<FILE name="ip/atax_bb_B8.sv" />
+			<FILE name="ip/atax_B8_branch.sv" />
+			<FILE name="ip/atax_B8_merge.sv" />
+			<FILE name="ip/atax_bb_B8_stall_region.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_f32_add26_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_i_13819_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i32_i_23621_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_p67f32_arrayidx32523_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i32_unnamed_21_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_source_i64_unnamed_22_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_5_0.sv" />
+			<FILE name="ip/atax_bb_B9.sv" />
+			<FILE name="ip/atax_B9_branch.sv" />
+			<FILE name="ip/atax_B9_merge.sv" />
+			<FILE name="ip/atax_bb_B9_stall_region.sv" />
+			<FILE name="ip/atax_B9_merge_reg.sv" />
+			<FILE name="ip/atax_i_sfc_s_c0_in_for_body52_s_c0_enter737_atax1.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body52_s_c0_exit75_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_atax1_full_detector.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it75_atax1_data_fifo.sv" />
+			<FILE name="ip/atax_i_sfc_logic_s_c0_in_for_body52_s_c0_enter737_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_f32_add27_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_ffwd_dest_i64_idxprom5530_0.sv" />
+			<FILE name="ip/atax_flt_i_sfc_logic_s_c0_in_for_body52_0000xk5id06uq0cp0jv34qcz.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_memdep_6_0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_23_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_mem_unnamed_24_atax0.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going37_6_sr.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going37_6_valid_fifo.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going50_1_sr.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going50_1_valid_fifo.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going_6_sr.sv" />
+			<FILE name="ip/atax_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv" />
+			<FILE name="ip/atax_loop_limiter_0.sv" />
+			<FILE name="ip/atax_loop_limiter_1.sv" />
+			<FILE name="ip/atax_loop_limiter_2.sv" />
+			<FILE name="ip/atax_loop_limiter_3.sv" />
+			<FILE name="ip/atax_loop_limiter_4.sv" />
+			<FILE name="ip/atax_loop_limiter_5.sv" />
+			<FILE name="ip/atax_bb_B10_sr_0.sv" />
+			<FILE name="ip/atax_bb_B11_sr_0.sv" />
+			<FILE name="ip/atax_bb_B12_sr_1.sv" />
+			<FILE name="ip/atax_bb_B13_sr_0.sv" />
+			<FILE name="ip/atax_bb_B2_sr_0.sv" />
+			<FILE name="ip/atax_bb_B3_sr_0.sv" />
+			<FILE name="ip/atax_bb_B3_sr_1.sv" />
+			<FILE name="ip/atax_bb_B4_sr_1.sv" />
+			<FILE name="ip/atax_bb_B5_sr_0.sv" />
+			<FILE name="ip/atax_bb_B6_sr_0.sv" />
+			<FILE name="ip/atax_bb_B6_sr_1.sv" />
+			<FILE name="ip/atax_bb_B7_sr_0.sv" />
+			<FILE name="ip/atax_bb_B7_sr_1.sv" />
+			<FILE name="ip/atax_bb_B8_sr_0.sv" />
+			<FILE name="ip/atax_bb_B9_sr_0.sv" />
+			<FILE name="ip/atax_bb_B9_sr_1.sv" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="memdep_4_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="64" optype="write" criticality="33554431" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="unnamed_atax18_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="64" optype="read" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="unnamed_atax24_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="64" optype="read" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="65" optype="write" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="unnamed_atax19_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="65" optype="read" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_2_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="66" optype="write" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_6_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="66" optype="write" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="unnamed_atax23_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="66" optype="read" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="unnamed_atax27_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="66" optype="read" criticality="1048575" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="arrayidx32_promoted1_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="67" optype="read" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="1" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_3_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="67" optype="write" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_5_atax" cosim_name="" type="host" width="2048" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__local" aspace_id="67" optype="write" criticality="0" buffer_location="" group_id="0" connected_to_agent="0" >
+				<CONNECTION port="0" bank="-1" />
+			</INTERFACE>
+			<INTERFACE port="memdep_7_atax" cosim_name="" type="host" width="64" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__global" aspace_id="0" optype="write" criticality="1048575" buffer_location="0" group_id="0" connected_to_agent="0" />
+			<INTERFACE port="unnamed_atax10_atax" cosim_name="" type="host" width="64" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__global" aspace_id="0" optype="read" criticality="33554431" buffer_location="0" group_id="0" connected_to_agent="0" />
+			<INTERFACE port="unnamed_atax6_atax" cosim_name="" type="host" width="64" true_lsu_width="32" burstwidth="1" pipelined="true" addr_space="__global" aspace_id="0" optype="read" criticality="0" buffer_location="0" group_id="0" connected_to_agent="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="A" cosim_name="A" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="64" alignment="0" type_qualifier="" access_qualifier="" type_name="" host_accessible="0" pipe_channel_id="" >
+		 <buffer_location name = "1024"/>
+		</ARGUMENT>
+			<ARGUMENT name="x" cosim_name="x" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="64" alignment="0" type_qualifier="" access_qualifier="" type_name="" host_accessible="0" pipe_channel_id="" >
+		 <buffer_location name = "1024"/>
+		</ARGUMENT>
+			<ARGUMENT name="y_out" cosim_name="y_out" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="64" alignment="0" type_qualifier="" access_qualifier="" type_name="" host_accessible="0" pipe_channel_id="" >
+		 <buffer_location name = "1024"/>
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<IPS>
+			<IP aspace="64" name="acl_arb2" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="6"/>
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="KEEP_LAST_GRANT" value="0"/>
+				<PARAM type="int" name="NO_STALL_NETWORK" value="0"/>
+				<PARAM type="ACLIPParameter" name="PIPELINE" value="NONE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+			</IP>
+			<IP aspace="64" name="acl_avm_to_ic" num_instances="3">
+				<PARAM type="int" name="ADDRESS_W" value="32"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="WRITEDATA_W" value="2048"/>
+			</IP>
+			<IP aspace="64" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="1"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="64" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="2"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="64" name="acl_ic_host_endpoint" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="6"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="1"/>
+			</IP>
+			<IP aspace="64" name="acl_ic_host_endpoint" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="6"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="2"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+			</IP>
+			<IP aspace="64" name="acl_ic_local_mem_router" num_instances="3">
+				<PARAM type="int" name="ADDRESS_W" value="6"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="NUM_BANKS" value="1"/>
+			</IP>
+			<IP aspace="64" name="acl_mem1x" num_instances="1">
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="DEPTH_WORDS" value="64"/>
+				<PARAM type="int" name="ENABLED" value="0"/>
+				<PARAM type="int" name="MEM_LATENCY" value="3"/>
+				<PARAM type="int" name="MINIMIZE_MEMORY_USAGE" value="0"/>
+				<PARAM type="ACLIPParameter" name="RAM_BLOCK_TYPE" value="AUTO"/>
+				<PARAM type="ACLIPParameter" name="RAM_OPERATION_MODE" value="DUAL_PORT"/>
+				<PARAM type="ACLIPParameter" name="RDW_MODE" value="DONT_CARE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+				<PARAM type="int" name="USE_BYTEENA" value="1"/>
+				<PARAM type="int" name="WIDTH" value="2048"/>
+			</IP>
+			<IP aspace="65" name="acl_avm_to_ic" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="32"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="WRITEDATA_W" value="2048"/>
+			</IP>
+			<IP aspace="65" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="1"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="65" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="1"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="65" name="acl_ic_host_endpoint" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="1"/>
+			</IP>
+			<IP aspace="65" name="acl_ic_host_endpoint" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="1"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+			</IP>
+			<IP aspace="65" name="acl_ic_local_mem_router" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="NUM_BANKS" value="1"/>
+			</IP>
+			<IP aspace="65" name="acl_mem1x" num_instances="1">
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="DEPTH_WORDS" value="2"/>
+				<PARAM type="int" name="ENABLED" value="0"/>
+				<PARAM type="int" name="MEM_LATENCY" value="3"/>
+				<PARAM type="int" name="MINIMIZE_MEMORY_USAGE" value="0"/>
+				<PARAM type="ACLIPParameter" name="RAM_BLOCK_TYPE" value="AUTO"/>
+				<PARAM type="ACLIPParameter" name="RAM_OPERATION_MODE" value="DUAL_PORT"/>
+				<PARAM type="ACLIPParameter" name="RDW_MODE" value="DONT_CARE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+				<PARAM type="int" name="USE_BYTEENA" value="1"/>
+				<PARAM type="int" name="WIDTH" value="2048"/>
+			</IP>
+			<IP aspace="66" name="acl_arb2" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="KEEP_LAST_GRANT" value="0"/>
+				<PARAM type="int" name="NO_STALL_NETWORK" value="0"/>
+				<PARAM type="ACLIPParameter" name="PIPELINE" value="NONE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+			</IP>
+			<IP aspace="66" name="acl_arb2" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="KEEP_LAST_GRANT" value="0"/>
+				<PARAM type="int" name="NO_STALL_NETWORK" value="0"/>
+				<PARAM type="ACLIPParameter" name="PIPELINE" value="NONE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+			</IP>
+			<IP aspace="66" name="acl_avm_to_ic" num_instances="4">
+				<PARAM type="int" name="ADDRESS_W" value="32"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="WRITEDATA_W" value="2048"/>
+			</IP>
+			<IP aspace="66" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="2"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="66" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="2"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="66" name="acl_ic_host_endpoint" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="2"/>
+			</IP>
+			<IP aspace="66" name="acl_ic_host_endpoint" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="2"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+			</IP>
+			<IP aspace="66" name="acl_ic_local_mem_router" num_instances="4">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="NUM_BANKS" value="1"/>
+			</IP>
+			<IP aspace="66" name="acl_mem1x" num_instances="1">
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="DEPTH_WORDS" value="2"/>
+				<PARAM type="int" name="ENABLED" value="0"/>
+				<PARAM type="int" name="MEM_LATENCY" value="3"/>
+				<PARAM type="int" name="MINIMIZE_MEMORY_USAGE" value="0"/>
+				<PARAM type="ACLIPParameter" name="RAM_BLOCK_TYPE" value="AUTO"/>
+				<PARAM type="ACLIPParameter" name="RAM_OPERATION_MODE" value="DUAL_PORT"/>
+				<PARAM type="ACLIPParameter" name="RDW_MODE" value="DONT_CARE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+				<PARAM type="int" name="USE_BYTEENA" value="1"/>
+				<PARAM type="int" name="WIDTH" value="2048"/>
+			</IP>
+			<IP aspace="67" name="acl_arb2" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="KEEP_LAST_GRANT" value="0"/>
+				<PARAM type="int" name="NO_STALL_NETWORK" value="0"/>
+				<PARAM type="ACLIPParameter" name="PIPELINE" value="NONE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+			</IP>
+			<IP aspace="67" name="acl_avm_to_ic" num_instances="3">
+				<PARAM type="int" name="ADDRESS_W" value="32"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="WRITEDATA_W" value="2048"/>
+			</IP>
+			<IP aspace="67" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="2"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="67" name="acl_ic_agent_endpoint" num_instances="1">
+				<PARAM type="int" name="AGENT_FIXED_LATENCY" value="3"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="1"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+				<PARAM type="int" name="PIPELINE_RETURN_PATHS" value="0"/>
+				<PARAM type="int" name="RRP_FIFO_DEPTH" value="0"/>
+				<PARAM type="int" name="RRP_USE_LL_FIFO" value="1"/>
+				<PARAM type="int" name="SEPARATE_READ_WRITE_STALLS" value="0"/>
+				<PARAM type="int" name="WRP_FIFO_DEPTH" value="0"/>
+			</IP>
+			<IP aspace="67" name="acl_ic_host_endpoint" num_instances="2">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="0"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="2"/>
+			</IP>
+			<IP aspace="67" name="acl_ic_host_endpoint" num_instances="1">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="ID_W" value="1"/>
+				<PARAM type="int" name="NUM_READ_HOSTS" value="1"/>
+				<PARAM type="int" name="NUM_WRITE_HOSTS" value="0"/>
+			</IP>
+			<IP aspace="67" name="acl_ic_local_mem_router" num_instances="3">
+				<PARAM type="int" name="ADDRESS_W" value="1"/>
+				<PARAM type="int" name="BURSTCOUNT_W" value="1"/>
+				<PARAM type="int" name="BYTEENA_W" value="256"/>
+				<PARAM type="int" name="DATA_W" value="2048"/>
+				<PARAM type="int" name="NUM_BANKS" value="1"/>
+			</IP>
+			<IP aspace="67" name="acl_mem1x" num_instances="1">
+				<PARAM type="int" name="ASYNC_RESET" value="1"/>
+				<PARAM type="int" name="DEPTH_WORDS" value="2"/>
+				<PARAM type="int" name="ENABLED" value="0"/>
+				<PARAM type="int" name="MEM_LATENCY" value="3"/>
+				<PARAM type="int" name="MINIMIZE_MEMORY_USAGE" value="0"/>
+				<PARAM type="ACLIPParameter" name="RAM_BLOCK_TYPE" value="AUTO"/>
+				<PARAM type="ACLIPParameter" name="RAM_OPERATION_MODE" value="DUAL_PORT"/>
+				<PARAM type="ACLIPParameter" name="RDW_MODE" value="DONT_CARE"/>
+				<PARAM type="int" name="SYNCHRONIZE_RESET" value="0"/>
+				<PARAM type="int" name="USE_BYTEENA" value="1"/>
+				<PARAM type="int" name="WIDTH" value="2048"/>
+			</IP>
+		</IPS>
+		<RETURN_DATA width="0" />
+		<PRINTF_FORMAT_STRINGS>
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<GLOBAL_MEM_LATENCY kernel_side_mem_latency="8" arbitration_latency="5" />
+	<STRUCT_TYPE_DEFS>
+		<COMPONENT name="atax">
+			<DEF name="struct_atax_inputs" value="typedef struct packed {\n	logic [63:0] y_out;\n	logic [63:0] x;\n	logic [63:0] A;\n} struct_atax_inputs;\n\n\n" />
+		</COMPONENT>
+	</STRUCT_TYPE_DEFS>
+	<KERNEL_INTERCONNECT>
+		<USM_INTERCONNECT value="0" />
+		<GLOBAL_ATOMICS value="0" />
+		<GLOBAL_INTERCONNECT gmem_id="0" name="0" type="0" />
+		<GLOBAL_READS memory="0" aspace="1024" />
+		<GLOBAL_READS memory="0" aspace="1024" />
+		<GLOBAL_WRITES memory="0" aspace="1024" />
+	</KERNEL_INTERCONNECT>
+</KERNEL_LIST>
