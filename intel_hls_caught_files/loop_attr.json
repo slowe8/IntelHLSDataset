@@ -1,0 +1,371 @@
+{
+  "name":"loop_attributes"
+  , "id":4294967295
+  , "nodes":
+  [
+    {
+      "name":"atax"
+      , "id":327827248
+      , "clk":"No"
+      , "fmax":"240.00"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+            , "line":6
+          }
+        ]
+      ]
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"atax.B0.runOnce"
+          , "id":327699024
+          , "af":"240.00"
+          , "br":"0"
+          , "ci":"0"
+          , "fo":"Disabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"2.000000"
+          , "mi":"n/a"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B1.start"
+          , "id":327692624
+          , "af":"240.00"
+          , "br":"0"
+          , "ci":"1"
+          , "fo":"Disabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"2.000000"
+          , "mi":"1"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Hyper-Optimized loop structure: n/a"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                , "line":6
+              }
+            ]
+          ]
+          , "type":"loop"
+          , "children":
+          [
+            {
+              "name":"atax.B3"
+              , "id":327693792
+              , "af":"240.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"n/a"
+              , "ll":"2"
+              , "lt":"11.000000"
+              , "mi":"n/a"
+              , "pl":"No"
+              , "tc":"0"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: n/a"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                    , "line":15
+                  }
+                ]
+              ]
+              , "type":"loop"
+              , "children":
+              [
+                {
+                  "name":"atax.B4"
+                  , "id":327693872
+                  , "af":"240.00"
+                  , "br":"1"
+                  , "ci":"0"
+                  , "fo":"Disabled"
+                  , "ii":"1"
+                  , "ll":"3"
+                  , "lt":"11.000000"
+                  , "mi":"1"
+                  , "pl":"Yes"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: n/a"
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                        , "line":20
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+              ]
+            }
+            , {
+              "name":"atax.B5"
+              , "id":327693952
+              , "af":"240.00"
+              , "br":"1"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"2.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B2"
+              , "id":327693712
+              , "af":"240.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"0.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"Fused loop atax.B6"
+              , "id":327694032
+              , "af":"240.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"n/a"
+              , "ll":"2"
+              , "lt":"9.000000"
+              , "mi":"n/a"
+              , "pl":"No"
+              , "tc":"0"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: n/a"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                    , "line":37
+                  }
+                ]
+              ]
+              , "type":"loop"
+              , "children":
+              [
+                {
+                  "name":"atax.B7"
+                  , "id":327694112
+                  , "af":"240.00"
+                  , "br":"1"
+                  , "ci":"0"
+                  , "fo":"Disabled"
+                  , "ii":"n/a"
+                  , "ll":"3"
+                  , "lt":"13.000000"
+                  , "mi":"n/a"
+                  , "pl":"No"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: n/a"
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                        , "line":30
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+                , {
+                  "name":"atax.B8"
+                  , "id":327694192
+                  , "af":"240.00"
+                  , "br":"0"
+                  , "ci":"0"
+                  , "fo":"Disabled"
+                  , "ii":"1"
+                  , "ll":"3"
+                  , "lt":"2.000000"
+                  , "mi":"n/a"
+                  , "pl":"Yes"
+                  , "tc":"0"
+                  , "tn":"1"
+                  , "type":"bb"
+                }
+                , {
+                  "name":"atax.B9"
+                  , "id":327694272
+                  , "af":"240.00"
+                  , "br":"1"
+                  , "ci":"0"
+                  , "fo":"Disabled"
+                  , "ii":"n/a"
+                  , "ll":"3"
+                  , "lt":"14.000000"
+                  , "mi":"n/a"
+                  , "pl":"No"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: n/a"
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                        , "line":40
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+              ]
+            }
+            , {
+              "name":"atax.B10"
+              , "id":327694352
+              , "af":"240.00"
+              , "br":"1"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"2.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B11"
+              , "id":327694432
+              , "af":"240.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"0.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B12"
+              , "id":327694512
+              , "af":"240.00"
+              , "br":"1"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"12.000000"
+              , "mi":"1"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: n/a"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/mnt/vault0/slowe8/IntelHLSDataset/polybench/atax/src/atax_0.c"
+                    , "line":46
+                  }
+                ]
+              ]
+              , "type":"loop"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B13"
+          , "id":327694592
+          , "af":"240.00"
+          , "br":"0"
+          , "ci":"0"
+          , "fo":"Disabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"1.000000"
+          , "mi":"n/a"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "type":"bb"
+        }
+      ]
+    }
+  ]
+}
