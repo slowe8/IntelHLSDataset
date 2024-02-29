@@ -1,11 +1,7 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <math.h>
-#include "ap_cint.h"
 #include "syr2k.h"
 
-void syr2k(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D_out[N][N]){
+
+component void syr2k(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D_out[N][N]){
 	int i, j, k;
 	DATA_TYPE buff_A0[N][N], buff_A1[N][N];
 	DATA_TYPE buff_B0[N][N], buff_B1[N][N];

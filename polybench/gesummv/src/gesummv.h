@@ -1,4 +1,9 @@
-#include "ap_cint.h"
+#include <unistd.h>
+#include <string.h>
+#include <math.h>
+#include <HLS/hls.h>
+#include <HLS/stdio.h>
+
 
 #define N 64
 

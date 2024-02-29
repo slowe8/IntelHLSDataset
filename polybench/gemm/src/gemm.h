@@ -1,10 +1,12 @@
 #ifndef _LU_H
 #define _LU_H
 
-#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
+#include <HLS/stdio.h>
+#include <HLS/hls.h>
+
 
 #define N  64
 #define DATA_TYPE float
