@@ -1,11 +1,6 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <math.h>
-#include "ap_cint.h"
 #include "syrk.h"
 
-void syrk(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C_out[N][N]) {
+component void syrk(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C_out[N][N]) {
 	int i, j, k;
 
 	DATA_TYPE buff_A0[N][N], buff_A1[N][N];
@@ -46,4 +41,5 @@ void syrk(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N],
 		}
 	}
 }
+
 
