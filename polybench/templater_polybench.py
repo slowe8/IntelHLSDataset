@@ -6,7 +6,7 @@
 #           2. source file to replicate (ex "atax/src/atax.c")
 #           3. name of benchmark we are working with (ex "atax")
 # Example call: "python3 templater_polybench.py opt_template.tcl atax/src/atax.c atax"
-
+#python3 templater_polybench.py /home/nanditha/Downloads/Intel_HLS/IntelHLSDataset/polybench/gemm/opt_template.tcl /home/nanditha/Downloads/Intel_HLS/IntelHLSDataset/polybench/gemm/src/gemm.c aes256_encrypt_ecb
 
 import os
 import sys
@@ -51,7 +51,7 @@ def Populate(parent, sections, name, pipelined, factor, level):
     return newNode
 
 def CreateFactors(node, factorList, level, total):
-    if node.visited is 1:
+    if node.visited == 1:
         return False
     for child in node.children:
         if CreateFactors(child, factorList, (level+1), total):
