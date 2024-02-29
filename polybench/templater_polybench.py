@@ -51,7 +51,7 @@ def Populate(parent, sections, name, pipelined, factor, level):
     return newNode
 
 def CreateFactors(node, factorList, level, total):
-    if node.visited is 1:
+    if node.visited == 1:
         return False
     for child in node.children:
         if CreateFactors(child, factorList, (level+1), total):

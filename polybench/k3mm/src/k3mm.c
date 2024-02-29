@@ -1,11 +1,8 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <math.h>
-
 #include "k3mm.h"
 
-void k3mm(DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D[N][N], DATA_TYPE E_out[N][N])
+
+
+component void k3mm(DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D[N][N], DATA_TYPE E_out[N][N])
 {
     int i, j, k;
 

@@ -1,7 +1,7 @@
 #include "k2mm.h"
 
 /* D := alpha*A*B*C + beta*D */
-void k2mm(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D[N][N], DATA_TYPE E_out[N][N])
+component void k2mm(DATA_TYPE alpha, DATA_TYPE beta, DATA_TYPE A[N][N], DATA_TYPE B[N][N], DATA_TYPE C[N][N], DATA_TYPE D[N][N], DATA_TYPE E_out[N][N])
 {
     int i, j, k;
     DATA_TYPE buff_A[N][N]; 
