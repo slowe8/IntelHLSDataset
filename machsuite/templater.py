@@ -13,6 +13,13 @@ loop_names = []
 loop_factors = []
 loop_pipeline = []
 
+class Partition:
+    def __init__(self, name, function, dimension, types):
+        self.name = name
+        self.function = function
+        self.dimension = dimension
+        self.types = types
+        
 
 class Node:
     def __init__(self) :
@@ -66,6 +73,10 @@ for line in template_file:
         for n in factors:
             partition_factors[-1].append(int(n))
 
+        for i in range(num_arrs):
+            array_line = template_file.readline().split()
+            new_array = Partition(array_line[-1], array_line[-2], array_line[-3], re.split('[\]', array_types )
+                    
     elif 'loop_opt,' in line:
         isLoop = True
         continue
