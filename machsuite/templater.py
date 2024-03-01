@@ -1,6 +1,6 @@
 import os
 import sys
-
+import re
 
 template_file = open(sys.argv[1], 'r')
 bench = open(sys.argv[2], 'r')
@@ -148,7 +148,7 @@ for partitionFactor in partitionFactors:
     for factorList in allFactors:
         #print(factorList)
         bench.seek(0,0)
-        filename = f'./' + bench_name + '/intelversions/' + bench_name + '_' + str(count) + '.c'
+        filename = f'./' + bench_name + '/src/' + bench_name + '_' + str(count) + '.c'
         
         if os.path.isfile(filename):
             os.remove(filename)
@@ -156,6 +156,7 @@ for partitionFactor in partitionFactors:
         newBench = open(filename, 'a+')
         isFunctionDecl = False
         for line in bench:
+            newLine = line
             isFunctionDecl = False
             isPartitionLoop = False
             for partitionName in partitionNames:
@@ -165,7 +166,6 @@ for partitionFactor in partitionFactors:
                         split_function = re.split('[()[\]{}\s]', line)
                         array_idx = 0
                         
-                        new_line = ''
 
                         for i in range(len(split_function)):
                             if partitionName == split_function[i]:
@@ -176,13 +176,14 @@ for partitionFactor in partitionFactors:
                         array_dim = split_function[i + array_idx]
 
                         new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
-                        new_line_e = array_type  + " *" + array
+                        new_line_e = array_type  + " *" + partitionName
 
                         # Add directives here
                         directives = ''
 
-                        line_to_replace = array_type + ' ' + array + '[' + str(array_dim) + ']'
-                        new_line = new_line.replace(line_to_replace, new_line_b + directives + new_line_e)
+                        line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
+                        newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+
             if not isFunctionDecl:
                 newLine = line
                 for partitionLoopName in partitionLoopNames:
