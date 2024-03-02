@@ -1,4 +1,4 @@
-q# Authored by: 	Sean Lowe
+# Authored by: 	Sean Lowe
 # Description: 	This file takes in a benchmark set and a specific benchmark in 
 #		the set an runs each design iteration in the source file for 
 #		the benchmark through HLS and Quartus Compilation
