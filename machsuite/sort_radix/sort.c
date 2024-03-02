@@ -75,7 +75,7 @@ void update(int b[SIZE], int bucket[BUCKETSIZE], int a[SIZE], int exp)
     }
 }
 
-void ss_sort(int a[SIZE], int b[SIZE], int bucket[BUCKETSIZE], int sum[SCAN_RADIX]){
+component void ss_sort(int a[SIZE], int b[SIZE], int bucket[BUCKETSIZE], int sum[SCAN_RADIX]){
     int exp=0;
     int valid_buffer=0;
     #define BUFFER_A 0

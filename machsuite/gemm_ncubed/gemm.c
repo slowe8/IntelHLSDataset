@@ -1,6 +1,6 @@
 #include "gemm.h"
 
-void gemm( TYPE m1[N], TYPE m2[N], TYPE prod[N] ){
+component void gemm( TYPE m1[N], TYPE m2[N], TYPE prod[N] ){
     int i, j, k;
     int k_col, i_col;
     TYPE mult;

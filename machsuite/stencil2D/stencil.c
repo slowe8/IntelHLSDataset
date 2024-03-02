@@ -1,6 +1,6 @@
 #include "stencil.h"
 
-void stencil (TYPE orig[row_size * col_size], TYPE sol[row_size * col_size], TYPE filter[f_size]){
+component void stencil (TYPE orig[row_size * col_size], TYPE sol[row_size * col_size], TYPE filter[f_size]){
     int r, c, k1, k2;
     TYPE temp, mul;
 

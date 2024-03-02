@@ -7,7 +7,7 @@ SC 2008
 
 #include "stencil.h"
 
-void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
+component void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
     int i, j, k;
     TYPE sum0, sum1, mul0, mul1;
 

@@ -3,7 +3,7 @@
 #define MIN(x,y) ( (x)<(y) ? (x) : (y) )
 #define MAX(x,y) ( (x)>(y) ? (x) : (y) )
 
-void md( int n_points[blockSide][blockSide][blockSide],
+component void md( int n_points[blockSide][blockSide][blockSide],
          dvector_t force[blockSide][blockSide][blockSide][densityFactor],
          dvector_t position[blockSide][blockSide][blockSide][densityFactor] )
 {

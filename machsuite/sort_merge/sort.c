@@ -28,7 +28,7 @@ void merge(TYPE a[SIZE], int start, int m, int stop){
     }
 }
 
-void ms_mergesort(TYPE a[SIZE]) {
+component void ms_mergesort(TYPE a[SIZE]) {
     int start, stop;
     int i, m, from, mid, to;
 
