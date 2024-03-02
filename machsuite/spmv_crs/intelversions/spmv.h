@@ -4,7 +4,7 @@ http://www.cs.berkeley.edu/~mhoemmen/matrix-seminar/slides/UCB_sparse_tutorial_1
 */
 
 #include <stdlib.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
 

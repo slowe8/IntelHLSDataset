@@ -4,25 +4,24 @@ http://www.cs.berkeley.edu/~mhoemmen/matrix-seminar/slides/UCB_sparse_tutorial_1
 */
 
 #include <stdlib.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
 
 // These constants valid for the IEEE 494 bus interconnect matrix
 #define NNZ 1666
 #define N 494
+#define L 10
 
 #define TYPE double
 
-void spmv(TYPE val[NNZ], int32_t cols[NNZ], int32_t rowDelimiters[N + 1],
-          TYPE vec[N], TYPE out[N]);
+void ellpack(TYPE nzval[N*L], int32_t cols[N*L], TYPE vec[N], TYPE out[N]);
 ////////////////////////////////////////////////////////////////////////////////
 // Test harness interface code.
 
 struct bench_args_t {
-  TYPE val[NNZ];
-  int32_t cols[NNZ];
-  int32_t rowDelimiters[N+1];
+  TYPE nzval[N*L];
+  int32_t cols[N*L];
   TYPE vec[N];
   TYPE out[N];
 };

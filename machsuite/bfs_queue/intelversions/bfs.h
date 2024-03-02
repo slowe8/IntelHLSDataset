@@ -1,24 +1,21 @@
 /*
-Implementations based on:
-Harish and Narayanan. "Accelerating large graph algorithms on the GPU using CUDA." HiPC, 2007.
+Implementation based on:
 Hong, Oguntebi, Olukotun. "Efficient Parallel Graph Exploration on Multi-Core CPU and GPU." PACT, 2011.
 */
 
 #include <stdlib.h>
 #include <inttypes.h>
 #include <string.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
-
 
 // Terminology (but not values) from graph500 spec
 //   graph density = 2^-(2*SCALE - EDGE_FACTOR)
 #define SCALE 8
 #define EDGE_FACTOR 16
 
-//N_NODES equla to 256
-#define N_NODES (1LL<<SCALE)
+#define N_NODES (1<<SCALE)
 #define N_EDGES (N_NODES*EDGE_FACTOR)
 
 // upper limit
@@ -55,4 +52,3 @@ struct bench_args_t {
 };
 
 void bfs(node_t nodes[N_NODES], edge_t edges[N_EDGES], node_index_t starting_node, level_t level[N_NODES], edge_index_t level_counts[N_LEVELS]);
-

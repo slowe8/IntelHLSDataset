@@ -5,7 +5,7 @@ V. Volkov and B. Kazian. Fitting fft onto the g80 architecture. 2008.
 
 #include <stdlib.h>
 #include <math.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
 
