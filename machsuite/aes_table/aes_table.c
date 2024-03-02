@@ -125,7 +125,7 @@ void aes_expandEncKey(uint8_t *k, uint8_t *rc)
 } /* aes_expandEncKey */
 
 /* -------------------------------------------------------------------------- */
-component void aes256_encrypt_ecb(aes256_context *ctx, hls_avalon_slave_memory_argument(32) hls_numbanks(4) hls_bankwidth(sizeof(uint8_t)) uint8_t * k, hls_avalon_slave_memory_argument(16) hls_numbanks(4) hls_bankwidth(sizeof(uint8_t)) uint8_t * buf)
+component void aes256_encrypt_ecb(aes256_context *ctx,  uint8_t k[32], uint8_t buf[16])
 {
     //INIT
     uint8_t rcon = 1;
