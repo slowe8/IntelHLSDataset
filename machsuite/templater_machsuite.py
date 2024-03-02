@@ -81,7 +81,7 @@ for line in template_file:
         if "set_directive_array_partition" in line:
             line_s = line.split(" ")
             if line_s[-1] != "\n": # fixed error where if the tcl file line ended with "var \n" instead of "var\n" it would mess everything up
-                                   # yes i know there is a better way to do this im tired im so tired pls let me see my family (joke)
+                                   # yes i know there is a better way to do this im tired
                 partitionNames.append(line_s[-1])
             else:
                 partitionNames.append(line_s[-2])
