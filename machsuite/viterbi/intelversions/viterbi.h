@@ -6,7 +6,7 @@ Lawrence Rabiner. "A Tutorial on Hidden Markov Models and Selected Applications 
 #include <stdlib.h>
 #include <stdint.h>
 #include <fcntl.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
 

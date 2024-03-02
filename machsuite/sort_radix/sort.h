@@ -5,10 +5,11 @@ The scalable heterogeneous computing (shoc) benchmark suite.
 In Proceedings of the 3rd Workshop on General-Purpose Computation on Graphics Processing Units, 2010
 */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../common/support.h"
+#include "../common/support.h"
+#include <HLS/hls.h> 
+#include <HLS/stdio.h>
 
 #define TYPE int32_t
 #define TYPE_MAX INT32_MAX

@@ -1,6 +1,6 @@
 //Standard Libraries
 #include <stdlib.h>
-#include "../common/support.h"
+#include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
 
