@@ -15,8 +15,8 @@ benchmark=$2
 design=$3
 
 # Go to the specified source directory
-if [ -d ./$benchmark_family/$benchmark/src ]; then
-	cd ./$benchmark_family/$benchmark/src
+if [ -d ./$benchmark_family/$benchmark/intelversions ]; then
+	cd ./$benchmark_family/$benchmark/intelversions
 else
 	echo "Not a valid benchmark."
 	exit 1
@@ -24,7 +24,7 @@ fi
 
 # Run an HLS Compilation
 # - We should consider making the target device an argument to this script
-i++ -march="Cyclone 10 GX" -ghdl --clock 10ns --component $benchmark $design.c --simulator "none" -v -o $design
+i++ -march=1ST110EN1F43E1VG -ghdl --clock 10ns --component $benchmark $design.c --simulator "none" -v -o $design
 
 # Go to the created project directory
 cd ./$design.prj/quartus/

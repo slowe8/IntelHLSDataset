@@ -1,19 +1,12 @@
-# Authors: Allison Seigler (UT-Austin), Sean Lowe (ASU)
-# Description: Parses a Vitis .tcl file with specifications for HLS compilation, turns those into
-#              equivalent Intel i++ source files with inserted pragmas
-# Arguments:
-#           1. template tcl file to pull from (ex "opt_template.tcl")
-#           2. source file to replicate (ex "atax/src/atax.c")
-#           3. name of benchmark we are working with (ex "atax")
-# Example call: "python3 templater_polybench.py opt_template.tcl atax/src/atax.c atax"
-#python3 templater_polybench.py /home/nanditha/Downloads/Intel_HLS/IntelHLSDataset/polybench/gemm/opt_template.tcl /home/nanditha/Downloads/Intel_HLS/IntelHLSDataset/polybench/gemm/src/gemm.c aes256_encrypt_ecb
+# Example call: "python templater.py aes_table/template_table.tcl aes_table/aes_table.c aes_table"
 
 import os
 import sys
+import re
 
-templateFile = open(sys.argv[1], 'r')
+template_file = open(sys.argv[1], 'r')
 bench = open(sys.argv[2], 'r')
-benchName = sys.argv[3]
+bench_name = sys.argv[3]
 
 components = []
 partitionFactors = []
@@ -24,22 +17,21 @@ loopFactors = []
 partitionPipelines = []
 partitions = False
 
-
 # Nodes are for creating all permutations we need of different loop names and factors
 class Node:
     def __init__(self) :
-        self.name = "\0"
+        self.names = []
         self.factor = 0
         self.pipelined = False
         self.visited = 0
         self.children = []
         self.parent = None
     
-def Populate(parent, sections, name, pipelined, factor, level):
+def Populate(parent, sections, names, pipelined, factor, level):
     newNode = Node()
     if parent is not None:
         newNode.parent = parent
-        newNode.name = name
+        newNode.names = names
         newNode.factor = factor
         newNode.pipelined = pipelined
     if level is len(sections):
@@ -55,7 +47,7 @@ def CreateFactors(node, factorList, level, total):
         return False
     for child in node.children:
         if CreateFactors(child, factorList, (level+1), total):
-            factorList.append({"name": child.name, "factor": child.factor, "pipelined":child.pipelined})
+            factorList.append({"name": child.names, "factor": child.factor, "pipelined":child.pipelined})
             return True
     node.visited = 1
     if level == total:
@@ -64,17 +56,15 @@ def CreateFactors(node, factorList, level, total):
         return False
 
 
+
 isLoop = False
 newLoopSection = False
 currSection = -1
 loopSections = list()
-while True:
-    line = templateFile.readline()
-    if not line:
-        break
-
+for line in template_file:
     line = line.strip()
-    if 'inline' in line: # does nothing currently
+
+    if 'inline' in line:
         line_s = line.split()
         components.append(line_s[1])
     elif 'array_partition,' in line: # indicates beginning of array partition specifications
@@ -93,14 +83,14 @@ while True:
             line_s = line.split(" ")
             partitionNames.append(line_s[-1])
             partitionNames[-1] = partitionNames[-1].replace("\n", "")
-        elif "set_directive_unroll" in line:
+        elif "set_directive_unroll" in line: #leaving this in here for now because it doesn't hurt, but we don't need for machsuite
             line_s = line.split(" ")
             partitionLoopName = line_s[-1].split("/")[-1]
             partitionLoopName = partitionLoopName.replace("\"", "")
             partitionLoopName = partitionLoopName.replace("\n", "")
             partitionLoopNames.append(partitionLoopName)
             partitionPipelines.append(False)
-        elif "set_directive_pipeline" in line:
+        elif "set_directive_pipeline" in line: #leaving this in here for now because it doesn't hurt, but we don'tneed for machsuite
             line_s = line.split(" ")
             partitionLoopName = line_s[-1].split("/")[-1]
             partitionLoopName = partitionLoopName.replace("\"", "")
@@ -124,7 +114,10 @@ while True:
             continue
 
         line_s = line.split(',')
-        name = line_s[1]
+        if "/" in line_s[1]:
+            loopNamesTemp = line_s[1].split("/")
+        else:
+            loopNamesTemp = [line_s[1]]
         factors = line_s[-1].replace('[', '')
         factors = factors.replace(']','')
         factors = factors.split()
@@ -132,13 +125,12 @@ while True:
         if line_s[2] == "pipeline":
             pipelined = True
         newLoop = {}
-        newLoop["name"] = name
+        newLoop["name"] = loopNamesTemp
         newLoop["factors"] = factors
         newLoop["pipelined"] = pipelined
         loopSections[currSection].append(newLoop)
 
-
-root = Populate(None, loopSections, "\0", False, 0, 0)
+root = Populate(None, loopSections, [], False, 0, 0)
 allFactors = []
 factorList = list()
 i = 0
@@ -150,6 +142,8 @@ except IndexError:
     print("index error here idk why\n")
 
 
+
+
 count = 1
 isPartitionLoop = False
 
@@ -157,24 +151,49 @@ for partitionFactor in partitionFactors:
     for factorList in allFactors:
         #print(factorList)
         bench.seek(0,0)
-        filename = f'' + benchName + '/intelversions/' + benchName + '_' + str(count) + '.c'
+        filename = f'./' + bench_name + '/intelversions/' + bench_name + '_' + str(count) + '.c'
         
         if os.path.isfile(filename):
             os.remove(filename)
 
         newBench = open(filename, 'a+')
-
+        isFunctionDecl = False
         for line in bench:
             newLine = line
+            isFunctionDecl = False
             isPartitionLoop = False
-            if 'DATA_TYPE' in line:
-                if benchName not in line:
-                    array = line.split(" ")[-1]
-                    array = array.split("[")[0]
-                    if array in partitionNames:
-                        newBench.write("hls_numbanks(" + str(partitionFactor) + ")\n") # we can add bankbits or bankwidth here too, just not sure about the state of things
-            else:
+            firstRun = True
+            #print(partitionNames)
+            for partitionName in partitionNames:
+                if partitionName in line:
+                    if 'component' in line:
+                        isFunctionDecl = True
+                        split_function = re.split('[()[\]{}\s+]', line)
+                        #print(split_function)
+                        array_idx = 0
+                        
+
+                        for i in range(len(split_function)):
+                            if partitionName == split_function[i]:
+                                #print(str(i))
+                                break
+
+                        array_type = split_function[i - 1]
+                        array_dim = split_function[i + 1]
+
+                        new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                        new_line_e = array_type  + " *" + partitionName
+
+                        directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                        
+                        line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
+                        newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                        #print(newLine)
+
+
+            if not isFunctionDecl:
                 for partitionLoopName in partitionLoopNames:
+                    print("machsuite probably shouldn't be here")
                     if partitionLoopName in line and ":" in line:
                         if not partitionPipelines[partitionLoopNames.index(partitionLoopName)]:
                             newBench.write("#pragma disable_loop_pipelining\n")
@@ -184,17 +203,19 @@ for partitionFactor in partitionFactors:
                         isPartitionLoop = True
                 if not isPartitionLoop:
                     for loop in factorList:
-                        if loop["name"] in line and ":" in line:
-                            if not loop["pipelined"]:
-                                newBench.write("#pragma disable_loop_pipelining\n")
-                            newBench.write("#pragma unroll " + loop["factor"] + '\n')
-                            lineParsed = line.split(":")
-                            newLine = lineParsed[1]
-            if "register" in newLine:
-                newLine = newLine.replace("register", "")
+                        for name in loop["name"]:
+                            if name in line and ":" in line:
+                                if not loop["pipelined"]:
+                                    newBench.write("#pragma disable_loop_pipelining\n")
+                                newBench.write("#pragma unroll " + loop["factor"] + '\n')
+                                lineParsed = line.split(":")
+                                newLine = lineParsed[1]
+                if "register" in newLine:
+                    newLine = newLine.replace("register", "hls_register")
+                if ("hls_hls_register" in newLine):
+                    newLine = newLine.replace("hls_hls_register", "hls_register")
 
             newBench.write(newLine)
 
         newBench.close()
         count += 1
-
