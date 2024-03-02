@@ -130,7 +130,7 @@ void aes_expandEncKey(uint8_t *k, uint8_t *rc)
 } /* aes_expandEncKey */
 
 /* -------------------------------------------------------------------------- */
-void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
+component void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
 {
     //INIT
     uint8_t rcon = 1;

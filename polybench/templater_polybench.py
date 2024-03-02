@@ -73,6 +73,7 @@ while True:
     if not line:
         break
 
+    line = line.strip()
     if 'inline' in line: # does nothing currently
         line_s = line.split()
         components.append(line_s[1])
@@ -196,7 +197,4 @@ for partitionFactor in partitionFactors:
 
         newBench.close()
         count += 1
-
-        
-
 

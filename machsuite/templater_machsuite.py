@@ -62,6 +62,7 @@ newLoopSection = False
 currSection = -1
 loopSections = list()
 for line in template_file:
+    line = line.strip()
 
     if 'inline' in line:
         line_s = line.split()
@@ -80,11 +81,7 @@ for line in template_file:
                      # always match array partitions
         if "set_directive_array_partition" in line:
             line_s = line.split(" ")
-            if line_s[-1] != "\n": # fixed error where if the tcl file line ended with "var \n" instead of "var\n" it would mess everything up
-                                   # yes i know there is a better way to do this im tired
-                partitionNames.append(line_s[-1])
-            else:
-                partitionNames.append(line_s[-2])
+            partitionNames.append(line_s[-1])
             partitionNames[-1] = partitionNames[-1].replace("\n", "")
         elif "set_directive_unroll" in line: #leaving this in here for now because it doesn't hurt, but we don't need for machsuite
             line_s = line.split(" ")
