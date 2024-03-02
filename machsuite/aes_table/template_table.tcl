@@ -15,7 +15,7 @@ set_directive_inline aes_shiftRows
 
 #dim = 5
 array_partition,3,[1 2 4 8 16],[cyclic]
-set_directive_array_partition -factor [factor] -type [type] -dim 1 "aes256_encrypt_ecb" k 
+set_directive_array_partition -factor [factor] -type [type] -dim 1 "aes256_encrypt_ecb" k
 set_directive_array_partition -factor [factor] -type [type] -dim 1 "aes256_encrypt_ecb" buf
 set_directive_array_partition -factor [factor] -type [type] -dim 1 "aes256_encrypt_ecb" sbox
 

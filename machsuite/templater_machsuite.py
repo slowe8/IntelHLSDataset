@@ -80,7 +80,11 @@ for line in template_file:
                      # always match array partitions
         if "set_directive_array_partition" in line:
             line_s = line.split(" ")
-            partitionNames.append(line_s[-1])
+            if line_s[-1] != "\n": # fixed error where if the tcl file line ended with "var \n" instead of "var\n" it would mess everything up
+                                   # yes i know there is a better way to do this im tired im so tired pls let me see my family (joke)
+                partitionNames.append(line_s[-1])
+            else:
+                partitionNames.append(line_s[-2])
             partitionNames[-1] = partitionNames[-1].replace("\n", "")
         elif "set_directive_unroll" in line: #leaving this in here for now because it doesn't hurt, but we don't need for machsuite
             line_s = line.split(" ")
@@ -161,28 +165,34 @@ for partitionFactor in partitionFactors:
             newLine = line
             isFunctionDecl = False
             isPartitionLoop = False
+            firstRun = True
+            #print(partitionNames)
             for partitionName in partitionNames:
                 if partitionName in line:
                     if 'component' in line:
                         isFunctionDecl = True
-                        split_function = re.split('[()[\]{}\s]', line)
+                        split_function = re.split('[()[\]{}\s+]', line)
+                        #print(split_function)
                         array_idx = 0
                         
 
                         for i in range(len(split_function)):
                             if partitionName == split_function[i]:
-                                array_idx = i
+                                #print(str(i))
                                 break
-                        
-                        array_type = split_function[array_idx - 1]
-                        array_dim = split_function[array_idx + 1]
+
+                        array_type = split_function[i - 1]
+                        array_dim = split_function[i + 1]
 
                         new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
                         new_line_e = array_type  + " *" + partitionName
 
                         directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                        
                         line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
                         newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                        #print(newLine)
+
 
             if not isFunctionDecl:
                 for partitionLoopName in partitionLoopNames:
