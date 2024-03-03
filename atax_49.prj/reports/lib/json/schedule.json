@@ -1,0 +1,2530 @@
+{
+  "1013048472":
+  {
+    "nodes":
+    [
+      {
+        "name":"atax.B0.runOnce"
+        , "id":1013677136
+        , "start":"0"
+        , "end":"17"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"?"
+            , "id":1017817232
+            , "start":"0"
+            , "end":"17"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"0"
+                , "Latency":"17"
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"atax.B1.start"
+        , "id":1013670736
+        , "start":"17"
+        , "end":"125"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 0"
+            , "id":1012101792
+            , "start":"17"
+            , "end":"52"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_wt_entry_ataxs_c0_enter11_atax0"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"35"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Exit"
+                , "id":1026643360
+                , "start":"21"
+                , "end":"52"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"4"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"16"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"?"
+            , "id":1027477312
+            , "start":"52"
+            , "end":"69"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"35"
+                , "Latency":"17"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"RD"
+            , "id":1027916160
+            , "start":"69"
+            , "end":"93"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Read"
+                , "Width":"192 bits"
+                , "Depth":"0"
+                , "Stream Name":"call.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"52"
+                , "Latency":"24"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":5
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 1"
+            , "id":1017278096
+            , "start":"93"
+            , "end":"125"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c1_in_wt_entry_ataxs_c1_enter_atax4"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"76"
+                , "Cluster Latency":"32"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"FFwd Src"
+                , "id":1022165984
+                , "start":"94"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"77"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":1022163760
+                , "start":"94"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"77"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Src"
+                , "id":1017808720
+                , "start":"94"
+                , "end":"94"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Source"
+                    , "Start Cycle":"77"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1027353616
+                , "start":"94"
+                , "end":"125"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"77"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B3"
+        , "id":1013671952
+        , "start":"125"
+        , "end":"225"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 2"
+            , "id":1017441920
+            , "start":"125"
+            , "end":"161"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body_ataxs_c0_enter9612_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"36"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":1019594192
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1026639136
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":20
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1018927520
+                , "start":"129"
+                , "end":"130"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":20
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1023196192
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":17
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1018372544
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1018375184
+                , "start":"129"
+                , "end":"130"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":19
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":1019595520
+                , "start":"130"
+                , "end":"130"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1019597744
+                , "start":"130"
+                , "end":"130"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1027587392
+                , "start":"130"
+                , "end":"161"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"5"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"256"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"LD"
+            , "id":1027743968
+            , "start":"161"
+            , "end":"192"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"36"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":18
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 3"
+            , "id":1017922576
+            , "start":"192"
+            , "end":"225"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c1_in_for_body_ataxs_c1_enter101_atax5"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"67"
+                , "Cluster Latency":"33"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Ptr. Comp."
+                , "id":1044993280
+                , "start":"192"
+                , "end":"193"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"67"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1044995920
+                , "start":"193"
+                , "end":"194"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"68"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1027493920
+                , "start":"194"
+                , "end":"225"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"69"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B4"
+        , "id":1013672032
+        , "start":"225"
+        , "end":"326"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 4"
+            , "id":1018090032
+            , "start":"225"
+            , "end":"262"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body13_ataxs_c0_enter10515_atax3"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"37"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"?"
+                , "id":1047543728
+                , "start":"229"
+                , "end":"229"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":18
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":1047540176
+                , "start":"230"
+                , "end":"230"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1048566656
+                , "start":"230"
+                , "end":"230"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":22
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1048562240
+                , "start":"229"
+                , "end":"231"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"2"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":23
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":1047541504
+                , "start":"230"
+                , "end":"230"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1047544704
+                , "start":"229"
+                , "end":"231"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"2"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":23
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1020704800
+                , "start":"231"
+                , "end":"262"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"6"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"256"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"LD"
+            , "id":1027927120
+            , "start":"262"
+            , "end":"293"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Load"
+                , "Width":"32 bits"
+                , "LSU Style":"Pipelined"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"37"
+                , "Latency":"31"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":23
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 5"
+            , "id":1018488928
+            , "start":"293"
+            , "end":"326"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c1_in_for_body13_ataxs_c1_enter118_atax7"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"68"
+                , "Cluster Latency":"33"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"ST"
+                , "id":1026548096
+                , "start":"294"
+                , "end":"295"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"69"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":23
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1026552416
+                , "start":"295"
+                , "end":"326"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"70"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B5"
+        , "id":1013672112
+        , "start":"326"
+        , "end":"326"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B2"
+        , "id":1013671872
+        , "start":"326"
+        , "end":"326"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"Fused loop atax.B6"
+        , "id":1013672192
+        , "start":"326"
+        , "end":"365"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 6"
+            , "id":1018689744
+            , "start":"326"
+            , "end":"365"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_cond28_preheader_ataxs_c0_enter12313_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"39"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":1045027744
+                , "start":"330"
+                , "end":"330"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1045029072
+                , "start":"330"
+                , "end":"330"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1022144864
+                , "start":"330"
+                , "end":"334"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"4"
+                    , "Latency":"4"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1026562560
+                , "start":"330"
+                , "end":"330"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":27
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1025731088
+                , "start":"334"
+                , "end":"365"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"8"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"256"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B7"
+        , "id":1013672272
+        , "start":"365"
+        , "end":"413"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 7"
+            , "id":1019147792
+            , "start":"365"
+            , "end":"413"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body30_ataxs_c0_enter13916_atax7"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"48"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"buff_A"
+                , "id":1048530000
+                , "start":"369"
+                , "end":"369"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_A"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":1048528672
+                , "start":"370"
+                , "end":"370"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1048530976
+                , "start":"369"
+                , "end":"370"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1048534864
+                , "start":"370"
+                , "end":"376"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"5"
+                    , "Latency":"6"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1026627760
+                , "start":"370"
+                , "end":"372"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"5"
+                    , "Latency":"2"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1026630400
+                , "start":"372"
+                , "end":"376"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1026603120
+                , "start":"371"
+                , "end":"371"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":29
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"tmp1"
+                , "id":1047174496
+                , "start":"369"
+                , "end":"369"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"tmp1"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_y_out"
+                , "id":1047171632
+                , "start":"369"
+                , "end":"370"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"?"
+                , "id":1026601792
+                , "start":"376"
+                , "end":"376"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"11"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1026602768
+                , "start":"376"
+                , "end":"382"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"11"
+                    , "Latency":"6"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1022142416
+                , "start":"382"
+                , "end":"413"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"17"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"320"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B8"
+        , "id":1013672352
+        , "start":"413"
+        , "end":"446"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"buff_y_out"
+            , "id":1045050512
+            , "start":"429"
+            , "end":"446"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"buff_y_out"
+                , "Start Cycle":"16"
+                , "Latency":"17"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":37
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Cluster 8"
+            , "id":1019854480
+            , "start":"413"
+            , "end":"446"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_inc44_ataxs_c0_enter158_atax3"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"33"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"ST"
+                , "id":1047223056
+                , "start":"414"
+                , "end":"415"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1045258624
+                , "start":"415"
+                , "end":"446"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"2"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B9"
+        , "id":1013672432
+        , "start":"446"
+        , "end":"495"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 9"
+            , "id":1020060912
+            , "start":"446"
+            , "end":"495"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body52_ataxs_c0_enter16817_atax6"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"49"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"?"
+                , "id":1047514800
+                , "start":"450"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_y_out"
+                , "id":1047511936
+                , "start":"451"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":35
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_y_out"
+                , "id":1047214848
+                , "start":"451"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_y_out"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"buff_A"
+                , "id":1046800992
+                , "start":"450"
+                , "end":"450"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"buff_A"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":1045076048
+                , "start":"451"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1047221008
+                , "start":"451"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"5"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":36
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1046801968
+                , "start":"450"
+                , "end":"451"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1047210336
+                , "start":"451"
+                , "end":"457"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"5"
+                    , "Latency":"6"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1046792336
+                , "start":"451"
+                , "end":"453"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"5"
+                    , "Latency":"2"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1046795952
+                , "start":"453"
+                , "end":"457"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"7"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"f32 FP *+"
+                , "id":1047215824
+                , "start":"457"
+                , "end":"463"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Floating-point Multiply-Add"
+                    , "Start Cycle":"11"
+                    , "Latency":"6"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1047216176
+                , "start":"463"
+                , "end":"464"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"17"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":37
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1048780672
+                , "start":"464"
+                , "end":"495"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"18"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"48"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B10"
+        , "id":1013672512
+        , "start":"495"
+        , "end":"512"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B11"
+        , "id":1013672592
+        , "start":"512"
+        , "end":"512"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+      }
+      , {
+        "name":"atax.B12"
+        , "id":1013672672
+        , "start":"512"
+        , "end":"554"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 10"
+            , "id":1020794208
+            , "start":"512"
+            , "end":"554"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body73_ataxs_c0_enter18714_atax1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"42"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":1043293888
+                , "start":"516"
+                , "end":"516"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":7
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":1047309600
+                , "start":"516"
+                , "end":"516"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":42
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1045032912
+                , "start":"516"
+                , "end":"516"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":43
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":1045035552
+                , "start":"516"
+                , "end":"520"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"4"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":43
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"FFwd Dest"
+                , "id":1045040064
+                , "start":"520"
+                , "end":"520"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"FFwd Destination"
+                    , "Start Cycle":"8"
+                    , "Latency":"0"
+                  }
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":1045042288
+                , "start":"516"
+                , "end":"520"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":43
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":1045044624
+                , "start":"520"
+                , "end":"523"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"Yes"
+                    , "Start Cycle":"8"
+                    , "Latency":"3"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                      , "line":43
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":1023203344
+                , "start":"523"
+                , "end":"554"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"11"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"24"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"atax.B13"
+        , "id":1013672752
+        , "start":"554"
+        , "end":"595"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"WR"
+            , "id":1023121600
+            , "start":"554"
+            , "end":"578"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Write"
+                , "Width":"1 bit"
+                , "Depth":"0"
+                , "Stream Name":"return.atax"
+                , "Stall-free":"No"
+                , "Start Cycle":"0"
+                , "Latency":"24"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":45
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1013672752
+        , "to":1013670736
+      }
+      , {
+        "from":1045032912
+        , "to":1045035552
+      }
+      , {
+        "from":1013672672
+        , "to":1013672752
+      }
+      , {
+        "from":1013672592
+        , "to":1013672672
+      }
+      , {
+        "from":1013672512
+        , "to":1013672192
+      }
+      , {
+        "from":1013672512
+        , "to":1013672592
+      }
+      , {
+        "from":1047216176
+        , "to":1048780672
+      }
+      , {
+        "from":1047215824
+        , "to":1047216176
+      }
+      , {
+        "from":1046795952
+        , "to":1047215824
+      }
+      , {
+        "from":1046792336
+        , "to":1046795952
+      }
+      , {
+        "from":1046792336
+        , "to":1047216176
+      }
+      , {
+        "from":1047210336
+        , "to":1047215824
+      }
+      , {
+        "from":1047544704
+        , "to":1020704800
+      }
+      , {
+        "from":1045042288
+        , "to":1045044624
+      }
+      , {
+        "from":1047540176
+        , "to":1047544704
+      }
+      , {
+        "from":1047540176
+        , "to":1048562240
+      }
+      , {
+        "from":1047540176
+        , "to":1048566656
+      }
+      , {
+        "from":1045040064
+        , "to":1045042288
+      }
+      , {
+        "from":1047543728
+        , "to":1047544704
+      }
+      , {
+        "from":1047543728
+        , "to":1048562240
+      }
+      , {
+        "from":1018090032
+        , "to":1018488928
+      }
+      , {
+        "from":1018090032
+        , "to":1027927120
+      }
+      , {
+        "from":1013672432
+        , "to":1013672512
+      }
+      , {
+        "from":1048562240
+        , "to":1020704800
+      }
+      , {
+        "from":1027743968
+        , "to":1017922576
+      }
+      , {
+        "from":1045035552
+        , "to":1045044624
+      }
+      , {
+        "from":1013671872
+        , "to":1013672192
+      }
+      , {
+        "from":1018372544
+        , "to":1018375184
+      }
+      , {
+        "from":1027927120
+        , "to":1018488928
+      }
+      , {
+        "from":1048530000
+        , "to":1022142416
+      }
+      , {
+        "from":1048530000
+        , "to":1048530976
+      }
+      , {
+        "from":1027477312
+        , "to":1027916160
+      }
+      , {
+        "from":1019595520
+        , "to":1019597744
+      }
+      , {
+        "from":1043293888
+        , "to":1045032912
+      }
+      , {
+        "from":1043293888
+        , "to":1045042288
+      }
+      , {
+        "from":1043293888
+        , "to":1047309600
+      }
+      , {
+        "from":1044993280
+        , "to":1044995920
+      }
+      , {
+        "from":1013672032
+        , "to":1013672112
+      }
+      , {
+        "from":1013677136
+        , "to":1013670736
+      }
+      , {
+        "from":1027916160
+        , "to":1017278096
+      }
+      , {
+        "from":1026639136
+        , "to":1018927520
+      }
+      , {
+        "from":1047541504
+        , "to":1047544704
+      }
+      , {
+        "from":1026627760
+        , "to":1026630400
+      }
+      , {
+        "from":1013670736
+        , "to":1013671952
+      }
+      , {
+        "from":1045029072
+        , "to":1022144864
+      }
+      , {
+        "from":1045029072
+        , "to":1025731088
+      }
+      , {
+        "from":1017441920
+        , "to":1017922576
+      }
+      , {
+        "from":1017441920
+        , "to":1027743968
+      }
+      , {
+        "from":1047214848
+        , "to":1047215824
+      }
+      , {
+        "from":1013672112
+        , "to":1013671872
+      }
+      , {
+        "from":1013672112
+        , "to":1013671952
+      }
+      , {
+        "from":1019594192
+        , "to":1018372544
+      }
+      , {
+        "from":1019594192
+        , "to":1019597744
+      }
+      , {
+        "from":1019594192
+        , "to":1023196192
+      }
+      , {
+        "from":1019594192
+        , "to":1026639136
+      }
+      , {
+        "from":1019594192
+        , "to":1027587392
+      }
+      , {
+        "from":1026602768
+        , "to":1022142416
+      }
+      , {
+        "from":1047174496
+        , "to":1022142416
+      }
+      , {
+        "from":1013672192
+        , "to":1013672272
+      }
+      , {
+        "from":1026630400
+        , "to":1026602768
+      }
+      , {
+        "from":1047171632
+        , "to":1022142416
+      }
+      , {
+        "from":1045027744
+        , "to":1025731088
+      }
+      , {
+        "from":1045027744
+        , "to":1026562560
+      }
+      , {
+        "from":1045027744
+        , "to":1045029072
+      }
+      , {
+        "from":1022144864
+        , "to":1025731088
+      }
+      , {
+        "from":1046801968
+        , "to":1047210336
+      }
+      , {
+        "from":1048528672
+        , "to":1026603120
+      }
+      , {
+        "from":1048528672
+        , "to":1026627760
+      }
+      , {
+        "from":1048528672
+        , "to":1048530976
+      }
+      , {
+        "from":1048530976
+        , "to":1048534864
+      }
+      , {
+        "from":1048534864
+        , "to":1026602768
+      }
+      , {
+        "from":1026601792
+        , "to":1026602768
+      }
+      , {
+        "from":1013672352
+        , "to":1013672432
+      }
+      , {
+        "from":1013671952
+        , "to":1013672032
+      }
+      , {
+        "from":1046800992
+        , "to":1046801968
+      }
+      , {
+        "from":1019597744
+        , "to":1027587392
+      }
+      , {
+        "from":1047514800
+        , "to":1048780672
+      }
+      , {
+        "from":1047511936
+        , "to":1048780672
+      }
+      , {
+        "from":1045076048
+        , "to":1046792336
+      }
+      , {
+        "from":1045076048
+        , "to":1046801968
+      }
+      , {
+        "from":1045076048
+        , "to":1047221008
+      }
+      , {
+        "from":1013672272
+        , "to":1013672352
+      }
+    ]
+  }
+}

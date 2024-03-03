@@ -1,0 +1,371 @@
+{
+  "name":"loop_attributes"
+  , "id":4294967295
+  , "nodes":
+  [
+    {
+      "name":"atax"
+      , "id":1013843424
+      , "clk":"No"
+      , "fmax":"480.00"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+            , "line":6
+          }
+        ]
+      ]
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"atax.B0.runOnce"
+          , "id":1013677136
+          , "af":"480.00"
+          , "br":"0"
+          , "ci":"0"
+          , "fo":"Disabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"17.000000"
+          , "mi":"n/a"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B1.start"
+          , "id":1013670736
+          , "af":"480.00"
+          , "br":"0"
+          , "ci":"1"
+          , "fo":"Enabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"108.000000"
+          , "mi":"1"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Hyper-Optimized loop structure: enabled."
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":6
+              }
+            ]
+          ]
+          , "type":"loop"
+          , "children":
+          [
+            {
+              "name":"atax.B3"
+              , "id":1013671952
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Enabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"100.000000"
+              , "mi":"1"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: enabled."
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                    , "line":17
+                  }
+                ]
+              ]
+              , "type":"loop"
+              , "children":
+              [
+                {
+                  "name":"atax.B4"
+                  , "id":1013672032
+                  , "af":"480.00"
+                  , "br":"0"
+                  , "ci":"0"
+                  , "fo":"Enabled"
+                  , "ii":"1"
+                  , "ll":"3"
+                  , "lt":"101.000000"
+                  , "mi":"1"
+                  , "pl":"Yes"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: enabled."
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+              ]
+            }
+            , {
+              "name":"atax.B5"
+              , "id":1013672112
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"0.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B2"
+              , "id":1013671872
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"0.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"Fused loop atax.B6"
+              , "id":1013672192
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Enabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"39.000000"
+              , "mi":"1"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: enabled."
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                    , "line":35
+                  }
+                ]
+              ]
+              , "type":"loop"
+              , "children":
+              [
+                {
+                  "name":"atax.B7"
+                  , "id":1013672272
+                  , "af":"312.00"
+                  , "br":"0"
+                  , "ci":"0"
+                  , "fo":"Enabled"
+                  , "ii":"6"
+                  , "ll":"3"
+                  , "lt":"48.000000"
+                  , "mi":"6"
+                  , "pl":"Yes"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: enabled."
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                        , "line":29
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+                , {
+                  "name":"atax.B8"
+                  , "id":1013672352
+                  , "af":"480.00"
+                  , "br":"0"
+                  , "ci":"0"
+                  , "fo":"Disabled"
+                  , "ii":"1"
+                  , "ll":"3"
+                  , "lt":"33.000000"
+                  , "mi":"n/a"
+                  , "pl":"Yes"
+                  , "tc":"0"
+                  , "tn":"1"
+                  , "type":"bb"
+                }
+                , {
+                  "name":"atax.B9"
+                  , "id":1013672432
+                  , "af":"480.00"
+                  , "br":"0"
+                  , "ci":"0"
+                  , "fo":"Enabled"
+                  , "ii":"1"
+                  , "ll":"3"
+                  , "lt":"49.000000"
+                  , "mi":"1"
+                  , "pl":"Yes"
+                  , "tc":"64"
+                  , "tn":"1"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"Hyper-Optimized loop structure: enabled."
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                        , "line":36
+                      }
+                    ]
+                  ]
+                  , "type":"loop"
+                }
+              ]
+            }
+            , {
+              "name":"atax.B10"
+              , "id":1013672512
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"17.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B11"
+              , "id":1013672592
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Disabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"0.000000"
+              , "mi":"n/a"
+              , "pl":"Yes"
+              , "tc":"0"
+              , "tn":"1"
+              , "type":"bb"
+            }
+            , {
+              "name":"atax.B12"
+              , "id":1013672672
+              , "af":"480.00"
+              , "br":"0"
+              , "ci":"0"
+              , "fo":"Enabled"
+              , "ii":"1"
+              , "ll":"2"
+              , "lt":"42.000000"
+              , "mi":"1"
+              , "pl":"Yes"
+              , "tc":"64"
+              , "tn":"1"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Hyper-Optimized loop structure: enabled."
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                    , "line":42
+                  }
+                ]
+              ]
+              , "type":"loop"
+            }
+          ]
+        }
+        , {
+          "name":"atax.B13"
+          , "id":1013672752
+          , "af":"480.00"
+          , "br":"0"
+          , "ci":"0"
+          , "fo":"Disabled"
+          , "ii":"1"
+          , "ll":"1"
+          , "lt":"41.000000"
+          , "mi":"n/a"
+          , "pl":"Yes"
+          , "tc":"0"
+          , "tn":"1"
+          , "type":"bb"
+        }
+      ]
+    }
+  ]
+}
