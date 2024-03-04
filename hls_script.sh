@@ -45,24 +45,25 @@ for ((i = 1 ; i < (($bench_num + 1)) ; i++)); do
 	if [ -f "$FILE" ]; then
 		i++ -march=1ST110EN1F43E1VG -ghdl "$FILE" --simulator "none" -v -o "$benchmark"_"$i"
 		# Go to the created project directory
-		#cd ./"$benchmark"_"$i".prj/quartus/
+		cd ./"$benchmark"_"$i".prj/quartus/
 		# Run a Quartus Compilation up to Fitting
-		#quartus_sh --flow compile quartus_compile >> "$benchmark"_"$i"_compLog.txt
-		#cd ../..
+		quartus_sh --flow compile quartus_compile >> "$benchmark"_"$i"_compLog.txt
+  		
+		# Modify the Quartus settings file (.qsf) to include power analysis
+		cat $base_dir/quartus_power_set >> ./quartus_compile.qsf
+
+		# Run a Power Analysis on the generated design
+		quartus_pow quartus_compile
+
+		# Extract the Report Panel to a CSV file
+		# - We could consider extracting more Report Panels here or let it be
+		#   an argument to the script
+		# - All extracted data is stored in the data directory of the benchmark
+		quartus_sh -t $base_dir/power_to_csv.tcl -project "quartus_compile" -panel "Power Analyzer||Power Analyzer Summary" -file ../../../data/$benchmark_i.csv
+  		cd ../..
 	fi
 done
 
 
-# Modify the Quartus settings file (.qsf) to include power analysis
-#cat $base_dir/quartus_power_set >> ./quartus_compile.qsf
-
-# Run a Power Analysis on the generated design
-#quartus_pow quartus_compile
-
-# Extract the Report Panel to a CSV file
-# - We could consider extracting more Report Panels here or let it be
-#   an argument to the script
-# - All extracted data is stored in the data directory of the benchmark
-#quartus_sh -t $base_dir/power_to_csv.tcl -project "quartus_compile" -panel "Power Analyzer||Power Analyzer Summary" -file ../../../data/$design.csv
 
 
