@@ -1,0 +1,537 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Thu Feb 29 17:11:34 2024
+    Info: System process ID: 453381
+Info: Command: quartus_sh --flow compile quartus_compile
+Info: Quartus(args): compile quartus_compile
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: Project Name = /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus_compile
+Info: Revision Name = quartus_compile
+Warning (125060): Assignment "PARTITION_NETLIST_TYPE" is no longer supported. The assignment in the Intel Quartus Prime Settings file (.qsf) will be ignored
+Warning (125060): Assignment "PARTITION_FITTER_PRESERVATION_LEVEL" is no longer supported. The assignment in the Intel Quartus Prime Settings file (.qsf) will be ignored
+Info: Run task: IP Generation
+Info: *******************************************************************
+Info: Running Quartus Prime IP Generation Tool
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:11:35 2024
+    Info: System process ID: 453631
+Info: Command: quartus_ipgenerate quartus_compile -c quartus_compile --run_default_mode_op
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: Found 1 IP file(s) in the project.
+    Info: IP file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax.ip was found in the project.
+Info: Finished generating IP file(s) in the project.
+    Info: Previously generated synthesis files were detected in the Platform Designer IP file generation directory (/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax).
+    Info: Skipped generation of synthesis files for the Platform Designer IP file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax.ip based on the current regeneration policy setting (Tools/Options/IP Settings).
+Info: Quartus Prime IP Generation Tool was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 1137 megabytes
+    Info: Processing ended: Thu Feb 29 17:11:35 2024
+    Info: Elapsed time: 00:00:00
+    Info: System process ID: 453631
+Info: Run task: Analysis & Synthesis
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:11:37 2024
+    Info: System process ID: 453889
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: qis_default_flow_script.tcl version: #2
+Info: Initializing Synthesis...
+Info: Project = "quartus_compile"
+Info: Revision = "quartus_compile"
+Info: Analyzing source files
+Warning (17326): Verilog HDL warning at acl_altera_syncram_wrapped.sv(246): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_altera_syncram_wrapped.sv Line: 246
+Warning (17326): Verilog HDL warning at acl_altera_syncram_wrapped.sv(249): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_altera_syncram_wrapped.sv Line: 249
+Info (16884): Verilog HDL info at hld_fifo.sv(146): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_fifo.sv Line: 146
+Info (19624): Verilog HDL info at hld_fifo.sv(146): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_fifo.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_fifo.sv Line: 146
+Info (16884): Verilog HDL info at acl_mid_speed_fifo.sv(85): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 85
+Info (19624): Verilog HDL info at acl_mid_speed_fifo.sv(85): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 85
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(196): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 196
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(199): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 199
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(202): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 202
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(205): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 205
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(208): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 208
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(211): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 211
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(214): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 214
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(217): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 217
+Warning (17326): Verilog HDL warning at acl_latency_one_ram_fifo.sv(220): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_one_ram_fifo.sv Line: 220
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(126): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 126
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(129): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 129
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(132): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 132
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(135): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 135
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(138): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 138
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(141): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 141
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(144): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 144
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(147): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 147
+Warning (17326): Verilog HDL warning at acl_latency_zero_ram_fifo.sv(150): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_latency_zero_ram_fifo.sv Line: 150
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(218): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 218
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(221): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 221
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(224): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 224
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(227): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 227
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(230): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 230
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(233): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 233
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(236): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 236
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(239): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 239
+Warning (17326): Verilog HDL warning at acl_high_speed_fifo.sv(242): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_high_speed_fifo.sv Line: 242
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(157): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 157
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(160): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 160
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(163): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 163
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(166): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 166
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(169): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 169
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(172): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 172
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(175): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 175
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(178): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 178
+Warning (17326): Verilog HDL warning at acl_low_latency_fifo.sv(181): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_low_latency_fifo.sv Line: 181
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(161): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 161
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(164): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 164
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(167): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 167
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(170): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 170
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(173): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 173
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(176): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 176
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(179): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 179
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(182): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 182
+Warning (17326): Verilog HDL warning at acl_zero_latency_fifo.sv(185): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_zero_latency_fifo.sv Line: 185
+Info (16884): Verilog HDL info at acl_mlab_fifo.sv(32): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mlab_fifo.sv Line: 32
+Info (19624): Verilog HDL info at acl_mlab_fifo.sv(32): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mlab_fifo.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mlab_fifo.sv Line: 32
+Warning (17326): Verilog HDL warning at acl_sync.sv(308): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 308
+Warning (17326): Verilog HDL warning at acl_sync.sv(314): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 314
+Warning (17326): Verilog HDL warning at acl_sync.sv(338): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 338
+Warning (17326): Verilog HDL warning at acl_sync.sv(376): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 376
+Warning (17326): Verilog HDL warning at acl_sync.sv(469): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 469
+Warning (17326): Verilog HDL warning at acl_sync.sv(500): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 500
+Warning (17326): Verilog HDL warning at acl_sync.sv(538): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 538
+Warning (17326): Verilog HDL warning at acl_desync.sv(261): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_desync.sv Line: 261
+Warning (17326): Verilog HDL warning at acl_desync.sv(306): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_desync.sv Line: 306
+Warning (17326): Verilog HDL warning at acl_desync.sv(344): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_desync.sv Line: 344
+Warning (17326): Verilog HDL warning at acl_desync.sv(378): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_desync.sv Line: 378
+Warning (17326): Verilog HDL warning at acl_push.v(100): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_push.v Line: 100
+Warning (17326): Verilog HDL warning at acl_loop_admit.sv(777): elaboration system task fatal violates IEEE 1800 (2005) syntax File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 777
+Info (16884): Verilog HDL info at hld_iord.sv(34): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iord.sv Line: 34
+Info (19624): Verilog HDL info at hld_iord.sv(34): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iord.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iord.sv Line: 34
+Info (16884): Verilog HDL info at hld_global_load_store.sv(66): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_global_load_store.sv Line: 66
+Info (19624): Verilog HDL info at hld_global_load_store.sv(66): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_global_load_store.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_global_load_store.sv Line: 66
+Info (16884): Verilog HDL info at hld_iowr.sv(34): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv Line: 34
+Info (19624): Verilog HDL info at hld_iowr.sv(34): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv Line: 34
+Info (16884): Verilog HDL info at hld_ram.sv(50): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram.sv Line: 50
+Info (19624): Verilog HDL info at hld_ram.sv(50): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram.sv Line: 50
+Info (16884): Verilog HDL info at hld_ram_ecc.sv(25): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_ecc.sv Line: 25
+Info (19624): Verilog HDL info at hld_ram_ecc.sv(25): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_ecc.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_ecc.sv Line: 25
+Info (16884): Verilog HDL info at hld_ram_tall_depth_stitch.sv(26): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_tall_depth_stitch.sv Line: 26
+Info (19624): Verilog HDL info at hld_ram_tall_depth_stitch.sv(26): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_tall_depth_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_tall_depth_stitch.sv Line: 26
+Info (16884): Verilog HDL info at hld_ram_remaining_width.sv(29): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_remaining_width.sv Line: 29
+Info (19624): Verilog HDL info at hld_ram_remaining_width.sv(29): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_remaining_width.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_remaining_width.sv Line: 29
+Info (16884): Verilog HDL info at hld_ram_bits_per_enable.sv(25): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bits_per_enable.sv Line: 25
+Info (19624): Verilog HDL info at hld_ram_bits_per_enable.sv(25): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bits_per_enable.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bits_per_enable.sv Line: 25
+Info (16884): Verilog HDL info at hld_ram_generic_two_way_depth_stitch.sv(30): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_two_way_depth_stitch.sv Line: 30
+Info (19624): Verilog HDL info at hld_ram_generic_two_way_depth_stitch.sv(30): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_two_way_depth_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_two_way_depth_stitch.sv Line: 30
+Info (16884): Verilog HDL info at hld_ram_generic_three_way_depth_stitch.sv(24): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_three_way_depth_stitch.sv Line: 24
+Info (19624): Verilog HDL info at hld_ram_generic_three_way_depth_stitch.sv(24): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_three_way_depth_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_generic_three_way_depth_stitch.sv Line: 24
+Info (16884): Verilog HDL info at hld_ram_short_depth_stitch.sv(26): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_short_depth_stitch.sv Line: 26
+Info (19624): Verilog HDL info at hld_ram_short_depth_stitch.sv(26): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_short_depth_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_short_depth_stitch.sv Line: 26
+Info (16884): Verilog HDL info at hld_ram_bottom_width_stitch.sv(28): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_width_stitch.sv Line: 28
+Info (19624): Verilog HDL info at hld_ram_bottom_width_stitch.sv(28): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_width_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_width_stitch.sv Line: 28
+Info (16884): Verilog HDL info at hld_ram_bottom_depth_stitch.sv(26): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_depth_stitch.sv Line: 26
+Info (19624): Verilog HDL info at hld_ram_bottom_depth_stitch.sv(26): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_depth_stitch.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_bottom_depth_stitch.sv Line: 26
+Info (16884): Verilog HDL info at hld_ram_lower.sv(28): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower.sv Line: 28
+Info (19624): Verilog HDL info at hld_ram_lower.sv(28): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower.sv Line: 28
+Info (16884): Verilog HDL info at hld_ram_lower_mlab_simple_dual_port.sv(25): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_mlab_simple_dual_port.sv Line: 25
+Info (19624): Verilog HDL info at hld_ram_lower_mlab_simple_dual_port.sv(25): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_mlab_simple_dual_port.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_mlab_simple_dual_port.sv Line: 25
+Info (16884): Verilog HDL info at hld_ram_lower_m20k_simple_dual_port.sv(25): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_simple_dual_port.sv Line: 25
+Info (19624): Verilog HDL info at hld_ram_lower_m20k_simple_dual_port.sv(25): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_simple_dual_port.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_simple_dual_port.sv Line: 25
+Info (16884): Verilog HDL info at hld_ram_lower_m20k_true_dual_port.sv(26): analyzing included file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_parameter_assert.svh File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_true_dual_port.sv Line: 26
+Info (19624): Verilog HDL info at hld_ram_lower_m20k_true_dual_port.sv(26): back to file '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_true_dual_port.sv' File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_ram_lower_m20k_true_dual_port.sv Line: 26
+Warning (21392): Verilog HDL warning at atax_internal.v(495): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 495
+Warning (21392): Verilog HDL warning at atax_internal.v(858): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 858
+Warning (21392): Verilog HDL warning at atax_internal.v(1209): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1209
+Warning (21392): Verilog HDL warning at atax_internal.v(1584): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1584
+Warning (21392): Verilog HDL warning at atax_internal.v(1947): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1947
+Warning (21392): Verilog HDL warning at atax_internal.v(2118): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2118
+Warning (21392): Verilog HDL warning at atax_internal.v(2129): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2129
+Warning (21392): Verilog HDL warning at atax_internal.v(2143): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2143
+Warning (21392): Verilog HDL warning at atax_internal.v(2485): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2485
+Warning (21392): Verilog HDL warning at atax_internal.v(2492): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2492
+Warning (21392): Verilog HDL warning at atax_internal.v(2500): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2500
+Warning (21392): Verilog HDL warning at atax_internal.v(2742): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2742
+Warning (21392): Verilog HDL warning at atax_internal.v(2747): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2747
+Warning (21392): Verilog HDL warning at atax_internal.v(2755): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2755
+Warning (21392): Verilog HDL warning at atax_internal.v(2938): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2938
+Warning (21392): Verilog HDL warning at atax_internal.v(2945): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2945
+Warning (21392): Verilog HDL warning at atax_internal.v(2950): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 2950
+Warning (21392): Verilog HDL warning at atax_internal.v(3133): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3133
+Warning (21392): Verilog HDL warning at atax_internal.v(3138): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3138
+Warning (21392): Verilog HDL warning at atax_internal.v(3146): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3146
+Warning (21392): Verilog HDL warning at atax_internal.v(3329): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3329
+Warning (21392): Verilog HDL warning at atax_internal.v(3338): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3338
+Warning (21392): Verilog HDL warning at atax_internal.v(3343): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3343
+Warning (21392): Verilog HDL warning at atax_internal.v(3585): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3585
+Warning (21392): Verilog HDL warning at atax_internal.v(3590): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3590
+Warning (21392): Verilog HDL warning at atax_internal.v(3601): generate block is allowed only inside loop and conditional generate in SystemVerilog mode File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 3601
+Critical Warning (20615): Use the Reset Release IP in Intel Stratix 10 FPGA designs to ensure a successful configuration. For more information about the Reset Release IP, refer to the Intel Stratix 10 Configuration User Guide.
+Info: Elaborating from top-level entity "quartus_compile"
+Info (18235): Library search order is as follows: "atax_internal_10; atax". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(174): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 174
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(185): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 185
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(187): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 187
+Warning (13469): Verilog HDL assignment warning at acl_sync.sv(682): truncated value with size 5 to match size of target (4) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 682
+Warning (16788): Net "usedw_true_width[4]" does not have a driver at lsu_pipelined.v(156) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/lsu_pipelined.v Line: 156
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(174): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 174
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(185): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 185
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(187): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 187
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(371): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 371
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(376): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 376
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(643): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 643
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(174): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 174
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(185): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 185
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(187): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 187
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(371): truncated value with size 4 to match size of target (3) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 371
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(376): truncated value with size 4 to match size of target (3) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 376
+Warning (13469): Verilog HDL assignment warning at acl_loop_admit.sv(643): truncated value with size 4 to match size of target (3) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_loop_admit.sv Line: 643
+Warning (16735): Verilog HDL warning at acl_pop_stall_latency.sv(204): actual bit length 3 differs from formal bit length 1 for port "i_data" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_pop_stall_latency.sv Line: 204
+Warning (13469): Verilog HDL assignment warning at acl_pop_stall_latency.sv(274): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_pop_stall_latency.sv Line: 274
+Warning (13469): Verilog HDL assignment warning at acl_sync.sv(682): truncated value with size 5 to match size of target (4) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_sync.sv Line: 682
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(174): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 174
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(185): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 185
+Warning (13469): Verilog HDL assignment warning at acl_full_detector.v(187): truncated value with size 2 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v Line: 187
+Warning (13469): Verilog HDL assignment warning at acl_push_stall_latency.sv(225): truncated value with size 4 to match size of target (2) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_push_stall_latency.sv Line: 225
+Warning (16735): Verilog HDL warning at hld_iowr.sv(363): actual bit length 4 differs from formal bit length 3 for port "i_data" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv Line: 363
+Warning (16735): Verilog HDL warning at hld_iowr.sv(376): actual bit length 4 differs from formal bit length 3 for port "o_fifodata" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv Line: 376
+Warning (16735): Verilog HDL warning at hld_iord.sv(380): actual bit length 195 differs from formal bit length 194 for port "o_data" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iord.sv Line: 380
+Warning (16735): Verilog HDL warning at hld_iord.sv(387): actual bit length 195 differs from formal bit length 194 for port "i_fifodata" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iord.sv Line: 387
+Warning (13469): Verilog HDL assignment warning at acl_ic_slave_rrp.v(219): truncated value with size 32 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_ic_slave_rrp.v Line: 219
+Warning (16735): Verilog HDL warning at atax_internal.v(546): actual bit length 12 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 546
+Warning (16735): Verilog HDL warning at atax_internal.v(546): actual bit length 12 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 546
+Warning (16735): Verilog HDL warning at atax_internal.v(546): actual bit length 12 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 546
+Warning (21398): Verilog HDL warning at acl_ic_local_mem_router.v(120): delay control is not supported for synthesis File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_ic_local_mem_router.v Line: 120
+Warning (16735): Verilog HDL warning at atax_internal.v(909): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 909
+Warning (16735): Verilog HDL warning at atax_internal.v(909): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 909
+Warning (21398): Verilog HDL warning at acl_ic_local_mem_router.v(120): delay control is not supported for synthesis File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_ic_local_mem_router.v Line: 120
+Warning (16735): Verilog HDL warning at atax_internal.v(1260): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1260
+Warning (16735): Verilog HDL warning at atax_internal.v(1260): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1260
+Warning (16735): Verilog HDL warning at atax_internal.v(1260): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1260
+Warning (16735): Verilog HDL warning at atax_internal.v(1260): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1260
+Warning (13469): Verilog HDL assignment warning at acl_ic_slave_rrp.v(219): truncated value with size 32 to match size of target (1) File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_ic_slave_rrp.v Line: 219
+Warning (16735): Verilog HDL warning at atax_internal.v(1635): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1635
+Warning (16735): Verilog HDL warning at atax_internal.v(1635): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1635
+Warning (16735): Verilog HDL warning at atax_internal.v(1635): actual bit length 6 differs from formal bit length 30 for port "ic_arb_address" File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v Line: 1635
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B3|theatax_B3_merge|theatax_B3_merge_storage|theatax_B3_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (287013): Variable or input pin "outclock" is defined but never used. File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/tmp-clearbox/quartus_compile/453889/dpram_pr32.tdf Line: 32
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B3|thebb_atax_B3_stall_region|thei_sfc_s_c0_in_for_body_ataxs_c0_enter9612_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_body_ataxs_c0_enter9612_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going48_atax6|thei_llvm_fpga_pipeline_keep_going48_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B3|thebb_atax_B3_stall_region|thei_sfc_s_c0_in_for_body_ataxs_c0_enter9612_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_body_ataxs_c0_enter9612_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going48_atax6|thei_llvm_fpga_pipeline_keep_going48_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B4|thebb_atax_B4_stall_region|thei_sfc_s_c0_in_for_body13_ataxs_c0_enter10515_atax3_aunroll_x|thei_sfc_logic_s_c0_in_for_body13_ataxs_c0_enter10515_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going43_atax6|thei_llvm_fpga_pipeline_keep_going43_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B4|thebb_atax_B4_stall_region|thei_sfc_s_c0_in_for_body13_ataxs_c0_enter10515_atax3_aunroll_x|thei_sfc_logic_s_c0_in_for_body13_ataxs_c0_enter10515_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going43_atax6|thei_llvm_fpga_pipeline_keep_going43_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B2|theatax_B2_merge|theatax_B2_merge_storage|theatax_B2_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B6|theatax_B6_merge|theatax_B6_merge_storage|theatax_B6_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B6|thebb_atax_B6_stall_region|thei_sfc_s_c0_in_for_cond28_preheader_ataxs_c0_enter12313_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_cond28_preheader_ataxs_c0_enter12313_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going38_atax6|thei_llvm_fpga_pipeline_keep_going38_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B6|thebb_atax_B6_stall_region|thei_sfc_s_c0_in_for_cond28_preheader_ataxs_c0_enter12313_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_cond28_preheader_ataxs_c0_enter12313_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going38_atax6|thei_llvm_fpga_pipeline_keep_going38_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B7|thebb_atax_B7_stall_region|thei_sfc_s_c0_in_for_body30_ataxs_c0_enter13916_atax7_aunroll_x|thei_sfc_logic_s_c0_in_for_body30_ataxs_c0_enter13916_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going33_atax8|thei_llvm_fpga_pipeline_keep_going33_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B7|thebb_atax_B7_stall_region|thei_sfc_s_c0_in_for_body30_ataxs_c0_enter13916_atax7_aunroll_x|thei_sfc_logic_s_c0_in_for_body30_ataxs_c0_enter13916_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going33_atax8|thei_llvm_fpga_pipeline_keep_going33_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (287013): Variable or input pin "outclock" is defined but never used. File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/tmp-clearbox/quartus_compile/453889/dpram_9t32.tdf Line: 32
+Warning (287013): Variable or input pin "outclock" is defined but never used. File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/tmp-clearbox/quartus_compile/453889/dpram_qr32.tdf Line: 32
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B8|thebb_atax_B8_stall_region|thebubble_out_stall_entry_1_reg|hld_fifo_inst|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B8|thebb_atax_B8_stall_region|thei_llvm_fpga_pop_i1_memdep_phi_pop20_atax0|thei_llvm_fpga_pop_i1_memdep_phi_pop20_atax1" of entity "acl_pop_stall_latency_zero_width" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_pop_stall_latency_zero_width.sv Line: 75
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B8|thebb_atax_B8_stall_region|thei_llvm_fpga_pop_i1_memdep_phi_pop20_atax0|thei_llvm_fpga_pop_i1_memdep_phi_pop20_atax1|acl_pop_stall_latency_inst|downstream_fifo|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B9|thebb_atax_B9_stall_region|thei_sfc_s_c0_in_for_body52_ataxs_c0_enter16817_atax6_aunroll_x|thei_sfc_logic_s_c0_in_for_body52_ataxs_c0_enter16817_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going28_atax6|thei_llvm_fpga_pipeline_keep_going28_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B9|thebb_atax_B9_stall_region|thei_sfc_s_c0_in_for_body52_ataxs_c0_enter16817_atax6_aunroll_x|thei_sfc_logic_s_c0_in_for_body52_ataxs_c0_enter16817_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going28_atax6|thei_llvm_fpga_pipeline_keep_going28_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "data_out[0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1" of entity "acl_push_stall_latency_zero_width" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_push_stall_latency_zero_width.sv Line: 83
+Warning (21610): Output port "feedback_data_out[0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1" of entity "acl_push_stall_latency_zero_width" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_push_stall_latency_zero_width.sv Line: 76
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1|acl_push_stall_latency_inst|upstream_fifo|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "o_data[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1|acl_push_stall_latency_inst|desync_inst" of entity "acl_desync_predicate_nonblocking" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_desync.sv Line: 205
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1|acl_push_stall_latency_inst|downstream_fifo|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B10|thebb_atax_B10_stall_region|thei_llvm_fpga_push_i1_memdep_phi_push20_atax0|thei_llvm_fpga_push_i1_memdep_phi_push20_atax1|acl_push_stall_latency_inst|backedge_fifo|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B11|theatax_B11_merge|theatax_B11_merge_storage|theatax_B11_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B12|theatax_B12_merge|theatax_B12_merge_storage|theatax_B12_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B12|thebb_atax_B12_stall_region|thei_sfc_s_c0_in_for_body73_ataxs_c0_enter18714_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_body73_ataxs_c0_enter18714_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going_atax6|thei_llvm_fpga_pipeline_keep_going_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B12|thebb_atax_B12_stall_region|thei_sfc_s_c0_in_for_body73_ataxs_c0_enter18714_atax1_aunroll_x|thei_sfc_logic_s_c0_in_for_body73_ataxs_c0_enter18714_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going_atax6|thei_llvm_fpga_pipeline_keep_going_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B13|theatax_B13_merge|theatax_B13_merge_storage|theatax_B13_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "o_ack" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B13|thebb_atax_B13_stall_region|thei_iowr_bl_return_atax_unnamed_atax17_atax0|theiowr|GEN_STALL_LATENCY.hld_iowr_stall_latency_inst" of entity "hld_iowr_stall_latency" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_latency.sv Line: 94
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B0_runOnce|theatax_B0_runOnce_merge|theatax_B0_runOnce_merge_storage|theatax_B0_runOnce_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "data_out[-1..0]" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B1_start|theatax_B1_start_merge|theatax_B1_start_merge_storage|theatax_B1_start_merge_storage|ms.acl_mid_speed_fifo_inst" of entity "acl_mid_speed_fifo" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_mid_speed_fifo.sv Line: 133
+Warning (21610): Output port "stall_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B1_start|thebb_atax_B1_start_stall_region|thei_sfc_s_c0_in_wt_entry_ataxs_c0_enter11_atax0_aunroll_x|thei_sfc_logic_s_c0_in_wt_entry_ataxs_c0_enter11_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going52_atax5|thei_llvm_fpga_pipeline_keep_going52_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Warning (21610): Output port "valid_out" in instance "atax_inst|atax_internal_inst|atax_internal|theatax_function|thebb_atax_B1_start|thebb_atax_B1_start_stall_region|thei_sfc_s_c0_in_wt_entry_ataxs_c0_enter11_atax0_aunroll_x|thei_sfc_logic_s_c0_in_wt_entry_ataxs_c0_enter11_atax0_aunroll_x|thei_llvm_fpga_pipeline_keep_going52_atax5|thei_llvm_fpga_pipeline_keep_going52_atax1" of entity "acl_fast_pipeline" does not have a driver. Connecting to the default value "gnd". File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/atax_internal_10/synth/acl_fast_pipeline.v Line: 53
+Info: Found 405 design entities
+Info: There are 2006 partitions after elaboration.
+Info: Creating instance-specific data models and dissolving soft partitions
+Info (18299): Expanding entity and wildcard assignments.
+Info (18300): Expanded entity and wildcard assignments. Elapsed time: 00:00:00
+Info (21615): Running Design Assistant Rules for snapshot 'partitioned'
+Info: No waiver waived any violations
+Warning (21620): Design Assistant Results: 1 of 2 High severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus_compile.drc.partitioned.rpt' for more information
+Info (21622): Design Assistant Results: 0 of 6 Low severity rules issued violations in snapshot 'partitioned'
+Info: found pre-synthesis snapshots for 2 partition(s)
+Info: Synthesizing partition "root_partition"
+Info (21057): Implemented 802 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 260 input pins
+    Info (21059): Implemented 140 output pins
+    Info (21061): Implemented 401 logic cells
+    Info (21071): Implemented 1 partitions
+Info: Successfully synthesized partition
+Info: Synthesizing partition "component_atax"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "atax_inst|avmm_0_rw_address[0]" is stuck at GND File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/synth/atax.v Line: 16
+    Warning (13410): Pin "atax_inst|avmm_0_rw_address[1]" is stuck at GND File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/synth/atax.v Line: 16
+    Warning (13410): Pin "atax_inst|avmm_0_rw_address[2]" is stuck at GND File: /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/components/atax/atax/synth/atax.v Line: 16
+Info (17049): 7811 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 15028 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 260 input pins
+    Info (21059): Implemented 140 output pins
+    Info (21061): Implemented 13117 logic cells
+    Info (21064): Implemented 1509 RAM segments
+Info: Successfully synthesized partition
+Info: Saving post-synthesis snapshots for 2 partition(s)
+Info (21615): Running Design Assistant Rules for snapshot 'synthesized'
+Info: No waiver waived any violations
+Info (21661): Design Assistant Results: 0 of 1 High severity rules issued violations in snapshot 'synthesized'
+Info (21621): Design Assistant Results: 0 of 3 Medium severity rules issued violations in snapshot 'synthesized'
+Info (21622): Design Assistant Results: 0 of 7 Low severity rules issued violations in snapshot 'synthesized'
+Info: Quartus Prime Synthesis was successful. 0 errors, 171 warnings
+    Info: Peak virtual memory: 2343 megabytes
+    Info: Processing ended: Thu Feb 29 17:12:13 2024
+    Info: Elapsed time: 00:00:36
+    Info: System process ID: 453889
+Info: Run task: Fitter
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:12:15 2024
+    Info: System process ID: 457429
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = quartus_compile
+Info: Revision = quartus_compile
+Info (16677): Loading synthesized database.
+Info (16734): Loading "synthesized" snapshot for partition "root_partition".
+Info (16734): Loading "synthesized" snapshot for partition "component_atax".
+Info (16678): Successfully loaded synthesized database: elapsed time is 00:00:07.
+Info (119006): Selected device 1ST110EN1F43E1VG for design "quartus_compile"
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (171004): Fitter is performing a Standard Fit compilation using maximum Fitter effort to optimize design performance
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
+Info (12262): Starting Fitter periphery placement operations
+Info (12290): Loading the periphery placement data.
+Info (12291): Periphery placement data loaded: elapsed time is 00:00:12
+Info (12627): Pin ~ALTERA_AS_DATA1~ is reserved at location AM30
+Info (12627): Pin ~ALTERA_AS_nCSO0,ALTERA_MSEL0~ is reserved at location AU32
+Info (12627): Pin ~ALTERA_AS_DATA2~ is reserved at location AN29
+Info (12627): Pin ~ALTERA_AS_DATA0~ is reserved at location AP31
+Info (12627): Pin ~ALTERA_AS_CLK~ is reserved at location AV32
+Info (12627): Pin ~ALTERA_AS_nCSO2,ALTERA_MSEL1~ is reserved at location AR29
+Info (12627): Pin ~ALTERA_AS_nCSO1,ALTERA_MSEL2~ is reserved at location AU29
+Info (12627): Pin ~ALTERA_AS_DATA3~ is reserved at location AP30
+Info (12627): Pin ~ALTERA_AS_nCSO3~ is reserved at location BA29
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
+Info (16210): Plan updated with currently enabled project assignments.
+Info (12295): Periphery placement of all unplaced cells complete: elapsed time is 00:00:00
+Info (20360): 6 wire LUT(s) were inserted to tie-off unconnected input partition boundary ports in the design.
+Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:00.
+Info (332104): Reading SDC File: 'quartus_compile.sdc'
+Info (19449): Reading SDC files elapsed 00:00:00.
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 1 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000        clock
+Info (176233): Starting register packing
+Info (176235): Finished register packing
+    Extra Info (176218): Packed 860 registers into blocks of type MLAB cell
+Info (20273): Intermediate fitter snapshots will not be committed because ENABLE_INTERMEDIATE_SNAPSHOTS QSF assignment is disabled during compilation.
+Info (21624): Not running Design Assistant in plan stage because there is no enabled rule to check
+Info (12517): Periphery placement operations ending: elapsed time is 00:01:13
+Info (11165): Fitter preparation operations ending: elapsed time is 00:00:41
+Info (18252): The Fitter is using Physical Synthesis.
+Info (170189): Fitter placement preparation operations beginning
+Info (14951): The Fitter is using Advanced Physical Optimization.
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:13
+Info (11888): Total time spent on timing analysis during Global Placement is 1.94 seconds.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:00
+Info (11178): Promoted 1 clock 
+    Info (18386): clock~FITTER_INSERTED_0 (15128 fanout) drives clock sectors (2, 3) to (4, 4)
+Info (11888): Total time spent on timing analysis during Physical Synthesis is 0.00 seconds.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:09
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:17
+Info (11888): Total time spent on timing analysis during Placement is 2.30 seconds.
+Info (21624): Not running Design Assistant in place stage because there is no enabled rule to check
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 16% of up directional wire in region X128_Y144 to X135_Y151
+    Info (20265): Estimated peak short right directional wire demand : 10% in region X128_Y152 to X135_Y159
+    Info (20265): Estimated peak short left directional wire demand : 9% in region X136_Y152 to X143_Y159
+    Info (20265): Estimated peak short up directional wire demand : 16% in region X128_Y144 to X135_Y151
+    Info (20265): Estimated peak short down directional wire demand : 12% in region X128_Y160 to X135_Y167
+Info (20215): Router estimated peak long high speed interconnect demand : 98% of up directional wire in region X136_Y152 to X143_Y159
+    Info (20265): Estimated peak long high speed right directional wire demand : 18% in region X128_Y152 to X135_Y159
+    Info (20265): Estimated peak long high speed left directional wire demand : 39% in region X144_Y152 to X151_Y159
+    Info (20265): Estimated peak long high speed up directional wire demand : 98% in region X136_Y152 to X143_Y159
+    Info (20265): Estimated peak long high speed down directional wire demand : 64% in region X136_Y160 to X143_Y167
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.01 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 3.16 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:01:04
+Info (17966): Starting Hyper-Retimer operations.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:06
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:00
+Critical Warning (19527): There are 48 unused RX channels and 48 unused TX channels in the design.
+    Info (19528): Add the QSF assignment 'set_instance_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON -to <pin_name>' for each unused channel that will be used in future.
+    Info (19529): The above QSF assignment will preserve the performance of specified channels over time.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:00:37
+Info (20274): Successfully committed final database.
+Info (21624): Not running Design Assistant in finalize stage because there is no enabled rule to check
+Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
+Info: Quartus Prime Fitter was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 13880 megabytes
+    Info: Processing ended: Thu Feb 29 17:17:03 2024
+    Info: Elapsed time: 00:04:48
+    Info: System process ID: 457429
+Info (19538): Reading SDC files took 00:00:02 cumulatively in this process.
+Info: Run task: Timing Analysis (Signoff)
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:17:06 2024
+    Info: System process ID: 484299
+Info: Command: quartus_sta quartus_compile -c quartus_compile --mode=finalize
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: qsta_default_script.tcl version: #2
+Info (16677): Loading final database.
+Info (16734): Loading "final" snapshot for partition "root_partition".
+Info (16734): Loading "final" snapshot for partition "component_atax".
+Info (16678): Successfully loaded final database: elapsed time is 00:00:08.
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:00.
+Info (332104): Reading SDC File: 'quartus_compile.sdc'
+Info (19449): Reading SDC files elapsed 00:00:01.
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+    Info (19062): For recommendations on closing timing for HyperFlex architectures, run Fast Forward Timing Closure Recommendations in the Compilation Dashboard.
+Info (332146): Worst-case setup slack is -0.468
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):    -0.468            -467.051      3517      clock  1 Slow vid1 0C Model 
+Info (332146): Worst-case hold slack is 0.001
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.001               0.000         0      clock   Slow 900mV 0C Model 
+Info (332146): Worst-case recovery slack is -0.211
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):    -0.211              -5.327        73      clock  1 Slow vid1 0C Model 
+Info (332146): Worst-case removal slack is 0.250
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.250               0.000         0      clock   Fast 900mV 0C Model 
+Info (332146): Worst-case minimum pulse width slack is -0.667
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):    -0.667            -110.930      1120      clock 1 Slow vid1 100C Model 
+Info (332114): Report Metastability (1 Slow vid1 100C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 25, or 10.2%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332114): Report Metastability (1 Slow vid1 0C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 37, or 15.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332114): Report Metastability (Slow 900mV 100C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 32, or 13.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332114): Report Metastability (Slow 900mV 0C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 33, or 13.4%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332114): Report Metastability (Fast 900mV 100C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 11, or 4.5%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332114): Report Metastability (Fast 900mV 0C Model): Found 246 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+    Info (332114): Number of Synchronizer Chains Found: 246
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 2, or 0.8%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 0, or 0.0%
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info (21615): Running Design Assistant Rules for snapshot 'final'
+Info: No waiver waived any violations
+Info (21661): Design Assistant Results: 0 of 38 High severity rules issued violations in snapshot 'final'
+Info (21621): Design Assistant Results: 6 of 25 Medium severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus_compile.tq.drc.signoff.rpt' for more information
+Info (21622): Design Assistant Results: 0 of 14 Low severity rules issued violations in snapshot 'final'
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 5299 megabytes
+    Info: Processing ended: Thu Feb 29 17:17:27 2024
+    Info: Elapsed time: 00:00:21
+    Info: System process ID: 484299
+Info (19538): Reading SDC files took 00:00:01 cumulatively in this process.
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:17:28 2024
+    Info: System process ID: 485979
+Info: Command: quartus_sh -t generate_report.tcl compile quartus_compile quartus_compile
+Info: Quartus(args): compile quartus_compile quartus_compile
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: Clock clock
+Info:   Period: 1.000
+Info:   Restricted Fmax from STA: 599.88
+Info: Get Quartus Fitter Resource Utilization: family: Stratix10
+Info (23030): Evaluation of Tcl script generate_report.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 1131 megabytes
+    Info: Processing ended: Thu Feb 29 17:17:29 2024
+    Info: Elapsed time: 00:00:01
+    Info: System process ID: 485979
+Info (21793): Quartus Prime Full Compilation was successful. 0 errors, 176 warnings
+Info (23030): Evaluation of Tcl script /misc/scratch/ans5695/quartus_21.1/intelFPGA_pro/21.1/quartus/common/tcl/internal/qsh_flowengine.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 176 warnings
+    Info: Peak virtual memory: 1258 megabytes
+    Info: Processing ended: Thu Feb 29 17:17:30 2024
+    Info: Elapsed time: 00:05:56
+    Info: System process ID: 453381

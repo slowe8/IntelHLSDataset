@@ -1,0 +1,96 @@
+{
+  "performanceSummary":
+  {
+    "name":"Function Summary"
+    , "columns":
+    ["Function Name", "Hyper-Optimized Handshaking"]
+    , "children":
+    [
+      {
+        "name":"atax"
+        , "data":
+        [
+          "On"
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+              , "line":5
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  , "functionNameMapping":
+  {
+    "name":"Synthesized Function Name Mapping"
+    , "columns":
+    ["User-defined Function Name", "Mapped Function Name"]
+    , "children":
+    [
+      {
+        "name":"atax(float (*) [64], float*, float*)"
+        , "data":
+        ["atax"]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+              , "line":5
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  , "estimatedResources":
+  {
+    "name":"Estimated Resource Usage"
+    , "columns":
+    ["Function Name", "ALUTs ", "FFs  ", "RAMs ", "DSPs ", "MLABs"]
+    , "children":
+    [
+      {
+        "name":"atax"
+        , "data":
+        [2753, 7052, 48, 2, 30]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+              , "line":5
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"Total"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [2753, 7052, 48, 2, 30]
+        , "data_percent":
+        [0.147516, 0.188936, 0.409521, 0.0347222]
+      }
+      , {
+        "name":"Available"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [1866240, 3732480, 11721, 5760, 0]
+      }
+    ]
+  }
+  , "compileWarnings":
+  {
+    "name":"Compile Warnings"
+    , "children":
+    [
+    ]
+  }
+}

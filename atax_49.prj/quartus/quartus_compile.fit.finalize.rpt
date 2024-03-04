@@ -1,0 +1,89 @@
+Fitter Finalize Stage Report for quartus_compile
+Thu Feb 29 17:16:58 2024
+Quartus Prime Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Routing Usage Summary
+  3. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------+
+; Routing Usage Summary                                         ;
++--------------------------------+------------------------------+
+; Routing Resource Type          ; Usage                        ;
++--------------------------------+------------------------------+
+; Block Input Muxes              ; 4 / 361,828 ( < 1 % )        ;
+; Block interconnects            ; 17,797 / 4,381,776 ( < 1 % ) ;
+; C16 interconnects              ; 4 / 108,864 ( < 1 % )        ;
+; C2 interconnects               ; 1,843 / 653,184 ( < 1 % )    ;
+; C3 interconnects               ; 1,716 / 1,325,376 ( < 1 % )  ;
+; C4 interconnects               ; 2,197 / 851,904 ( < 1 % )    ;
+; CLOCK_INVERTs                  ; 6 / 4,032 ( < 1 % )          ;
+; DCM_muxes                      ; 0 / 1,088 ( 0 % )            ;
+; Direct links                   ; 8,953 / 4,381,776 ( < 1 % )  ;
+; GAP Interconnects              ; 0 / 173,376 ( 0 % )          ;
+; GAPs                           ; 0 / 29,304 ( 0 % )           ;
+; HIO Buffers                    ; 0 / 145,152 ( 0 % )          ;
+; Horizontal Buffers             ; 0 / 115,776 ( 0 % )          ;
+; Horizontal_clock_segment_muxes ; 4 / 4,032 ( < 1 % )          ;
+; Programmable Inverts           ; 51 / 195,696 ( < 1 % )       ;
+; R10 interconnects              ; 1,865 / 1,216,008 ( < 1 % )  ;
+; R2 interconnects               ; 2,249 / 1,088,640 ( < 1 % )  ;
+; R24 interconnects              ; 20 / 152,064 ( < 1 % )       ;
+; R24/C16 interconnect drivers   ; 23 / 217,728 ( < 1 % )       ;
+; R4 interconnects               ; 3,403 / 1,574,496 ( < 1 % )  ;
+; Row Clock Tap-Offs             ; 835 / 350,352 ( < 1 % )      ;
+; Switchbox_clock_muxes          ; 19 / 23,040 ( < 1 % )        ;
+; Vertical_seam_tap_muxes        ; 16 / 12,096 ( < 1 % )        ;
++--------------------------------+------------------------------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.1.0 Build 169 03/24/2021 Patches 0.36 SC Pro Edition
+    Info: Processing started: Thu Feb 29 17:12:15 2024
+    Info: System process ID: 457429
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off quartus_compile -c quartus_compile
+Info: Using INI file /home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/atax_49.prj/quartus/quartus.ini
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = quartus_compile
+Info: Revision = quartus_compile
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:00
+Critical Warning (19527): There are 48 unused RX channels and 48 unused TX channels in the design.
+    Info (19528): Add the QSF assignment 'set_instance_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON -to <pin_name>' for each unused channel that will be used in future.
+    Info (19529): The above QSF assignment will preserve the performance of specified channels over time.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:00:37
+
+

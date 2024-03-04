@@ -1,0 +1,567 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"?"
+      , "id":4294967295
+      , "src":"1027477312"
+      , "dst":"1038898672"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"atax.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"atax.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: atax.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"17"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"22"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"17"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"27"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: Fused loop atax.B6(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"35"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B7(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"29"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B8(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"36"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B9(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"36"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B10(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"35"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: atax.B11(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"42"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: atax.B12(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"42"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":1027477312
+          , "start":"35.00"
+          , "parent":"atax.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":5
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"atax.B3"
+          , "id":1041446560
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B4"
+          , "id":1041036048
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B5"
+          , "id":1023527056
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B2"
+          , "id":1041155168
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":27
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Fused loop atax.B6"
+          , "id":1027479808
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B7"
+          , "id":1027921152
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":29
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B8"
+          , "id":1027334128
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B9"
+          , "id":1027928368
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"atax.B10"
+          , "id":1027478560
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B11"
+          , "id":1027918656
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"atax.B12"
+          , "id":1027571024
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1038898672
+          , "end":"41.00"
+          , "parent":"atax.B13"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1041036048
+          , "to":1041036048
+        }
+        , {
+          "from":1041446560
+          , "to":1041036048
+        }
+        , {
+          "from":1041036048
+          , "to":1023527056
+        }
+        , {
+          "from":1023527056
+          , "to":1041155168
+        }
+        , {
+          "from":1041155168
+          , "to":1027479808
+        }
+        , {
+          "from":1027479808
+          , "to":1027921152
+        }
+        , {
+          "from":1027921152
+          , "to":1027921152
+        }
+        , {
+          "from":1027921152
+          , "to":1027334128
+        }
+        , {
+          "from":1027334128
+          , "to":1027928368
+        }
+        , {
+          "from":1027928368
+          , "to":1027928368
+        }
+        , {
+          "from":1027928368
+          , "to":1027478560
+        }
+        , {
+          "from":1027478560
+          , "to":1027918656
+        }
+        , {
+          "from":1027571024
+          , "to":1027571024
+        }
+        , {
+          "from":1027918656
+          , "to":1027571024
+        }
+        , {
+          "from":1027477312
+          , "to":1041446560
+        }
+        , {
+          "from":1027571024
+          , "to":1038898672
+        }
+        , {
+          "from":1027477312
+          , "to":1038898672
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"buff_y_out"
+      , "id":4294967295
+      , "src":"1045050512"
+      , "dst":"1041472816"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"Fused loop atax.B6"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"buff_y_out"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"13"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: atax.B9(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"36"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"buff_y_out"
+          , "id":1045050512
+          , "start":"16.00"
+          , "parent":"atax.B6"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":37
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"atax.B9"
+          , "id":1027928368
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1041472816
+          , "end":"17.00"
+          , "parent":"atax.B10"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":37
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1027928368
+          , "to":1027928368
+        }
+        , {
+          "from":1045050512
+          , "to":1027928368
+        }
+        , {
+          "from":1027928368
+          , "to":1041472816
+        }
+        , {
+          "from":1045050512
+          , "to":1041472816
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Unknown variable"
+      , "id":4294967295
+      , "type":"fMAX/II"
+      , "brief":"N/A"
+      , "loop":"atax.B7"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"atax.B7"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                  , "line":"29"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"N/A"
+          , "Estimated fmax reduced to: ":"312.0"
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"f32 FP *+"
+          , "id":1026602768
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/projects/ljohn/simplescalar/ans/polybench/atax/intelversions/./atax_49.c"
+                , "line":30
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+      ]
+    }
+  ]
+}

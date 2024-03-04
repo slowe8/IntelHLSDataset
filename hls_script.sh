@@ -18,7 +18,7 @@ benchmark_family=$1
 benchmark=$2
 template=$3
 src=$4
-
+bench_num=$5
 
 if [ -d ./$benchmark_family/ ]; then
 
@@ -40,7 +40,7 @@ fi
 
 # Run an HLS Compilation
 # - We should consider making the target device an argument to this script
-for ((i = 1 ; i < 577 ; i++)); do
+for ((i = 1 ; i < (($bench_num + 1)) ; i++)); do
 	FILE=./"$benchmark"_"$i".c
 	if [ -f "$FILE" ]; then
 		i++ -march=1ST110EN1F43E1VG -ghdl "$FILE" --simulator "none" -v -o "$benchmark"_"$i"
