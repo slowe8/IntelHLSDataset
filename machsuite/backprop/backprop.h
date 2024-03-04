@@ -1,7 +1,9 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "../common/support.h"
+#include <HLS/hls.h> 
+#include <HLS/stdio.h>
+
 
 // Fixed parameters
 #define input_dimension  13
