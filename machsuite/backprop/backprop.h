@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <math.h>
+#include <HLS/math.h>
 #include "../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>

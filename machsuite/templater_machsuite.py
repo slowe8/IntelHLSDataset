@@ -12,10 +12,12 @@ components = []
 partitionFactors = []
 partitionNames = []
 partitionLoopNames = []
+partition2Factors = []
+partition2Names = []
 loopNames = []
 loopFactors = []
 partitionPipelines = []
-partitions = False
+activePartition = False
 
 # Nodes are for creating all permutations we need of different loop names and factors
 class Node:
@@ -61,6 +63,8 @@ isLoop = False
 newLoopSection = False
 currSection = -1
 loopSections = list()
+partitionsIdx = 0
+partitionCount = 0
 for line in template_file:
     line = line.strip()
 
@@ -74,15 +78,24 @@ for line in template_file:
         factors = factors.split()
 
         for n in factors:
-            partitionFactors.append(int(n))
-        partitions = True
+            if partitionCount == 1:
+                partition2Factors.append(int(n))
+            else :
+                partitionFactors.append(int(n))
+        partitionCount += 1
+        activePartition = True
         continue
-    elif partitions: # getting names of arrays to partition and array-related loops whose unroll factors
-                     # always match array partitions
+    elif activePartition: # getting names of arrays to partition and array-related loops whose unroll factors
+                     # always match array activePartition
         if "set_directive_array_partition" in line:
             line_s = line.split(" ")
-            partitionNames.append(line_s[-1])
-            partitionNames[-1] = partitionNames[-1].replace("\n", "")
+            if partitionCount == 1:
+                partitionNames.append(line_s[-1])
+                partitionNames[-1] = partitionNames[-1].replace("\n", "")
+            elif partitionCount == 2:
+                partition2Names.append(line_s[-1])
+                partition2Names[-1] = partition2Names[-1].replace("\n", "")
+
         elif "set_directive_unroll" in line: #leaving this in here for now because it doesn't hurt, but we don't need for machsuite
             line_s = line.split(" ")
             partitionLoopName = line_s[-1].split("/")[-1]
@@ -97,7 +110,7 @@ for line in template_file:
             partitionLoopName = partitionLoopName.replace("\n", "")
             partitionPipelines[partitionLoopNames.index(partitionLoopName)] = True
         elif "loop_opt" in line: # indicates beginning of a loop section
-            partitions = False
+            activePartition = False
             isLoop = True
             newLoopSection = True
     elif "loop_opt" in line:
@@ -143,79 +156,108 @@ except IndexError:
 
 
 
+if partitionCount == 1:
+    partition2Factors = [1]
 
 count = 1
 isPartitionLoop = False
+for partition2Factor in partition2Factors:
+    for partitionFactor in partitionFactors:
+        for factorList in allFactors:
+            #print(factorList)
+            bench.seek(0,0)
+            filename = f'./' + bench_name + '/intelversions/' + bench_name + '_' + str(count) + '.c'
+            
+            if os.path.isfile(filename):
+                os.remove(filename)
 
-for partitionFactor in partitionFactors:
-    for factorList in allFactors:
-        #print(factorList)
-        bench.seek(0,0)
-        filename = f'./' + bench_name + '/intelversions/' + bench_name + '_' + str(count) + '.c'
-        
-        if os.path.isfile(filename):
-            os.remove(filename)
-
-        newBench = open(filename, 'a+')
-        isFunctionDecl = False
-        for line in bench:
-            newLine = line
+            newBench = open(filename, 'a+')
             isFunctionDecl = False
-            isPartitionLoop = False
-            firstRun = True
-            #print(partitionNames)
-            for partitionName in partitionNames:
-                if partitionName in line:
-                    if 'component' in line:
-                        isFunctionDecl = True
-                        split_function = re.split('[()[\]{}\s+]', line)
-                        #print(split_function)
-                        array_idx = 0
-                        
+            for line in bench:
+                newLine = line
+                isFunctionDecl = False
+                isPartitionLoop = False
+                firstRun = True
+                #print(partitionNames)
+                if partitionCount == 2:
+                    for partition2Name in partition2Names:
+                        if partition2Name in line:
+                            if 'component' in line:
+                                isFunctionDecl = True
+                                split_function = re.split('[()[\]{}\s+]', line)
+                                #print(split_function)
+                                array_idx = 0
+                                
 
-                        for i in range(len(split_function)):
-                            if partitionName == split_function[i]:
-                                #print(str(i))
-                                break
+                                for i in range(len(split_function)):
+                                    if partition2Name == split_function[i]:
+                                        #print(str(i))
+                                        break
 
-                        array_type = split_function[i - 1]
-                        array_dim = split_function[i + 1]
+                                array_type = split_function[i - 1]
+                                array_dim = split_function[i + 1]
 
-                        new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
-                        new_line_e = array_type  + " *" + partitionName
+                                new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                                new_line_e = array_type  + " *" + partition2Name
 
-                        directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
-                        
-                        line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
-                        newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
-                        #print(newLine)
+                                directives = "hls_numbanks(" + str(partition2Factor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                                
+                                line_to_replace = array_type + ' ' + partition2Name + '[' + str(array_dim) + ']'
+                                newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                                #print(newLine)
+
+                for partitionName in partitionNames:
+                    if partitionName in line:
+                        if 'component' in line:
+                            isFunctionDecl = True
+                            split_function = re.split('[()[\]{}\s+]', line)
+                            #print(split_function)
+                            array_idx = 0
+                            
+
+                            for i in range(len(split_function)):
+                                if partitionName == split_function[i]:
+                                    #print(str(i))
+                                    break
+
+                            array_type = split_function[i - 1]
+                            array_dim = split_function[i + 1]
+
+                            new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                            new_line_e = array_type  + " *" + partitionName
+
+                            directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                            
+                            line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
+                            newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                            #print(newLine)
 
 
-            if not isFunctionDecl:
-                for partitionLoopName in partitionLoopNames:
-                    print("machsuite probably shouldn't be here")
-                    if partitionLoopName in line and ":" in line:
-                        if not partitionPipelines[partitionLoopNames.index(partitionLoopName)]:
-                            newBench.write("#pragma disable_loop_pipelining\n")
-                        newBench.write("#pragma unroll " + str(partitionFactor) + "\n")
-                        lineParsed = line.split(":")
-                        newLine = lineParsed[1]
-                        isPartitionLoop = True
-                if not isPartitionLoop:
-                    for loop in factorList:
-                        for name in loop["name"]:
-                            if name in line and ":" in line:
-                                if not loop["pipelined"]:
-                                    newBench.write("#pragma disable_loop_pipelining\n")
-                                newBench.write("#pragma unroll " + loop["factor"] + '\n')
-                                lineParsed = line.split(":")
-                                newLine = lineParsed[1]
-                if "register" in newLine:
-                    newLine = newLine.replace("register", "hls_register")
-                if ("hls_hls_register" in newLine):
-                    newLine = newLine.replace("hls_hls_register", "hls_register")
+                if not isFunctionDecl:
+                    for partitionLoopName in partitionLoopNames:
+                        print("machsuite probably shouldn't be here")
+                        if partitionLoopName in line and ":" in line:
+                            if not partitionPipelines[partitionLoopNames.index(partitionLoopName)]:
+                                newBench.write("#pragma disable_loop_pipelining\n")
+                            newBench.write("#pragma unroll " + str(partitionFactor) + "\n")
+                            lineParsed = line.split(":")
+                            newLine = lineParsed[1]
+                            isPartitionLoop = True
+                    if not isPartitionLoop:
+                        for loop in factorList:
+                            for name in loop["name"]:
+                                if name in line and ":" in line:
+                                    if not loop["pipelined"]:
+                                        newBench.write("#pragma disable_loop_pipelining\n")
+                                    newBench.write("#pragma unroll " + loop["factor"] + '\n')
+                                    lineParsed = line.split(":")
+                                    newLine = lineParsed[1]
+                    if "register" in newLine:
+                        newLine = newLine.replace("register", "hls_register")
+                    if ("hls_hls_register" in newLine):
+                        newLine = newLine.replace("hls_hls_register", "hls_register")
 
-            newBench.write(newLine)
+                newBench.write(newLine)
 
-        newBench.close()
-        count += 1
+            newBench.close()
+            count += 1
