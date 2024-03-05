@@ -9,7 +9,7 @@
 #		a CSV file
 
 # arg1=benchmark_family arg2=benchmark arg3=template file name arg4= source file name
-# Example call: source hls_script.sh machsuite aes_table template_table.tcl aes_table.c
+# Example call: source hls_script.sh machsuite aes_table template_table.tcl aes_table.c 150
 #! /bin/bash
 
 
