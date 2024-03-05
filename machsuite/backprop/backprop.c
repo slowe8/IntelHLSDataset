@@ -1,5 +1,18 @@
 #include "backprop.h"
 
+#define arg1 (input_dimension * nodes_per_layer)
+#define arg2 (nodes_per_layer * nodes_per_layer)
+#define arg3 (nodes_per_layer * possible_outputs)
+#define arg7 (training_sets*input_dimension)
+#define arg8 (training_sets*possible_outputs)
+/*
+TYPE arg1(void) {return input_dimension * nodes_per_layer;}
+TYPE arg2(void) {return nodes_per_layer * nodes_per_layer;}
+TYPE arg3(void) {return nodes_per_layer * possible_outputs;}
+TYPE arg7(void) {return training_sets*input_dimension;}
+TYPE arg8(void) {return training_sets*possible_outputs;}
+*/
+
 void soft_max(TYPE net_outputs[possible_outputs], TYPE activations[possible_outputs]) {
     int i;
     TYPE sum;
@@ -236,14 +249,8 @@ void update_weights(TYPE weights1[input_dimension*nodes_per_layer],
     }
 }
 
-component void backprop(TYPE weights1[input_dimension*nodes_per_layer], 
-                TYPE weights2[nodes_per_layer*nodes_per_layer],
-                TYPE weights3[nodes_per_layer*possible_outputs],
-                TYPE biases1[nodes_per_layer], 
-                TYPE biases2[nodes_per_layer],
-                TYPE biases3[possible_outputs],
-                TYPE training_data[training_sets*input_dimension],
-                TYPE training_targets[training_sets*possible_outputs]) {
+component void backprop(TYPE weights1[arg1], TYPE weights2[arg2], TYPE weights3[arg3], TYPE biases1[nodes_per_layer], TYPE biases2[nodes_per_layer], TYPE biases3[possible_outputs], TYPE training_data[arg7], TYPE training_targets[arg8]) 
+{
     int i,j;
     //Forward and training structures
     TYPE activations1[nodes_per_layer];
@@ -263,7 +270,6 @@ component void backprop(TYPE weights1[input_dimension*nodes_per_layer],
 
     for(i=0; i<training_sets; i++){
         init_loop: for(j=0;j<nodes_per_layer;j++){
-            #pragma HLS unroll factor=64
             activations1[j] = (TYPE)0.0;
             activations2[j] = (TYPE)0.0;
             if(j<possible_outputs){
