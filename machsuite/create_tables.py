@@ -16,23 +16,20 @@ def getDevice(prjpath):
 def get_post_hls_data(data_file):
     json = pd.read_json(data_file)
 
-    header = json.iloc[1,1]
-
-    row = json.iloc[2,1]
-
-    name = row[0]['name']
-    data = row[0]['data']
+    columns = json['estimatedResources'][1]
+    name = json['estimatedResources'][2][0]['name']
+    data = json['estimatedResources'][2][0]['data']
 
     df = {}
-    df[header[0]] = [name]
-    for i in range(1, len(header)):
-        df[header[i]] = [data[i-1]]
+    df['name'] = [name]
+    for i in range(len(columns)):
+        df[columns[i]] = [data[i-1]]
 
     df = pd.DataFrame(df)
 
     return df
 
-def get_post_impl_data(data_file):
+def get_post_impl_data(data_file, power_file):
 
     json = pd.read_json(data_file)
 
@@ -86,9 +83,17 @@ def get_post_impl_data(data_file):
 
     timingTable = pd.DataFrame(timing_summary)
 
+    power_df = pd.read_csv(power_file)
+
+    power_data = {}
+    power_data['Total On-Chip Power Dissipation'] = power_df.iloc[8, 1]
+    power_data['Core Dynamic On-Chip Power Dissipation'] = power_df.iloc[14,1]
+    power_data['Device Static On-Chip Power Dissipation'] = power_df.iloc[17,1]
+
     post_impl = {}
     post_impl.update(fitting_summary)
     post_impl.update(timing_summary)
+    post_impl.update(power_data)
 
     post_impl_table = pd.DataFrame(post_impl)
     
@@ -96,6 +101,7 @@ def get_post_impl_data(data_file):
 
 benchmark = sys.argv[1]
 path_project = sys.argv[2]
+power_file = sys.argv[3]
 
 device = getDevice(path_project)
 
@@ -108,21 +114,22 @@ if device not in os.listdir(benchmark):
 path_post_hls_data = f'./{benchmark}/{device}/post_hls.csv' 
 path_post_impl_data = f'./{benchmark}/{device}/post_implementation.csv'
    
-post_hls_data = open(path_post_hls_data, 'w+')
-post_impl_data = open(path_post_impl_data, 'w+')
-
 summary_path = f'./{path_project}/reports/lib/json/summary.json'
 
 if os.stat(path_post_hls_data).st_size > 0:
-    pd.read_csv(post_hls_data).append(get_post_hls_data(summary_path)).to_csv(path_post_hls_data)
+    df = pd.read_csv(path_post_hls_data)
+    df = df._append(get_post_hls_data(summary_path))
+    df.to_csv(path_post_hls_data, index=False)
 else:
-    get_post_hls_data(summary_path).to_csv(path_post_hls_data)
+    get_post_hls_data(summary_path).to_csv(path_post_hls_data, index=False)
                     
 quartus_path = f'./{path_project}/reports/lib/json/quartus.json'
 
-if os.stat(path_post_impl_data).st_size > 0:
-    pd.read_csv(post_impl_data).append(get_post_impl_data(quartus_path)).to_csv(path_post_impl_data)
-else:
-    get_post_impl_data(quartus_path).to_csv(path_post_impl_data)
-    
+power_path = f'./{path_project}/../../data/{power_file}'
 
+if os.stat(path_post_impl_data).st_size > 0:
+    df = pd.read_csv(path_post_impl_data)
+    df = df._append(get_post_impl_data(quartus_path, power_path))
+    df.to_csv(path_post_impl_data, index=False)
+else:
+    get_post_impl_data(quartus_path, power_path).to_csv(path_post_impl_data, index=False)
