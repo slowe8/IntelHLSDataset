@@ -22,7 +22,13 @@ def get_post_hls_data(data_file):
     data = json['estimatedResources'][2][0]['data']
 
     df = {}
-    df = {}
+    source_file = ''
+    for s in data_file.split('/'):
+        if '.prj' in s:
+            source_file = s.replace('.prj', '')
+            break
+
+    df['Source File'] = source_file
     df[columns[0]] = [name]
     for i in range(1, len(columns)):
         df[columns[i]] = [data[i-1]]
@@ -93,6 +99,15 @@ def get_post_impl_data(data_file, power_file):
     power_data['Device Static On-Chip Power Dissipation (mW)'] = power_df.iloc[17,1].split()[0]
 
     post_impl = {}
+
+    source_file = ''
+    for s in data_file.split('/'):
+        if '.prj' in s:
+            source_file = s.replace('.prj', '')
+            break
+
+    post_impl['Source File'] = source_file 
+
     post_impl.update(fitting_summary)
     post_impl.update(timing_summary)
     post_impl.update(power_data)
