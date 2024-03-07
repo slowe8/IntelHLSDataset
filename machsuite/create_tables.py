@@ -1,3 +1,8 @@
+"""
+create_tables.py
+Usage: pythone3 create_tables.py <benchmark_path> <HLS project path>
+"""
+
 import sys
 import os
 import pandas as pd
@@ -118,7 +123,6 @@ def get_post_impl_data(data_file, power_file):
 
 benchmark = sys.argv[1]
 path_project = sys.argv[2]
-power_file = sys.argv[3]
 
 device = getDevice(path_project)
 
@@ -148,6 +152,13 @@ else:
                     
 quartus_path = f'./{path_project}/reports/lib/json/quartus.json'
 
+source_file = ''
+for s in data_file.split('/'):
+    if '.prj' in s:
+        source_file = s.replace('.prj', '')
+        break
+
+power_file = source_file + '.csv'
 power_path = f'./{path_project}/../../data/{power_file}'
 
 if os.stat(path_post_impl_data).st_size > 0:
