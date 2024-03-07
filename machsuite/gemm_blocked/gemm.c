@@ -7,7 +7,7 @@ ASPLOS 1991
 
 #include "gemm.h"
 
-component void bbgemm(hls_avalon_slave_memory_argument(N) TYPE *m1, hls_avalon_slave_memory_argument(N) TYPE *m2, hls_avalon_slave_memory_argument(N) TYPE *prod){
+void bbgemm(TYPE m1[N], TYPE m2[N], TYPE prod[N]){
     int i, k, j, jj, kk;
     int i_row, k_row;
     TYPE temp_x, mul;
