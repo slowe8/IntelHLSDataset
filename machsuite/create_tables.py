@@ -22,8 +22,9 @@ def get_post_hls_data(data_file):
     data = json['estimatedResources'][2][0]['data']
 
     df = {}
-    df['name'] = [name]
-    for i in range(len(columns)):
+    df = {}
+    df[columns[0]] = [name]
+    for i in range(1, len(columns)):
         df[columns[i]] = [data[i-1]]
 
     df = pd.DataFrame(df)
