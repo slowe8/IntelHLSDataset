@@ -1,6 +1,7 @@
 import sys
 import os
 import pandas as pd
+from pathlib import Path
 
 def getDevice(prjpath):
 
@@ -86,9 +87,9 @@ def get_post_impl_data(data_file, power_file):
     power_df = pd.read_csv(power_file)
 
     power_data = {}
-    power_data['Total On-Chip Power Dissipation'] = power_df.iloc[8, 1]
-    power_data['Core Dynamic On-Chip Power Dissipation'] = power_df.iloc[14,1]
-    power_data['Device Static On-Chip Power Dissipation'] = power_df.iloc[17,1]
+    power_data['Total On-Chip Power Dissipation (mW)'] = power_df.iloc[8, 1].split()[0]
+    power_data['Core Dynamic On-Chip Power Dissipation (mW)'] = power_df.iloc[14,1].split()[0]
+    power_data['Device Static On-Chip Power Dissipation (mW)'] = power_df.iloc[17,1].split()[0]
 
     post_impl = {}
     post_impl.update(fitting_summary)
@@ -105,15 +106,21 @@ power_file = sys.argv[3]
 
 device = getDevice(path_project)
 
+path_device = Path(f'./{benchmark}/{device}')
+path_device.mkdir(exist_ok=True)
+
 post_hls_data = 0
 post_impl_data = 0
 
-if device not in os.listdir(benchmark):
-    os.mkdir(f'./{benchmark}/{device}')
+path_post_hls_data = Path(f'./{benchmark}/{device}/post_hls.csv')
+path_post_impl_data = Path(f'./{benchmark}/{device}/post_implementation.csv')
 
-path_post_hls_data = f'./{benchmark}/{device}/post_hls.csv' 
-path_post_impl_data = f'./{benchmark}/{device}/post_implementation.csv'
-   
+if not path_post_hls_data.exists():
+    path_post_hls_data.touch()
+
+if not path_post_impl_data.exists():
+    path_post_impl_data.touch()
+
 summary_path = f'./{path_project}/reports/lib/json/summary.json'
 
 if os.stat(path_post_hls_data).st_size > 0:
