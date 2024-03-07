@@ -153,7 +153,7 @@ else:
 quartus_path = f'./{path_project}/reports/lib/json/quartus.json'
 
 source_file = ''
-for s in data_file.split('/'):
+for s in path_project.split('/'):
     if '.prj' in s:
         source_file = s.replace('.prj', '')
         break
