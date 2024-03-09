@@ -15,8 +15,6 @@ array_partition,1,[1 2 5 10],[cyclic]
 set_directive_array_partition -factor [factor] -type [type] "bfs" level
 
 
-#loop pipeline and unroll, expected dimensionality is 7
-#0,loop_queue,pipeline,unroll,[2 4  8 16 32 64 128 256]
 loop_opt,1,2
 0,loop_neighbors,pipeline,unroll,[2 4 8 16 32 64 128]
 set_directive_pipeline bfs/[name]
