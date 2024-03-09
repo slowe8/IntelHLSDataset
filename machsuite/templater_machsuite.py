@@ -174,6 +174,7 @@ for partition2Factor in partition2Factors:
             newBench = open(filename, 'a+')
             isFunctionDecl = False
             for line in bench:
+                line = line.strip()
                 newLine = line
                 isFunctionDecl = False
                 isPartitionLoop = False
@@ -182,7 +183,7 @@ for partition2Factor in partition2Factors:
                 if partitionCount == 2:
                     for partition2Name in partition2Names:
                         if partition2Name in line:
-                            if 'component' in line:
+                            if line.split(" ")[0] == 'component':
                                 isFunctionDecl = True
                                 split_function = re.split('[()[\]{}\s+]', line)
                                 #print(split_function)
@@ -246,7 +247,8 @@ for partition2Factor in partition2Factors:
                     if not isPartitionLoop:
                         for loop in factorList:
                             for name in loop["name"]:
-                                if name in line and ":" in line:
+                                line_s = line.split(" ")
+                                if (line_s[0] == name) and (line_s[1] == ":"):
                                     if not loop["pipelined"]:
                                         newBench.write("#pragma disable_loop_pipelining\n")
                                     newBench.write("#pragma unroll " + loop["factor"] + '\n')
