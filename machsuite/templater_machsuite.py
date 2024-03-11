@@ -19,6 +19,8 @@ loopFactors = []
 partitionPipelines = []
 activePartition = False
 
+datatype_pattern = r'\b(int|float|double|char|long|short|uint8_t|uint16_t|uint32_t|uint64_t|int8_t|int16_t|int32_t|int64_t)\b(?:\s*\*+\s*)?'
+
 # Nodes are for creating all permutations we need of different loop names and factors
 class Node:
     def __init__(self) :
@@ -205,6 +207,13 @@ for partition2Factor in partition2Factors:
                                 line_to_replace = array_type + ' ' + partition2Name + '[' + str(array_dim) + ']'
                                 newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
                                 #print(newLine)
+                            elif '(' in line or ')' in line:
+                                continue
+                            else:
+                                inFunctionDecl = False
+                                array_type = re.search(datatype_pattern, newLine)
+                                if array_type:
+                                    newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
 
                 for partitionName in partitionNames:
                     if partitionName in line:
@@ -231,6 +240,14 @@ for partition2Factor in partition2Factors:
                             line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
                             newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
                             #print(newLine)
+                        elif '(' in line or ')' in line:
+                            continue
+                        else:
+                            inFunctionDecl = False
+                            array_type = re.search(datatype_pattern, newLine)
+                            if array_type:
+                                newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
+
 
 
                 if not isFunctionDecl:

@@ -16,6 +16,9 @@
 |    4. Please follow the copyright of each benchmark program.             |
 +--------------------------------------------------------------------------+
 */
+
+#include <HLS/hls.h>
+
 #ifndef SHA_H
 #define SHA_H
 
