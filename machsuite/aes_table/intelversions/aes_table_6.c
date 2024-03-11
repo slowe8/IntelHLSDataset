@@ -7,6 +7,8 @@
 #define F(x)   (((x)<<1) ^ ((((x)>>7) & 1) * 0x1b))
 #define FD(x)  (((x) >> 1) ^ (((x) & 1) ? 0x8d : 0))
 
+hls_numbanks(1)
+hls_bankwidth(sizeof(uint8_t))
 const uint8_t sbox[256] = {
     0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5,
     0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
@@ -55,8 +57,7 @@ void aes_subBytes(uint8_t *buf)
 {
     hls_register uint8_t i = 16;
 
-#pragma unroll 2
- while (i--) buf[i] = rj_sbox(buf[i]);
+    sub : while (i--) buf[i] = rj_sbox(buf[i]);
 } /* aes_subBytes */
 
 /* -------------------------------------------------------------------------- */
