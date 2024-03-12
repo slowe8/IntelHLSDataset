@@ -72,7 +72,10 @@ firstNonTemp = False
 nonTempIdx = 0
 for line in template_file:
     line = line.strip()
-
+    if not line:
+        continue
+    if line[0] == "#":
+        continue
     if 'array_partition,' in line: # indicates beginning of array partition specifications
         line_s = line.split(',')
         factors = line_s[2].replace('[', '')
@@ -195,7 +198,6 @@ except IndexError:
     print("index error here idk why\n")
 
 
-
 if partitionCount == 1:
     partition2Factors = [1]
 
@@ -213,7 +215,7 @@ for partition2Factor in partition2Factors:
             newBench = open(filename, 'a+')
             isFunctionDecl = False
             for line in bench:
-                newLine = line + "\n"
+                newLine = line
                 line = line.strip()
                 isFunctionDecl = False
                 isPartitionLoop = False
@@ -226,7 +228,6 @@ for partition2Factor in partition2Factors:
                                 split_function = re.split('[()[\]{}\s+]', line)
                                 array_idx = 0
                                 
-
                                 for i in range(len(split_function)):
                                     if partition2Name == split_function[i]:
                                         break
@@ -244,10 +245,14 @@ for partition2Factor in partition2Factors:
                             elif '(' in line or ')' in line:
                                 continue
                             else:
-                                inFunctionDecl = False
+                                isFunctionDecl = False
                                 array_type = re.search(datatype_pattern, newLine)
                                 if array_type:
                                     newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
+
+                                first = line.split(" ")[0]
+                                if ("_t" in first) or (first == "TYPE") :
+                                    newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
 
                 for partitionName in partitionNames:
                     if partitionName in line:
@@ -274,11 +279,13 @@ for partition2Factor in partition2Factors:
                         elif '(' in line or ')' in line:
                             continue
                         else:
-                            inFunctionDecl = False
+                            isFunctionDecl = False
                             array_type = re.search(datatype_pattern, newLine)
                             if array_type:
                                 newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
-
+                            first = line.split(" ")[0]
+                            if ("_t" in first) or (first == "TYPE"):
+                                newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
 
 
                 if not isFunctionDecl:
