@@ -229,31 +229,44 @@ for partition2Factor in partition2Factors:
                                 split_function = re.split('[()[\]{}\s+]', line)
                                 array_idx = 0
                                 
+                                isFunctionDecl = True
+                                split_function = re.split('[()[\]{}\s+]', line)
+                                array_idx = 0
+
+                                found = False
                                 for i in range(len(split_function)):
-                                    if partition2Name == split_function[i]:
+                                    if partitionName == split_function[i]:
+                                        found = True
                                         break
 
-                                array_type = split_function[i - 1]
-                                array_dim = split_function[i + 1]
+                                if found:
+                                    array_type = split_function[i - 1]
+                                    array_dim = split_function[i + 1]
 
-                                new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
-                                new_line_e = array_type  + " *" + partition2Name
+                                    new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                                    new_line_e = array_type  + " *" + partitionName
 
-                                directives = "hls_numbanks(" + str(partition2Factor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
-                                
-                                line_to_replace = array_type + ' ' + partition2Name + '[' + str(array_dim) + ']'
-                                newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                                    directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                                    
+                                    line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
+                                    newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
                             elif '(' in line or ')' in line:
                                 continue
                             else:
                                 isFunctionDecl = False
-                                array_type = re.search(datatype_pattern, newLine)
-                                if array_type:
-                                    newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
-
-                                first = line.split(" ")[0]
-                                if ("_t" in first) or (first == "TYPE") :
-                                    newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
+                                #print(line_s)
+                                for piece in line_s:
+                                    if "[" in piece:
+                                        #print(piece)
+                                        if piece.split("[")[0] == partitionName:
+                                            if line_s.index(piece) > 1:
+                                                break
+                                            array_type = re.search(datatype_pattern, newLine)
+                                            if array_type:
+                                                newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
+                                            first = line.split(" ")[0]
+                                            if ("_t" in first) or (first == "TYPE"):
+                                                newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
                 for partitionName in partitionNames:
                     if partitionName in line:
                         line_s = line.split(" ")
@@ -283,15 +296,18 @@ for partition2Factor in partition2Factors:
                             continue
                         else:
                             isFunctionDecl = False
-                            for piece in line.split(" "):
+                            for piece in line_s:
                                 if "[" in piece:
+                                    #print(piece)
                                     if piece.split("[")[0] == partitionName:
+                                        if line_s.index(piece) > 1:
+                                            break
                                         array_type = re.search(datatype_pattern, newLine)
                                         if array_type:
                                             newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
                                         first = line.split(" ")[0]
                                         if ("_t" in first) or (first == "TYPE"):
-                                            newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
+                                            newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
 
 
                 if not isFunctionDecl:
