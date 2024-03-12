@@ -19,7 +19,7 @@ partitionPipelines = []
 loopTemplates = []
 activePartition = False
 
-datatype_pattern = r'\b(int|float|double|char|long|short|uint8_t|uint16_t|uint32_t|uint64_t|int8_t|int16_t|int32_t|int64_t)\b(?:\s*\*+\s*)?'
+datatype_pattern = r'\b(void|int|float|double|char|long|short|uint8_t|uint16_t|uint32_t|uint64_t|int8_t|int16_t|int32_t|int64_t)\b(?:\s*\*+\s*)?'
 
 # Nodes are for creating all permutations we need of different loop names and factors
 class Node:
@@ -160,6 +160,8 @@ for line in template_file:
                         i+=1
 
         if "loop_opt" in line:
+            loopTemplates = list() #DECLARE
+            currSection += 1
             isLoop = True
             newLoopSection = True
             loopSections.append([])
@@ -167,8 +169,6 @@ for line in template_file:
             
         if newLoopSection:
             firstNonTemp = True
-            loopTemplates = list() #DECLARE
-            currSection += 1
             line_s = line.split(",")
             if "/" in line_s[1]:
                 loopTemplateNames = line_s[1].split("/")
@@ -223,7 +223,8 @@ for partition2Factor in partition2Factors:
                 if partitionCount == 2:
                     for partition2Name in partition2Names:
                         if partition2Name in line:
-                            if line.split(" ")[0] == 'component':
+                            line_s = line.split(" ")
+                            if (line_s[0] == 'component') or (line_s[0] == 'void' and ("(" in line_s[1] or (line_s[2][0] == "("))):
                                 isFunctionDecl = True
                                 split_function = re.split('[()[\]{}\s+]', line)
                                 array_idx = 0
@@ -253,39 +254,44 @@ for partition2Factor in partition2Factors:
                                 first = line.split(" ")[0]
                                 if ("_t" in first) or (first == "TYPE") :
                                     newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
-
                 for partitionName in partitionNames:
                     if partitionName in line:
-                        if 'component' in line:
+                        line_s = line.split(" ")
+                        if (line_s[0] == 'component') or (line_s[0] == 'void' and ("(" in line_s[1] or (line_s[2][0] == "("))):
                             isFunctionDecl = True
                             split_function = re.split('[()[\]{}\s+]', line)
                             array_idx = 0
-                            
 
+                            found = False
                             for i in range(len(split_function)):
                                 if partitionName == split_function[i]:
+                                    found = True
                                     break
 
-                            array_type = split_function[i - 1]
-                            array_dim = split_function[i + 1]
+                            if found:
+                                array_type = split_function[i - 1]
+                                array_dim = split_function[i + 1]
 
-                            new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
-                            new_line_e = array_type  + " *" + partitionName
+                                new_line_b = "hls_avalon_slave_memory_argument(" + array_dim + ") "
+                                new_line_e = array_type  + " *" + partitionName
 
-                            directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
-                            
-                            line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
-                            newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
+                                directives = "hls_numbanks(" + str(partitionFactor) + ") hls_bankwidth(sizeof(" + array_type + ")) "
+                                
+                                line_to_replace = array_type + ' ' + partitionName + '[' + str(array_dim) + ']'
+                                newLine = newLine.replace(line_to_replace, new_line_b + directives + new_line_e)
                         elif '(' in line or ')' in line:
                             continue
                         else:
                             isFunctionDecl = False
-                            array_type = re.search(datatype_pattern, newLine)
-                            if array_type:
-                                newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
-                            first = line.split(" ")[0]
-                            if ("_t" in first) or (first == "TYPE"):
-                                newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
+                            for piece in line.split(" "):
+                                if "[" in piece:
+                                    if piece.split("[")[0] == partitionName:
+                                        array_type = re.search(datatype_pattern, newLine)
+                                        if array_type:
+                                            newLine = "hls_numbanks(" + str(partitionFactor) + ")\nhls_bankwidth(sizeof(" + array_type.group() + "))\n" + newLine
+                                        first = line.split(" ")[0]
+                                        if ("_t" in first) or (first == "TYPE"):
+                                            newLine = "hls_numbanks(" + str(partition2Factor) + ")\nhls_bankwidth(sizeof(" + first + "))\n" + newLine
 
 
                 if not isFunctionDecl:
