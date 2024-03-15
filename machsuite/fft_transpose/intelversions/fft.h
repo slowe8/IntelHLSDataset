@@ -4,10 +4,12 @@ V. Volkov and B. Kazian. Fitting fft onto the g80 architecture. 2008.
 */
 
 #include <stdlib.h>
-#include <math.h>
+#include <HLS/math.h>
 #include "../../common/support.h"
 #include <HLS/hls.h> 
 #include <HLS/stdio.h>
+#include <HLS/extendedmath.h>
+#include <HLS/hls_float.h>
 
 #define TYPE double
 
