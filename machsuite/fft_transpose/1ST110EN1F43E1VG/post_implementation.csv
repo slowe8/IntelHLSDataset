@@ -1,0 +1,3 @@
+Source File,alm_component,reg_component,dsp_component,ram_component,mlab_component,alm_system,reg_system,dsp_system,ram_system,mlab_system,clock,clock1x,Total On-Chip Power Dissipation (mW),Core Dynamic On-Chip Power Dissipation (mW),Device Static On-Chip Power Dissipation (mW)
+fft_transpose_1,352113.2,808843,192,711,3787,352113.2,808843,192,711,3787,178.19,178.19,53800.43,47336.03,7102.39
+fft_transpose_2,391818.8,820911,192,820,3835,391818.8,820911,192,820,3835,156.05,156.05,59453.05,52910.24,7210.00
