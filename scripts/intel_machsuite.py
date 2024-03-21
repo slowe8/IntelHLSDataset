@@ -3,8 +3,11 @@ import shutil
 from pathlib import Path
 parent_dir = "/home/nanditha/Downloads/machsuite"
 
+K="common"
 folders = [f for f in os.listdir() if os.path.isdir(f)]
-#print ('Folder names are', folders)
+print ('Folder names are', folders)
+while(K in folders):
+    folders.remove(K)
 
 def copy_files_with_extension(source_folder, target_folder, extension):
     for filename in os.listdir(source_folder):
@@ -26,16 +29,22 @@ for i in range(len(folders)):
 	copy_files_with_extension(root_path, dest_path, '.c')
 	copy_files_with_extension(root_path, dest_path, '.h')
 
+	#Find the name of the hls template file
+	hls_template = [filename for filename in os.listdir(root_path) if filename.startswith("hls_template")]
+	#Pick the module name from the template file	
+	print ("prefixed", hls_template[0])
 
 	#Pick the module name from the template file	
-	fp = open(os.path.join(root_path, 'hls_template.tcl'))
+	fp = open(os.path.join(root_path, hls_template[0]))
 	lines = fp.readlines()
 	words = lines[1].split()
 	component_name = words[1]
-	#print ("component",component_name)
+	print ("component",component_name)
 
 	words = lines[2].split()
 	Cfile_name = words[1]
+	#Cfile_names = words[1].split('/')
+	#Cfile_name= Cfile_names[-1]
 #	print ("filename",Cfile_name)
 	
 	words = lines[3].split()
@@ -49,10 +58,10 @@ for i in range(len(folders)):
 		for num, line in enumerate(f, 1):
 			if component_name in line: 
 				words = line.split()
-				print ('dest file line',words)
-				print ('dest file line num',num)
+				#print ('dest file line',words)
+				#print ('dest file line num',num)
 				linenum=num
-	print ('dest file line num now is',linenum)
+	#print ('dest file line num now is',linenum)
 	f.close()
 
 
@@ -84,7 +93,7 @@ for i in range(len(folders)):
 	f.close()
 	
 
-	header_text= "\n\n#include <stdlib.h> \n #include <inttypes.h> \n#include <string.h>\n#include \"../common/support.h"+ "\n" + "#include <HLS/hls.h> \n#include <HLS/stdio.h>\n#include <fcntl.h>\n#include <stdint.h>\n"
+	header_text= "\n\n#include <stdlib.h> \n #include <inttypes.h> \n#include <string.h>\n#include \"../common/support.h\" "+ "\n" + "#include <HLS/hls.h> \n#include <HLS/stdio.h>\n#include <fcntl.h>\n#include <stdint.h>\n"
 
 
 	new_lines[4] = header_text + new_lines[4]
