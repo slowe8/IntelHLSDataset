@@ -8,8 +8,7 @@ from pathlib import Path
 class AnnotateMachSuiteIntel:
 
     def Annotate(parent_dir):
-
-        parent_dir = parent_dir + "/machsuite_intel"
+        parent_dir = str(parent_dir) + "/machsuite_intel"
 
         K="common"
        # folders = [f for f in os.listdir(parent_dir) if os.path.isdir(f)]
