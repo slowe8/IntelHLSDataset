@@ -1,0 +1,26 @@
+Source File,Function Name,ALUTs ,FFs  ,RAMs ,DSPs ,MLABs
+aes_table_21,aes256_encrypt_ecb,88307,117081,87,0,3037
+aes_table_16,aes256_encrypt_ecb,108894,140565,86,0,3547
+aes_table_1,aes256_encrypt_ecb,67497,91185,70,0,2226
+aes_table_11,aes256_encrypt_ecb,75102,100419,77,0,2519
+aes_table_6,aes256_encrypt_ecb,86978,115196,66,0,2991
+aes_table_17,aes256_encrypt_ecb,67497,91185,85,0,2229
+aes_table_2,aes256_encrypt_ecb,66310,89324,68,0,2182
+aes_table_22,aes256_encrypt_ecb,86978,115188,81,0,2994
+aes_table_12,aes256_encrypt_ecb,74020,98666,75,0,2475
+aes_table_18,aes256_encrypt_ecb,66310,89332,83,0,2185
+aes_table_7,aes256_encrypt_ecb,102907,131092,24,0,3415
+aes_table_3,aes256_encrypt_ecb,75102,100419,72,0,2518
+aes_table_23,aes256_encrypt_ecb,102683,130803,41,0,3411
+aes_table_13,aes256_encrypt_ecb,88307,117081,77,0,3035
+aes_table_8,aes256_encrypt_ecb,108920,140687,83,0,3549
+aes_table_19,aes256_encrypt_ecb,75102,100411,87,0,2521
+aes_table_4,aes256_encrypt_ecb,74020,98650,70,0,2474
+aes_table_24,aes256_encrypt_ecb,108343,139708,91,0,3544
+aes_table_9,aes256_encrypt_ecb,67497,91185,75,0,2227
+aes_table_20,aes256_encrypt_ecb,74020,98666,85,0,2477
+aes_table_14,aes256_encrypt_ecb,86978,115196,71,0,2992
+aes_table_25,aes256_encrypt_ecb,58925,80364,100,0,1920
+aes_table_5,aes256_encrypt_ecb,88307,117081,72,0,3034
+aes_table_10,aes256_encrypt_ecb,66310,89332,73,0,2183
+aes_table_15,aes256_encrypt_ecb,102831,130888,29,0,3413
